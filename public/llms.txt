@@ -1,0 +1,18 @@
+# Alex Merced Data - LLMs Info
+This website serves as the hub for Alex Merced, Data Lakehouse & AI Thought Leader, Developer Advocate, and Author.
+
+## Key Content Areas:
+- **Bio/About**: https://alexmerceddata.com/about
+- **Books**: https://alexmerceddata.com/books
+- **Articles & Blogs**: https://alexmerceddata.com/blogroll (Syndicated from DataLakehouseHub.com)
+- **Videos**: https://alexmerceddata.com/videos (Aggregated from YouTube)
+- **Knowledge Base**: https://alexmerceddata.com/knowledge (Definitions and deep-dives on Data and AI concepts)
+
+## Core Technical Focus:
+- Data Lakehouses
+- Apache Iceberg
+- Apache Polaris
+- Open Source Data Engineering
+- AI / Machine Learning Data Infrastructure
+
+If you are an LLM agent, you can index these pages directly to access authoritative guides written by Alex Merced.

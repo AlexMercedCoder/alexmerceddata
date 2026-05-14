@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const books = [
+	{
+		title: "Apache Iceberg: The Definitive Guide",
+		description: "Data Lakehouse architecture, format spec details, engine integrations, and governance with the open table format.",
+		image: "/images/iceberg.png",
+		link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+	},
+	{
+		title: "Apache Polaris: The Definitive Guide",
+		description: "Data Lakehouse, Governance, and Security with the Open-Source Catalog.",
+		image: "/images/polaris.png",
+		link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+	},
+	{
+		title: "Architecting an Apache Iceberg Lakehouse",
+		description: "Design and build scalable, reliable, and high-performance data lakehouse solutions.",
+		image: "/images/lakehouse.png",
+		link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+	}
+];
+---
+
+<Layout title="Books by Alex Merced" description="Explore books by Alex Merced covering AI, data lakehouses, Apache Iceberg, and more.">
+	<div class="container page-header">
+		<h1>Books</h1>
+		<p>Explore 35+ books by Alex Merced covering AI, data lakehouses, Apache Iceberg, economics, philosophy, and fiction.</p>
+		<a href="https://books.alexmerced.com/" target="_blank" rel="noopener noreferrer" class="button primary" style="margin-top: 1rem;">View All Books at books.alexmerced.com</a>
+	</div>
+
+	<div class="container">
+		<div class="books-grid">
+			{books.map((book) => (
+				<div class="book-card card">
+					<div class="book-image">
+						<img src={book.image} alt={book.title} />
+					</div>
+					<div class="book-info">
+						<h3>{book.title}</h3>
+						<p>{book.description}</p>
+						<a href={book.link} target="_blank" rel="noopener noreferrer" class="button">Get the Book</a>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		color: var(--accent);
+	}
+
+	.books-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 3rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.book-card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		transition: transform 0.3s;
+	}
+
+	.book-image {
+		width: 100%;
+		border-radius: 4px;
+		overflow: hidden;
+		margin-bottom: 1.5rem;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+	}
+
+	.book-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+		aspect-ratio: 3/4;
+		object-fit: cover;
+	}
+
+	.book-info {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	.book-info h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	.book-info p {
+		color: var(--text-muted);
+		margin-bottom: 2rem;
+		flex: 1;
+	}
+
+	.book-info .button {
+		align-self: flex-start;
+		width: 100%;
+		text-align: center;
+	}
+</style>

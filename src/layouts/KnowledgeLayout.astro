@@ -1,0 +1,121 @@
+---
+import Layout from './Layout.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+	<article class="container kb-article">
+		<header class="kb-header">
+			<h1>{frontmatter.title}</h1>
+			<p class="kb-meta">Published: {new Date(frontmatter.date).toLocaleDateString()} | Author: Alex Merced</p>
+			{frontmatter.tags && (
+				<div class="kb-tags">
+					{frontmatter.tags.map(tag => <span class="tag">{tag}</span>)}
+				</div>
+			)}
+		</header>
+		
+		<div class="kb-content">
+			<slot />
+		</div>
+
+		<div class="kb-cta card">
+			<h2>Deepen Your Knowledge</h2>
+			<p>Ready to take the next step in mastering the Data Lakehouse? Dive deeper with my authoritative guides and practical resources.</p>
+			<a href="/books" class="button primary">Explore Alex's Books</a>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.kb-article {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.kb-header {
+		margin-bottom: 3rem;
+		text-align: center;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--secondary);
+	}
+
+	.kb-header h1 {
+		font-size: 3.5rem;
+		color: var(--accent);
+		margin-bottom: 1rem;
+	}
+
+	.kb-meta {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+	}
+
+	.kb-tags {
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.tag {
+		background-color: rgba(100, 255, 218, 0.1);
+		color: var(--accent);
+		padding: 0.25rem 0.75rem;
+		border-radius: 9999px;
+		font-size: 0.85rem;
+		border: 1px solid rgba(100, 255, 218, 0.2);
+	}
+
+	.kb-content {
+		font-size: 1.15rem;
+		line-height: 1.8;
+		color: #ccd6f6;
+	}
+
+	.kb-content h2 {
+		font-size: 2rem;
+		margin-top: 3rem;
+		margin-bottom: 1.5rem;
+		color: var(--text);
+	}
+
+	.kb-content h3 {
+		font-size: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		color: #e6f1ff;
+	}
+
+	.kb-content p {
+		margin-bottom: 1.5rem;
+		color: #8892b0;
+	}
+
+	.kb-content ul, .kb-content ol {
+		margin-bottom: 1.5rem;
+		padding-left: 2rem;
+		color: #8892b0;
+	}
+
+	.kb-content li {
+		margin-bottom: 0.5rem;
+	}
+
+	.kb-cta {
+		margin-top: 4rem;
+		text-align: center;
+		padding: 3rem 2rem;
+		background: linear-gradient(to bottom, var(--secondary), rgba(2,12,27,0.5));
+		border-color: var(--accent);
+	}
+
+	.kb-cta h2 {
+		color: var(--accent);
+	}
+
+	.kb-cta p {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+	}
+</style>

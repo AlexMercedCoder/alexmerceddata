@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Parser from 'rss-parser';
+
+const parser = new Parser();
+let videos = [];
+try {
+	const feed = await parser.parseURL('https://www.youtube.com/feeds/videos.xml?channel_id=UCmI91YGMVBvJlJB0oZV-M9g');
+	videos = feed.items.map(item => ({
+		title: item.title,
+		link: item.link,
+		date: new Date(item.pubDate || item.isoDate).toLocaleDateString(),
+		id: item.id.replace('yt:video:', '')
+	}));
+} catch (error) {
+	console.error('Error fetching youtube feed:', error);
+}
+---
+
+<Layout title="Video Roll" description="Watch the latest data and AI videos from Alex Merced.">
+	<div class="container page-header">
+		<h1>Video Roll</h1>
+		<p>Search and explore Alex Merced's videos on Data Lakehouses, AI, and Apache Iceberg.</p>
+		
+		<div class="search-container">
+			<input type="text" id="videoSearch" placeholder="Search videos by title..." />
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="video-grid" id="videoGrid">
+			{videos.map((video) => (
+				<a href={video.link} target="_blank" rel="noopener noreferrer" class="video-card card" data-title={video.title.toLowerCase()}>
+					<div class="video-thumbnail">
+						<img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt={video.title} loading="lazy" />
+					</div>
+					<div class="video-info">
+						<h3>{video.title}</h3>
+						<p class="date">{video.date}</p>
+					</div>
+				</a>
+			))}
+			{videos.length === 0 && <p>No videos found or error loading feed.</p>}
+		</div>
+	</div>
+</Layout>
+
+<script>
+	const searchInput = document.getElementById('videoSearch');
+	const videoCards = document.querySelectorAll('.video-card');
+
+	if(searchInput) {
+		searchInput.addEventListener('input', (e) => {
+			const term = e.target.value.toLowerCase();
+			videoCards.forEach(card => {
+				const title = card.getAttribute('data-title');
+				if (title && title.includes(term)) {
+					card.style.display = 'block';
+				} else {
+					card.style.display = 'none';
+				}
+			});
+		});
+	}
+</script>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		color: var(--accent);
+	}
+
+	.search-container {
+		margin-top: 2rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.search-container input {
+		width: 100%;
+		padding: 1rem;
+		border-radius: 8px;
+		border: 1px solid var(--secondary);
+		background-color: var(--primary);
+		color: var(--text);
+		font-size: 1.1rem;
+		outline: none;
+		transition: border-color 0.3s;
+	}
+
+	.search-container input:focus {
+		border-color: var(--accent);
+	}
+
+	.video-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.video-card {
+		display: block;
+		text-decoration: none;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.video-thumbnail img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+	}
+
+	.video-info {
+		padding: 1.5rem;
+	}
+
+	.video-info h3 {
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+		color: var(--text);
+		transition: color 0.3s;
+	}
+
+	.video-card:hover h3 {
+		color: var(--accent);
+	}
+
+	.date {
+		font-size: 0.9rem;
+		color: var(--text-muted);
+		margin: 0;
+	}
+</style>

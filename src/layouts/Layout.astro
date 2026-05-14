@@ -1,0 +1,339 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Alex Merced is a Data Lakehouse & AI thought leader, educator, and author." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/og-image.jpg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="/og-image.jpg" />
+		
+		<!-- JSON-LD -->
+		<script type="application/ld+json" set:html={`{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Alex Merced",
+			"url": "https://alexmerceddata.com",
+			"sameAs": [
+				"https://youtube.com/@alexmerceddata",
+				"https://datalakehousehub.com",
+				"https://whoisalexmerced.com"
+			],
+			"jobTitle": "Data Lakehouse & AI Thought Leader",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Dremio"
+			}
+		}`} />
+		
+		<title>{title} | Alex Merced Data</title>
+	</head>
+	<body>
+		<header>
+			<nav class="container">
+				<a href="/" class="logo">AlexMerced<span>Data</span></a>
+				<ul class="nav-links">
+					<li><a href="/">About</a></li>
+					<li><a href="/books">Books</a></li>
+					<li><a href="/blogroll">Blogroll</a></li>
+					<li><a href="/videos">Videos</a></li>
+					<li><a href="/knowledge">Knowledge Base</a></li>
+				</ul>
+				<button class="mobile-menu" aria-label="Toggle Menu">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+				</button>
+			</nav>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer>
+			<div class="container footer-content">
+				<div class="footer-brand">
+					<h3>AlexMerced<span>Data</span></h3>
+					<p>Empowering the data and AI community through education, advocacy, and open source.</p>
+				</div>
+				<div class="footer-links">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="/">About Alex</a></li>
+						<li><a href="/books">Data & AI Books</a></li>
+						<li><a href="/knowledge">Knowledge Base</a></li>
+					</ul>
+				</div>
+				<div class="footer-social">
+					<h4>Connect</h4>
+					<ul>
+						<li><a href="https://youtube.com/@alexmerceddata" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+						<li><a href="https://linkedin.com/in/alexmerced" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; {new Date().getFullYear()} Alex Merced. All rights reserved.</p>
+			</div>
+		</footer>
+
+		<script>
+			// Mobile menu toggle
+			const btn = document.querySelector('.mobile-menu');
+			const links = document.querySelector('.nav-links');
+			if(btn && links) {
+				btn.addEventListener('click', () => {
+					links.classList.toggle('active');
+				});
+			}
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary: #0A192F;
+		--secondary: #112240;
+		--accent: #64FFDA;
+		--text: #E6F1FF;
+		--text-muted: #8892B0;
+		--bg: #020C1B;
+		--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: var(--font-sans);
+		background-color: var(--bg);
+		color: var(--text);
+		line-height: 1.6;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	main {
+		flex: 1;
+		padding: 4rem 0;
+	}
+
+	/* Header & Nav */
+	header {
+		background-color: rgba(10, 25, 47, 0.85);
+		backdrop-filter: blur(10px);
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		border-bottom: 1px solid var(--secondary);
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 80px;
+	}
+
+	.logo {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.logo span {
+		color: var(--accent);
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+		list-style: none;
+	}
+
+	.nav-links a {
+		color: var(--text);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.nav-links a:hover {
+		color: var(--accent);
+	}
+
+	.mobile-menu {
+		display: none;
+		background: none;
+		border: none;
+		color: var(--accent);
+		cursor: pointer;
+	}
+
+	/* Footer */
+	footer {
+		background-color: var(--secondary);
+		padding: 4rem 0 2rem;
+		border-top: 1px solid rgba(100, 255, 218, 0.1);
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+
+	.footer-brand h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.footer-brand span {
+		color: var(--accent);
+	}
+
+	.footer-brand p {
+		color: var(--text-muted);
+	}
+
+	.footer-links h4, .footer-social h4 {
+		color: var(--text);
+		margin-bottom: 1rem;
+	}
+
+	.footer-links ul, .footer-social ul {
+		list-style: none;
+	}
+
+	.footer-links li, .footer-social li {
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-links a, .footer-social a {
+		color: var(--text-muted);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.footer-links a:hover, .footer-social a:hover {
+		color: var(--accent);
+	}
+
+	.footer-bottom {
+		text-align: center;
+		color: var(--text-muted);
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	/* Typography & Utilities */
+	h1, h2, h3, h4 {
+		color: var(--text);
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+
+	p {
+		margin-bottom: 1rem;
+		color: var(--text-muted);
+	}
+
+	a.button, button.cta {
+		display: inline-block;
+		background-color: transparent;
+		color: var(--accent);
+		border: 1px solid var(--accent);
+		padding: 0.75rem 1.5rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	a.button:hover, button.cta:hover {
+		background-color: rgba(100, 255, 218, 0.1);
+	}
+
+	a.button.primary {
+		background-color: var(--accent);
+		color: var(--primary);
+	}
+
+	a.button.primary:hover {
+		background-color: transparent;
+		color: var(--accent);
+		border-color: var(--accent);
+	}
+
+	/* Cards */
+	.card {
+		background-color: var(--secondary);
+		border-radius: 8px;
+		padding: 1.5rem;
+		border: 1px solid rgba(100, 255, 218, 0.05);
+		transition: transform 0.3s ease, border-color 0.3s ease;
+	}
+
+	.card:hover {
+		transform: translateY(-5px);
+		border-color: rgba(100, 255, 218, 0.3);
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.nav-links {
+			display: none;
+			position: absolute;
+			top: 80px;
+			left: 0;
+			right: 0;
+			background-color: var(--secondary);
+			flex-direction: column;
+			padding: 2rem;
+			gap: 1.5rem;
+			text-align: center;
+			box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+		}
+		
+		.nav-links.active {
+			display: flex;
+		}
+
+		.mobile-menu {
+			display: block;
+		}
+	}
+</style>
