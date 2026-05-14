@@ -22,7 +22,7 @@ const { frontmatter } = Astro.props;
 		<div class="kb-cta card">
 			<h2>Deepen Your Knowledge</h2>
 			<p>Ready to take the next step in mastering the Data Lakehouse? Dive deeper with my authoritative guides and practical resources.</p>
-			<a href="/books" class="button primary">Explore Alex's Books</a>
+			<a href={frontmatter.cta_link || "/books"} class="button primary">Explore Alex's Books</a>
 		</div>
 	</article>
 </Layout>

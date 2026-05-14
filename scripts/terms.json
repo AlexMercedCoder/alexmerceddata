@@ -1,0 +1,2201 @@
+[
+  {
+    "term": "Apache Polaris",
+    "category": "Data Catalogs",
+    "keywords": [
+      "open source catalog",
+      "iceberg rest",
+      "governance",
+      "data lakehouse"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Apache Iceberg Manifest Lists",
+    "category": "Data Architecture",
+    "keywords": [
+      "metadata",
+      "file pruning",
+      "query optimization",
+      "avro"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Apache Iceberg Time Travel",
+    "category": "Data Architecture",
+    "keywords": [
+      "snapshots",
+      "reproducibility",
+      "rollback",
+      "historical data"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Medallion Architecture",
+    "category": "Data Engineering",
+    "keywords": [
+      "bronze",
+      "silver",
+      "gold",
+      "data quality",
+      "data pipelines"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Separation of Compute and Storage",
+    "category": "Data Lakehouse",
+    "keywords": [
+      "scalability",
+      "cloud architecture",
+      "cost optimization"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Lakehouse",
+    "category": "Data Lakehouse",
+    "keywords": [
+      "data warehouse",
+      "data lake",
+      "hybrid architecture",
+      "open formats"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Agentic AI",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "autonomous agents",
+      "LLMs",
+      "tool use",
+      "reasoning"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Retrieval-Augmented Generation (RAG)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "embeddings",
+      "vector search",
+      "context injection",
+      "LLMs"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Large Language Model (LLM) Context Windows",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "tokens",
+      "memory",
+      "attention mechanism",
+      "prompt engineering"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Semantic Search",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "vector embeddings",
+      "similarity search",
+      "NLP",
+      "information retrieval"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "ACID Transactions in Data Lakes",
+    "category": "Data Engineering",
+    "keywords": [
+      "atomicity",
+      "consistency",
+      "isolation",
+      "durability",
+      "concurrent writes"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Change Data Capture (CDC)",
+    "category": "Data Engineering",
+    "keywords": [
+      "streaming",
+      "database logs",
+      "Debezium",
+      "incremental updates"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Streaming Ingestion",
+    "category": "Data Engineering",
+    "keywords": [
+      "Apache Kafka",
+      "Apache Flink",
+      "real-time analytics",
+      "event streaming"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Vector Embeddings",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "high-dimensional space",
+      "neural networks",
+      "feature representation",
+      "similarity"
+    ],
+    "target_cta": "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddings/dp/B0GSHRZNZ5/ref=sr_1_21"
+  },
+  {
+    "term": "Data Catalogs",
+    "category": "Data Governance",
+    "keywords": [
+      "metadata management",
+      "data discovery",
+      "access control",
+      "Nessie"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Apache Parquet",
+    "category": "Data Formats",
+    "keywords": [
+      "columnar storage",
+      "compression",
+      "query performance",
+      "big data"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "ORC Format",
+    "category": "Data Formats",
+    "keywords": [
+      "Optimized Row Columnar",
+      "Hadoop",
+      "compression",
+      "analytical queries"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Governance",
+    "category": "Data Governance",
+    "keywords": [
+      "compliance",
+      "security",
+      "data quality",
+      "stewardship"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Role-Based Access Control (RBAC)",
+    "category": "Data Governance",
+    "keywords": [
+      "security",
+      "permissions",
+      "authorization",
+      "data catalogs"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Data Mesh",
+    "category": "Data Architecture",
+    "keywords": [
+      "decentralization",
+      "domain-driven design",
+      "data as a product",
+      "self-serve infrastructure"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Fabric",
+    "category": "Data Architecture",
+    "keywords": [
+      "metadata-driven",
+      "data integration",
+      "active metadata",
+      "unified layer"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Vector Databases",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "Milvus",
+      "Pinecone",
+      "ANN search",
+      "embeddings storage"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Schema Evolution",
+    "category": "Data Architecture",
+    "keywords": [
+      "column drops",
+      "type promotion",
+      "backward compatibility",
+      "metadata updates"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Hidden Partitioning",
+    "category": "Data Architecture",
+    "keywords": [
+      "query simplification",
+      "partition transforms",
+      "Apache Iceberg",
+      "user experience"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Optimistic Concurrency Control (OCC)",
+    "category": "Data Engineering",
+    "keywords": [
+      "transaction isolation",
+      "conflicts",
+      "lock-free",
+      "data consistency"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Apache Arrow",
+    "category": "Data Formats",
+    "keywords": [
+      "in-memory",
+      "columnar format",
+      "zero-copy",
+      "performance"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Arrow Flight SQL",
+    "category": "Data Connectivity",
+    "keywords": [
+      "database connectivity",
+      "high throughput",
+      "JDBC",
+      "ODBC"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Vector Search Indexes",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "ANN",
+      "HNSW",
+      "Faiss",
+      "embeddings"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Data Lineage",
+    "category": "Data Governance",
+    "keywords": [
+      "provenance",
+      "impact analysis",
+      "compliance",
+      "tracing"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Data Observability",
+    "category": "Data Engineering",
+    "keywords": [
+      "monitoring",
+      "data quality",
+      "anomaly detection",
+      "reliability"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Zero-Copy Cloning",
+    "category": "Data Architecture",
+    "keywords": [
+      "snapshots",
+      "storage optimization",
+      "branching",
+      "Apache Iceberg"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Data as Code",
+    "category": "Data Engineering",
+    "keywords": [
+      "branching",
+      "merging",
+      "Nessie",
+      "version control"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Prompt Engineering",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "LLMs",
+      "context framing",
+      "few-shot learning",
+      "reasoning"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Fine-Tuning LLMs",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "LoRA",
+      "PEFT",
+      "model adaptation",
+      "domain specific"
+    ],
+    "target_cta": "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
+  },
+  {
+    "term": "Data Contracts",
+    "category": "Data Engineering",
+    "keywords": [
+      "API",
+      "schema registry",
+      "data producers",
+      "quality guarantees"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Reverse ETL",
+    "category": "Data Engineering",
+    "keywords": [
+      "operational analytics",
+      "data activation",
+      "CRM sync",
+      "lakehouse"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Vault Architecture",
+    "category": "Data Architecture",
+    "keywords": [
+      "hubs",
+      "links",
+      "satellites",
+      "agile data warehouse"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Star Schema",
+    "category": "Data Architecture",
+    "keywords": [
+      "dimensional modeling",
+      "facts",
+      "dimensions",
+      "Kimball"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Slowly Changing Dimensions (SCD)",
+    "category": "Data Architecture",
+    "keywords": [
+      "historical data",
+      "Type 2 SCD",
+      "data warehouse",
+      "upserts"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Lambda Architecture",
+    "category": "Data Architecture",
+    "keywords": [
+      "batch layer",
+      "speed layer",
+      "streaming",
+      "data consolidation"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Kappa Architecture",
+    "category": "Data Architecture",
+    "keywords": [
+      "streaming first",
+      "event logs",
+      "Kafka",
+      "simplified pipelines"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Hudi",
+    "category": "Data Formats",
+    "keywords": [
+      "table formats",
+      "upserts",
+      "incremental processing",
+      "lakehouse"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Delta Lake",
+    "category": "Data Formats",
+    "keywords": [
+      "transaction log",
+      "Databricks",
+      "Z-Ordering",
+      "open formats"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Compute Pushdown",
+    "category": "Data Engineering",
+    "keywords": [
+      "query optimization",
+      "data source",
+      "filtering",
+      "performance"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Predicate Pushdown",
+    "category": "Data Engineering",
+    "keywords": [
+      "file pruning",
+      "min-max stats",
+      "Parquet",
+      "query execution"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Bloom Filters",
+    "category": "Data Engineering",
+    "keywords": [
+      "probabilistic data structures",
+      "file skipping",
+      "query speed",
+      "indexing"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Z-Ordering",
+    "category": "Data Engineering",
+    "keywords": [
+      "space-filling curves",
+      "data clustering",
+      "multi-dimensional queries",
+      "file pruning"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Event Sourcing",
+    "category": "Data Architecture",
+    "keywords": [
+      "state changes",
+      "event log",
+      "immutable data",
+      "microservices"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Micro-Batches",
+    "category": "Data Engineering",
+    "keywords": [
+      "Spark Streaming",
+      "near real-time",
+      "latency",
+      "ETL"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Multi-Agent Systems",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "collaboration",
+      "autonomous agents",
+      "GenAI workflows",
+      "distributed AI"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Data Serialization",
+    "category": "Data Engineering",
+    "keywords": [
+      "encoding",
+      "binary formats",
+      "RPC",
+      "data transport"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Avro",
+    "category": "Data Formats",
+    "keywords": [
+      "row-based",
+      "schema evolution",
+      "JSON schema",
+      "streaming"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Trino (PrestoSQL)",
+    "category": "Query Engines",
+    "keywords": [
+      "distributed SQL",
+      "MPP",
+      "federated queries",
+      "interactive analytics"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Flink",
+    "category": "Query Engines",
+    "keywords": [
+      "stream processing",
+      "stateful computations",
+      "event-driven",
+      "real-time"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Spark",
+    "category": "Query Engines",
+    "keywords": [
+      "batch processing",
+      "in-memory computing",
+      "distributed data",
+      "ETL"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Query Planner",
+    "category": "Data Engineering",
+    "keywords": [
+      "SQL parsing",
+      "execution plan",
+      "logical plan",
+      "physical plan"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Cost-Based Optimizer (CBO)",
+    "category": "Data Engineering",
+    "keywords": [
+      "statistics",
+      "execution paths",
+      "query performance",
+      "joins"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Vectorized Execution",
+    "category": "Data Engineering",
+    "keywords": [
+      "SIMD",
+      "CPU cache",
+      "columnar processing",
+      "query engines"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Democratization",
+    "category": "Data Culture",
+    "keywords": [
+      "accessibility",
+      "data literacy",
+      "empowerment",
+      "analytics for everyone"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Self-Service Analytics",
+    "category": "Data Culture",
+    "keywords": [
+      "business intelligence",
+      "dashboards",
+      "ad-hoc queries",
+      "agile data"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Extract, Load, Transform (ELT)",
+    "category": "Data Engineering",
+    "keywords": [
+      "cloud data warehouses",
+      "dbt",
+      "data transformations",
+      "modern data stack"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Orchestration",
+    "category": "Data Engineering",
+    "keywords": [
+      "DAGs",
+      "scheduling",
+      "workflow management",
+      "dependencies"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Airflow",
+    "category": "Data Engineering",
+    "keywords": [
+      "Python",
+      "orchestration",
+      "DAGs",
+      "data pipelines"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Project Nessie",
+    "category": "Data Catalogs",
+    "keywords": [
+      "git for data",
+      "branching",
+      "version control",
+      "data catalog"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Dremio Sonar",
+    "category": "Query Engines",
+    "keywords": [
+      "SQL engine",
+      "lakehouse platform",
+      "Arrow Flight",
+      "data virtualization"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Semantic Layer",
+    "category": "Data Architecture",
+    "keywords": [
+      "business logic",
+      "metrics",
+      "unified interface",
+      "data abstraction"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Virtual Data Warehouse",
+    "category": "Data Architecture",
+    "keywords": [
+      "data federation",
+      "no data movement",
+      "logical data warehouse"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Zero-ETL",
+    "category": "Data Engineering",
+    "keywords": [
+      "direct queries",
+      "real-time sync",
+      "operational data",
+      "lakehouse"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Multi-Cloud Architecture",
+    "category": "Data Architecture",
+    "keywords": [
+      "vendor lock-in",
+      "AWS",
+      "Azure",
+      "GCP",
+      "hybrid cloud"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Knowledge Graphs",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "ontologies",
+      "relationships",
+      "graph databases",
+      "semantic context"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Graph Neural Networks (GNNs)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "deep learning",
+      "node embeddings",
+      "network analysis",
+      "machine learning"
+    ],
+    "target_cta": "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddings/dp/B0GSHRZNZ5/ref=sr_1_21"
+  },
+  {
+    "term": "Zero-Shot Learning",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "LLMs",
+      "prompting",
+      "generalization",
+      "inference"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Tokenization in LLMs",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "subwords",
+      "BPE",
+      "vocabulary",
+      "text processing"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Temperature in Generative AI",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "creativity",
+      "randomness",
+      "LLM parameters",
+      "logits"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Hardware Acceleration (GPUs/TPUs) for AI",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "parallel processing",
+      "tensor cores",
+      "model training",
+      "inference"
+    ],
+    "target_cta": "https://www.amazon.com/Economics-AI-Latency-Infrastructure-Tradeoffs/dp/B0GSPGSKXC/ref=sr_1_36"
+  },
+  {
+    "term": "Data Quality",
+    "category": "Data Governance",
+    "keywords": [
+      "accuracy",
+      "completeness",
+      "reliability",
+      "trust"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Profiling",
+    "category": "Data Engineering",
+    "keywords": [
+      "metadata",
+      "statistics",
+      "data analysis",
+      "cleanliness"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "MLOps (Machine Learning Operations)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "deployment",
+      "model lifecycle",
+      "CI/CD",
+      "monitoring"
+    ],
+    "target_cta": "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
+  },
+  {
+    "term": "DataOps",
+    "category": "Data Culture",
+    "keywords": [
+      "agile",
+      "automation",
+      "pipeline collaboration",
+      "DevOps for data"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Model Drift",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "data drift",
+      "concept drift",
+      "performance degradation",
+      "retraining"
+    ],
+    "target_cta": "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
+  },
+  {
+    "term": "Feature Store",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "machine learning",
+      "feature engineering",
+      "model serving",
+      "centralized data"
+    ],
+    "target_cta": "https://www.amazon.com/AI-Ready-Data-Designing-Platforms-Agents/dp/B0GSN7GLH2/ref=sr_1_3"
+  },
+  {
+    "term": "Data Lake vs Data Warehouse",
+    "category": "Data Architecture",
+    "keywords": [
+      "structured vs unstructured",
+      "cost comparison",
+      "scalability",
+      "lakehouse"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Snowflake Data Cloud",
+    "category": "Data Architecture",
+    "keywords": [
+      "cloud data warehouse",
+      "compute separation",
+      "data sharing"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Databricks",
+    "category": "Data Architecture",
+    "keywords": [
+      "unified analytics",
+      "Apache Spark",
+      "Delta Lake",
+      "Lakehouse"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Data Virtualization",
+    "category": "Data Architecture",
+    "keywords": [
+      "no data movement",
+      "federation",
+      "logical views",
+      "Dremio"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Polyglot Persistence",
+    "category": "Data Architecture",
+    "keywords": [
+      "multiple databases",
+      "right tool for the job",
+      "storage paradigms"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Kafka",
+    "category": "Data Engineering",
+    "keywords": [
+      "event streaming",
+      "publish-subscribe",
+      "high throughput",
+      "real-time"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Object Storage (S3, ADLS, GCS)",
+    "category": "Data Lakehouse",
+    "keywords": [
+      "cloud storage",
+      "durability",
+      "scalability",
+      "data lakes"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Storage Abstraction",
+    "category": "Data Architecture",
+    "keywords": [
+      "decoupling",
+      "cloud independence",
+      "file systems",
+      "HDFS"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Iceberg Copy-on-Write (CoW)",
+    "category": "Data Engineering",
+    "keywords": [
+      "data updates",
+      "file rewriting",
+      "read optimized",
+      "Apache Iceberg"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Iceberg Merge-on-Read (MoR)",
+    "category": "Data Engineering",
+    "keywords": [
+      "delete files",
+      "position deletes",
+      "write optimized",
+      "Apache Iceberg"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Row-Level Deletes",
+    "category": "Data Engineering",
+    "keywords": [
+      "GDPR",
+      "compliance",
+      "upserts",
+      "table formats"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Data Consistency",
+    "category": "Data Engineering",
+    "keywords": [
+      "CAP theorem",
+      "eventual consistency",
+      "strong consistency",
+      "ACID"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "ACID Compliance",
+    "category": "Data Engineering",
+    "keywords": [
+      "databases",
+      "transactions",
+      "reliability",
+      "data integrity"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Idempotent Data Pipelines",
+    "category": "Data Engineering",
+    "keywords": [
+      "re-runnable",
+      "safe retries",
+      "data duplication",
+      "robustness"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Backfilling Data",
+    "category": "Data Engineering",
+    "keywords": [
+      "historical processing",
+      "pipeline updates",
+      "data correction",
+      "reprocessing"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Upserts (Update and Insert)",
+    "category": "Data Engineering",
+    "keywords": [
+      "merge operations",
+      "CDC",
+      "data synchronization",
+      "lakehouse"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Unstructured Data",
+    "category": "Data Formats",
+    "keywords": [
+      "text",
+      "images",
+      "audio",
+      "AI training data"
+    ],
+    "target_cta": "https://www.amazon.com/AI-Ready-Data-Designing-Platforms-Agents/dp/B0GSN7GLH2/ref=sr_1_3"
+  },
+  {
+    "term": "Semi-Structured Data (JSON, XML)",
+    "category": "Data Formats",
+    "keywords": [
+      "flexibility",
+      "nested data",
+      "NoSQL",
+      "logs"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Open Table Formats",
+    "category": "Data Lakehouse",
+    "keywords": [
+      "Iceberg",
+      "Delta",
+      "Hudi",
+      "interoperability"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Real-time Analytics",
+    "category": "Data Analytics",
+    "keywords": [
+      "low latency",
+      "dashboards",
+      "event streams",
+      "decision making"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Batch Processing vs Stream Processing",
+    "category": "Data Engineering",
+    "keywords": [
+      "data processing",
+      "latency",
+      "throughput",
+      "ETL"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Druid",
+    "category": "Query Engines",
+    "keywords": [
+      "OLAP",
+      "time-series",
+      "sub-second queries",
+      "real-time"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "ClickHouse",
+    "category": "Query Engines",
+    "keywords": [
+      "column-oriented",
+      "analytical database",
+      "high performance"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Business Intelligence (BI)",
+    "category": "Data Analytics",
+    "keywords": [
+      "reporting",
+      "KPIs",
+      "dashboards",
+      "data visualization"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Data Warehousing",
+    "category": "Data Architecture",
+    "keywords": [
+      "EDW",
+      "historical data",
+      "structured data",
+      "SQL"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Materialized Views",
+    "category": "Data Architecture",
+    "keywords": [
+      "pre-computation",
+      "query performance",
+      "caching",
+      "database optimization"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Apache Pinot",
+    "category": "Query Engines",
+    "keywords": [
+      "OLAP",
+      "real-time",
+      "user-facing analytics",
+      "distributed"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Mining",
+    "category": "Data Analytics",
+    "keywords": [
+      "patterns",
+      "statistics",
+      "knowledge discovery",
+      "machine learning"
+    ],
+    "target_cta": "https://www.amazon.com/AI-Ready-Data-Designing-Platforms-Agents/dp/B0GSN7GLH2/ref=sr_1_3"
+  },
+  {
+    "term": "Predictive Analytics",
+    "category": "Data Analytics",
+    "keywords": [
+      "forecasting",
+      "statistical modeling",
+      "machine learning",
+      "future trends"
+    ],
+    "target_cta": "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
+  },
+  {
+    "term": "Prescriptive Analytics",
+    "category": "Data Analytics",
+    "keywords": [
+      "optimization",
+      "simulation",
+      "decision support",
+      "actionable insights"
+    ],
+    "target_cta": "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
+  },
+  {
+    "term": "Dimensional Modeling",
+    "category": "Data Architecture",
+    "keywords": [
+      "Ralph Kimball",
+      "facts",
+      "dimensions",
+      "data warehouse"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Silos",
+    "category": "Data Culture",
+    "keywords": [
+      "fragmentation",
+      "isolation",
+      "data integration",
+      "lakehouse"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Customer Data Platform (CDP)",
+    "category": "Data Architecture",
+    "keywords": [
+      "marketing",
+      "unified profile",
+      "segmentation",
+      "analytics"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Superset",
+    "category": "Data Analytics",
+    "keywords": [
+      "data exploration",
+      "visualization",
+      "open source",
+      "dashboards"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Tableau",
+    "category": "Data Analytics",
+    "keywords": [
+      "BI tool",
+      "visual analytics",
+      "dashboards",
+      "data sources"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Power BI",
+    "category": "Data Analytics",
+    "keywords": [
+      "Microsoft",
+      "business analytics",
+      "DAX",
+      "reporting"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Looker",
+    "category": "Data Analytics",
+    "keywords": [
+      "LookML",
+      "Google Cloud",
+      "data modeling",
+      "BI"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Data Lineage vs Data Provenance",
+    "category": "Data Governance",
+    "keywords": [
+      "tracking",
+      "origins",
+      "transformations",
+      "auditing"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Active Metadata",
+    "category": "Data Governance",
+    "keywords": [
+      "automation",
+      "data fabric",
+      "machine learning",
+      "metadata management"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Data Classification",
+    "category": "Data Governance",
+    "keywords": [
+      "security",
+      "PII",
+      "sensitivity",
+      "compliance"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Data Masking",
+    "category": "Data Governance",
+    "keywords": [
+      "obfuscation",
+      "security",
+      "privacy",
+      "testing"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Data Anonymization",
+    "category": "Data Governance",
+    "keywords": [
+      "privacy",
+      "de-identification",
+      "compliance",
+      "GDPR"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Master Data Management (MDM)",
+    "category": "Data Governance",
+    "keywords": [
+      "single source of truth",
+      "reference data",
+      "consolidation",
+      "quality"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Stewardship",
+    "category": "Data Culture",
+    "keywords": [
+      "accountability",
+      "data policies",
+      "governance",
+      "roles"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Generative Pre-trained Transformer (GPT)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "OpenAI",
+      "transformers",
+      "LLMs",
+      "NLP"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Attention Mechanism",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "transformers",
+      "neural networks",
+      "sequence-to-sequence",
+      "context"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Low-Rank Adaptation (LoRA)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "fine-tuning",
+      "parameter efficient",
+      "LLMs",
+      "weights"
+    ],
+    "target_cta": "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
+  },
+  {
+    "term": "Reinforcement Learning from Human Feedback (RLHF)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "alignment",
+      "reward model",
+      "LLM training",
+      "human-in-the-loop"
+    ],
+    "target_cta": "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
+  },
+  {
+    "term": "Chain of Thought Prompting",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "reasoning",
+      "LLMs",
+      "prompt engineering",
+      "step-by-step"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Few-Shot Prompting",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "in-context learning",
+      "examples",
+      "LLMs",
+      "task adaptation"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Zero-Shot Prompting",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "generalization",
+      "LLMs",
+      "no examples",
+      "inference"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "LangChain",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "framework",
+      "agents",
+      "LLM applications",
+      "chains"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "LlamaIndex",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "data framework",
+      "RAG",
+      "LLMs",
+      "indexing"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Vector Similarity Metrics",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "cosine similarity",
+      "euclidean distance",
+      "dot product",
+      "embeddings"
+    ],
+    "target_cta": "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddings/dp/B0GSHRZNZ5/ref=sr_1_21"
+  },
+  {
+    "term": "Chunking Strategies for RAG",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "document parsing",
+      "context window",
+      "embeddings",
+      "information retrieval"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Hybrid Search",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "keyword search",
+      "semantic search",
+      "BM25",
+      "vector search"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Re-ranking Models",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "Cross-encoders",
+      "search optimization",
+      "RAG",
+      "relevance"
+    ],
+    "target_cta": "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
+  },
+  {
+    "term": "Open-Source LLMs (Llama, Mistral)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "weights",
+      "local deployment",
+      "Hugging Face",
+      "democratization"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Hugging Face",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "model hub",
+      "transformers",
+      "open source",
+      "machine learning"
+    ],
+    "target_cta": "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
+  },
+  {
+    "term": "Model Quantization",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "compression",
+      "INT8",
+      "memory optimization",
+      "inference speed"
+    ],
+    "target_cta": "https://www.amazon.com/Economics-AI-Latency-Infrastructure-Tradeoffs/dp/B0GSPGSKXC/ref=sr_1_36"
+  },
+  {
+    "term": "Mixture of Experts (MoE)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "neural networks",
+      "sparse activation",
+      "scaling",
+      "LLM architecture"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Hallucination in AI",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "factual accuracy",
+      "grounding",
+      "LLMs",
+      "reliability"
+    ],
+    "target_cta": "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
+  },
+  {
+    "term": "AI Agent Tool Use (Function Calling)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "APIs",
+      "action execution",
+      "LLM extensions",
+      "agentic workflows"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Autonomous Agents",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "AutoGPT",
+      "goal-driven",
+      "planning",
+      "execution"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Multi-Modal AI",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "text",
+      "images",
+      "audio",
+      "unified models"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Computer Vision",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "image recognition",
+      "CNNs",
+      "object detection",
+      "visual processing"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "Natural Language Processing (NLP)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "linguistics",
+      "text analysis",
+      "sentiment",
+      "parsing"
+    ],
+    "target_cta": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+  },
+  {
+    "term": "Speech-to-Text (ASR)",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "transcription",
+      "audio processing",
+      "voice assistants",
+      "Whisper"
+    ],
+    "target_cta": "https://www.amazon.com/dp/B0GQW7CTML"
+  },
+  {
+    "term": "AI Ethics and Bias",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "fairness",
+      "safety",
+      "alignment",
+      "responsible AI"
+    ],
+    "target_cta": "https://www.amazon.com/Governing-AI-Systems/dp/B0GSMVQ1TH/ref=sr_1_21"
+  },
+  {
+    "term": "Distributed Systems",
+    "category": "Data Engineering",
+    "keywords": [
+      "networking",
+      "concurrency",
+      "fault tolerance",
+      "scalability"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "CAP Theorem",
+    "category": "Data Engineering",
+    "keywords": [
+      "consistency",
+      "availability",
+      "partition tolerance",
+      "databases"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Eventual Consistency",
+    "category": "Data Engineering",
+    "keywords": [
+      "BASE",
+      "distributed databases",
+      "latency",
+      "sync"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Paxos and Raft Consensus",
+    "category": "Data Engineering",
+    "keywords": [
+      "algorithms",
+      "distributed state",
+      "leader election",
+      "replication"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "MapReduce",
+    "category": "Data Engineering",
+    "keywords": [
+      "Hadoop",
+      "batch processing",
+      "distributed algorithms",
+      "legacy data"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Serialization Formats (Protobuf, Thrift)",
+    "category": "Data Formats",
+    "keywords": [
+      "RPC",
+      "schema evolution",
+      "binary encoding",
+      "microservices"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Message Queues",
+    "category": "Data Engineering",
+    "keywords": [
+      "RabbitMQ",
+      "ActiveMQ",
+      "asynchronous",
+      "decoupling"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Log-Structured Merge-Tree (LSM)",
+    "category": "Data Engineering",
+    "keywords": [
+      "databases",
+      "write optimization",
+      "SSTables",
+      "compaction"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "B-Tree Indexing",
+    "category": "Data Engineering",
+    "keywords": [
+      "databases",
+      "read optimization",
+      "search algorithms",
+      "storage"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Data Partitioning and Sharding",
+    "category": "Data Architecture",
+    "keywords": [
+      "horizontal scaling",
+      "database design",
+      "distributed storage",
+      "performance"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Consistent Hashing",
+    "category": "Data Engineering",
+    "keywords": [
+      "load balancing",
+      "distributed caching",
+      "node routing",
+      "scalability"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Microservices Architecture",
+    "category": "Software Architecture",
+    "keywords": [
+      "decoupling",
+      "containers",
+      "APIs",
+      "scalability"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Serverless Computing",
+    "category": "Cloud Architecture",
+    "keywords": [
+      "AWS Lambda",
+      "event-driven",
+      "auto-scaling",
+      "functions"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Containerization (Docker)",
+    "category": "DevOps",
+    "keywords": [
+      "isolation",
+      "deployment",
+      "environments",
+      "microservices"
+    ],
+    "target_cta": "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
+  },
+  {
+    "term": "Kubernetes",
+    "category": "DevOps",
+    "keywords": [
+      "orchestration",
+      "containers",
+      "scaling",
+      "cloud native"
+    ],
+    "target_cta": "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
+  },
+  {
+    "term": "CI/CD for Data",
+    "category": "DataOps",
+    "keywords": [
+      "automation",
+      "testing",
+      "deployment pipelines",
+      "reliability"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Infrastructure as Code (IaC)",
+    "category": "DevOps",
+    "keywords": [
+      "Terraform",
+      "automation",
+      "cloud provisioning",
+      "reproducibility"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "GDPR and CCPA",
+    "category": "Data Governance",
+    "keywords": [
+      "privacy laws",
+      "compliance",
+      "user rights",
+      "data protection"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Personally Identifiable Information (PII)",
+    "category": "Data Governance",
+    "keywords": [
+      "sensitive data",
+      "privacy",
+      "security",
+      "masking"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Data Encryption (At Rest and In Transit)",
+    "category": "Data Security",
+    "keywords": [
+      "cryptography",
+      "TLS/SSL",
+      "security",
+      "protection"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Federated Learning",
+    "category": "Artificial Intelligence",
+    "keywords": [
+      "decentralized AI",
+      "privacy-preserving",
+      "edge devices",
+      "model training"
+    ],
+    "target_cta": "https://www.amazon.com/Governing-AI-Systems/dp/B0GSMVQ1TH/ref=sr_1_21"
+  },
+  {
+    "term": "Homomorphic Encryption",
+    "category": "Data Security",
+    "keywords": [
+      "cryptography",
+      "secure computation",
+      "privacy",
+      "cloud security"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Differential Privacy",
+    "category": "Data Privacy",
+    "keywords": [
+      "statistical noise",
+      "anonymization",
+      "data analysis",
+      "security"
+    ],
+    "target_cta": "https://www.amazon.com/Governing-AI-Systems/dp/B0GSMVQ1TH/ref=sr_1_21"
+  },
+  {
+    "term": "Zero Trust Architecture",
+    "category": "Data Security",
+    "keywords": [
+      "authentication",
+      "authorization",
+      "network security",
+      "identity"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Threat Modeling",
+    "category": "Data Security",
+    "keywords": [
+      "risk assessment",
+      "vulnerabilities",
+      "security lifecycle",
+      "mitigation"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "The Apache Software Foundation",
+    "category": "Open Source",
+    "keywords": [
+      "governance",
+      "community",
+      "open source",
+      "incubator"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Apache Hadoop",
+    "category": "Data Engineering",
+    "keywords": [
+      "HDFS",
+      "MapReduce",
+      "big data",
+      "legacy ecosystems"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Apache Hive",
+    "category": "Data Engineering",
+    "keywords": [
+      "data warehouse",
+      "Hadoop",
+      "metastore",
+      "SQL"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Hive Metastore (HMS)",
+    "category": "Data Catalogs",
+    "keywords": [
+      "metadata",
+      "legacy catalogs",
+      "Hadoop ecosystem",
+      "Iceberg migration"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "AWS Glue",
+    "category": "Data Catalogs",
+    "keywords": [
+      "managed service",
+      "serverless",
+      "ETL",
+      "AWS"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Amazon S3",
+    "category": "Cloud Architecture",
+    "keywords": [
+      "object storage",
+      "AWS",
+      "data lakes",
+      "durability"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Azure Data Lake Storage (ADLS)",
+    "category": "Cloud Architecture",
+    "keywords": [
+      "Microsoft Azure",
+      "hierarchical namespace",
+      "object storage",
+      "analytics"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Google Cloud Storage (GCS)",
+    "category": "Cloud Architecture",
+    "keywords": [
+      "GCP",
+      "object storage",
+      "global infrastructure",
+      "analytics"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Engineering Lifecycle",
+    "category": "Data Engineering",
+    "keywords": [
+      "generation",
+      "storage",
+      "ingestion",
+      "transformation",
+      "serving"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Strategy",
+    "category": "Data Culture",
+    "keywords": [
+      "business alignment",
+      "value creation",
+      "roadmap",
+      "leadership"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Data Literacy",
+    "category": "Data Culture",
+    "keywords": [
+      "education",
+      "understanding data",
+      "decision making",
+      "organizational culture"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Chief Data Officer (CDO)",
+    "category": "Data Culture",
+    "keywords": [
+      "leadership",
+      "executive",
+      "data governance",
+      "strategy"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Data-Driven Decision Making",
+    "category": "Data Culture",
+    "keywords": [
+      "analytics",
+      "metrics",
+      "business value",
+      "KPIs"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Monetization",
+    "category": "Data Strategy",
+    "keywords": [
+      "revenue streams",
+      "data products",
+      "value extraction",
+      "business models"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Data Privacy by Design",
+    "category": "Data Governance",
+    "keywords": [
+      "frameworks",
+      "proactive privacy",
+      "engineering",
+      "compliance"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Data Security Posture Management (DSPM)",
+    "category": "Data Security",
+    "keywords": [
+      "cloud security",
+      "risk management",
+      "visibility",
+      "compliance"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+  },
+  {
+    "term": "Open-Source Software (OSS)",
+    "category": "Data Culture",
+    "keywords": [
+      "community",
+      "collaboration",
+      "transparency",
+      "licensing"
+    ],
+    "target_cta": "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
+  },
+  {
+    "term": "Vendor Lock-in",
+    "category": "Data Strategy",
+    "keywords": [
+      "proprietary systems",
+      "migration costs",
+      "open formats",
+      "cloud independence"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "Total Cost of Ownership (TCO) in Data",
+    "category": "Data Strategy",
+    "keywords": [
+      "compute costs",
+      "storage costs",
+      "maintenance",
+      "ROI"
+    ],
+    "target_cta": "https://www.amazon.com/Economics-AI-Latency-Infrastructure-Tradeoffs/dp/B0GSPGSKXC/ref=sr_1_36"
+  },
+  {
+    "term": "FinOps for Data",
+    "category": "Data Strategy",
+    "keywords": [
+      "cloud spend",
+      "cost optimization",
+      "financial accountability",
+      "efficiency"
+    ],
+    "target_cta": "https://www.amazon.com/Economics-AI-Latency-Infrastructure-Tradeoffs/dp/B0GSPGSKXC/ref=sr_1_36"
+  },
+  {
+    "term": "Return on Investment (ROI) for AI",
+    "category": "Data Strategy",
+    "keywords": [
+      "business cases",
+      "value realization",
+      "metrics",
+      "AI investments"
+    ],
+    "target_cta": "https://www.amazon.com/Economics-AI-Latency-Infrastructure-Tradeoffs/dp/B0GSPGSKXC/ref=sr_1_36"
+  },
+  {
+    "term": "Change Management in Data Initiatives",
+    "category": "Data Culture",
+    "keywords": [
+      "adoption",
+      "training",
+      "organizational alignment",
+      "processes"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Center of Excellence (CoE)",
+    "category": "Data Culture",
+    "keywords": [
+      "best practices",
+      "leadership",
+      "innovation",
+      "support"
+    ],
+    "target_cta": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+  },
+  {
+    "term": "Data Product Manager",
+    "category": "Data Culture",
+    "keywords": [
+      "product lifecycle",
+      "user needs",
+      "data as a product",
+      "agile"
+    ],
+    "target_cta": "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
+  },
+  {
+    "term": "The Future of the Data Lakehouse",
+    "category": "Data Strategy",
+    "keywords": [
+      "convergence",
+      "AI integration",
+      "real-time",
+      "trends"
+    ],
+    "target_cta": "https://www.amazon.com/Open-Source-Lakehouse-Architecting-Analytical-ebook/dp/B0D46P3VB7/ref=sr_1_17"
+  }
+]
