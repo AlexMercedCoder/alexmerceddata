@@ -5,6 +5,9 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Home & About" description="Learn about Alex Merced, a Technologist, Educator, Developer Advocate, and Author specializing in Data Lakehouses, AI, and Apache Iceberg.">
 	<div class="hero">
 		<div class="container hero-content">
+			<div class="hero-image">
+				<img src="/images/alexmercedpic.jpg" alt="Alex Merced" />
+			</div>
 			<div class="hero-text">
 				<h1>Alex Merced</h1>
 				<h2 class="subtitle">Data Lakehouse & AI Thought Leader</h2>
@@ -61,6 +64,19 @@ import Layout from '../layouts/Layout.astro';
 		background: linear-gradient(to right, var(--text), var(--accent));
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+
+	.hero-image {
+		margin-bottom: 2rem;
+	}
+
+	.hero-image img {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 4px solid var(--accent);
+		box-shadow: 0 10px 30px -10px rgba(100, 255, 218, 0.3);
 	}
 
 	.subtitle {

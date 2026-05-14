@@ -4,30 +4,174 @@ import Layout from '../layouts/Layout.astro';
 const books = [
 	{
 		title: "Apache Iceberg: The Definitive Guide",
-		description: "Data Lakehouse architecture, format spec details, engine integrations, and governance with the open table format.",
-		image: "/images/iceberg.png",
-		link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.html"
-	},
-	{
-		title: "Apache Polaris: The Definitive Guide",
-		description: "Data Lakehouse, Governance, and Security with the Open-Source Catalog.",
-		image: "/images/polaris.png",
-		link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
+		description: "Guide to Apache Iceberg and modern lakehouse architecture.",
+		image: "https://images.amazon.com/images/P/1098148622.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/1098148622"
 	},
 	{
 		title: "Architecting an Apache Iceberg Lakehouse",
-		description: "Design and build scalable, reliable, and high-performance data lakehouse solutions.",
-		image: "/images/lakehouse.png",
-		link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse"
-	}
+		description: "Architecture patterns for building Iceberg-based data platforms.",
+		image: "https://images.amazon.com/images/P/1633435105.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/1633435105"
+	},
+	{
+		title: "Apache Polaris: The Definitive Guide",
+		description: "Guide to open catalogs for Iceberg lakehouses.",
+		image: "https://images.amazon.com/images/P/B0FBRJ7J1Y.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0FBRJ7J1Y"
+	},
+	{
+		title: "The Book on Using Apache Iceberg with Python",
+		description: "Hands-on guide using Iceberg with Python tools.",
+		image: "https://images.amazon.com/images/P/B0GNZ454FF.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GNZ454FF"
+	},
+	{
+		title: "The 2026 Guide to Lakehouses, Apache Iceberg and Agentic AI",
+		description: "Comprehensive guide to lakehouse architecture and AI.",
+		image: "https://images.amazon.com/images/P/B0GQNY21TD.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GQNY21TD"
+	},
+	{
+		title: "The Book on Agentic Analytics",
+		description: "Foundations of agentic data architecture.",
+		image: "https://images.amazon.com/images/P/B0GQN4Q41Y.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GQN4Q41Y"
+	},
+	{
+		title: "Enabling Agentic Analytics with Apache Iceberg and Dremio",
+		description: "Building AI-ready lakehouse systems.",
+		image: "https://images.amazon.com/images/P/B0GQXT6W3N.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GQXT6W3N"
+	},
+	{
+		title: "Using AI Agents for Data Engineering and Data Analysis",
+		description: "Practical guide to AI-driven workflows.",
+		image: "https://images.amazon.com/images/P/B0GR6PYJT9.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GR6PYJT9"
+	},
+	{
+		title: "The AI Engineering Handbook",
+		description: "Full-stack reference for AI systems.",
+		image: "https://images.amazon.com/images/P/B0GSS4R9FK.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GSS4R9FK"
+	},
+	{
+		title: "AI-Ready Data",
+		description: "Designing Data Platforms for LLMs, Agents, and RAG",
+		image: "https://m.media-amazon.com/images/I/61ILD2jjU9L._SY522_.jpg",
+		link: "https://www.amazon.com/AI-Ready-Data-Designing-Platforms-Agents/dp/B0GSN7GLH2/ref=sr_1_3"
+	},
+	{
+		title: "The 2026 Guide to AI-Assisted Development",
+		description: "Prompt engineering and agent workflows.",
+		image: "https://images.amazon.com/images/P/B0GQW7CTML.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GQW7CTML"
+	},
+	{
+		title: "Apache Iceberg for Agentic AI: Connecting Structured Enterprise",
+		description: "Enabling Agentic AI on an Iceberg Lakehouse.",
+		image: "https://m.media-amazon.com/images/I/8108U1UJbsL._SY522_.jpg",
+		link: "https://www.amazon.com/Apache-Iceberg-Agentic-Connecting-Structured-ebook/dp/B0DYTX2WZY/ref=sr_1_8"
+	},
+	{
+		title: "The Agentic Enterprise: Deploying AI Agents Across the Modern Organization",
+		description: "Prompt engineering and agent workflows.",
+		image: "https://m.media-amazon.com/images/I/712lLVxVrcL._SY522_.jpg",
+		link: "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
+	},
+	{
+		title: "Constructing Context and Semantics for AI Agents",
+		description: "Constructing Context for AI",
+		image: "https://m.media-amazon.com/images/I/71gkfSn8lSL._SL1430_.jpg",
+		link: "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddings/dp/B0GSHRZNZ5/ref=sr_1_21"
+	},
+	{
+		title: "The Open Source Lakehouse: Architecting the Decoupled Analytical Foundation",
+		description: "Building a Lakehouse using Open Source",
+		image: "https://m.media-amazon.com/images/I/81q8SELxiKL._SL1500_.jpg",
+		link: "https://www.amazon.com/Open-Source-Lakehouse-Architecting-Analytical-ebook/dp/B0D46P3VB7/ref=sr_1_17"
+	},
+	{
+		title: "Evaluating AI Systems: Testing LLMs, RAG, and Agents",
+		description: "How to properly test and evaluate AI systems",
+		image: "https://m.media-amazon.com/images/I/71i0+pwD0NL._SL1499_.jpg",
+		link: "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
+	},
+	{
+		title: "The Economics of Labor in the AI Era",
+		description: "How will the AI-Era Effect the Labor Market",
+		image: "https://m.media-amazon.com/images/I/71yanjbGdEL._SL1499_.jpg",
+		link: "https://www.amazon.com/Economics-Labor-Era-Disruption-Adaptation/dp/B0GSQSL344/ref=sr_1_20"
+	},
+	{
+		title: "Governing AI Systems",
+		description: "How to best govern AI systems",
+		image: "https://m.media-amazon.com/images/I/715f6abCEqL._SL1499_.jpg",
+		link: "https://www.amazon.com/Governing-AI-Systems/dp/B0GSMVQ1TH/ref=sr_1_21"
+	},
+	{
+		title: "Shipping AI: From Prototype to Production Systems",
+		description: "How to deploy AI systems that scale",
+		image: "https://m.media-amazon.com/images/I/71V2oEyfaCL._SL1499_.jpg",
+		link: "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
+	},
+	{
+		title: "Building Knowledge Systems for AI: Graphs, RAG, Memory, and Context",
+		description: "Building Robust AI Systems",
+		image: "https://m.media-amazon.com/images/I/71AY0UlebPL._SL1499_.jpg",
+		link: "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
+	},
+	{
+		title: "The AI Lakehouse: Architecting Data Platforms for AI",
+		description: "Building AI Systems on a Data Lakehouse",
+		image: "https://m.media-amazon.com/images/I/61ybHcw6c2L._SL1499_.jpg",
+		link: "https://www.amazon.com/AI-Lakehouse-Architecting-Data-Platforms/dp/B0GSMQ6M2J/ref=sr_1_29"
+	},
+	{
+		title: "AI Application Architecture: Patterns for Building Intelligent Systems",
+		description: "The Architecture of an AI Application",
+		image: "https://m.media-amazon.com/images/I/71Y2EL6xo1L._SL1499_.jpg",
+		link: "https://www.amazon.com/AI-Application-Architecture-Patterns-Intelligent/dp/B0GSVFT3H4/ref=sr_1_35"
+	},
+	{
+		title: "The Economics of AI: Cost, Latency, and Infrastructure Tradeoffs",
+		description: "Understanding the Costs of AI and how to Optimize them",
+		image: "https://m.media-amazon.com/images/I/61X6ZAmfUoL._SL1499_.jpg",
+		link: "https://www.amazon.com/Economics-AI-Latency-Infrastructure-Tradeoffs/dp/B0GSPGSKXC/ref=sr_1_36"
+	},
+	{
+		title: "Economic Ideas: From Beginning to Early 2026",
+		description: "History of economic thought through the AI era.",
+		image: "https://images.amazon.com/images/P/B0GQQ68F63.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GQQ68F63"
+	},
+	{
+		title: "The Semantic Rebellion",
+		description: "A data engineer's journey through a changing world.",
+		image: "https://images.amazon.com/images/P/B0GPMNX78W.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GPMNX78W"
+	},
+	{
+		title: "The Emperors of A.I. Valley",
+		description: "Power struggles in an AI-dominated future.",
+		image: "https://images.amazon.com/images/P/B0GQHKF4ZT.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GQHKF4ZT"
+	},
+	{
+		title: "Embers of Claim",
+		description: "Epic fantasy beginning of a trilogy.",
+		image: "https://images.amazon.com/images/P/B0GQGW7VCY.01._SCLZZZZZZZ_.jpg",
+		link: "https://www.amazon.com/dp/B0GQGW7VCY"
+	},
 ];
 ---
 
-<Layout title="Books by Alex Merced" description="Explore books by Alex Merced covering AI, data lakehouses, Apache Iceberg, and more.">
+<Layout title="Data & AI Books by Alex Merced" description="Explore the full repertoire of Data and AI books by Alex Merced.">
 	<div class="container page-header">
-		<h1>Books</h1>
-		<p>Explore 35+ books by Alex Merced covering AI, data lakehouses, Apache Iceberg, economics, philosophy, and fiction.</p>
-		<a href="https://books.alexmerced.com/" target="_blank" rel="noopener noreferrer" class="button primary" style="margin-top: 1rem;">View All Books at books.alexmerced.com</a>
+		<h1>Data & AI Books</h1>
+		<p>Explore all the books by Alex Merced covering AI, data lakehouses, Apache Iceberg, and modern data infrastructure.</p>
+		<a href="https://books.alexmerced.com/" target="_blank" rel="noopener noreferrer" class="button primary" style="margin-top: 1rem;">View All 35+ Books at books.alexmerced.com</a>
 	</div>
 
 	<div class="container">
@@ -35,7 +179,7 @@ const books = [
 			{books.map((book) => (
 				<div class="book-card card">
 					<div class="book-image">
-						<img src={book.image} alt={book.title} />
+						<img src={book.image} alt={book.title} loading="lazy" />
 					</div>
 					<div class="book-info">
 						<h3>{book.title}</h3>
@@ -63,7 +207,7 @@ const books = [
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		gap: 3rem;
-		max-width: 1000px;
+		max-width: 1200px;
 		margin: 0 auto;
 	}
 
