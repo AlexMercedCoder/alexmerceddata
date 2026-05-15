@@ -15,7 +15,7 @@ When a Python application (like Pandas) needed to process data stored in a Java-
 
 **Apache Arrow** was created to eliminate this bottleneck.
 
-Introduced by Wes McKinney (the creator of Pandas) and Jacques Nadeau (the co-creator of Dremio), Apache Arrow is a cross-language development platform for in-memory analytics. At its core, Arrow defines a standardized, language-independent columnar memory format for flat and hierarchical data.
+Introduced by Wes McKinney (the creator of Pandas) and Jacques Nadeau (the co-creator of [Dremio](/knowledge/dremio)), Apache Arrow is a cross-language development platform for in-memory analytics. At its core, Arrow defines a standardized, language-independent columnar memory format for flat and hierarchical data.
 
 ## The Architecture of Arrow
 
@@ -45,7 +45,7 @@ With the release of Pandas 2.0, the library adopted Apache Arrow as an optional 
 ## Arrow vs. Parquet
 
 A common point of confusion is the relationship between Arrow and Parquet. They are complementary, not competitive.
-*   **Apache Parquet** is a *storage format*. It is designed to sit on disk (S3/HDFS). It uses aggressive compression (like Snappy/ZSTD) and dictionary encoding to minimize storage footprint and reduce network I/O.
+*   **[Apache Parquet](/knowledge/apache-parquet)** is a *storage format*. It is designed to sit on disk (S3/HDFS). It uses aggressive compression (like Snappy/ZSTD) and dictionary encoding to minimize storage footprint and reduce network I/O.
 *   **Apache Arrow** is an *in-memory format*. It is designed to sit in RAM. It does not use heavy compression because the CPU needs direct, instantaneous access to the raw values. 
 
 The standard lifecycle of modern data processing involves reading Parquet from disk, instantly decoding it into Arrow in memory, computing the analytics, and then either returning the result to the user or encoding it back to Parquet for storage.

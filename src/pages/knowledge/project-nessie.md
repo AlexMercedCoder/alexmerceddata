@@ -20,7 +20,7 @@ For decades, Data Engineering completely lacked this capability. If two data eng
 To understand Nessie, you must understand that it **does not store data**. It only stores metadata pointers.
 
 When a massive Apache Iceberg table is written to [Amazon S3](/knowledge/amazon-s3), it consists of thousands of Parquet data files and a few JSON metadata files. 
-Instead of the query engine (like Dremio or Spark) keeping track of these metadata files manually, it registers them with Nessie.
+Instead of the query engine (like [Dremio](/knowledge/dremio) or Spark) keeping track of these metadata files manually, it registers them with Nessie.
 
 Nessie maintains a cryptographic, chronological log of every single change made to the metadata across the entire lakehouse. 
 

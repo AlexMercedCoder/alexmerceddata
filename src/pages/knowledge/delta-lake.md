@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 Before 2017, building a reliable data lake was an exercise in frustration. If a massive [Apache Spark](/knowledge/apache-spark) job crashed halfway through writing a petabyte dataset to [Amazon S3](/knowledge/amazon-s3), it left behind a graveyard of partial, corrupted Parquet files. Any business analyst querying that S3 bucket would receive catastrophically wrong answers. Data engineering teams spent a significant portion of their time writing defensive scripts to clean up these corrupted states and ensure basic data integrity.
 
-**Delta Lake** was created by [Databricks](/knowledge/databricks) (the commercial entity behind Apache Spark) to bring order to this chaos. 
+**Delta Lake** was created by [Databricks](/knowledge/databricks) (the commercial entity behind [Apache Spark](/knowledge/apache-spark)) to bring order to this chaos. 
 
 Open-sourced in 2019 and now a Linux Foundation project, Delta Lake is an open-source storage layer that brings ACID (Atomicity, Consistency, Isolation, Durability) transactions to Apache Spark and big data workloads. By wrapping raw Parquet files in a transactional metadata layer, Delta Lake ensures that massive, distributed data lakes behave with the reliability of a traditional relational database.
 
@@ -43,8 +43,8 @@ Traditional database partitioning works well for a single column (e.g., partitio
 
 Delta Lake shares the "Big Three" table format arena with Apache Iceberg and [Apache Hudi](/knowledge/apache-hudi).
 
-*   **Delta Lake's Strength**: Delta Lake was built by Databricks, meaning it shares an unparalleled, flawless integration with the Apache Spark ecosystem. For organizations heavily invested in Databricks and Spark for their ETL pipelines, Delta Lake often provides the path of least resistance and highest out-of-the-box performance.
-*   **The Delta UniForm Initiative**: Recognizing the fragmentation in the market, Databricks recently introduced "Delta UniForm." This feature allows a Delta Lake table to automatically generate Apache Iceberg metadata alongside its own Delta Log. This means an engine that prefers Iceberg (like Dremio or Snowflake) can query a Delta table as if it were a native Iceberg table, bridging the gap between the competing formats.
+*   **Delta Lake's Strength**: Delta Lake was built by [Databricks](/knowledge/databricks), meaning it shares an unparalleled, flawless integration with the Apache Spark ecosystem. For organizations heavily invested in Databricks and Spark for their ETL pipelines, Delta Lake often provides the path of least resistance and highest out-of-the-box performance.
+*   **The Delta UniForm Initiative**: Recognizing the fragmentation in the market, Databricks recently introduced "Delta UniForm." This feature allows a Delta Lake table to automatically generate Apache Iceberg metadata alongside its own Delta Log. This means an engine that prefers Iceberg (like [Dremio](/knowledge/dremio) or Snowflake) can query a Delta table as if it were a native Iceberg table, bridging the gap between the competing formats.
 
 ## Conclusion
 

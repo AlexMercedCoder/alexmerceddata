@@ -19,7 +19,7 @@ In 2014, Jay Kreps (co-creator of [Apache Kafka](/knowledge/apache-kafka)) propo
 
 In the Kappa Architecture, the batch processing layer is entirely eliminated. There is only one single, unified code path: the stream processing engine.
 
-To achieve this, the architecture relies heavily on an immutable, replayable distributed commit log—almost exclusively **Apache Kafka**.
+To achieve this, the architecture relies heavily on an immutable, replayable distributed commit log—almost exclusively **[Apache Kafka](/knowledge/apache-kafka)**.
 
 ### How Kappa Replaces Batch
 In a traditional batch system (like Hadoop), historical data sits static on disk. A batch job reads the files, computes analytics, and outputs a table.

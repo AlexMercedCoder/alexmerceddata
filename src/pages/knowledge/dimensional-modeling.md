@@ -35,7 +35,7 @@ Dimension tables are small (thousands of rows) but very "wide." They contain all
 ## Why Dimensional Modeling Wins
 
 ### 1. Extreme Query Performance
-When an analyst queries a Star Schema, the database engine is highly optimized. If they want "Total Revenue for Blue Shirts in Q1," the engine filters the tiny `Product` and `Date` dimensions first, grabs the relevant IDs, and then executes a rapid, highly indexed scan of the massive Fact table. It requires minimal `JOIN` logic compared to a 3NF schema.
+When an analyst queries a [Star Schema](/knowledge/star-schema), the database engine is highly optimized. If they want "Total Revenue for Blue Shirts in Q1," the engine filters the tiny `Product` and `Date` dimensions first, grabs the relevant IDs, and then executes a rapid, highly indexed scan of the massive Fact table. It requires minimal `JOIN` logic compared to a 3NF schema.
 
 ### 2. Human Intuition
 The Star Schema maps perfectly to human psychology. Business users naturally think in dimensions. A CEO asks: *"Show me Revenue (Fact) by Region (Dimension 1) by Quarter (Dimension 2)."* Because the database structure perfectly matches the business question, analysts can build [Tableau](/knowledge/tableau) or [Power BI](/knowledge/power-bi) dashboards exponentially faster.

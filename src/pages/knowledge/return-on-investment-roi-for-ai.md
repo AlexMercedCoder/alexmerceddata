@@ -25,7 +25,7 @@ The TCO (Total Cost of Ownership) of AI includes:
 1.  **Data Engineering Costs**: The AI is useless without clean data. 80% of the cost of an AI project is often the hidden cost of data engineers building pipelines to clean, normalize, and format the training data.
 2.  **Training Costs (Compute)**: Renting GPU clusters to train a model from scratch can cost millions of dollars and take weeks of continuous computing.
 3.  **Inference Costs**: This is the silent killer. Every time a user types a prompt into a corporate AI chatbot, the company pays a fractional cent to the LLM provider (or pays for the compute to run the model locally). If a million customers use the chatbot every day, the ongoing operational costs can wipe out the profit margins.
-4.  **[Model Drift](/knowledge/model-drift) Maintenance**: AI models degrade over time as the real world changes (Model Drift). A predictive pricing model built in 2023 will fail in 2025. The company must continuously pay Data Scientists to monitor, retrain, and tune the model.
+4.  **[Model Drift](/knowledge/model-drift) Maintenance**: AI models degrade over time as the real world changes ([Model Drift](/knowledge/model-drift)). A predictive pricing model built in 2023 will fail in 2025. The company must continuously pay Data Scientists to monitor, retrain, and tune the model.
 
 ## Measuring the Value (The Numerator)
 

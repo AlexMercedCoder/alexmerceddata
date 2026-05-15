@@ -36,7 +36,7 @@ The Steward acts as the gatekeeper for sensitive data. If a new data scientist r
 
 ## The Shift to Federated Stewardship (Data Mesh)
 
-Historically, organizations attempted to implement a Centralized Data Governance board. A committee of 5 people in a boardroom tried to govern all the data for a 10,000-person global company. This failed spectacularly, creating massive bureaucratic bottlenecks.
+Historically, organizations attempted to implement a Centralized [Data Governance](/knowledge/data-governance) board. A committee of 5 people in a boardroom tried to govern all the data for a 10,000-person global company. This failed spectacularly, creating massive bureaucratic bottlenecks.
 
 Modern organizations are shifting toward **Federated Stewardship**, heavily aligned with the **[Data Mesh](/knowledge/data-mesh)** philosophy.
 In this model, governance is decentralized. The Marketing team completely owns, governs, and stewards all Marketing data. The Finance team completely owns the Finance data. 

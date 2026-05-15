@@ -30,7 +30,7 @@ The Apache 2.0 License is incredibly permissive. It allows any business to take 
 
 ### 3. Vendor Neutrality
 This is the most strictly enforced rule. An Apache project cannot be controlled by a single company. 
-For example, Apache Iceberg was created by Netflix and Apple. However, the Project Management Committee (PMC) that votes on Iceberg's code changes includes engineers from Dremio, Snowflake, Tabular, and Amazon. The ASF requires that individuals participate as *individuals*, not as representatives of their employers, guaranteeing that the software serves the broader community, not just one corporate agenda.
+For example, Apache Iceberg was created by Netflix and Apple. However, the Project Management Committee (PMC) that votes on Iceberg's code changes includes engineers from [Dremio](/knowledge/dremio), Snowflake, Tabular, and Amazon. The ASF requires that individuals participate as *individuals*, not as representatives of their employers, guaranteeing that the software serves the broader community, not just one corporate agenda.
 
 ## The Apache Incubator
 

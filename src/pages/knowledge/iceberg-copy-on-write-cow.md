@@ -34,7 +34,7 @@ When the next user queries the table, Iceberg directs them to `File_B`. The `Fil
 
 ### The Advantage: Massive Read Performance
 Copy-on-Write is heavily **Read-Optimized**. 
-Because the engine goes through the painful process of rewriting the entire Parquet file perfectly during the update, the resulting `File_B` is pristine. When a business analyst subsequently queries the table using Dremio or Snowflake, the read engine simply scans `File_B` at maximum speed. There is no complex logic required to figure out which rows were deleted or updated; the file is mathematically perfect.
+Because the engine goes through the painful process of rewriting the entire Parquet file perfectly during the update, the resulting `File_B` is pristine. When a business analyst subsequently queries the table using [Dremio](/knowledge/dremio) or Snowflake, the read engine simply scans `File_B` at maximum speed. There is no complex logic required to figure out which rows were deleted or updated; the file is mathematically perfect.
 
 ### The Disadvantage: Write Amplification
 Copy-on-Write suffers from massive **Write Amplification**. 

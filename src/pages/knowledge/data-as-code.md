@@ -17,7 +17,7 @@ Data Engineering, conversely, has historically operated without these safety net
 
 ## The Mechanics of Data as Code
 
-Data as Code is implemented through specialized [Data Catalogs](/knowledge/data-catalogs) (such as **[Project Nessie](/knowledge/project-nessie)** or **Dremio Arctic**) managing open table formats like **Apache Iceberg**.
+Data as Code is implemented through specialized [Data Catalogs](/knowledge/data-catalogs) (such as **[Project Nessie](/knowledge/project-nessie)** or **[Dremio](/knowledge/dremio) Arctic**) managing open table formats like **Apache Iceberg**.
 
 Because Iceberg data files (Parquet) are immutable and table states are managed entirely by metadata pointers, catalogs like Nessie can track the entire history of a lakehouse as a sequence of atomic commits. This enables Git-like operations at the catalog level.
 

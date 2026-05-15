@@ -40,7 +40,7 @@ The LLM reads this new context and finally generates the English response to the
 
 Tool Use radically transforms how enterprises build software. Instead of building massive, complex graphical user interfaces (GUIs) with hundreds of buttons, developers can expose their internal APIs directly to an LLM.
 
-*   **Data Lakehouse Queries**: An agent can be given a `run_sql` tool. When the CEO asks for a revenue report, the Agent automatically writes the SQL, uses the tool to query the Dremio Lakehouse, and returns the chart.
+*   **Data Lakehouse Queries**: An agent can be given a `run_sql` tool. When the CEO asks for a revenue report, the Agent automatically writes the SQL, uses the tool to query the [Dremio](/knowledge/dremio) Lakehouse, and returns the chart.
 *   **Customer Support**: An agent can be given a `refund_order` tool. It can authenticate the user, verify the shipping delay, and physically execute the Stripe API call to refund the customer's credit card without any human intervention.
 
 ## The Security Risks

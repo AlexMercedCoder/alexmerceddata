@@ -34,13 +34,13 @@ Because the old data files are never deleted by the transaction itself (they are
 
 ## Executing Time Travel Queries
 
-Apache Iceberg’s time travel capabilities are exposed seamlessly through standard SQL extensions across modern compute engines like Dremio, [Apache Spark](/knowledge/apache-spark), and Trino.
+Apache Iceberg’s time travel capabilities are exposed seamlessly through standard SQL extensions across modern compute engines like [Dremio](/knowledge/dremio), [Apache Spark](/knowledge/apache-spark), and Trino.
 
 ### Time Travel by Timestamp
 
 The most common use case is querying a table as it existed at a specific date and time. This is invaluable for debugging ("What did this table look like right before the pipeline failed at 2:00 AM?") or regulatory compliance.
 
-**In Apache Spark:**
+**In [Apache Spark](/knowledge/apache-spark):**
 ```sql
 SELECT * FROM my_catalog.db.orders 
 TIMESTAMP AS OF '2026-05-14 02:00:00';

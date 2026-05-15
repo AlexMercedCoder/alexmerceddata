@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Apache Pinot
 
-Imagine opening the LinkedIn app on your phone and clicking on the "Who Viewed Your Profile" dashboard. You instantly see a chart showing that 500 people from Dremio and 200 people from Microsoft viewed your profile in the last 90 days. 
+Imagine opening the LinkedIn app on your phone and clicking on the "Who Viewed Your Profile" dashboard. You instantly see a chart showing that 500 people from [Dremio](/knowledge/dremio) and 200 people from Microsoft viewed your profile in the last 90 days. 
 
 To generate that simple chart, a database somewhere had to scan billions of web-click events, filter them specifically for your user ID, aggregate the companies, and return the answer in less than 50 milliseconds. If it took 5 seconds, you would close the app. 
 
@@ -41,7 +41,7 @@ Pinot automatically builds multiple indexes for every segment:
 ## Apache Pinot vs. Apache Druid vs. ClickHouse
 
 Pinot exists in the same architectural space as Druid and [ClickHouse](/knowledge/clickhouse) (Real-Time OLAP). 
-*   **ClickHouse** is often the fastest for brute-force scanning of massive, wide tables without indexes.
+*   **[ClickHouse](/knowledge/clickhouse)** is often the fastest for brute-force scanning of massive, wide tables without indexes.
 *   **Druid** is excellent for log analytics and high-cardinality time-series data.
 *   **Pinot** is widely considered the best choice when dealing with incredibly high concurrency (e.g., 100,000 external users clicking a dashboard simultaneously) because its Star-Tree index guarantees predictable, sub-second latency regardless of user load.
 

@@ -48,7 +48,7 @@ Applying Zero Trust to modern Data Engineering requires strict Identity and Acce
 
 Historically, business analysts shared a single, generic `readonly_user` password to access the data warehouse. This violates Zero Trust because the security team has no idea *which specific human* is running the queries.
 
-Modern Lakehouse architectures (like Dremio) integrate directly with Identity Providers (like Okta or Azure AD) via Single Sign-On (SSO). When John Doe runs a SQL query, the query executes using John Doe's specific identity token. The engine evaluates John Doe's precise Row-Level and Column-Level security policies, ensuring he can only see the specific rows of data his department is legally allowed to see, perfectly fulfilling the mandate of Least Privilege.
+Modern Lakehouse architectures (like [Dremio](/knowledge/dremio)) integrate directly with Identity Providers (like Okta or Azure AD) via Single Sign-On (SSO). When John Doe runs a SQL query, the query executes using John Doe's specific identity token. The engine evaluates John Doe's precise Row-Level and Column-Level security policies, ensuring he can only see the specific rows of data his department is legally allowed to see, perfectly fulfilling the mandate of Least Privilege.
 
 ## Conclusion
 

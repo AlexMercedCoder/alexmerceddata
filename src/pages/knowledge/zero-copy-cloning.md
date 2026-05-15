@@ -48,7 +48,7 @@ Because clones are instantaneous and free, organizations can script daily clones
 ## Zero-Copy Cloning with Apache Iceberg and Nessie
 
 While proprietary systems like Snowflake popularized this feature, the open-source community has replicated and enhanced it. 
-By pairing **Apache Iceberg** with a Git-like catalog such as **[Project Nessie](/knowledge/project-nessie)** or **Dremio Arctic**, Zero-Copy Cloning is elevated to **[Data as Code](/knowledge/data-as-code)**. Instead of cloning a single table, engineers can "Branch" the entire catalog instantly. They can run ETL jobs on the branch, and if the data quality checks pass, "Merge" the branch back into the main production trunk, executing massive multi-table updates atomically.
+By pairing **Apache Iceberg** with a Git-like catalog such as **[Project Nessie](/knowledge/project-nessie)** or **[Dremio](/knowledge/dremio) Arctic**, Zero-Copy Cloning is elevated to **[Data as Code](/knowledge/data-as-code)**. Instead of cloning a single table, engineers can "Branch" the entire catalog instantly. They can run ETL jobs on the branch, and if the data quality checks pass, "Merge" the branch back into the main production trunk, executing massive multi-table updates atomically.
 
 ## Conclusion
 

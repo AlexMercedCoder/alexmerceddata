@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 When designing a Data Warehouse to serve analytical queries, data architects rely on dimensional modeling to organize data into Facts (the measurable numbers) and Dimensions (the descriptive context). The most famous implementation of this is the [Star Schema](/knowledge/star-schema).
 
-However, in certain architectural scenarios—particularly those strictly constrained by storage capacity or dealing with incredibly massive and complex hierarchical dimensions—the pure denormalization of the Star Schema is not ideal. To address this, architects utilize a more structured variant known as the **Snowflake Schema**.
+However, in certain architectural scenarios—particularly those strictly constrained by storage capacity or dealing with incredibly massive and complex hierarchical dimensions—the pure denormalization of the [Star Schema](/knowledge/star-schema) is not ideal. To address this, architects utilize a more structured variant known as the **Snowflake Schema**.
 
 The Snowflake Schema derives its name from its physical Entity-Relationship (ER) diagram. While a Star Schema has a single layer of dimension tables radiating from a central fact table, a Snowflake Schema normalizes those dimension tables into multiple secondary and tertiary tables, creating a complex, branching shape that resembles a snowflake.
 

@@ -44,7 +44,7 @@ As the Internet of Things (IoT) grows, new categories are emerging. If a smartwa
 
 In an enterprise Data Lakehouse containing 50,000 different tables, it is physically impossible for a human to know exactly where the PII is hidden. A developer might accidentally name a column `Notes` but allow users to type their phone numbers into that field.
 
-To solve this, modern enterprises use **[Active Metadata](/knowledge/active-metadata) Catalogs**. These tools employ Machine Learning models to continuously scan the raw data in [Amazon S3](/knowledge/amazon-s3) or Azure Data Lake. If the ML model detects a sequence of 9 numbers formatted as `XXX-XX-XXXX`, it autonomously flags the column as `Contains_PII: SSN`, alerts the security team, and instantly applies Tag-Based Security policies in the query engine (like Dremio or Snowflake) to lock down access.
+To solve this, modern enterprises use **[Active Metadata](/knowledge/active-metadata) Catalogs**. These tools employ Machine Learning models to continuously scan the raw data in [Amazon S3](/knowledge/amazon-s3) or Azure Data Lake. If the ML model detects a sequence of 9 numbers formatted as `XXX-XX-XXXX`, it autonomously flags the column as `Contains_PII: SSN`, alerts the security team, and instantly applies Tag-Based Security policies in the query engine (like [Dremio](/knowledge/dremio) or Snowflake) to lock down access.
 
 ## Conclusion
 

@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Compute Pushdown
 
-In modern decoupled data architectures, data is often stored far away from the engine executing the query. For example, a business analyst might run a massive SQL aggregation using a federated query engine (like Dremio or Trino), but the actual data resides inside a proprietary operational database (like Oracle), a cloud data warehouse (like Snowflake), or even an external REST API.
+In modern decoupled data architectures, data is often stored far away from the engine executing the query. For example, a business analyst might run a massive SQL aggregation using a federated query engine (like [Dremio](/knowledge/dremio) or Trino), but the actual data resides inside a proprietary operational database (like Oracle), a cloud data warehouse (like Snowflake), or even an external REST API.
 
 If the analyst executes the query:
 `SELECT region, SUM(sales) FROM oracle_db.sales_data WHERE region = 'EMEA' GROUP BY region`

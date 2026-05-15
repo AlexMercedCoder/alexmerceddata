@@ -47,7 +47,7 @@ The winning Physical Plan is compiled into executable code (often using advanced
 
 In a traditional, monolithic database (like Oracle), the Query Planner is tightly coupled to the storage engine. It knows exactly where every byte sits on the spinning hard drive.
 
-In a modern, decoupled Data Lakehouse, the Query Planner (living inside an engine like Dremio or Trino) does not own the storage. The data sits as raw Parquet files on [Amazon S3](/knowledge/amazon-s3). 
+In a modern, decoupled Data Lakehouse, the Query Planner (living inside an engine like [Dremio](/knowledge/dremio) or Trino) does not own the storage. The data sits as raw Parquet files on [Amazon S3](/knowledge/amazon-s3). 
 
 To plan queries effectively, modern lakehouse planners rely heavily on open table formats like **Apache Iceberg**. Iceberg acts as the metadata layer, providing the Query Planner with the precise file locations, partition maps, and min/max column statistics required to accurately feed the Cost-Based Optimizer and generate highly efficient, distributed execution plans.
 

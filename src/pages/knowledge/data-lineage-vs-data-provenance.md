@@ -17,7 +17,7 @@ This requirement for absolute traceability is satisfied by two closely related, 
 
 ## Data Lineage: The Map of Movement
 
-**Data Lineage** answers the question: *"How did the data get here, and what happened to it along the way?"*
+**[Data Lineage](/knowledge/data-lineage)** answers the question: *"How did the data get here, and what happened to it along the way?"*
 
 Data Lineage focuses on the physical journey and transformation of data through the enterprise architecture. It is usually visualized as a complex, branching graph (a Directed Acyclic Graph, or DAG).
 
@@ -28,7 +28,7 @@ If you look at the lineage of a "Total Revenue" column in a dashboard, the graph
 4.  **The Destination**: It was materialized into the `Lakehouse.Gold_Revenue` table.
 5.  **The Consumer**: It is currently being read by 3 different [Tableau](/knowledge/tableau) dashboards.
 
-Lineage is critical for **Impact Analysis**. If a data engineer wants to delete or change the `Salesforce.Orders` table, they look at the lineage graph to see exactly which downstream Tableau dashboards will crash if they make that change.
+Lineage is critical for **Impact Analysis**. If a data engineer wants to delete or change the `Salesforce.Orders` table, they look at the lineage graph to see exactly which downstream [Tableau](/knowledge/tableau) dashboards will crash if they make that change.
 
 ## Data Provenance: The Certificate of Authenticity
 

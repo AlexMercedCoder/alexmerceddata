@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 The traditional data engineering lifecycle has a clear trajectory: pull raw data from operational systems (Salesforce, Zendesk, Stripe), transform it, and load it into a centralized Data Warehouse or Lakehouse. This allows executives to look at BI dashboards in [Tableau](/knowledge/tableau) or [Looker](/knowledge/looker) to make strategic decisions.
 
-However, a dashboard is a passive destination. If a complex machine learning model running on the data warehouse identifies that a specific customer has a 90% probability of churning, that insight is useless if it is buried in a Tableau dashboard that the customer success team only checks on Fridays.
+However, a dashboard is a passive destination. If a complex machine learning model running on the data warehouse identifies that a specific customer has a 90% probability of churning, that insight is useless if it is buried in a [Tableau](/knowledge/tableau) dashboard that the customer success team only checks on Fridays.
 
 To make that insight actionable, the data must be pushed *back* into the operational tools the business teams actually use (like Salesforce, HubSpot, or Zendesk). 
 

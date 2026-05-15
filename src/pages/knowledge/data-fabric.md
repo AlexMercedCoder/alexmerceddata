@@ -19,7 +19,7 @@ Coined by research firms like Gartner, a Data Fabric is a unified, intelligent d
 
 It is common to confuse Data Fabric with [Data Mesh](/knowledge/data-mesh), as both aim to solve the problem of distributed data. However, their approaches are fundamentally different:
 
-*   **Data Mesh** is a *socio-technical, organizational* pattern. It solves scaling issues by decentralizing human teams and assigning data ownership to business domains.
+*   **[Data Mesh](/knowledge/data-mesh)** is a *socio-technical, organizational* pattern. It solves scaling issues by decentralizing human teams and assigning data ownership to business domains.
 *   **Data Fabric** is a *technology-centric* pattern. It solves scaling issues by deploying an intelligent software layer over existing infrastructure to automate integration and governance across silos.
 
 In practice, many advanced enterprises implement both simultaneously: using a Data Fabric to provide the technical interoperability required to support a decentralized Data Mesh organization.
@@ -41,8 +41,8 @@ Data Fabrics utilize AI to automate heavy-lifting data engineering tasks.
 *   **Anomaly Detection**: The fabric constantly monitors data flowing through the network, using ML to detect sudden drops in data quality or unauthorized access patterns.
 
 ### 4. Data Virtualization and Federation
-A core principle of Data Fabric is minimizing data movement. Instead of copying terabytes of data from an operational database into a data lake for a single query, the fabric utilizes **[Data Virtualization](/knowledge/data-virtualization)** (often powered by engines like Dremio). 
-Data Virtualization provides a logical view of the data. An analyst writes a standard SQL query against the fabric; the virtualization engine translates that query on the fly, pushes it down to the underlying source systems, retrieves the results, and joins them in memory. The analyst experiences a unified database, while the data never permanently leaves its original silo.
+A core principle of Data Fabric is minimizing data movement. Instead of copying terabytes of data from an operational database into a data lake for a single query, the fabric utilizes **[Data Virtualization](/knowledge/data-virtualization)** (often powered by engines like [Dremio](/knowledge/dremio)). 
+[Data Virtualization](/knowledge/data-virtualization) provides a logical view of the data. An analyst writes a standard SQL query against the fabric; the virtualization engine translates that query on the fly, pushes it down to the underlying source systems, retrieves the results, and joins them in memory. The analyst experiences a unified database, while the data never permanently leaves its original silo.
 
 ## The Business Value of a Data Fabric
 

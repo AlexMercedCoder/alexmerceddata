@@ -51,7 +51,7 @@ Organizations typically deploy Data Observability using two complementary strate
 Teams implement tools like **[Great Expectations](/knowledge/great-expectations)** or **dbt tests** directly inside their CI/CD and ETL pipelines. This is an active defense. Before a dbt model writes data into the Silver layer, it executes assertions (e.g., `assert customer_id is not null`). If the test fails, the pipeline halts, preventing the bad data from entering the lakehouse.
 
 ### 2. Continuous Monitoring (The Control Tower)
-You cannot write manual tests for every possible statistical anomaly across 10,000 tables. Continuous monitoring platforms connect to the query logs and metadata catalogs (like Dremio or Snowflake) to passively monitor everything in the background using ML-driven anomaly detection, providing a safety net for issues the engineers never thought to write tests for.
+You cannot write manual tests for every possible statistical anomaly across 10,000 tables. Continuous monitoring platforms connect to the query logs and metadata catalogs (like [Dremio](/knowledge/dremio) or Snowflake) to passively monitor everything in the background using ML-driven anomaly detection, providing a safety net for issues the engineers never thought to write tests for.
 
 ## Conclusion
 

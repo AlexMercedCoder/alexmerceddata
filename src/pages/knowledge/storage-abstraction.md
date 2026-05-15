@@ -19,11 +19,11 @@ If your organization later decided to migrate to the cloud (e.g., moving data to
 
 A Storage Abstraction layer acts as a universal translator. 
 
-Instead of an [Apache Spark](/knowledge/apache-spark) job requesting data directly from Amazon S3, the Spark job requests data from the Abstraction Layer using a universal, standardized URI. 
+Instead of an [Apache Spark](/knowledge/apache-spark) job requesting data directly from [Amazon S3](/knowledge/amazon-s3), the Spark job requests data from the Abstraction Layer using a universal, standardized URI. 
 The Abstraction Layer receives the request, determines where the data actually lives physically, translates the generic request into the proprietary API call (e.g., the specific REST API required by Azure ADLS or Google Cloud Storage), retrieves the bytes, and hands them back to Spark.
 
 ### Example: Apache Arrow Flight
-While not exclusively a storage abstraction, **[Apache Arrow](/knowledge/apache-arrow) Flight** acts as a high-performance, network-level abstraction. An analyst can use Python to connect to a Flight endpoint. The Python client doesn't need to know if the data is stored in Parquet files on S3, or sitting in memory on a Dremio server. It just asks for the data, and Flight streams the columnar bytes over the network instantly.
+While not exclusively a storage abstraction, **[Apache Arrow](/knowledge/apache-arrow) Flight** acts as a high-performance, network-level abstraction. An analyst can use Python to connect to a Flight endpoint. The Python client doesn't need to know if the data is stored in Parquet files on S3, or sitting in memory on a [Dremio](/knowledge/dremio) server. It just asks for the data, and Flight streams the columnar bytes over the network instantly.
 
 ## The Role of Open Table Formats
 

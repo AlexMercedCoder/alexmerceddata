@@ -14,7 +14,7 @@ In the era of on-premise Hadoop, managing metadata and data integration was a ni
 When the industry migrated to the cloud, Amazon Web Services (AWS) recognized that data engineers were spending 80% of their time managing infrastructure, and only 20% of their time writing actual business logic.
 
 To solve this, Amazon created **AWS Glue**. 
-AWS Glue is a fully managed, serverless data integration service. It provides both the central Data Catalog for the AWS ecosystem and a serverless compute environment for running massive Apache Spark ETL jobs without ever managing a single server.
+AWS Glue is a fully managed, serverless data integration service. It provides both the central Data Catalog for the AWS ecosystem and a serverless compute environment for running massive [Apache Spark](/knowledge/apache-spark) ETL jobs without ever managing a single server.
 
 ## Component 1: The AWS Glue Data Catalog
 

@@ -30,14 +30,14 @@ Data engineers map raw physical tables to logical entities.
 When a user queries "Customer," the Semantic Layer automatically handles the complex underlying SQL joins. If the data engineering team later migrates the data from S3 to Azure, they only update the mapping in the Semantic Layer. The business user never notices the change.
 
 ### 2. Centralizing Metrics (The Headless BI)
-Instead of defining the formula for "Active Customer" inside a specific Tableau workbook, the data team writes the definition inside the Semantic Layer using code (often integrated with tools like dbt or Cube).
+Instead of defining the formula for "Active Customer" inside a specific [Tableau](/knowledge/tableau) workbook, the data team writes the definition inside the Semantic Layer using code (often integrated with tools like dbt or Cube).
 The Semantic Layer declares: `Active Customer = User who logged in within the last 30 days and spent > $100`.
 
-Now, the Semantic Layer acts as a "Headless BI" engine. When Tableau, Power BI, or a custom Python script asks for "Active Customers," they send an API or SQL request to the Semantic Layer. The Semantic Layer executes the centrally-defined formula and returns the exact same number to every single tool.
+Now, the Semantic Layer acts as a "Headless BI" engine. When Tableau, [Power BI](/knowledge/power-bi), or a custom Python script asks for "Active Customers," they send an API or SQL request to the Semantic Layer. The Semantic Layer executes the centrally-defined formula and returns the exact same number to every single tool.
 
 ## The Architecture of a Semantic Layer
 
-Modern Semantic Layers (such as Dremio's integrated Semantic Layer, Cube, or dbt Semantic Layer) generally provide three core functionalities:
+Modern Semantic Layers (such as [Dremio](/knowledge/dremio)'s integrated Semantic Layer, Cube, or dbt Semantic Layer) generally provide three core functionalities:
 
 1.  **Modeling (The Logic)**: Using SQL, YAML, or proprietary UI to define dimensions, measures, and the relationships (joins) between them.
 2.  **Access (The API/SQL Endpoint)**: Exposing the models so downstream tools can easily query them. Modern layers often expose REST APIs, GraphQL, or present themselves as standard PostgreSQL databases to seamlessly trick BI tools into connecting.

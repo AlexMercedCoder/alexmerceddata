@@ -39,8 +39,8 @@ Historically, vendors tried to trap customers inside their proprietary walled ga
 The future Lakehouse is defined by **Radical Openness**. 
 Because the data is stored in the universal Apache Iceberg format, and cataloged in an open standard (like the REST Catalog specification or [Apache Polaris](/knowledge/apache-polaris)), the architecture will be entirely commoditized. 
 
-A company will store one single copy of their data in Amazon S3. 
-*   At 9:00 AM, the Finance team will query that data using Dremio.
+A company will store one single copy of their data in [Amazon S3](/knowledge/amazon-s3). 
+*   At 9:00 AM, the Finance team will query that data using [Dremio](/knowledge/dremio).
 *   At 10:00 AM, the Data Science team will query the exact same data using [Apache Spark](/knowledge/apache-spark).
 *   At 11:00 AM, the Marketing team will query the exact same data using Snowflake.
 

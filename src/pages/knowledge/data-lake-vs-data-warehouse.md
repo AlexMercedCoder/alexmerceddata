@@ -33,7 +33,7 @@ Its defining characteristic is **Schema-on-Read**.
 A data lake is a massive, highly scalable repository where organizations dump raw data in its native format—structured (CSV), semi-structured (JSON logs), or completely unstructured (images, audio files, PDFs). The data is simply dropped into cheap object storage. Structure is only applied later, when a data scientist actually attempts to read and process it.
 
 *   **The Pros**: It is incredibly cheap, allowing organizations to store petabytes of data infinitely. It is highly flexible and serves as the perfect playground for Data Scientists who need massive amounts of raw, unadulterated data to train Machine Learning models.
-*   **The Cons**: Data Lakes are essentially just massive hard drives. They lack the transactional guarantees (ACID) of a database. If an ETL job fails halfway through writing a file, the data is corrupted. Because the data is unoptimized and messy, business analysts cannot simply connect Tableau to a Data Lake to run fast SQL queries; they often devolve into unusable "Data Swamps."
+*   **The Cons**: Data Lakes are essentially just massive hard drives. They lack the transactional guarantees (ACID) of a database. If an ETL job fails halfway through writing a file, the data is corrupted. Because the data is unoptimized and messy, business analysts cannot simply connect [Tableau](/knowledge/tableau) to a Data Lake to run fast SQL queries; they often devolve into unusable "Data Swamps."
 
 ## The Two-Tier Architecture Problem
 
@@ -47,4 +47,4 @@ The fundamental limitations of the Warehouse and the Lake ultimately birthed the
 
 By utilizing [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**, organizations can superimpose the transactional guarantees, schema enforcement, and high-speed indexing of a Data Warehouse directly on top of the cheap, scalable files of a Data Lake. 
 
-Coupled with high-speed federated query engines like Dremio, the Lakehouse eliminates the need for the two-tier architecture entirely. Data is stored once in cheap S3 buckets, yet it is instantly queryable by both business analysts running sub-second SQL dashboards and data scientists training deep learning models, unifying the enterprise data stack for the first time in history.
+Coupled with high-speed federated query engines like [Dremio](/knowledge/dremio), the Lakehouse eliminates the need for the two-tier architecture entirely. Data is stored once in cheap S3 buckets, yet it is instantly queryable by both business analysts running sub-second SQL dashboards and data scientists training deep learning models, unifying the enterprise data stack for the first time in history.

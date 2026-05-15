@@ -18,7 +18,7 @@ In 2018, the original creators left Facebook and forked the project, rebranding 
 ## The Architecture of Trino
 
 Trino is not a database. It does not store data. It is purely a compute engine. 
-It utilizes a **Massively Parallel Processing (MPP)** architecture designed to execute queries entirely in memory, completely bypassing the slow disk-writing phases that crippled Hadoop MapReduce.
+It utilizes a **Massively Parallel Processing (MPP)** architecture designed to execute queries entirely in memory, completely bypassing the slow disk-writing phases that crippled Hadoop [MapReduce](/knowledge/mapreduce).
 
 ### The Coordinator and the Workers
 A Trino cluster consists of two types of nodes:
@@ -50,7 +50,7 @@ Trino pushes the Oracle query down to Oracle, pushes the S3 query down to the Ic
 
 While federated querying across databases is a great feature, Trino's primary use case today is acting as the massive SQL engine powering Open Data Lakehouses.
 
-When paired with an open table format like **Apache Iceberg**, Trino transforms a cheap Amazon S3 bucket into a fully functional, high-speed data warehouse.
+When paired with an open table format like **Apache Iceberg**, Trino transforms a cheap [Amazon S3](/knowledge/amazon-s3) bucket into a fully functional, high-speed data warehouse.
 *   **Performance**: Trino is heavily optimized for reading [Apache Parquet](/knowledge/apache-parquet) and ORC files. It utilizes advanced vectorized execution and highly tuned [Predicate Pushdown](/knowledge/predicate-pushdown) to skip irrelevant files.
 *   **Cost Efficiency**: Because Trino scales horizontally, organizations can spin up a massive cluster of 100 Trino workers, execute complex end-of-month financial reports against an S3 lakehouse in minutes, and instantly spin the cluster down to zero, paying only for the exact compute used.
 

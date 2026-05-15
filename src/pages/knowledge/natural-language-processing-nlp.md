@@ -41,7 +41,7 @@ While ChatGPT is the most famous NLP application, enterprise data engineering re
 
 Historically, NLP required dedicated teams of Data Scientists building custom Python models. Today, NLP is being democratized and pushed directly into the database layer.
 
-In a modern **Data Lakehouse**, analysts do not need to export data to a Python script to run an NLP task. Modern SQL engines (like Dremio) allow analysts to run NLP functions directly inside their SQL queries. 
+In a modern **Data Lakehouse**, analysts do not need to export data to a Python script to run an NLP task. Modern SQL engines (like [Dremio](/knowledge/dremio)) allow analysts to run NLP functions directly inside their SQL queries. 
 An analyst can write: `SELECT customer_email, AI_CLASSIFY(customer_email, 'Angry, Happy') FROM support_tickets`. 
 The database engine autonomously handles the complex NLP execution, allowing standard BI analysts to extract structured insights from massive lakes of unstructured text.
 

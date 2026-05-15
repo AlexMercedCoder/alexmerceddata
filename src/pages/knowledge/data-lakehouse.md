@@ -37,7 +37,7 @@ A true Data Lakehouse rests on several critical technological pillars:
 The foundation is highly durable, infinitely scalable, and incredibly cheap object storage. This holds both structured and unstructured data.
 
 ### 2. Open File Formats
-Data is stored in open, columnar formats like **Apache Parquet** or **ORC**. These formats are highly optimized for analytical queries, allowing engines to skip reading unnecessary columns and drastically speeding up performance.
+Data is stored in open, columnar formats like **[Apache Parquet](/knowledge/apache-parquet)** or **ORC**. These formats are highly optimized for analytical queries, allowing engines to skip reading unnecessary columns and drastically speeding up performance.
 
 ### 3. Open Table Formats
 This is the key enabler. Formats like **Apache Iceberg**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)** sit above the file layer. They provide the metadata required for ACID transactions, time travel, schema evolution, and concurrent reads/writes.
@@ -47,7 +47,7 @@ A catalog (like **[Apache Polaris](/knowledge/apache-polaris)**, [AWS Glue](/kno
 
 ### 5. Decoupled Compute Engines
 Because the data is open, you are not locked into a single vendor's compute engine. You can use:
-- **Dremio** or **Trino** for blazing-fast BI and interactive SQL.
+- **[Dremio](/knowledge/dremio)** or **Trino** for blazing-fast BI and interactive SQL.
 - **[Apache Spark](/knowledge/apache-spark)** for heavy ETL and batch processing.
 - **Ray** or **Python (Pandas/Polars)** for Machine Learning and AI.
 All these engines can operate on the same data simultaneously without stepping on each other's toes.

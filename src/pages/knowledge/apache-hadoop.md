@@ -26,7 +26,7 @@ To guarantee fault tolerance, HDFS defaults to 3x replication. It makes three co
 
 ### 2. MapReduce
 [MapReduce](/knowledge/mapreduce) solved the compute problem. In a traditional database, you pull the data over the network to the CPU. If you try to pull Petabytes of data over a network cable, the network instantly crashes.
-MapReduce flips the paradigm: **It moves the code to the data.** 
+[MapReduce](/knowledge/mapreduce) flips the paradigm: **It moves the code to the data.** 
 The central server sends a tiny Java program out to the 1,000 servers. Each server runs the code locally, right next to the physical hard drive where the 128MB block of data lives. The servers process their tiny chunk of data simultaneously, and send only the final aggregated answer back to the central server.
 
 ## The Hadoop Ecosystem Explosion

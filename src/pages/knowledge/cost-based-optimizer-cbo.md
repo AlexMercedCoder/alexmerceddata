@@ -53,7 +53,7 @@ The CBO is a mathematical genius, but it is entirely dependent on its input data
 
 If a table actually contains 10 billion rows, but the metadata statistics haven't been updated in a month and currently claim the table only has 10,000 rows, the CBO will attempt a Broadcast Join. It will try to load the entire 10-billion row table into the RAM of every worker node, instantly crashing the entire cluster.
 
-In traditional databases, Database Administrators (DBAs) had to manually run the `ANALYZE` command nightly to recalculate these statistics. In modern Open Lakehouses, table formats like **Apache Iceberg** automatically track and update these statistics (min/max bounds, null counts) internally during every single write operation. This guarantees that modern engines (like Spark or Dremio) always have perfectly fresh statistics, enabling the CBO to execute flawless query plans at petabyte scale.
+In traditional databases, Database Administrators (DBAs) had to manually run the `ANALYZE` command nightly to recalculate these statistics. In modern Open Lakehouses, table formats like **Apache Iceberg** automatically track and update these statistics (min/max bounds, null counts) internally during every single write operation. This guarantees that modern engines (like Spark or [Dremio](/knowledge/dremio)) always have perfectly fresh statistics, enabling the CBO to execute flawless query plans at petabyte scale.
 
 ## Conclusion
 

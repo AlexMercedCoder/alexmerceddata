@@ -43,4 +43,4 @@ Without row-level mutation capabilities, engineers had to write complex code to 
 
 ## Conclusion
 
-Row-Level Deletes are the defining feature that elevated the Data Lake into the Data Lakehouse. By providing standard SQL `DELETE`, `UPDATE`, and `MERGE` capabilities over massive, immutable cloud storage files, Open Table Formats solved the most critical regulatory and architectural challenge of the big data era. They allow organizations to maintain strict GDPR compliance and execute real-time CDC streams without abandoning the infinite scalability and cost-efficiency of the data lake.
+Row-Level Deletes are the defining feature that elevated the Data Lake into the Data Lakehouse. By providing standard SQL `DELETE`, `UPDATE`, and `MERGE` capabilities over massive, immutable cloud storage files, [Open Table Formats](/knowledge/open-table-formats) solved the most critical regulatory and architectural challenge of the big data era. They allow organizations to maintain strict GDPR compliance and execute real-time CDC streams without abandoning the infinite scalability and cost-efficiency of the data lake.

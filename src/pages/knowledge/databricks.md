@@ -22,12 +22,12 @@ These two teams lived in silos, looking at different data, using completely diff
 Databricks is essentially a highly optimized, managed cloud wrapper around three foundational open-source technologies.
 
 ### 1. The Compute Engine: Apache Spark
-At its core, Databricks is the premier platform for running Apache Spark. 
+At its core, Databricks is the premier platform for running [Apache Spark](/knowledge/apache-spark). 
 While anyone can run open-source Spark on an AWS EMR cluster, managing the infrastructure is notoriously difficult. Databricks abstracts away the infrastructure. An engineer simply selects "Spin up a 50-node cluster" from a dropdown menu. Furthermore, Databricks utilizes a proprietary, heavily optimized version of the Spark engine (the **Photon Engine**) which is written in C++ and utilizes [Vectorized Execution](/knowledge/vectorized-execution) to run Spark workloads significantly faster than the open-source equivalent.
 
 ### 2. The Storage Layer: Delta Lake
 Data Lakes are inherently messy and lack the transactional reliability of databases. To solve this, Databricks invented (and subsequently open-sourced) **[Delta Lake](/knowledge/delta-lake)**.
-Delta Lake sits on top of cheap cloud storage (S3/ADLS) and provides ACID transactions, schema enforcement, and time travel. This was the technological breakthrough that birthed the "Data Lakehouse" concept—bringing warehouse-like reliability to data lake storage. 
+[Delta Lake](/knowledge/delta-lake) sits on top of cheap cloud storage (S3/ADLS) and provides ACID transactions, schema enforcement, and time travel. This was the technological breakthrough that birthed the "Data Lakehouse" concept—bringing warehouse-like reliability to data lake storage. 
 
 ### 3. The ML Lifecycle: MLflow
 To support the Data Science team, Databricks created MLflow. MLflow is an MLOps platform deeply integrated into the Databricks workspace. When a data scientist trains a model in a Databricks Notebook using Spark MLlib, MLflow automatically tracks the hyperparameters, versions the model, and provides a 1-click deployment mechanism to serve the model as a REST API.

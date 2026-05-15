@@ -39,7 +39,7 @@ Modern frontier models (like Google's Gemini 1.5 Pro and OpenAI's GPT-4o) are **
 Multi-Modal AI unlocks use cases that were previously impossible for computers to solve.
 
 1.  **Medical Diagnostics**: A multi-modal AI can simultaneously read a patient's 50-page text medical history AND analyze their X-ray image, cross-referencing the text symptoms with the visual anomalies to suggest a highly accurate diagnosis.
-2.  **Autonomous Robotics**: A robot in a warehouse doesn't just need Computer Vision to see a box; it needs an LLM's reasoning to understand the text written on the box ("Fragile") and the audio processing to hear a human yell "Stop!" Multi-modal models act as the unified brain for these physical agents.
+2.  **Autonomous Robotics**: A robot in a warehouse doesn't just need [Computer Vision](/knowledge/computer-vision) to see a box; it needs an LLM's reasoning to understand the text written on the box ("Fragile") and the audio processing to hear a human yell "Stop!" Multi-modal models act as the unified brain for these physical agents.
 3.  **Data Lakehouse Analytics**: Historically, you could only query structured text data. With Multi-Modal embeddings, a data analyst can write a SQL query that searches a database of 1 million unstructured images by typing: *"Find me all pictures where a red car is parked illegally next to a fire hydrant."*
 
 ## Conclusion

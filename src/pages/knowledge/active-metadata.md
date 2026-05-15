@@ -34,13 +34,13 @@ It also analyzes the data itself. If it detects a column filled with 9-digit num
 ### 3. Bi-Directional Action (The Loop)
 This is the defining feature of Active Metadata. Passive metadata only *displays* information. Active metadata *executes* actions back into the architecture.
 *   **Example**: The ML engine detects a Social Security Number in a new table. It automatically applies the "PII" tag in the catalog. 
-*   **The Action**: Because the metadata is "Active," the catalog instantly fires an API call to the Data Warehouse (like Snowflake or Dremio), commanding the database to apply dynamic Row-Level Security masking to that column. The security is enforced autonomously, driven purely by the metadata graph.
+*   **The Action**: Because the metadata is "Active," the catalog instantly fires an API call to the Data Warehouse (like Snowflake or [Dremio](/knowledge/dremio)), commanding the database to apply dynamic Row-Level Security masking to that column. The security is enforced autonomously, driven purely by the metadata graph.
 
 ## The Foundation of the Data Fabric
 
 Active Metadata is the technological prerequisite for the **[Data Fabric](/knowledge/data-fabric)**—the ultimate vision of an intelligent, self-healing, and autonomous enterprise data ecosystem.
 
-In a mature Data Fabric, Active Metadata controls orchestration. If the metadata detects that a crucial upstream data source has failed a [Data Quality](/knowledge/data-quality) test (e.g., the data is 50% null), the Active Metadata platform will intercept the Airflow scheduler and automatically halt all downstream ETL jobs and BI dashboards, preventing the corrupted data from poisoning executive reports. 
+In a mature [Data Fabric](/knowledge/data-fabric), Active Metadata controls orchestration. If the metadata detects that a crucial upstream data source has failed a [Data Quality](/knowledge/data-quality) test (e.g., the data is 50% null), the Active Metadata platform will intercept the Airflow scheduler and automatically halt all downstream ETL jobs and BI dashboards, preventing the corrupted data from poisoning executive reports. 
 
 ## Conclusion
 

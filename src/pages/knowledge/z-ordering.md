@@ -54,4 +54,4 @@ While powerful, Z-Ordering is computationally expensive to execute. Re-clusterin
 
 ## Conclusion
 
-Z-Ordering breaks the fundamental limitation of linear data sorting. By utilizing space-filling curves to physically co-locate related data points across multiple dimensions, it supercharges the effectiveness of Predicate Pushdown. For Data Lakehouses dealing with complex, unpredictable ad-hoc queries spanning multiple variables, Z-Ordering transforms sluggish, full-table scans into razor-sharp, millisecond retrievals.
+Z-Ordering breaks the fundamental limitation of linear data sorting. By utilizing space-filling curves to physically co-locate related data points across multiple dimensions, it supercharges the effectiveness of [Predicate Pushdown](/knowledge/predicate-pushdown). For Data Lakehouses dealing with complex, unpredictable ad-hoc queries spanning multiple variables, Z-Ordering transforms sluggish, full-table scans into razor-sharp, millisecond retrievals.

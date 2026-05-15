@@ -40,8 +40,8 @@ Because Apache Iceberg is open-source, any compute engine in the world knows how
 
 ### The Result: Compute Agnosticism
 Because the data is sitting in an open format in neutral storage, the company has achieved ultimate leverage. 
-If Compute Engine A suddenly raises their prices by 40%, the company does not have to migrate Petabytes of data. They simply turn off Compute Engine A, plug Compute Engine B (like Dremio) into the exact same S3 bucket, and begin querying the exact same Iceberg tables within minutes.
+If Compute Engine A suddenly raises their prices by 40%, the company does not have to migrate Petabytes of data. They simply turn off Compute Engine A, plug Compute Engine B (like [Dremio](/knowledge/dremio)) into the exact same S3 bucket, and begin querying the exact same Iceberg tables within minutes.
 
 ## Conclusion
 
-Vendor Lock-in is the greatest financial threat to a long-term enterprise data strategy. By strictly decoupling storage from compute, and ruthlessly standardizing on open-source data formats like Apache Parquet and Apache Iceberg, modern data architects guarantee that their organization maintains total technological agility, forcing vendors to constantly compete on price and performance rather than relying on hostage economics.
+Vendor Lock-in is the greatest financial threat to a long-term enterprise data strategy. By strictly decoupling storage from compute, and ruthlessly standardizing on open-source data formats like [Apache Parquet](/knowledge/apache-parquet) and Apache Iceberg, modern data architects guarantee that their organization maintains total technological agility, forcing vendors to constantly compete on price and performance rather than relying on hostage economics.

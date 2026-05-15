@@ -21,7 +21,7 @@ This manual process ("ClickOps") is a disaster for modern enterprises:
 
 ## How IaC Works: Enter Terraform
 
-While cloud providers have their own IaC tools (like AWS CloudFormation), **HashiCorp Terraform** is the undisputed open-source industry standard because it works across all clouds (AWS, Google Cloud, Azure, and Dremio).
+While cloud providers have their own IaC tools (like AWS CloudFormation), **HashiCorp Terraform** is the undisputed open-source industry standard because it works across all clouds (AWS, Google Cloud, Azure, and [Dremio](/knowledge/dremio)).
 
 With Terraform, a DevOps engineer writes a declarative configuration file (using HCL - HashiCorp Configuration Language):
 

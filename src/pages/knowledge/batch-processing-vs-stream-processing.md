@@ -40,7 +40,7 @@ A stream processing engine (like **[Apache Flink](/knowledge/apache-flink)**) ru
 Historically, organizations had to build two completely separate pipelines (The [Lambda Architecture](/knowledge/lambda-architecture)): a Batch pipeline for deep historical analytics, and a Streaming pipeline for real-time alerts.
 
 Modern architectures (The [Kappa Architecture](/knowledge/kappa-architecture)) and modern frameworks are converging. 
-*   **Apache Flink** allows engineers to write one set of code that treats batch data simply as a "stream that eventually stops." 
+*   **[Apache Flink](/knowledge/apache-flink)** allows engineers to write one set of code that treats batch data simply as a "stream that eventually stops." 
 *   **Micro-batching** (used by Spark Structured Streaming) blurs the lines by running batch jobs every 30 seconds.
 
 Ultimately, the choice depends on the business requirement. If you are calculating the quarterly tax report, use Batch. If you are predicting if an Uber driver will arrive in 3 minutes, use Streaming.

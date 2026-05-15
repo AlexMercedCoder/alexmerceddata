@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to Apache Polaris
 
-In the rapidly evolving landscape of modern data lakehouses, the separation of compute and storage has unlocked unprecedented scalability and cost-efficiency. However, this decoupling introduces a critical challenge: how do disparate compute engines (such as Dremio, [Apache Spark](/knowledge/apache-spark), Trino, and [Apache Flink](/knowledge/apache-flink)) discover, access, and consistently manage the underlying data stored in object storage? 
+In the rapidly evolving landscape of modern data lakehouses, the separation of compute and storage has unlocked unprecedented scalability and cost-efficiency. However, this decoupling introduces a critical challenge: how do disparate compute engines (such as [Dremio](/knowledge/dremio), [Apache Spark](/knowledge/apache-spark), Trino, and [Apache Flink](/knowledge/apache-flink)) discover, access, and consistently manage the underlying data stored in object storage? 
 
 The answer lies in the **data catalog**, the centralized metadata layer that serves as the definitive source of truth. As Apache Iceberg has emerged as the de facto standard for open table formats, the ecosystem required a robust, standardized way to interact with Iceberg tables across various tools. **Apache Polaris** was introduced to solve this exact problem.
 
@@ -48,7 +48,7 @@ Polaris only stores the *catalog-level metadata*—the pointers to the current s
 
 One of the most significant advantages of Apache Polaris over basic catalog implementations is its sophisticated, centralized governance model.
 
-In a decoupled lakehouse, managing security is notoriously difficult. If security policies are defined within a specific compute engine (e.g., Dremio or Snowflake), those policies are bypassed if a user accesses the same data using a different engine (e.g., Apache Spark). 
+In a decoupled lakehouse, managing security is notoriously difficult. If security policies are defined within a specific compute engine (e.g., Dremio or Snowflake), those policies are bypassed if a user accesses the same data using a different engine (e.g., [Apache Spark](/knowledge/apache-spark)). 
 
 Apache Polaris solves this by pushing authorization down to the catalog layer.
 
@@ -79,7 +79,7 @@ The compute engine then uses these temporary credentials to read the Parquet fil
 
 The true power of an open lakehouse is the ability to choose the right engine for the right job. 
 *   **Apache Spark**: For heavy ETL, batch processing, and complex data transformations.
-*   **Apache Flink**: For real-time streaming ingestion.
+*   **[Apache Flink](/knowledge/apache-flink)**: For real-time streaming ingestion.
 *   **Dremio**: For high-performance, interactive BI queries and data virtualization.
 
 Because Apache Polaris adheres strictly to the Iceberg REST API, all of these engines can connect to it simultaneously. 

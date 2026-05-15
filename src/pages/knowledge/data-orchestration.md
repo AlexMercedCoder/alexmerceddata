@@ -47,9 +47,9 @@ If the data team deploys a new transformation algorithm, they often need to reru
 
 ## The Shift to Data-Aware Orchestration
 
-Historically, orchestrators (like early Apache Airflow) were purely task-based. Airflow didn't know *what* data it was moving; it just knew it had to trigger a Python script.
+Historically, orchestrators (like early [Apache Airflow](/knowledge/apache-airflow)) were purely task-based. Airflow didn't know *what* data it was moving; it just knew it had to trigger a Python script.
 
-Modern orchestrators (like Dagster) have shifted toward **Data-Aware Orchestration (Software-Defined Assets)**. Instead of defining a task ("Run this script"), engineers define the *asset* they want to produce ("I want the `gold_sales` Iceberg table to exist"). The orchestrator understands the physical data assets, tracking their lineage and freshness, blurring the lines between pure orchestration and [Data Observability](/knowledge/data-observability).
+Modern orchestrators (like [Dagster](/knowledge/dagster)) have shifted toward **Data-Aware Orchestration (Software-Defined Assets)**. Instead of defining a task ("Run this script"), engineers define the *asset* they want to produce ("I want the `gold_sales` Iceberg table to exist"). The orchestrator understands the physical data assets, tracking their lineage and freshness, blurring the lines between pure orchestration and [Data Observability](/knowledge/data-observability).
 
 ## Conclusion
 

@@ -25,7 +25,7 @@ If they made a typo in the math, the dashboard used by the CEO the next morning 
 
 ## Implementing CI/CD for Data (DataOps)
 
-To bring the rigor of software engineering to the data warehouse, the industry pioneered **[DataOps](/knowledge/dataops)**, heavily utilizing tools like **dbt (Data Build Tool)** and modern Git-like catalogs (like [Project Nessie](/knowledge/project-nessie) / Dremio Arctic).
+To bring the rigor of software engineering to the data warehouse, the industry pioneered **[DataOps](/knowledge/dataops)**, heavily utilizing tools like **dbt (Data Build Tool)** and modern Git-like catalogs (like [Project Nessie](/knowledge/project-nessie) / [Dremio](/knowledge/dremio) Arctic).
 
 A modern CI/CD pipeline for Data Engineering works exactly like a software pipeline:
 

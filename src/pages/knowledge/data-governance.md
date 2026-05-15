@@ -25,7 +25,7 @@ Data is useless if business users do not trust it. Data governance establishes s
 
 ### 2. Data Security and Access Control
 Governance ensures that the right people have access to the right data at the right time, and more importantly, that the *wrong* people do not.
-*   **Technical Implementation**: Organizations deploy sophisticated **Role-Based Access Control (RBAC)** systems. In a modern lakehouse, security policies are centralized in the Data Catalog (like [Apache Polaris](/knowledge/apache-polaris) or Dremio). When an analyst queries a table, the catalog dynamically masks Personally Identifiable Information (PII), such as redacting credit card numbers, based strictly on the user's assigned corporate role.
+*   **Technical Implementation**: Organizations deploy sophisticated **Role-Based Access Control (RBAC)** systems. In a modern lakehouse, security policies are centralized in the Data Catalog (like [Apache Polaris](/knowledge/apache-polaris) or [Dremio](/knowledge/dremio)). When an analyst queries a table, the catalog dynamically masks Personally Identifiable Information (PII), such as redacting credit card numbers, based strictly on the user's assigned corporate role.
 
 ### 3. Data Discovery and Metadata Management
 If an analyst doesn't know a dataset exists, or doesn't understand what the columns mean, the data holds no value. Governance mandates that all data assets be cataloged and clearly defined.
@@ -52,4 +52,4 @@ Perhaps the strongest driver for data governance is avoiding regulatory disaster
 
 ## Conclusion
 
-Data Governance is the maturation of the data industry. Moving away from the "move fast and break things" mentality of early big data, modern organizations recognize that ungoverned data is a toxic asset. By implementing strong stewardship, automated quality controls, and centralized metadata catalogs like Apache Polaris, organizations can transform their data lakehouses from chaotic storage swamps into trusted, highly secure engines for business intelligence and AI.
+Data Governance is the maturation of the data industry. Moving away from the "move fast and break things" mentality of early big data, modern organizations recognize that ungoverned data is a toxic asset. By implementing strong stewardship, automated quality controls, and centralized metadata catalogs like [Apache Polaris](/knowledge/apache-polaris), organizations can transform their data lakehouses from chaotic storage swamps into trusted, highly secure engines for business intelligence and AI.

@@ -45,4 +45,4 @@ Masking is not just about replacing text with "X"s. Advanced masking techniques 
 
 ## Conclusion
 
-Data Masking is the technical mechanism that allows organizations to balance strict regulatory compliance (GDPR, HIPAA, PCI) with the insatiable business demand for data analytics and AI training. By implementing robust Dynamic Data Masking rules natively within Lakehouse query engines like Dremio or Snowflake, security teams can ensure that sensitive data remains cryptographically locked down without hindering the productivity of the broader data organization.
+Data Masking is the technical mechanism that allows organizations to balance strict regulatory compliance (GDPR, HIPAA, PCI) with the insatiable business demand for data analytics and AI training. By implementing robust Dynamic Data Masking rules natively within Lakehouse query engines like [Dremio](/knowledge/dremio) or Snowflake, security teams can ensure that sensitive data remains cryptographically locked down without hindering the productivity of the broader data organization.

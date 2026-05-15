@@ -42,7 +42,7 @@ Delivering ACID guarantees on a distributed filesystem without a central running
 ### The Commit Flow
 1.  **Write Data**: The compute engine (e.g., Spark) writes all new Parquet data files to S3.
 2.  **Write Metadata**: The engine writes the new Manifest files and Manifest Lists, which point to the new data files.
-3.  **The Atomic Swap**: The engine sends a request to the Catalog (like [Apache Polaris](/knowledge/apache-polaris) or Dremio Arctic). The request says: *"I want to update the table pointer to `metadata-v2.json`. I expect the current pointer to be `metadata-v1.json`."*
+3.  **The Atomic Swap**: The engine sends a request to the Catalog (like [Apache Polaris](/knowledge/apache-polaris) or [Dremio](/knowledge/dremio) Arctic). The request says: *"I want to update the table pointer to `metadata-v2.json`. I expect the current pointer to be `metadata-v1.json`."*
 4.  **Validation**: The Catalog checks the current state. If the current pointer is indeed `v1`, it atomically swaps it to `v2`. The transaction is complete. The new data is instantly visible.
 
 ### Handling Conflicts (OCC)

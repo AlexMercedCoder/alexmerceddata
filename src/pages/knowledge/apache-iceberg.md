@@ -10,7 +10,7 @@ tags: ["Apache Iceberg", "Data Lakehouse", "Data Engineering", "Open Source"]
 
 In the modern data ecosystem, the separation of storage and compute has led to the rise of the **Data Lakehouse**—a hybrid architecture combining the flexibility of a data lake with the reliability of a data warehouse. At the heart of this revolution is **Apache Iceberg**, an open table format originally developed at Netflix to solve the massive data challenges associated with [Apache Hive](/knowledge/apache-hive).
 
-Apache Iceberg is designed for huge analytic datasets, typically stored in cloud object storage like [Amazon S3](/knowledge/amazon-s3), Google Cloud Storage (GCS), or Azure Data Lake Storage (ADLS). It brings ACID transactions, schema evolution, and time travel to the data lake, allowing engines like [Apache Spark](/knowledge/apache-spark), Trino, Dremio, and Snowflake to work with the same data simultaneously without locking or inconsistency.
+Apache Iceberg is designed for huge analytic datasets, typically stored in cloud object storage like [Amazon S3](/knowledge/amazon-s3), Google Cloud Storage (GCS), or Azure Data Lake Storage (ADLS). It brings ACID transactions, schema evolution, and time travel to the data lake, allowing engines like [Apache Spark](/knowledge/apache-spark), Trino, [Dremio](/knowledge/dremio), and Snowflake to work with the same data simultaneously without locking or inconsistency.
 
 ## Why Do We Need a Table Format?
 
@@ -65,7 +65,7 @@ Because Iceberg maintains a history of snapshots, you can query the table exactl
 ## Engines and Ecosystem Integration
 
 Iceberg is engine-agnostic. It is supported by a massive ecosystem:
-- **Apache Spark:** Full support for reads, writes, and streaming.
+- **[Apache Spark](/knowledge/apache-spark):** Full support for reads, writes, and streaming.
 - **[Apache Flink](/knowledge/apache-flink):** Excellent for real-time ingestion into Iceberg tables.
 - **Dremio:** Native, lightning-fast reads and writes with built-in optimizations.
 - **Trino/Starburst:** Highly optimized distributed SQL querying.

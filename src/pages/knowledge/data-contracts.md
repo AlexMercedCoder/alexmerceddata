@@ -40,7 +40,7 @@ If the PR attempts to drop a column that the Data Contract explicitly guarantees
 
 ### 2. Schema Registries and Dead Letter Queues
 In streaming environments (like [Apache Kafka](/knowledge/apache-kafka)), Data Contracts are enforced at runtime using a **[Schema Registry](/knowledge/schema-registry)**. 
-When the upstream application attempts to publish an event to Kafka, the Schema Registry checks the event payload against the contract. If the payload violates the schema (e.g., sending a String instead of an Integer), the event is rejected and routed to a "Dead Letter Queue" for debugging, ensuring that malformed data never enters the data lakehouse.
+When the upstream application attempts to publish an event to Kafka, the [Schema Registry](/knowledge/schema-registry) checks the event payload against the contract. If the payload violates the schema (e.g., sending a String instead of an Integer), the event is rejected and routed to a "Dead Letter Queue" for debugging, ensuring that malformed data never enters the data lakehouse.
 
 ## The Cultural Impact of Data Contracts
 

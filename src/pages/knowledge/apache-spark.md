@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Apache Spark
 
-In the early 2010s, the Big Data revolution was powered by Hadoop [MapReduce](/knowledge/mapreduce). While MapReduce allowed organizations to process unprecedented volumes of data by distributing tasks across clusters of commodity hardware, it was agonizingly slow. MapReduce was designed to read data from a hard drive, perform a calculation, and write the intermediate result back to the hard drive before starting the next step. This constant disk I/O throttled performance.
+In the early 2010s, the Big Data revolution was powered by Hadoop [MapReduce](/knowledge/mapreduce). While [MapReduce](/knowledge/mapreduce) allowed organizations to process unprecedented volumes of data by distributing tasks across clusters of commodity hardware, it was agonizingly slow. MapReduce was designed to read data from a hard drive, perform a calculation, and write the intermediate result back to the hard drive before starting the next step. This constant disk I/O throttled performance.
 
 **Apache Spark** was developed at UC Berkeley's AMPLab specifically to solve this problem. 
 

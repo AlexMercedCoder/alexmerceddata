@@ -46,7 +46,7 @@ To fix the company extraction problem, the engineer alters the prompt to include
 > Text: "Google and Meta announced a new partnership for VR."
 > Output:
 
-When the LLM processes this prompt, it uses its Attention Mechanism to recognize the structural pattern: `[Text -> Output Ticker]`. 
+When the LLM processes this prompt, it uses its [Attention Mechanism](/knowledge/attention-mechanism) to recognize the structural pattern: `[Text -> Output Ticker]`. 
 When it reaches the final line, it does not output "Google and Meta." It strictly obeys the mathematical pattern established in the context window and outputs exactly what the engineer needs: `GOOG, META`.
 
 ## Best Practices for Few-Shot Prompting

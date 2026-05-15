@@ -23,7 +23,7 @@ Data Lineage is utilized by different roles for different purposes, generally ca
 
 ### 1. Root Cause Analysis (Looking Backward)
 When a metric is broken on a downstream dashboard, data analysts trace the lineage backward to find the source of the error. 
-*   *Example*: The Tableau dashboard shows zero sales for Europe. The lineage tool shows that the dashboard reads from the `gold_sales_regional` table. The lineage traces back to the `silver_sales_cleaned` table, which is populated by a dbt job. Tracing further back to the `bronze_raw_sales` table reveals that the Kafka ingestion stream from the European operational database went offline. The root cause is identified seamlessly.
+*   *Example*: The [Tableau](/knowledge/tableau) dashboard shows zero sales for Europe. The lineage tool shows that the dashboard reads from the `gold_sales_regional` table. The lineage traces back to the `silver_sales_cleaned` table, which is populated by a dbt job. Tracing further back to the `bronze_raw_sales` table reveals that the Kafka ingestion stream from the European operational database went offline. The root cause is identified seamlessly.
 
 ### 2. Impact Analysis (Looking Forward)
 When data engineers need to change a schema or deprecate a table, they must know what will break before they execute the change. 
@@ -35,10 +35,10 @@ Capturing lineage in a decoupled, multi-engine data lakehouse is technologically
 
 ### 1. Active Integration (The Push Model)
 Modern data pipeline tools are designed to actively broadcast their lineage.
-Tools like **dbt**, **[Apache Airflow](/knowledge/apache-airflow)**, and **Apache Spark** integrate with frameworks like **OpenLineage**. OpenLineage is an open standard for metadata and lineage collection. When an Airflow DAG executes a Spark job, the job automatically emits a JSON payload to a central lineage server saying: *"I am Job X. I read from Table A and wrote to Table B."* The lineage server uses these broadcasts to construct the graph in real-time.
+Tools like **dbt**, **[Apache Airflow](/knowledge/apache-airflow)**, and **[Apache Spark](/knowledge/apache-spark)** integrate with frameworks like **OpenLineage**. OpenLineage is an open standard for metadata and lineage collection. When an Airflow DAG executes a Spark job, the job automatically emits a JSON payload to a central lineage server saying: *"I am Job X. I read from Table A and wrote to Table B."* The lineage server uses these broadcasts to construct the graph in real-time.
 
 ### 2. Automated SQL Parsing (The Pull Model)
-When legacy systems or proprietary tools are involved, they often do not broadcast OpenLineage events. In this scenario, the lineage platform connects directly to the query logs of the database or data warehouse (e.g., Snowflake or Dremio query history).
+When legacy systems or proprietary tools are involved, they often do not broadcast OpenLineage events. In this scenario, the lineage platform connects directly to the query logs of the database or data warehouse (e.g., Snowflake or [Dremio](/knowledge/dremio) query history).
 The platform utilizes sophisticated AI parsers to read the raw SQL strings executed by users and applications. If it parses the SQL `INSERT INTO target_table SELECT * FROM source_table`, the lineage platform automatically infers the relationship and draws a lineage edge between `source_table` and `target_table`.
 
 ## Column-Level vs. Table-Level Lineage

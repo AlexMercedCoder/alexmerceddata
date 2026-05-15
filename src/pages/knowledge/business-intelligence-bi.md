@@ -26,7 +26,7 @@ In the 1990s and 2000s, BI tools (like early Cognos or SAP BusinessObjects) were
 In the 2010s, tools like **[Tableau](/knowledge/tableau)**, **Microsoft [Power BI](/knowledge/power-bi)**, and **[Looker](/knowledge/looker)** revolutionized the industry. They introduced intuitive, drag-and-drop graphical interfaces. An accountant with zero SQL knowledge could connect to a database, drag the "Revenue" and "Region" metrics onto a canvas, and instantly generate an interactive map. This democratized data, allowing business users to explore data independently.
 
 ### 3. Augmented BI (The AI Era)
-Modern BI platforms are integrating Generative AI and Machine Learning directly into the interface. Instead of building a dashboard, a user simply types a question in natural language: *"Why did sales dip in Germany last Q3?"* The BI tool uses an LLM to query the Semantic Layer, mathematically analyzes the anomalies, and generates both a chart and a written explanation instantly.
+Modern BI platforms are integrating Generative AI and Machine Learning directly into the interface. Instead of building a dashboard, a user simply types a question in natural language: *"Why did sales dip in Germany last Q3?"* The BI tool uses an LLM to query the [Semantic Layer](/knowledge/semantic-layer), mathematically analyzes the anomalies, and generates both a chart and a written explanation instantly.
 
 ## The Core Components of BI
 
@@ -38,10 +38,10 @@ A successful BI implementation relies on several key outputs:
 
 ## BI and the Modern Data Stack
 
-BI tools are only as good as the data they are connected to. The most beautiful Tableau dashboard in the world is useless if it takes 15 minutes to load because the underlying database is slow.
+BI tools are only as good as the data they are connected to. The most beautiful [Tableau](/knowledge/tableau) dashboard in the world is useless if it takes 15 minutes to load because the underlying database is slow.
 
-This is why the **Open Data Lakehouse** and high-speed federated engines (like Dremio) are critical. 
-1.  **Speed**: Engines like Dremio use Data Reflections (caching) to ensure that when a CEO clicks a filter in Power BI, the massive SQL query executes in milliseconds.
+This is why the **Open Data Lakehouse** and high-speed federated engines (like [Dremio](/knowledge/dremio)) are critical. 
+1.  **Speed**: Engines like Dremio use Data Reflections (caching) to ensure that when a CEO clicks a filter in [Power BI](/knowledge/power-bi), the massive SQL query executes in milliseconds.
 2.  **Consistency**: BI tools historically caused "Metrics Chaos" because analysts wrote different SQL logic inside different dashboards. Modern architectures push this logic down into a centralized **Semantic Layer**. The BI tool is stripped of its complex logic and relegated to being a "dumb glass" visualization layer, ensuring every dashboard across the company reports the exact same numbers.
 
 ## Conclusion

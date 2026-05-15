@@ -19,7 +19,7 @@ It is the practice of integrating data from disparate sources, locations, and fo
 
 ## How Data Virtualization Works
 
-Data Virtualization relies on an intelligent middleware layer (a federated query engine like Dremio or Presto/Trino) that sits between the business users and the physical databases.
+Data Virtualization relies on an intelligent middleware layer (a federated query engine like [Dremio](/knowledge/dremio) or Presto/Trino) that sits between the business users and the physical databases.
 
 When an analyst connects [Tableau](/knowledge/tableau) to a Virtualization engine, they do not see three separate databases. They see a single, clean directory of folders and tables (the [Semantic Layer](/knowledge/semantic-layer)). 
 
@@ -34,7 +34,7 @@ If they execute a SQL query joining `Salesforce.Customers` with `S3.Log_Files`, 
 If the organization acquires a new company, the data team does not have to spend 6 months building an ETL pipeline to integrate the acquired company's database into the main warehouse. They simply connect the Virtualization engine to the new database, create a logical view joining the data, and the business analysts can query the integrated data on Day 1.
 
 ### 2. Cost Reduction
-Storing data in an enterprise Data Warehouse is expensive. Storing it in Amazon S3 is incredibly cheap. Virtualization allows organizations to leave 90% of their massive, historical data in cheap S3 buckets, while only using expensive databases for specialized, low-latency applications. The Virtualization engine seamlessly bridges the gap, saving millions in duplicate storage and compute costs.
+Storing data in an enterprise Data Warehouse is expensive. Storing it in [Amazon S3](/knowledge/amazon-s3) is incredibly cheap. Virtualization allows organizations to leave 90% of their massive, historical data in cheap S3 buckets, while only using expensive databases for specialized, low-latency applications. The Virtualization engine seamlessly bridges the gap, saving millions in duplicate storage and compute costs.
 
 ### 3. Simplified Data Governance
 When data is physically copied into 5 different databases via ETL, applying security rules is a nightmare. If a user's permission level changes, the administrator must update 5 different systems. 

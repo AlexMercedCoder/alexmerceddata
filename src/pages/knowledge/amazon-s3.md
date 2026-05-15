@@ -39,7 +39,7 @@ Because S3 storage is incredibly cheap (pennies per gigabyte) and infinitely sca
 
 This birthed the **Data Lake**. 
 
-Instead of paying millions of dollars to store data in a proprietary Teradata or Oracle data warehouse, companies stored all their data in cheap S3 buckets. They then attached decoupled, serverless query engines (like Amazon Athena or Dremio) to read the data directly from S3. 
+Instead of paying millions of dollars to store data in a proprietary Teradata or Oracle data warehouse, companies stored all their data in cheap S3 buckets. They then attached decoupled, serverless query engines (like Amazon Athena or [Dremio](/knowledge/dremio)) to read the data directly from S3. 
 Today, almost every modern Open Table Format (Apache Iceberg, [Delta Lake](/knowledge/delta-lake)) is explicitly architected to operate on top of S3 Object Storage.
 
 ## Durability vs. Availability

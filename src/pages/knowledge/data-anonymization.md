@@ -20,7 +20,7 @@ Weeks later, researchers cross-referenced the "anonymous" Netflix data with publ
 It is critical to distinguish Anonymization from simple [Data Masking](/knowledge/data-masking) (or Pseudonymization).
 
 If you have a medical record: `[John Doe, Male, Age 42, Zip Code 32801, Diagnosis: Cancer]`.
-If you use **Data Masking** to remove the name: `[REDACTED, Male, Age 42, Zip Code 32801, Diagnosis: Cancer]`.
+If you use **[Data Masking](/knowledge/data-masking)** to remove the name: `[REDACTED, Male, Age 42, Zip Code 32801, Diagnosis: Cancer]`.
 
 This is *Pseudonymized*, but it is **not Anonymized**. 
 If someone buys a public voter registration database for Zip Code 32801, and discovers there is only one 42-year-old male living in that specific zip code, they instantly know John Doe has cancer. This is called a **Linkage Attack**.

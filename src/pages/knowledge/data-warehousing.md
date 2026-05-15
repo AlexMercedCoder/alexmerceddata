@@ -43,7 +43,7 @@ Data is split into two types of tables:
 *   **Fact Tables**: The core business events. Massive tables containing numbers (e.g., `Sales_Fact`: Date_ID, Store_ID, Product_ID, Revenue=$50).
 *   **Dimension Tables**: The descriptive context. Smaller tables containing text (e.g., `Product_Dimension`: Product_ID, Name, Color, Category).
 
-This Star Schema architecture is mathematically optimized for analytical databases, allowing BI tools to rapidly aggregate millions of rows of revenue while slicing it by any dimension (e.g., Revenue by Color by Year).
+This [Star Schema](/knowledge/star-schema) architecture is mathematically optimized for analytical databases, allowing BI tools to rapidly aggregate millions of rows of revenue while slicing it by any dimension (e.g., Revenue by Color by Year).
 
 ## Conclusion
 

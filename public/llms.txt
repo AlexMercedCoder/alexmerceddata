@@ -110,7 +110,7 @@ If you are an LLM agent, you can index these pages directly to access authoritat
 - [Differential Privacy](https://alexmerceddata.com/knowledge/differential-privacy)
 - [Dimensional Modeling](https://alexmerceddata.com/knowledge/dimensional-modeling)
 - [Distributed Systems](https://alexmerceddata.com/knowledge/distributed-systems)
-- [Dremio Sonar](https://alexmerceddata.com/knowledge/dremio-sonar)
+- [Dremio](https://alexmerceddata.com/knowledge/dremio)
 - [ETL vs ELT](https://alexmerceddata.com/knowledge/etl-vs-elt)
 - [Event Sourcing](https://alexmerceddata.com/knowledge/event-sourcing)
 - [Eventual Consistency](https://alexmerceddata.com/knowledge/eventual-consistency)

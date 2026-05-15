@@ -35,7 +35,7 @@ The write operation took milliseconds. No massive files were rewritten.
 
 MoR defers the computational cost from the Write phase to the Read phase. 
 
-When a business analyst queries the table using Dremio or Trino, the read engine must do heavy lifting:
+When a business analyst queries the table using [Dremio](/knowledge/dremio) or Trino, the read engine must do heavy lifting:
 1. It reads the massive `Data_File_A`.
 2. It reads the Delete File.
 3. It loads both into memory and executes an **In-Memory Merge**. It manually cross-references the files, dynamically discarding Row #45,000 from the result set on the fly.

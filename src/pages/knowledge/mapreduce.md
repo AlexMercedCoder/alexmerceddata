@@ -55,4 +55,4 @@ MapReduce was entirely superseded by **[Apache Spark](/knowledge/apache-spark)**
 
 ## Conclusion
 
-While you will rarely write a raw Java MapReduce job today, understanding the concept is absolutely mandatory for data engineers. The MapReduce paradigm—breaking a massive task into independent, parallel maps and aggregating them into final reductions—remains the underlying mathematical architecture of every modern distributed processing engine, from Apache Spark to modern SQL engines operating on the Data Lakehouse.
+While you will rarely write a raw Java MapReduce job today, understanding the concept is absolutely mandatory for data engineers. The MapReduce paradigm—breaking a massive task into independent, parallel maps and aggregating them into final reductions—remains the underlying mathematical architecture of every modern distributed processing engine, from [Apache Spark](/knowledge/apache-spark) to modern SQL engines operating on the Data Lakehouse.

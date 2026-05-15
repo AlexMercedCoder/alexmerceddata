@@ -40,7 +40,7 @@ The dominant strategy of the 2020s is the **Open Data Lakehouse**. Instead of co
 The silos are destroyed. All enterprise data lives in one unified location, allowing analysts to instantly join Sales data with Engineering data.
 
 ### The Data Virtualization Approach (Federation)
-For massive enterprises where physically centralizing all data into S3 is impossible (due to regulatory compliance or legacy on-premises databases), the solution is **[Data Virtualization](/knowledge/data-virtualization)** (using engines like Dremio).
+For massive enterprises where physically centralizing all data into S3 is impossible (due to regulatory compliance or legacy on-premises databases), the solution is **[Data Virtualization](/knowledge/data-virtualization)** (using engines like [Dremio](/knowledge/dremio)).
 Virtualization leaves the data inside its original silo. Instead, it places an intelligent query engine over the top. When an analyst writes a query joining Salesforce and PostgreSQL, the engine translates the query, fetches the required data from both silos over the network, joins it in memory, and returns the unified result. 
 
 ## Conclusion

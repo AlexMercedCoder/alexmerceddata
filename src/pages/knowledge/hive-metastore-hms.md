@@ -15,7 +15,7 @@ If a Data Analyst writes a SQL query: `SELECT * FROM sales_table WHERE year = 20
 
 To bridge the gap between SQL engines and raw files, the industry relies on a **Data Catalog**. For over a decade, the absolute, undisputed king of [Data Catalogs](/knowledge/data-catalogs) has been the **Hive Metastore (HMS)**.
 
-Originally built as a subcomponent of [Apache Hive](/knowledge/apache-hive), the HMS became so critical that every major compute engine in the world ([Apache Spark](/knowledge/apache-spark), Presto, Trino, Dremio) adopted it as their central source of truth.
+Originally built as a subcomponent of [Apache Hive](/knowledge/apache-hive), the HMS became so critical that every major compute engine in the world ([Apache Spark](/knowledge/apache-spark), Presto, Trino, [Dremio](/knowledge/dremio)) adopted it as their central source of truth.
 
 ## How the Hive Metastore Works
 
@@ -26,7 +26,7 @@ It stores the **Metadata** (data about the data). When an engine asks the HMS ab
 2.  **Location**: "The files for this table are located in the S3 bucket at `s3://company-data/sales/`."
 3.  **Partitions**: "The files are organized into folders by Year and Month: `/year=2024/month=10/`."
 
-When an analyst runs a query, the SQL engine (like Spark) talks to the HMS *first*. The HMS tells Spark exactly which folders to look in. Spark then goes directly to Amazon S3 to read the specific files, completely bypassing the files it doesn't need.
+When an analyst runs a query, the SQL engine (like Spark) talks to the HMS *first*. The HMS tells Spark exactly which folders to look in. Spark then goes directly to [Amazon S3](/knowledge/amazon-s3) to read the specific files, completely bypassing the files it doesn't need.
 
 ## The Directory-Based Flaw
 

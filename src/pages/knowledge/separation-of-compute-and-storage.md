@@ -24,7 +24,7 @@ The storage layer is delegated to highly durable, infinitely scalable, and incre
 *   **Characteristics**: You pay only for the exact gigabytes you consume. The storage layer has no awareness of SQL, query execution, or data processing. It simply stores and retrieves binary objects (e.g., Parquet files).
 
 ### The Compute Layer (Query Engines)
-The compute layer consists of elastic, ephemeral clusters of servers running query engines like [Apache Spark](/knowledge/apache-spark), Trino, Dremio, or Snowflake virtual warehouses.
+The compute layer consists of elastic, ephemeral clusters of servers running query engines like [Apache Spark](/knowledge/apache-spark), Trino, [Dremio](/knowledge/dremio), or Snowflake virtual warehouses.
 *   **Characteristics**: You pay only for the compute time you use. Clusters can be spun up in seconds to execute a heavy query and completely shut down (scaling to zero) when idle. 
 
 When a query is executed, the compute nodes request the necessary byte-ranges directly from the object store over the network.
@@ -40,7 +40,7 @@ In a decoupled architecture, you simply dump the 10PB into S3 for a low monthly 
 
 ### 2. Multi-Engine Interoperability
 Because the data lives in a passive, centralized object store rather than being locked inside a proprietary database engine, the data is "democratized." 
-*   Data Engineers can use Apache Spark to write ETL pipelines to the S3 bucket.
+*   Data Engineers can use [Apache Spark](/knowledge/apache-spark) to write ETL pipelines to the S3 bucket.
 *   Data Scientists can use Python/Pandas or Ray to read the exact same files for machine learning.
 *   Business Analysts can use Dremio to execute real-time BI dashboards against the same data.
 

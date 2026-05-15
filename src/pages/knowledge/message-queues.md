@@ -37,7 +37,7 @@ There is a critical architectural distinction between traditional Message Queues
 *   **"Smart Broker, Dumb Consumer"**: The Queue tracks the status of every message.
 *   **Transient**: Once the Barista reads the coffee cup (the Consumer processes the message), the Queue permanently deletes the message. It is designed for task execution.
 
-**Event Streaming (Apache Kafka)**
+**Event Streaming ([Apache Kafka](/knowledge/apache-kafka))**
 *   **"Dumb Broker, Smart Consumer"**: Kafka acts more like a distributed, append-only log file. 
 *   **Persistent**: When a Consumer reads a message, Kafka does *not* delete it. The message remains on the disk for days or years. This allows five different microservices to read the exact same message independently, at their own pace. Kafka is designed for massive data ingestion and real-time analytics.
 

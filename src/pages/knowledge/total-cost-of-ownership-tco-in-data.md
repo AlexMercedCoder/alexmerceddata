@@ -43,7 +43,7 @@ Modern architectures drastically lower TCO by **Decoupling Storage and Compute**
 
 In a legacy data warehouse, you paid a premium for both. If you had massive amounts of "cold" historical data that you rarely queried, you still paid premium database storage prices to hold it. 
 
-By moving to an Open Data Lakehouse (using Apache Iceberg and S3), the organization pays the absolute rock-bottom commodity price for storage (S3), and only spins up and pays for the expensive Compute engine (like Dremio) for the exact seconds a query is actively running.
+By moving to an Open Data Lakehouse (using Apache Iceberg and S3), the organization pays the absolute rock-bottom commodity price for storage (S3), and only spins up and pays for the expensive Compute engine (like [Dremio](/knowledge/dremio)) for the exact seconds a query is actively running.
 
 ## Conclusion
 

@@ -31,7 +31,7 @@ The open-source industry standard for CDC is **Debezium**. Debezium operates as 
 1.  **Log Reading**: Debezium connects directly to the PostgreSQL WAL. It reads the raw byte-stream of the transaction log. Because it reads the log file from disk (or via replication protocols) rather than executing `SELECT` queries, the performance impact on the operational database is near zero.
 2.  **Event Generation**: When an application updates a customer's address, the database writes this to the WAL. Debezium instantly detects the write, parses it, and transforms it into a structured JSON or Avro event. 
     *   The event payload contains the *before* state of the row, the *after* state of the row, and the type of operation (`u` for update, `i` for insert, `d` for delete).
-3.  **Streaming**: Debezium publishes this event to an Apache Kafka topic (e.g., `customer_db.public.users`). 
+3.  **Streaming**: Debezium publishes this event to an [Apache Kafka](/knowledge/apache-kafka) topic (e.g., `customer_db.public.users`). 
 4.  **Ingestion**: A downstream streaming engine (like [Apache Flink](/knowledge/apache-flink) or Kafka Connect) consumes the Kafka topic and immediately applies the changes to the analytical table in the data lakehouse.
 
 ## Applying CDC to the Data Lakehouse

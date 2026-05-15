@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 In the highly competitive landscape of big data storage formats, [Apache Parquet](/knowledge/apache-parquet) often receives the most mainstream attention due to its tight integration with [Apache Spark](/knowledge/apache-spark). However, Parquet is not the only heavy hitter in the arena. The **Optimized Row Columnar (ORC)** format is a highly advanced, fiercely competitive open-source file format designed explicitly for Hadoop-based analytical workloads, offering compression ratios and query speeds that frequently outpace its rivals in specific use cases.
 
-Created in 2013 as part of the "Stinger Initiative" to drastically accelerate [Apache Hive](/knowledge/apache-hive), ORC was designed to overcome the severe limitations of legacy text formats (CSV, SequenceFile) and the older RCFile format. Today, ORC is a first-class citizen in the modern data lakehouse, fully supported by table formats like Apache Iceberg and compute engines like Trino and Dremio.
+Created in 2013 as part of the "Stinger Initiative" to drastically accelerate [Apache Hive](/knowledge/apache-hive), ORC was designed to overcome the severe limitations of legacy text formats (CSV, SequenceFile) and the older RCFile format. Today, ORC is a first-class citizen in the modern data lakehouse, fully supported by table formats like Apache Iceberg and compute engines like Trino and [Dremio](/knowledge/dremio).
 
 ## The Architecture of an ORC File
 
@@ -50,8 +50,8 @@ ORC supports a highly complex, nested type system. It handles complex data struc
 
 When building a modern Data Lakehouse using Apache Iceberg, architects must choose between Parquet, ORC, and Avro.
 
-*   **Apache Spark Users**: Typically default to Parquet, as Spark and Parquet evolved together and share massive optimization overlap.
-*   **Apache Hive, Trino, and Presto Users**: Often see superior performance and compression using ORC, as these engines are deeply optimized for ORC's large stripe architecture and specific indexing structures.
+*   **[Apache Spark](/knowledge/apache-spark) Users**: Typically default to Parquet, as Spark and Parquet evolved together and share massive optimization overlap.
+*   **[Apache Hive](/knowledge/apache-hive), Trino, and Presto Users**: Often see superior performance and compression using ORC, as these engines are deeply optimized for ORC's large stripe architecture and specific indexing structures.
 
 Ultimately, Apache Iceberg treats both Parquet and ORC as first-class citizens. An Iceberg table can seamlessly manage thousands of ORC files, using Iceberg's higher-level Manifest Lists to prune files before the engine even touches the ORC footers.
 

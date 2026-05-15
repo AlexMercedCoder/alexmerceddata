@@ -28,7 +28,7 @@ When an application writes a new transaction to the Aurora database, the AWS sto
 *   **Cons**: It creates massive vendor lock-in. It only works if you use the specific operational database and the specific warehouse provided by the same vendor.
 
 ### 2. Data Virtualization (The "Federation" Approach)
-The truest form of Zero-ETL involves no data movement whatsoever. This is achieved using a **[Virtual Data Warehouse](/knowledge/virtual-data-warehouse)** or federated query engine (like Dremio or Trino).
+The truest form of Zero-ETL involves no data movement whatsoever. This is achieved using a **[Virtual Data Warehouse](/knowledge/virtual-data-warehouse)** or federated query engine (like [Dremio](/knowledge/dremio) or Trino).
 
 In this architecture, the data remains permanently in the operational database. When a business analyst runs a [Tableau](/knowledge/tableau) dashboard, the federated query engine translates the query, pushes it directly down to the operational database in real-time, extracts only the necessary answer, and returns it.
 *   **Pros**: Absolute real-time analytics. Prevents vendor lock-in. Saves massive amounts of storage costs because data is never duplicated.

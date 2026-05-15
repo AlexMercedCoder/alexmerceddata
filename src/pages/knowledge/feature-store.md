@@ -26,7 +26,7 @@ When a data scientist is training a new machine learning model, they need histor
 The Offline Feature Store is usually built on top of a highly scalable Data Lakehouse (using Apache Iceberg and [Amazon S3](/knowledge/amazon-s3)). It stores massive volumes of historical feature data. The data scientist can query the Offline Store via a simple Python SDK to generate massive, perfectly formatted training datasets in minutes.
 
 ### 2. The Online Store (For Real-Time Inference)
-When the model is deployed into production, it needs data instantly. If a user swipes a credit card, the fraud-detection AI has 20 milliseconds to decide if it is legitimate. It cannot query Amazon S3 to find the user's `total_transactions_last_hour`. 
+When the model is deployed into production, it needs data instantly. If a user swipes a credit card, the fraud-detection AI has 20 milliseconds to decide if it is legitimate. It cannot query [Amazon S3](/knowledge/amazon-s3) to find the user's `total_transactions_last_hour`. 
 The Online Feature Store is built on ultra-fast, low-latency databases (like Redis or Cassandra). As features are calculated by streaming engines (like [Apache Flink](/knowledge/apache-flink)), the newest values are instantly written to the Online Store. When the live AI model needs context, it queries the Online Store and retrieves the pre-calculated features in single-digit milliseconds.
 
 ## The Core Benefits of a Feature Store

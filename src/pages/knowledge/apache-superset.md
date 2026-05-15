@@ -21,7 +21,7 @@ Superset was built for the cloud-native era. Unlike legacy BI tools that require
 Superset includes a lightweight semantic layer. When an analyst connects Superset to a database table, they can define virtual metrics (e.g., `Revenue = Price * Quantity`) and virtual dimensions directly within Superset. Once defined, any user can drag and drop these metrics onto a canvas without knowing the underlying SQL math.
 
 ### 2. SQLAlchemy Integration
-Superset does not come with its own database. It is a "dumb glass" visualization layer. It connects to almost any database in existence (from PostgreSQL to Snowflake to Dremio) using **SQLAlchemy**, a massive Python SQL toolkit. 
+Superset does not come with its own database. It is a "dumb glass" visualization layer. It connects to almost any database in existence (from PostgreSQL to Snowflake to [Dremio](/knowledge/dremio)) using **SQLAlchemy**, a massive Python SQL toolkit. 
 When a user clicks a filter on a Superset dashboard, Superset instantly translates that click into the specific SQL dialect of the underlying database, pushes the query down over the network, and renders the result.
 
 ### 3. The SQL Lab

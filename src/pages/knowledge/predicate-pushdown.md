@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Predicate Pushdown
 
-When querying massive datasets stored in a Data Lakehouse, the most expensive operation is disk I/O—physically reading bytes off the storage medium (like [Amazon S3](/knowledge/amazon-s3) or HDFS) and moving them across the network into the RAM of the compute engine (like Trino, Spark, or Dremio).
+When querying massive datasets stored in a Data Lakehouse, the most expensive operation is disk I/O—physically reading bytes off the storage medium (like [Amazon S3](/knowledge/amazon-s3) or HDFS) and moving them across the network into the RAM of the compute engine (like Trino, Spark, or [Dremio](/knowledge/dremio)).
 
 If a table contains 10 Terabytes of data, and an analyst runs a query that only needs 50 Megabytes of specific records (e.g., "Find all sales in London yesterday"), downloading the entire 10TB table just to filter it in memory is an architectural failure.
 
@@ -32,7 +32,7 @@ Through metadata pushdown, an engine can often eliminate 99% of the physical fil
 ### Phase 2: File-Level Pushdown (Apache Parquet)
 For the files that *do* survive the metadata pruning, the compute engine must now read them. 
 
-Because Apache Parquet is a highly structured columnar format, it has its own internal metadata stored in its file footer. Inside a Parquet file, data is divided into chunks called "Row Groups." The footer contains min/max statistics for every column within every Row Group.
+Because [Apache Parquet](/knowledge/apache-parquet) is a highly structured columnar format, it has its own internal metadata stored in its file footer. Inside a Parquet file, data is divided into chunks called "Row Groups." The footer contains min/max statistics for every column within every Row Group.
 
 1.  The Parquet reader opens the file footer.
 2.  It checks the min/max stats for the `customer_id` column in Row Group 1.

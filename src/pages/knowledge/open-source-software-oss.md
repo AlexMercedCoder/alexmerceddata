@@ -39,7 +39,7 @@ For example, instead of Apple, Netflix, and Uber all spending millions of dollar
 If the code is free, how do open-source companies make billions of dollars?
 
 *   **Open Core Model**: The company gives away the core software for free (e.g., [Apache Kafka](/knowledge/apache-kafka)), but sells a proprietary "Enterprise Edition" that includes advanced security, GUI dashboards, and 24/7 technical support.
-*   **Managed Cloud Services**: The company gives the software away for free, but recognizes that installing and managing it on AWS is incredibly difficult. They charge companies a premium to run the open-source software as a fully managed, serverless cloud service (e.g., [Databricks](/knowledge/databricks) managing Apache Spark, or Dremio managing Apache Iceberg).
+*   **Managed Cloud Services**: The company gives the software away for free, but recognizes that installing and managing it on AWS is incredibly difficult. They charge companies a premium to run the open-source software as a fully managed, serverless cloud service (e.g., [Databricks](/knowledge/databricks) managing [Apache Spark](/knowledge/apache-spark), or [Dremio](/knowledge/dremio) managing Apache Iceberg).
 
 ## Conclusion
 

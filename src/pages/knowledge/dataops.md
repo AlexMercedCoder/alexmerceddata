@@ -26,7 +26,7 @@ Instead of gathering requirements for 6 months to build a monolithic "Enterprise
 In a DataOps environment, absolutely nothing is done manually via a graphical interface.
 *   Data transformation logic is written in SQL (via **dbt**) and stored in Git.
 *   The orchestration pipeline is written in Python (via **[Apache Airflow](/knowledge/apache-airflow)**) and stored in Git.
-*   The underlying infrastructure (like Snowflake warehouses or Dremio clusters) is defined using Terraform (Infrastructure as Code) and stored in Git.
+*   The underlying infrastructure (like Snowflake warehouses or [Dremio](/knowledge/dremio) clusters) is defined using Terraform (Infrastructure as Code) and stored in Git.
 This guarantees that the entire data platform can be destroyed and perfectly recreated from scratch with a single command.
 
 ### 3. Automated Testing and CI/CD

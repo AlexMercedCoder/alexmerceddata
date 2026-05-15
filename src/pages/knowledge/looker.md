@@ -33,7 +33,7 @@ When a non-technical business user opens the Looker UI to build a dashboard, the
 Looker was the first major BI tool to completely abandon the concept of an "Extract" or a proprietary in-memory engine. Looker does not store your data.
 
 Looker operates strictly as a SQL generator. 
-When a user clicks a filter on a Looker dashboard, Looker reads the LookML definitions, dynamically generates an incredibly complex, highly optimized SQL query, and pushes it down to the underlying Data Warehouse (like Google BigQuery, Snowflake, or an Iceberg Lakehouse powered by Dremio).
+When a user clicks a filter on a Looker dashboard, Looker reads the LookML definitions, dynamically generates an incredibly complex, highly optimized SQL query, and pushes it down to the underlying Data Warehouse (like Google BigQuery, Snowflake, or an Iceberg Lakehouse powered by [Dremio](/knowledge/dremio)).
 
 This architecture has two massive advantages:
 1.  **No [Data Silos](/knowledge/data-silos)**: Because Looker never extracts data, the organization's data remains perfectly centralized and governed in the main Data Warehouse.

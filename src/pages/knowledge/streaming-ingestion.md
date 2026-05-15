@@ -52,8 +52,8 @@ Engines like Flink use concepts like **Watermarks** to handle late-arriving data
 
 ### Schema Evolution
 When streaming data continuously, the source application will inevitably change its schema (e.g., adding a new field for `user_location`). If the ingestion pipeline is rigidly typed, it will crash. 
-A robust streaming architecture utilizes a **[Schema Registry](/knowledge/schema-registry)** (like Confluent Schema Registry). The streaming engine consults the registry, detects the schema change, and propagates it down to the Iceberg table natively, ensuring the stream never stops flowing.
+A robust streaming architecture utilizes a **[Schema Registry](/knowledge/schema-registry)** (like Confluent [Schema Registry](/knowledge/schema-registry)). The streaming engine consults the registry, detects the schema change, and propagates it down to the Iceberg table natively, ensuring the stream never stops flowing.
 
 ## Conclusion
 
-Streaming ingestion is the engine of the real-time enterprise. By combining the durability of Apache Kafka, the continuous processing power of Apache Flink, and the transactional reliability of the Apache Iceberg lakehouse, data teams can provide business users with sub-second, actionable insights. While it introduces complexities regarding late data and state management, the architectural patterns to solve these challenges are now mature, making real-time data lakes a reality.
+Streaming ingestion is the engine of the real-time enterprise. By combining the durability of [Apache Kafka](/knowledge/apache-kafka), the continuous processing power of [Apache Flink](/knowledge/apache-flink), and the transactional reliability of the Apache Iceberg lakehouse, data teams can provide business users with sub-second, actionable insights. While it introduces complexities regarding late data and state management, the architectural patterns to solve these challenges are now mature, making real-time data lakes a reality.

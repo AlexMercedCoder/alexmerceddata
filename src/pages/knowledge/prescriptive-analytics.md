@@ -13,7 +13,7 @@ If **[Predictive Analytics](/knowledge/predictive-analytics)** is the technology
 
 Imagine an airline. 
 *   **Descriptive Analytics**: "Flight 101 from NY to LA was only 60% full yesterday."
-*   **Predictive Analytics**: "Based on historical weather and booking trends, Flight 101 tomorrow will only be 50% full."
+*   **[Predictive Analytics](/knowledge/predictive-analytics)**: "Based on historical weather and booking trends, Flight 101 tomorrow will only be 50% full."
 *   **Prescriptive Analytics**: "Because Flight 101 will be 50% full, you should instantly lower the ticket price by 12% on Expedia, and you should switch the aircraft from a Boeing 777 to a smaller 737 to save $15,000 in jet fuel."
 
 Prescriptive Analytics does not just forecast the future; it actively simulates hundreds of possible futures, calculates the mathematical outcome of each decision, and prescribes the optimal path forward to maximize revenue or minimize risk.
@@ -40,7 +40,7 @@ Prescriptive Analytics is the technology behind autonomous, algorithmic business
 
 *   **Algorithmic Trading**: Hedge funds don't just predict that a stock will go up. The prescriptive system calculates the exact number of shares to buy, and the exact millisecond to buy them, to optimize the portfolio's risk-to-reward ratio without destabilizing the market.
 *   **Dynamic Pricing (Surge Pricing)**: Uber uses prescriptive analytics continuously. The predictive model forecasts that demand will spike when a concert ends at 11 PM. The prescriptive engine automatically raises the price to 2.5x (Surge Pricing). This specific price point is mathematically calculated to maximize revenue while simultaneously incentivizing exactly enough new drivers to log onto the app to handle the crowd.
-*   **[Agentic AI](/knowledge/agentic-ai)**: The future of prescriptive analytics is Agentic AI. Instead of simply generating a dashboard recommending that a company buy more inventory, an AI Agent uses its LLM reasoning capabilities to connect to the supplier's API and physically execute the purchase order autonomously.
+*   **[Agentic AI](/knowledge/agentic-ai)**: The future of prescriptive analytics is [Agentic AI](/knowledge/agentic-ai). Instead of simply generating a dashboard recommending that a company buy more inventory, an AI Agent uses its LLM reasoning capabilities to connect to the supplier's API and physically execute the purchase order autonomously.
 
 ## The Barrier to Entry
 

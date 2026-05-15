@@ -52,7 +52,7 @@ If the ML model detects a column filled with 16-digit numbers that pass the Luhn
 ## Driving Policy (Tag-Based Security)
 
 Classification is useless if it doesn't drive security. 
-Modern architectures (like Dremio or Snowflake) use **Tag-Based Security**. 
+Modern architectures (like [Dremio](/knowledge/dremio) or Snowflake) use **Tag-Based Security**. 
 
 Instead of an administrator writing 500 different SQL rules saying "Bob cannot see Table A, Table B, Table C...", the administrator writes a single policy: *"No employee below the rank of VP can view any column tagged `PCI_RESTRICTED`."* 
 

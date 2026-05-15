@@ -24,7 +24,7 @@ The defining feature of ADLS Gen2—and what separates it from standard Azure Bl
 
 ADLS implements a true, physical directory hierarchy (exactly like the file system on your laptop). 
 
-This unlocks massive performance capabilities for analytical engines like Apache Spark or [Databricks](/knowledge/databricks):
+This unlocks massive performance capabilities for analytical engines like [Apache Spark](/knowledge/apache-spark) or [Databricks](/knowledge/databricks):
 1.  **Atomic Directory Operations**: In ADLS, if Spark wants to rename or delete the `/sales_2024/` directory containing 10,000 files, it executes a *single* metadata operation on the folder itself. The operation finishes in milliseconds, instead of the minutes it would take on a flat object store.
 2.  **POSIX-Compliant Permissions**: Because it uses real directories, Security Administrators can apply strict Access Control Lists (ACLs) at the folder level. They can lock down the `/HR/` directory using the same strict, granular security models they used on their on-premise Linux servers, satisfying the most stringent enterprise compliance requirements.
 

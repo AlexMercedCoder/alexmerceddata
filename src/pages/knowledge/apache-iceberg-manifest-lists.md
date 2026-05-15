@@ -49,7 +49,7 @@ Consider a massive table containing billions of rows of IoT sensor data, partiti
 In a legacy Hive architecture, if you query `SELECT * FROM sensors WHERE event_date = '2026-05-14'`, the query engine must ask S3 to list all directories matching `event_date=2026-05-14/`. If the partition contains 10,000 files, S3 must return all 10,000 file paths before the engine can even begin reading. If the query spans a year, the listing operation alone can take minutes.
 
 ### The Iceberg Approach with Manifest Lists
-When the same query is executed against an Iceberg table, the engine (like Dremio or Spark) follows these steps:
+When the same query is executed against an Iceberg table, the engine (like [Dremio](/knowledge/dremio) or Spark) follows these steps:
 1.  **Read the Metadata JSON**: Identify the current snapshot and locate the Manifest List.
 2.  **Read the Manifest List**: The engine reads the single Manifest List Avro file into memory.
 3.  **Manifest Pruning ([Predicate Pushdown](/knowledge/predicate-pushdown))**: The engine evaluates the query predicate (`event_date = '2026-05-14'`) against the `partitions` array stored inside the Manifest List for *each* manifest file. 

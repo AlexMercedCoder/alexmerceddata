@@ -33,7 +33,7 @@ The domain team is responsible for ensuring their "data product" meets strict Se
 
 ### 3. Self-Serve Data Infrastructure as a Platform
 Decentralizing data engineering does not mean forcing the Marketing team to learn how to deploy [Kubernetes](/knowledge/kubernetes) clusters or configure [Apache Spark](/knowledge/apache-spark) from scratch. 
-The organization must build a centralized **Data Platform Team**. However, this team no longer builds data pipelines. Instead, they build self-serve, automated infrastructure tooling. They provide the HR or Marketing domains with push-button templates to deploy object storage buckets, Dremio query engines, and Iceberg catalogs, lowering the technical barrier to entry for domain teams.
+The organization must build a centralized **Data Platform Team**. However, this team no longer builds data pipelines. Instead, they build self-serve, automated infrastructure tooling. They provide the HR or Marketing domains with push-button templates to deploy object storage buckets, [Dremio](/knowledge/dremio) query engines, and Iceberg catalogs, lowering the technical barrier to entry for domain teams.
 
 ### 4. Federated Computational Governance
 If every domain builds its own data products independently, how do you prevent the organization from returning to the chaotic days of disconnected data silos?

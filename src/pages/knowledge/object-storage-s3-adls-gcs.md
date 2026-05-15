@@ -19,7 +19,7 @@ The solution was **Object Storage**, commercialized most famously by Amazon Web 
 
 ## The Architecture of Object Storage
 
-In an Object Storage system (like Amazon S3, Azure Data Lake Storage [ADLS], or Google Cloud Storage [GCS]), there is no folder hierarchy. The system is entirely flat. 
+In an Object Storage system (like [Amazon S3](/knowledge/amazon-s3), Azure Data Lake Storage [ADLS], or Google Cloud Storage [GCS]), there is no folder hierarchy. The system is entirely flat. 
 
 Every piece of data is treated as a discrete **Object**.
 
@@ -45,7 +45,7 @@ Instead of buying a $5 Million Teradata appliance, organizations realized they c
 
 However, Object Storage has a major limitation for databases: **It is immutable.** You cannot open a 1GB Parquet file in S3, change a single row, and save it. You must overwrite the entire 1GB file. This is why building databases directly on S3 was historically impossible.
 
-The **Open Data Lakehouse** (powered by Apache Iceberg) solved this. Iceberg acts as an intelligent abstraction layer. When a user runs a SQL `UPDATE` command, Iceberg handles the complex mechanics of rewriting the necessary Parquet files and managing the metadata, allowing high-performance query engines (like Dremio) to treat raw, immutable Object Storage exactly like a transactional relational database.
+The **Open Data Lakehouse** (powered by Apache Iceberg) solved this. Iceberg acts as an intelligent abstraction layer. When a user runs a SQL `UPDATE` command, Iceberg handles the complex mechanics of rewriting the necessary Parquet files and managing the metadata, allowing high-performance query engines (like [Dremio](/knowledge/dremio)) to treat raw, immutable Object Storage exactly like a transactional relational database.
 
 ## Conclusion
 

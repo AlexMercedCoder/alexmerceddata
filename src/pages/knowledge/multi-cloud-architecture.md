@@ -30,7 +30,7 @@ A data science team might want to use Google's Vertex AI for training large lang
 
 ## Multi-Cloud in the Data Lakehouse
 
-Executing a multi-cloud strategy for web applications (using Kubernetes) is relatively straightforward. Doing it for petabyte-scale data analytics is incredibly difficult. Data possesses "gravity"—it is heavy, expensive to move, and charges massive egress fees when it leaves a cloud provider's network.
+Executing a multi-cloud strategy for web applications (using [Kubernetes](/knowledge/kubernetes)) is relatively straightforward. Doing it for petabyte-scale data analytics is incredibly difficult. Data possesses "gravity"—it is heavy, expensive to move, and charges massive egress fees when it leaves a cloud provider's network.
 
 The **Open Data Lakehouse** is the key enabling technology for multi-cloud data architecture.
 
@@ -38,7 +38,7 @@ The **Open Data Lakehouse** is the key enabling technology for multi-cloud data 
 If an organization stores its data in a proprietary format (like Snowflake's internal storage), that data is locked to Snowflake. 
 If the organization stores its data in [Amazon S3](/knowledge/amazon-s3) using **Apache Iceberg**, the data is completely decoupled from the compute engine. 
 
-1.  The primary engine (e.g., Dremio running on AWS) queries the Iceberg data.
+1.  The primary engine (e.g., [Dremio](/knowledge/dremio) running on AWS) queries the Iceberg data.
 2.  If the organization decides to use GCP's BigQuery to run a specific machine learning model, BigQuery can natively read the exact same Iceberg tables directly from S3 (or a replicated GCP bucket). 
 By standardizing on open formats, the data becomes universally accessible to any compute engine on any cloud.
 

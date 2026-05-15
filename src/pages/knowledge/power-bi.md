@@ -15,7 +15,7 @@ Launched in 2015, Power BI is an interactive data visualization and business int
 
 ## The Architecture: Power Query and DAX
 
-While tools like Tableau focus heavily on visual exploration, Power BI focuses heavily on deep, complex data modeling, borrowing heavily from Excel's advanced features.
+While tools like [Tableau](/knowledge/tableau) focus heavily on visual exploration, Power BI focuses heavily on deep, complex data modeling, borrowing heavily from Excel's advanced features.
 
 A Power BI implementation relies on two core proprietary languages:
 
@@ -31,7 +31,7 @@ Unlike standard SQL, DAX is a functional language specifically designed to work 
 Similar to other enterprise BI tools, Power BI must manage how it interacts with underlying databases.
 
 1.  **Import Mode (The VertiPaq Engine)**: The analyst imports massive datasets directly into Power BI. Microsoft uses its proprietary **VertiPaq** in-memory columnar compression engine. The dashboard loads instantly, but the data is siloed and must be refreshed on a rigid schedule. Furthermore, massive datasets will crash the user's laptop.
-2.  **DirectQuery Mode**: The analyst leaves the data in the underlying database (e.g., Snowflake or an Iceberg Lakehouse powered by Dremio). When a user opens the dashboard, Power BI translates the DAX logic into SQL and pushes the query down to the database.
+2.  **DirectQuery Mode**: The analyst leaves the data in the underlying database (e.g., Snowflake or an Iceberg Lakehouse powered by [Dremio](/knowledge/dremio)). When a user opens the dashboard, Power BI translates the DAX logic into SQL and pushes the query down to the database.
 
 ## The Semantic Model Architecture
 

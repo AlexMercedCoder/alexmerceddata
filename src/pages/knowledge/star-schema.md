@@ -39,7 +39,7 @@ The Dimension Tables surround the Fact Table. They provide the "who, what, where
 Despite the rise of NoSQL and massive data lakes, the Star Schema remains the de facto standard for the "Gold" presentation layer in modern architectures for several reasons:
 
 ### 1. Blazing Fast Query Performance
-Because dimension tables are heavily denormalized, joining data requires very few "hops." A business query to find "Total Sales in New York during Q1 for Nike Shoes" only requires joining the central `fact_sales` table directly to three dimensions (`dim_date`, `dim_customer`, `dim_product`). Modern MPP (Massively Parallel Processing) engines like Dremio and Snowflake are heavily optimized for this specific "Star Join" execution pattern.
+Because dimension tables are heavily denormalized, joining data requires very few "hops." A business query to find "Total Sales in New York during Q1 for Nike Shoes" only requires joining the central `fact_sales` table directly to three dimensions (`dim_date`, `dim_customer`, `dim_product`). Modern MPP (Massively Parallel Processing) engines like [Dremio](/knowledge/dremio) and Snowflake are heavily optimized for this specific "Star Join" execution pattern.
 
 ### 2. Intuitive for Business Users
 A highly normalized 3NF (Third Normal Form) database is impossible for a business analyst to understand without an ER diagram. The Star Schema mirrors how humans think about business. If an analyst drops a fact table into a BI tool like [Tableau](/knowledge/tableau), they immediately see the surrounding dimensions and can easily drag-and-drop attributes to slice the data.
@@ -51,7 +51,7 @@ Adding new attributes to a Star Schema is trivial. If the marketing team decides
 
 The most common alternative to the Star Schema is the [Snowflake Schema](/knowledge/snowflake-schema). 
 
-In a Snowflake Schema, the dimension tables are partially normalized. For example, instead of storing `category_name` directly inside the `dim_product` table, the `dim_product` table has a `category_id` that links out to a separate `dim_category` table. 
+In a [Snowflake Schema](/knowledge/snowflake-schema), the dimension tables are partially normalized. For example, instead of storing `category_name` directly inside the `dim_product` table, the `dim_product` table has a `category_id` that links out to a separate `dim_category` table. 
 
 While the Snowflake schema saves a marginal amount of disk space by reducing redundancy, it violates the core goal of dimensional modeling: speed and simplicity. It forces the query engine to execute more `JOIN` operations (Snowflaking), which degrades performance. In modern cloud data warehouses and lakehouses where storage is essentially free, the denormalized simplicity of the pure Star Schema is vastly preferred.
 

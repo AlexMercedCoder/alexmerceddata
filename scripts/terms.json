@@ -705,8 +705,8 @@
     "target_cta": "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
   },
   {
-    "term": "Dremio Sonar",
-    "category": "Query Engines",
+    "term": "Dremio",
+    "category": "Data Lakehouse",
     "keywords": [
       "SQL engine",
       "lakehouse platform",

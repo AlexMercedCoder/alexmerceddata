@@ -40,7 +40,7 @@ ClickHouse absolutely dominates in **Wide-Table Analytics** and **Log/Telemetry 
 
 ## ClickHouse vs. The Lakehouse
 
-The modern Open Data Lakehouse (Iceberg + Dremio/Trino) offers extreme flexibility, separating compute and storage. ClickHouse, historically, is a tightly coupled database (it owns the compute and the storage on the same servers).
+The modern Open Data Lakehouse (Iceberg + [Dremio](/knowledge/dremio)/Trino) offers extreme flexibility, separating compute and storage. ClickHouse, historically, is a tightly coupled database (it owns the compute and the storage on the same servers).
 
 While the Lakehouse is better for complex, multi-department enterprise BI, ClickHouse is deployed when applications require raw, brute-force speed for simple aggregations over massive, immutable event streams. However, even ClickHouse is adapting, recently adding features to allow its blazing-fast compute engine to query external Apache Iceberg tables residing in [Amazon S3](/knowledge/amazon-s3).
 

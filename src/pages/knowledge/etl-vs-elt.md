@@ -32,7 +32,7 @@ Historically, on-premises Data Warehouses (like Oracle or Teradata) were incredi
 
 ## The Modern Approach: ELT (Extract, Load, Transform)
 
-The advent of cloud data warehouses (Snowflake, BigQuery) and cloud data lakehouses (Dremio, [Databricks](/knowledge/databricks)) changed the economic constraints of data architecture. Storage in cloud object stores (like S3) became effectively free, and cloud compute became instantly scalable.
+The advent of cloud data warehouses (Snowflake, BigQuery) and cloud data lakehouses ([Dremio](/knowledge/dremio), [Databricks](/knowledge/databricks)) changed the economic constraints of data architecture. Storage in cloud object stores (like S3) became effectively free, and cloud compute became instantly scalable.
 
 This gave rise to ELT.
 

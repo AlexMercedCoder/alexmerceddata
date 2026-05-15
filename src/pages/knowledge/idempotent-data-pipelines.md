@@ -38,7 +38,7 @@ Even if the pipeline is retried 10 times, Iceberg simply deletes the entire 2026
 
 ## Why Idempotency is Critical for Orchestration
 
-Modern Data Orchestrators (Airflow, [Prefect](/knowledge/prefect), Dagster) are essentially built on the assumption that your code is idempotent. 
+Modern Data Orchestrators (Airflow, [Prefect](/knowledge/prefect), [Dagster](/knowledge/dagster)) are essentially built on the assumption that your code is idempotent. 
 
 These orchestrators provide massive power through features like:
 *   **Automated Retries**: Automatically running a failed task 3 times if an API times out.
