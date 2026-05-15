@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
 	<article class="container kb-article">
-		<header class="kb-header">
+		<div class="kb-header">
 			<h1>{frontmatter.title}</h1>
 			<p class="kb-meta">Published: {new Date(frontmatter.date).toLocaleDateString()} | Author: Alex Merced</p>
 			{frontmatter.tags && (
@@ -13,7 +13,7 @@ const { frontmatter } = Astro.props;
 					{frontmatter.tags.map(tag => <span class="tag">{tag}</span>)}
 				</div>
 			)}
-		</header>
+		</div>
 		
 		<div class="kb-content">
 			<slot />
