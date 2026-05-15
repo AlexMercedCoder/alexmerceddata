@@ -136,7 +136,7 @@ const allTags = [...new Set(allKnowledgeForClient.flatMap(p => p.tags))].sort();
 	}
 </script>
 
-<style>
+<style is:global>
 	.page-header {
 		text-align: center;
 		margin-bottom: 3rem;
@@ -191,7 +191,12 @@ const allTags = [...new Set(allKnowledgeForClient.flatMap(p => p.tags))].sort();
 	.kb-card {
 		display: flex;
 		flex-direction: column;
-		text-decoration: none;
+		text-decoration: none !important;
+		color: var(--text);
+	}
+
+	.kb-card * {
+		text-decoration: none !important;
 	}
 
 	.kb-card h3 {
