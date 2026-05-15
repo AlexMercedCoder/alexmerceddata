@@ -30,25 +30,50 @@ const { title, description = "Alex Merced is a Data Lakehouse & AI thought leade
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="/og-image.jpg" />
 		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+
 		<!-- JSON-LD -->
 		<script type="application/ld+json" set:html={`{
 			"@context": "https://schema.org",
-			"@type": "Person",
-			"name": "Alex Merced",
-			"url": "https://alexmerceddata.com",
-			"sameAs": [
-				"https://youtube.com/@alexmerceddata",
-				"https://datalakehousehub.com",
-				"https://whoisalexmerced.com"
-			],
-			"jobTitle": "Data Lakehouse & AI Thought Leader",
-			"worksFor": {
-				"@type": "Organization",
-				"name": "Dremio"
-			}
+			"@graph": [
+				{
+					"@type": "WebSite",
+					"@id": "https://alexmerceddata.com/#website",
+					"url": "https://alexmerceddata.com",
+					"name": "Alex Merced Data",
+					"publisher": {
+						"@id": "https://alexmerceddata.com/#organization"
+					}
+				},
+				{
+					"@type": "Organization",
+					"@id": "https://alexmerceddata.com/#organization",
+					"name": "Alex Merced Data",
+					"url": "https://alexmerceddata.com",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://alexmerceddata.com/favicon.png"
+					}
+				},
+				{
+					"@type": "Person",
+					"@id": "https://alexmerceddata.com/#alexmerced",
+					"name": "Alex Merced",
+					"url": "https://alexmerceddata.com",
+					"sameAs": [
+						"https://youtube.com/@alexmerceddata",
+						"https://datalakehousehub.com",
+						"https://whoisalexmerced.com",
+						"https://linkedin.com/in/alexmerced"
+					],
+					"jobTitle": "Data Lakehouse & AI Thought Leader"
+				}
+			]
 		}`} />
 		
 		<title>{title} | Alex Merced Data</title>
+		<slot name="head" />
 	</head>
 	<body>
 		<header class="site-header">
