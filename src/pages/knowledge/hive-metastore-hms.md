@@ -33,7 +33,7 @@ When an analyst runs a query, the SQL engine (like Spark) talks to the HMS *firs
 The Hive Metastore was a revolutionary piece of architecture in 2010. However, in the modern era of Cloud Computing, it suffers from a fatal architectural flaw: **It tracks data at the Folder (Directory) level, not the File level.**
 
 When a query engine asks the HMS for the files in the `sales_table`, the HMS simply says, *"Look inside the `s3://company-data/sales/` directory."* 
-The query engine then has to ask Amazon S3, *"List every single file inside this directory."*
+The query engine then has to ask [Amazon S3](/knowledge/amazon-s3), *"List every single file inside this directory."*
 
 This causes two massive problems:
 1.  **The "List" Bottleneck**: If the table has 500,000 files, asking S3 to list all of them takes agonizingly long. The query engine hangs while it waits for the list operation to finish.
@@ -41,7 +41,7 @@ This causes two massive problems:
 
 ## The Evolution: Apache Iceberg
 
-Because of the severe limitations of the Hive Metastore's directory-based tracking, the industry has aggressively moved toward modern [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**. 
+Because of the severe limitations of the Hive Metastore's directory-based tracking, the industry has aggressively moved toward modern [Open Table Formats](/knowledge/open-table-formats) like **[Apache Iceberg](/knowledge/apache-iceberg)**. 
 
 Iceberg replaces the directory-level tracking of the HMS with strict, cryptographic **File-Level Tracking**. Iceberg keeps a manifest file that explicitly lists the exact name and path of *every single file* in the table. This completely eliminates the slow S3 "List" operations and provides mathematically guaranteed ACID transactions on the Data Lake. 
 

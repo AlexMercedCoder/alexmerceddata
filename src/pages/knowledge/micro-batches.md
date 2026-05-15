@@ -24,7 +24,7 @@ Spark's core architecture was built explicitly for massive, parallel batch proce
 1.  **Ingestion**: A system like [Apache Kafka](/knowledge/apache-kafka) continuously receives millions of raw events (e.g., user clicks on a website).
 2.  **Chunking**: The Spark Streaming engine connects to Kafka. Instead of processing each click the millisecond it arrives, Spark waits for a predefined interval—the "Batch Interval"—say, 5 seconds.
 3.  **Execution**: After 5 seconds, Spark takes all the events that arrived within that window, packages them into a small, bounded dataset (a Resilient Distributed Dataset, or RDD), and fires off a rapid, highly parallel batch job to process them.
-4.  **Output**: The results of that 5-second chunk are appended to a downstream database or Data Lakehouse table. The system then immediately moves on to processing the next 5-second chunk.
+4.  **Output**: The results of that 5-second chunk are appended to a downstream database or [Data Lakehouse](/knowledge/data-lakehouse) table. The system then immediately moves on to processing the next 5-second chunk.
 
 ## The Advantages of Micro-Batching
 
@@ -42,7 +42,7 @@ Because micro-batches process bounded chunks of data, tracking completion is eas
 
 ## The Modern Lakehouse and Micro-Batches
 
-The advent of the Open Data Lakehouse (powered by formats like Apache Iceberg) has breathed new life into the micro-batch pattern.
+The advent of the Open Data Lakehouse (powered by formats like [Apache Iceberg](/knowledge/apache-iceberg)) has breathed new life into the micro-batch pattern.
 
 Historically, appending a tiny micro-batch to a data lake every 5 seconds resulted in the "Small File Problem"—thousands of tiny Parquet files that brought query engines to a halt.
 Modern table formats solve this. Iceberg allows a Spark micro-batch to safely commit data every minute. Iceberg manages the transactional metadata, while background compaction services seamlessly run behind the scenes, combining the thousands of tiny micro-batch files into large, read-optimized files without interrupting the live ingestion.

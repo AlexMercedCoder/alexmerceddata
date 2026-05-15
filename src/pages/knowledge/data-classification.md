@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to Data Classification
 
-In a massive enterprise Data Lakehouse containing petabytes of data, not all rows and columns are created equal. 
+In a massive enterprise [Data Lakehouse](/knowledge/data-lakehouse) containing petabytes of data, not all rows and columns are created equal. 
 
 If a hacker steals a table containing `website_click_coordinates`, it is a minor nuisance. If a hacker steals a table containing `customer_credit_card_numbers`, the company will face catastrophic lawsuits, regulatory fines, and permanent brand damage. Furthermore, internal employees (like junior data analysts) should have free access to the click data, but should be strictly blocked from viewing the credit card data.
 
@@ -46,7 +46,7 @@ The most dangerous data in the enterprise. Exposure of this data violates federa
 Historically, Data Classification was an impossible manual task. A data steward had to look at every single table in a 10,000-table database and manually type "Confidential" next to the columns.
 
 Today, classification is heavily automated using **[Active Metadata](/knowledge/active-metadata)** platforms and AI.
-Tools like BigID, Securiti.ai, or Collibra actively scan the Apache Iceberg tables in [Amazon S3](/knowledge/amazon-s3). They use Machine Learning and Regular Expressions to analyze the actual data in the columns. 
+Tools like BigID, Securiti.ai, or Collibra actively scan the [Apache Iceberg](/knowledge/apache-iceberg) tables in [Amazon S3](/knowledge/amazon-s3). They use Machine Learning and Regular Expressions to analyze the actual data in the columns. 
 If the ML model detects a column filled with 16-digit numbers that pass the Luhn algorithm (the mathematical formula for credit cards), it autonomously applies the `PCI_RESTRICTED` tag to that column in the centralized Data Catalog.
 
 ## Driving Policy (Tag-Based Security)

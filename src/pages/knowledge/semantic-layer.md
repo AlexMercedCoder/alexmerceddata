@@ -33,7 +33,7 @@ When a user queries "Customer," the Semantic Layer automatically handles the com
 Instead of defining the formula for "Active Customer" inside a specific [Tableau](/knowledge/tableau) workbook, the data team writes the definition inside the Semantic Layer using code (often integrated with tools like dbt or Cube).
 The Semantic Layer declares: `Active Customer = User who logged in within the last 30 days and spent > $100`.
 
-Now, the Semantic Layer acts as a "Headless BI" engine. When Tableau, [Power BI](/knowledge/power-bi), or a custom Python script asks for "Active Customers," they send an API or SQL request to the Semantic Layer. The Semantic Layer executes the centrally-defined formula and returns the exact same number to every single tool.
+Now, the Semantic Layer acts as a "Headless BI" engine. When [Tableau](/knowledge/tableau), [Power BI](/knowledge/power-bi), or a custom Python script asks for "Active Customers," they send an API or SQL request to the Semantic Layer. The Semantic Layer executes the centrally-defined formula and returns the exact same number to every single tool.
 
 ## The Architecture of a Semantic Layer
 
@@ -41,7 +41,7 @@ Modern Semantic Layers (such as [Dremio](/knowledge/dremio)'s integrated Semanti
 
 1.  **Modeling (The Logic)**: Using SQL, YAML, or proprietary UI to define dimensions, measures, and the relationships (joins) between them.
 2.  **Access (The API/SQL Endpoint)**: Exposing the models so downstream tools can easily query them. Modern layers often expose REST APIs, GraphQL, or present themselves as standard PostgreSQL databases to seamlessly trick BI tools into connecting.
-3.  **Caching and Acceleration**: Because the Semantic Layer intercepts all queries, it is the perfect place to optimize performance. Tools like Dremio use "Data Reflections" to automatically pre-aggregate common metrics, ensuring that when the CEO asks for total revenue, the Semantic Layer returns the answer in milliseconds without scanning the underlying 10-Terabyte table.
+3.  **Caching and Acceleration**: Because the Semantic Layer intercepts all queries, it is the perfect place to optimize performance. Tools like [Dremio](/knowledge/dremio) use "Data Reflections" to automatically pre-aggregate common metrics, ensuring that when the CEO asks for total revenue, the Semantic Layer returns the answer in milliseconds without scanning the underlying 10-Terabyte table.
 
 ## The Rise of AI and the Semantic Layer
 

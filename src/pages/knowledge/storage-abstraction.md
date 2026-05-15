@@ -27,7 +27,7 @@ While not exclusively a storage abstraction, **[Apache Arrow](/knowledge/apache-
 
 ## The Role of Open Table Formats
 
-The ultimate manifestation of Storage Abstraction in the modern data ecosystem is the **Open Table Format**, such as **Apache Iceberg**.
+The ultimate manifestation of Storage Abstraction in the modern data ecosystem is the **Open Table Format**, such as **[Apache Iceberg](/knowledge/apache-iceberg)**.
 
 Iceberg acts as the perfect metadata abstraction layer between the physical storage (S3 buckets) and the compute engine (Trino, Snowflake, Spark).
 1.  **The Engine's View**: When a user queries Trino (`SELECT * FROM sales`), Trino doesn't scan S3. Trino asks the Iceberg Catalog for the table.

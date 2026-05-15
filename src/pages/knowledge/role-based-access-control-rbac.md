@@ -46,7 +46,7 @@ When John moves to the HR department, the DBA simply removes him from the `marke
 
 ## Implementing RBAC in the Data Lakehouse
 
-Applying RBAC to a single PostgreSQL database is easy. Applying RBAC to a decoupled Data Lakehouse—where data sits in [Amazon S3](/knowledge/amazon-s3) and is queried by five different compute engines (Spark, [Dremio](/knowledge/dremio), Flink, Trino, Snowflake)—is incredibly complex.
+Applying RBAC to a single PostgreSQL database is easy. Applying RBAC to a decoupled [Data Lakehouse](/knowledge/data-lakehouse)—where data sits in [Amazon S3](/knowledge/amazon-s3) and is queried by five different compute engines (Spark, [Dremio](/knowledge/dremio), Flink, Trino, Snowflake)—is incredibly complex.
 
 If you define an RBAC policy inside [Apache Spark](/knowledge/apache-spark), that policy is completely useless if the user logs into Trino to query the same S3 bucket.
 
@@ -56,7 +56,7 @@ To secure a lakehouse, RBAC must be lifted out of the compute engines and pushed
 Tools like **[Apache Polaris](/knowledge/apache-polaris)** (which implements the Iceberg REST Catalog specification) solve this by acting as the unified gatekeeper. 
 
 1.  **Centralized Definition**: The organization defines all Roles and Privileges directly inside [Apache Polaris](/knowledge/apache-polaris).
-2.  **Engine Independence**: When a user logs into Dremio and runs a `SELECT` query, Dremio sends an API request to Polaris asking for the physical location of the Iceberg data files.
+2.  **Engine Independence**: When a user logs into [Dremio](/knowledge/dremio) and runs a `SELECT` query, Dremio sends an API request to Polaris asking for the physical location of the Iceberg data files.
 3.  **Authentication & Authorization**: Polaris intercepts the request, checks the user's credentials against an Identity Provider (like Okta or Azure AD), evaluates the user's Roles, and checks if those roles have `SELECT` privileges on the requested Iceberg table.
 4.  **Credential Vending**: If authorized, Polaris does not just say "yes". It generates short-lived, temporary AWS STS credentials scoped *only* to the specific S3 prefix where that table's files reside, and hands those temporary credentials back to Dremio.
 
@@ -74,4 +74,4 @@ RBAC can restrict access to specific columns. If a `customer_support` role queri
 
 ## Conclusion
 
-Role-Based Access Control is the bedrock of enterprise data security. By decoupling users from permissions through the abstraction of logical business roles, RBAC drastically reduces administrative overhead and eliminates the risk of creeping privileges. When centralized within a modern open catalog like Apache Polaris, RBAC enables the decoupled Data Lakehouse to meet the strictest regulatory compliance frameworks while remaining entirely engine-agnostic.
+Role-Based Access Control is the bedrock of enterprise data security. By decoupling users from permissions through the abstraction of logical business roles, RBAC drastically reduces administrative overhead and eliminates the risk of creeping privileges. When centralized within a modern open catalog like [Apache Polaris](/knowledge/apache-polaris), RBAC enables the decoupled Data Lakehouse to meet the strictest regulatory compliance frameworks while remaining entirely engine-agnostic.

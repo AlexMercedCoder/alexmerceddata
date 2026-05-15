@@ -23,7 +23,7 @@ Predictive Analytics relies on the fundamental assumption that history repeats i
 
 ### The Training Phase
 A telecommunications company wants to predict "Customer Churn" (when a user cancels their cell phone plan). 
-The data scientists gather 5 years of historical data from the **Data Lakehouse**. This data contains millions of rows of users who stayed, and users who canceled. It includes variables like: *Age, Monthly Bill Amount, Number of Customer Service Calls, and Data Usage*.
+The data scientists gather 5 years of historical data from the **[Data Lakehouse](/knowledge/data-lakehouse)**. This data contains millions of rows of users who stayed, and users who canceled. It includes variables like: *Age, Monthly Bill Amount, Number of Customer Service Calls, and Data Usage*.
 
 They feed this historical data into a Machine Learning algorithm (like an XGBoost Decision Tree). The algorithm mathematically analyzes the data and discovers hidden correlations. It might learn that: *If a user's monthly bill increases by 15%, AND they call customer service more than 3 times in one week, they have a 92% probability of canceling.*
 

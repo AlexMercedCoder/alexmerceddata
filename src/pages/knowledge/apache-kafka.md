@@ -36,7 +36,7 @@ Kafka operates on a Publisher/Subscriber model, which fundamentally changes how 
 2.  **The Consumers (Subscribers)**: Multiple independent systems can "subscribe" to the `Purchases` topic.
     *   The **Inventory System** reads the event and deducts 1 coffee bean.
     *   The **Fraud Detection AI** reads the *exact same event* a millisecond later to ensure the credit card isn't stolen.
-    *   The **Data Lake Ingestion Pipeline** reads the event to write it into an Apache Iceberg table for long-term analytics.
+    *   The **Data Lake Ingestion Pipeline** reads the event to write it into an [Apache Iceberg](/knowledge/apache-iceberg) table for long-term analytics.
 
 Crucially, Kafka remembers the exact location (the **Offset**) where each Consumer stopped reading. If the Inventory System crashes and is offline for an hour, it doesn't lose any data. When it reboots, it simply asks Kafka for all the messages it missed since it died.
 

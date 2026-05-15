@@ -19,7 +19,7 @@ This requirement for absolute traceability is satisfied by two closely related, 
 
 **[Data Lineage](/knowledge/data-lineage)** answers the question: *"How did the data get here, and what happened to it along the way?"*
 
-Data Lineage focuses on the physical journey and transformation of data through the enterprise architecture. It is usually visualized as a complex, branching graph (a Directed Acyclic Graph, or DAG).
+[Data Lineage](/knowledge/data-lineage) focuses on the physical journey and transformation of data through the enterprise architecture. It is usually visualized as a complex, branching graph (a Directed Acyclic Graph, or DAG).
 
 If you look at the lineage of a "Total Revenue" column in a dashboard, the graph will show:
 1.  **The Source**: It originated in the `Salesforce.Orders` table.
@@ -51,7 +51,7 @@ Historically, lineage and provenance were tracked manually in massive Excel spre
 Today, tracking is entirely automated using **[Active Metadata](/knowledge/active-metadata)** tools (like Alation, Collibra, or open-source tools like DataHub and Marquez).
 As data moves through the modern Lakehouse, the orchestration tools (Airflow) and transformation tools (dbt) automatically emit metadata events. The governance platform listens to these events, dynamically draws the lineage maps, and updates the provenance ledgers in real-time.
 
-Furthermore, [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg** provide foundational provenance by maintaining a strict, immutable history (Snapshots) of every single change made to the physical data files.
+Furthermore, [Open Table Formats](/knowledge/open-table-formats) like **[Apache Iceberg](/knowledge/apache-iceberg)** provide foundational provenance by maintaining a strict, immutable history (Snapshots) of every single change made to the physical data files.
 
 ## Conclusion
 

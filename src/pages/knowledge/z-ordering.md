@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Z-Ordering
 
-To achieve maximum query performance in a Data Lakehouse, the golden rule is simple: **Read less data.** Query engines achieve this using [Predicate Pushdown](/knowledge/predicate-pushdown)—checking the min/max statistics in a Parquet file's metadata to see if the file contains relevant data. 
+To achieve maximum query performance in a [Data Lakehouse](/knowledge/data-lakehouse), the golden rule is simple: **Read less data.** Query engines achieve this using [Predicate Pushdown](/knowledge/predicate-pushdown)—checking the min/max statistics in a Parquet file's metadata to see if the file contains relevant data. 
 
 However, min/max statistics only work if the data inside the files is physically sorted. 
 
@@ -36,7 +36,7 @@ The result is data clustering that is evenly balanced across multiple columns.
 
 ## The Impact on Query Performance
 
-When a data engineering team applies Z-Ordering to a massive Lakehouse table (supported by formats like [Delta Lake](/knowledge/delta-lake) and Apache Iceberg), the impact on performance is profound.
+When a data engineering team applies Z-Ordering to a massive Lakehouse table (supported by formats like [Delta Lake](/knowledge/delta-lake) and [Apache Iceberg](/knowledge/apache-iceberg)), the impact on performance is profound.
 
 Because the data is clustered equally across the chosen dimensions, the min/max statistics for *all* the Z-Ordered columns become incredibly tight and highly effective.
 
@@ -54,4 +54,4 @@ While powerful, Z-Ordering is computationally expensive to execute. Re-clusterin
 
 ## Conclusion
 
-Z-Ordering breaks the fundamental limitation of linear data sorting. By utilizing space-filling curves to physically co-locate related data points across multiple dimensions, it supercharges the effectiveness of [Predicate Pushdown](/knowledge/predicate-pushdown). For Data Lakehouses dealing with complex, unpredictable ad-hoc queries spanning multiple variables, Z-Ordering transforms sluggish, full-table scans into razor-sharp, millisecond retrievals.
+Z-Ordering breaks the fundamental limitation of linear data sorting. By utilizing space-filling curves to physically co-locate related data points across multiple dimensions, it supercharges the effectiveness of [Predicate Pushdown](/knowledge/predicate-pushdown). For [Data Lakehouses](/knowledge/data-lakehouse) dealing with complex, unpredictable ad-hoc queries spanning multiple variables, Z-Ordering transforms sluggish, full-table scans into razor-sharp, millisecond retrievals.

@@ -13,7 +13,7 @@ For decades, the data industry operated on a fundamental compromise: if you want
 
 **Dremio** was built to eliminate this compromise. 
 
-Dremio is a unified, open data lakehouse platform explicitly designed around the philosophy of **"Query, Don't Move."** It allows organizations to leave their data exactly where it is (in cheap cloud object storage like [Amazon S3](/knowledge/amazon-s3) or Azure ADLS, formatted as open standards like Apache Iceberg or Parquet) and brings the analytical engine directly to the data. It delivers the interactive, sub-second query performance of a proprietary data warehouse without the ETL tax.
+Dremio is a unified, open [data lakehouse](/knowledge/data-lakehouse) platform explicitly designed around the philosophy of **"Query, Don't Move."** It allows organizations to leave their data exactly where it is (in cheap cloud object storage like [Amazon S3](/knowledge/amazon-s3) or Azure ADLS, formatted as open standards like [Apache Iceberg](/knowledge/apache-iceberg) or Parquet) and brings the analytical engine directly to the data. It delivers the interactive, sub-second query performance of a proprietary data warehouse without the ETL tax.
 
 ## The Architecture of Dremio
 
@@ -42,4 +42,4 @@ They create a folder structure in Dremio that looks like `Finance -> Q3_Reports 
 
 ## Conclusion
 
-Dremio represents the modern realization of the Open Data Lakehouse. By combining a Universal Semantic Layer with the blistering speed of Apache Arrow and Data Reflections, Dremio proves that organizations no longer need to pay exorbitant fees to proprietary data warehouses or rely on brittle ETL pipelines. It empowers companies to keep their data in open, vendor-neutral formats while democratizing sub-second analytical access to the entire enterprise.
+Dremio represents the modern realization of the Open [Data Lakehouse](/knowledge/data-lakehouse). By combining a Universal [Semantic Layer](/knowledge/semantic-layer) with the blistering speed of [Apache Arrow](/knowledge/apache-arrow) and Data Reflections, Dremio proves that organizations no longer need to pay exorbitant fees to proprietary data warehouses or rely on brittle ETL pipelines. It empowers companies to keep their data in open, vendor-neutral formats while democratizing sub-second analytical access to the entire enterprise.

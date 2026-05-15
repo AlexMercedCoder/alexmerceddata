@@ -13,7 +13,7 @@ In software engineering, Git revolutionized how developers work. Before Git, mul
 
 For decades, Data Engineering completely lacked this capability. If two data engineers ran ETL pipelines against the same Data Lake simultaneously, they often corrupted the data. If a pipeline pushed bad data to production, the only way to fix it was to write complex SQL scripts to manually reverse the damage.
 
-**Project Nessie** is the open-source solution to this problem. Often described as "Git for Data," Nessie is a transactional Data Catalog designed specifically for Data Lakehouses (specifically those using Apache Iceberg). It brings the exact same semantics of Git (Branching, Merging, Tagging, and Reverting) directly to petabyte-scale data tables.
+**Project Nessie** is the open-source solution to this problem. Often described as "Git for Data," Nessie is a transactional Data Catalog designed specifically for [Data Lakehouses](/knowledge/data-lakehouse) (specifically those using [Apache Iceberg](/knowledge/apache-iceberg)). It brings the exact same semantics of Git (Branching, Merging, Tagging, and Reverting) directly to petabyte-scale data tables.
 
 ## How Nessie Works
 
@@ -48,4 +48,4 @@ Nessie was built specifically to replace the aging HMS. By utilizing a modern, G
 
 ## Conclusion
 
-Project Nessie fundamentally shifts the paradigm of [DataOps](/knowledge/dataops). By elevating data management to the same rigorous, version-controlled standard as software application code, it eliminates the fear of deploying changes to the data lakehouse. It empowers data teams to experiment freely in isolated branches, test their data mathematically, and execute massive, instantaneous multi-table deployments with the absolute confidence that they can revert any mistake in milliseconds.
+Project Nessie fundamentally shifts the paradigm of [DataOps](/knowledge/dataops). By elevating data management to the same rigorous, version-controlled standard as software application code, it eliminates the fear of deploying changes to the [data lakehouse](/knowledge/data-lakehouse). It empowers data teams to experiment freely in isolated branches, test their data mathematically, and execute massive, instantaneous multi-table deployments with the absolute confidence that they can revert any mistake in milliseconds.

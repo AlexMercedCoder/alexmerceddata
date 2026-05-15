@@ -43,11 +43,11 @@ By eliminating 4,095 function calls and perfectly utilizing the CPU cache, Vecto
 
 ## Impact on the Data Ecosystem
 
-Vectorized execution is the invisible technology that makes the modern Data Lakehouse viable.
+Vectorized execution is the invisible technology that makes the modern [Data Lakehouse](/knowledge/data-lakehouse) viable.
 
 1.  **Synergy with Parquet**: [Apache Parquet](/knowledge/apache-parquet) is a columnar storage format on disk. When a Vectorized engine reads a Parquet file, it does not need to parse the data into rows. It simply copies the column straight from the disk into a vectorized [Apache Arrow](/knowledge/apache-arrow) memory buffer and immediately executes SIMD mathematics on it. The synergy between columnar storage and vectorized compute is the core of modern performance.
-2.  **Engine Evolution**: Legacy Hadoop engines (like [Apache Hive](/knowledge/apache-hive)) originally used row-at-a-time processing, which is why they were so slow. Modern engines like Trino, Dremio, and [Apache Spark](/knowledge/apache-spark) (via its Photon engine or DataFusion) have completely rebuilt their internal architectures around Vectorized Execution.
-3.  **Data Science Acceleration**: The transition from legacy Python libraries (which process data row-by-row) to modern libraries like **Polars** (which uses Apache Arrow and vectorized Rust execution) has brought this exact same 100x speed increase to laptops and local data science workflows.
+2.  **Engine Evolution**: Legacy Hadoop engines (like [Apache Hive](/knowledge/apache-hive)) originally used row-at-a-time processing, which is why they were so slow. Modern engines like Trino, [Dremio](/knowledge/dremio), and [Apache Spark](/knowledge/apache-spark) (via its Photon engine or DataFusion) have completely rebuilt their internal architectures around Vectorized Execution.
+3.  **Data Science Acceleration**: The transition from legacy Python libraries (which process data row-by-row) to modern libraries like **Polars** (which uses [Apache Arrow](/knowledge/apache-arrow) and vectorized Rust execution) has brought this exact same 100x speed increase to laptops and local data science workflows.
 
 ## Conclusion
 

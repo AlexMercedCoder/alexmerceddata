@@ -51,7 +51,7 @@ When submitted, Flink does not run this query once and stop. It runs continuousl
 
 ## Flink in the Data Lakehouse
 
-Historically, Flink was used to feed specialized real-time databases (like [Apache Druid](/knowledge/apache-druid)). Today, Flink is heavily integrated with [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**.
+Historically, Flink was used to feed specialized real-time databases (like [Apache Druid](/knowledge/apache-druid)). Today, Flink is heavily integrated with [Open Table Formats](/knowledge/open-table-formats) like **[Apache Iceberg](/knowledge/apache-iceberg)**.
 Flink is the engine of choice for continuous, real-time ingestion into the Lakehouse. It can read an unbounded stream of CDC (Change Data Capture) updates from Kafka and execute native row-level upserts into an Iceberg table, ensuring the lakehouse is always a perfect, sub-second reflection of the operational database.
 
 ## Conclusion

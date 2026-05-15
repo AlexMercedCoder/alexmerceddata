@@ -11,10 +11,10 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 In a traditional relational database (like PostgreSQL), if you want to update a single row, the database simply goes to the specific sector on the hard drive, deletes the old data, and overwrites it with the new data.
 
-In the Data Lakehouse, this is physically impossible. Data is stored in massive (e.g., 500MB) **[Apache Parquet](/knowledge/apache-parquet)** files sitting in [Amazon S3](/knowledge/amazon-s3). Cloud object storage is **immutable**. You cannot open a 500MB file, change a single row, and save it. 
+In the [Data Lakehouse](/knowledge/data-lakehouse), this is physically impossible. Data is stored in massive (e.g., 500MB) **[Apache Parquet](/knowledge/apache-parquet)** files sitting in [Amazon S3](/knowledge/amazon-s3). Cloud object storage is **immutable**. You cannot open a 500MB file, change a single row, and save it. 
 
 So, how does a Data Lakehouse handle `UPDATE` or `DELETE` SQL commands? 
-Apache Iceberg solves this using two distinct mathematical strategies. The first, and most common, is **Copy-on-Write (CoW)**.
+[Apache Iceberg](/knowledge/apache-iceberg) solves this using two distinct mathematical strategies. The first, and most common, is **Copy-on-Write (CoW)**.
 
 ## How Copy-on-Write Works
 

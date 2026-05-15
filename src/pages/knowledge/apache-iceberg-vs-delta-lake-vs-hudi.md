@@ -15,21 +15,21 @@ Open table formats solve this problem. They act as an intelligent metadata layer
 
 While the concept of [Open Table Formats](/knowledge/open-table-formats) is universally accepted as the future of data engineering, the market has standardized around three competing projects: [Apache Iceberg](/knowledge/apache-iceberg), [Delta Lake](/knowledge/delta-lake), and [Apache Hudi](/knowledge/apache-hudi). 
 
-All three formats successfully deliver the core requirements of a data lakehouse. They all provide ACID compliance, they all support massive analytical workloads, and they all prevent vendor lock in by storing data in open standards. However, because they were developed by different organizations to solve slightly different engineering challenges, their underlying architectures and optimized workloads diverge significantly.
+All three formats successfully deliver the core requirements of a [data lakehouse](/knowledge/data-lakehouse). They all provide ACID compliance, they all support massive analytical workloads, and they all prevent vendor lock in by storing data in open standards. However, because they were developed by different organizations to solve slightly different engineering challenges, their underlying architectures and optimized workloads diverge significantly.
 
-This guide provides a rigorous, technical comparison of Apache Iceberg, Delta Lake, and Apache Hudi. It explores how each format manages state, how they handle updates and deletes, their interoperability with the broader data ecosystem, and a definitive framework for deciding which format is correct for your specific workloads.
+This guide provides a rigorous, technical comparison of [Apache Iceberg](/knowledge/apache-iceberg), [Delta Lake](/knowledge/delta-lake), and [Apache Hudi](/knowledge/apache-hudi). It explores how each format manages state, how they handle updates and deletes, their interoperability with the broader data ecosystem, and a definitive framework for deciding which format is correct for your specific workloads.
 
 ## The Origins and Philosophies
 
 To understand the technical differences between these formats, it is essential to understand where they came from and the specific problems their creators were trying to solve.
 
 ### Apache Iceberg
-Apache Iceberg was originally developed by Netflix. Netflix was running a massive cloud data ecosystem based on Apache Hive. As their data scaled into the petabytes, they encountered catastrophic performance issues related to cloud object storage. Finding data required executing O(N) directory listing operations, which were incredibly slow and frequently timed out. Concurrent writes often resulted in corrupted data because Hive lacked transactional guarantees. 
+Apache Iceberg was originally developed by Netflix. Netflix was running a massive cloud data ecosystem based on [Apache Hive](/knowledge/apache-hive). As their data scaled into the petabytes, they encountered catastrophic performance issues related to cloud object storage. Finding data required executing O(N) directory listing operations, which were incredibly slow and frequently timed out. Concurrent writes often resulted in corrupted data because Hive lacked transactional guarantees. 
 
 Iceberg was built from the ground up to solve the scalability limits of massive analytical tables. Its core philosophy is the complete decoupling of logical data definitions from physical file layouts. It tracks data at the individual file level using a rigid, hierarchical metadata tree. Because it was not built to favor any specific compute engine, Iceberg is fundamentally engine agnostic.
 
 ### Delta Lake
-Delta Lake was created by Databricks, the company founded by the original creators of Apache Spark. Databricks recognized that their customers were struggling to build reliable ETL pipelines on data lakes because failed Spark jobs would leave partial data behind, requiring massive manual cleanup.
+Delta Lake was created by [Databricks](/knowledge/databricks), the company founded by the original creators of [Apache Spark](/knowledge/apache-spark). Databricks recognized that their customers were struggling to build reliable ETL pipelines on data lakes because failed Spark jobs would leave partial data behind, requiring massive manual cleanup.
 
 Delta Lake was designed to bring reliability to data lakes specifically within the Spark ecosystem. Its philosophy is heavily influenced by traditional database design, utilizing a centralized, chronologically ordered transaction log to track state. While it is now a fully open source project under the Linux Foundation, it maintains an incredibly deep, highly optimized integration with the Databricks platform and the Apache Spark engine.
 
@@ -118,7 +118,7 @@ Selecting the correct format depends entirely on your existing infrastructure, y
 3.  You require advanced, automated table services running continuously in the background to handle compaction and indexing for real time data.
 
 ### Choose Apache Iceberg If:
-1.  Your goal is absolute vendor neutrality and the ability to seamlessly swap compute engines (e.g., using Spark for ETL, Dremio for BI, and Snowflake for ad hoc analysis) on the exact same dataset.
+1.  Your goal is absolute vendor neutrality and the ability to seamlessly swap compute engines (e.g., using Spark for ETL, [Dremio](/knowledge/dremio) for BI, and Snowflake for ad hoc analysis) on the exact same dataset.
 2.  You have massive analytical tables (petabyte scale) where directory listing performance and query planning times are the primary bottlenecks.
 3.  You require complex schema evolution and the ability to change partition strategies dynamically without rewriting historical data.
 4.  You are building an [Agentic Lakehouse](/knowledge/agentic-lakehouse) that requires the strictest levels of metadata governance, isolation, and engine interoperability to support autonomous AI agents.

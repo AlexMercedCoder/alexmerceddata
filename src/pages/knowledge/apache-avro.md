@@ -60,7 +60,7 @@ Avro and Parquet are not competitors; they are complementary tools used at diffe
 1.  **Use Avro for the "Write-Heavy" Ingestion Layer**: 
     Because Avro is row-based, it is incredibly fast at writing single records. It is the de facto standard for serializing messages in **[Apache Kafka](/knowledge/apache-kafka)**. When a microservice generates an event, it encodes it in Avro and publishes it to Kafka.
 2.  **Use Parquet for the "Read-Heavy" Analytical Layer**:
-    When the streaming data finally lands in the Data Lakehouse (often via Apache Iceberg), it is converted from Avro into Parquet. Parquet's columnar structure is terrible for single-row writes, but it is exponentially faster for executing complex SQL aggregations over billions of rows.
+    When the streaming data finally lands in the [Data Lakehouse](/knowledge/data-lakehouse) (often via [Apache Iceberg](/knowledge/apache-iceberg)), it is converted from Avro into Parquet. Parquet's columnar structure is terrible for single-row writes, but it is exponentially faster for executing complex SQL aggregations over billions of rows.
 
 ## Conclusion
 

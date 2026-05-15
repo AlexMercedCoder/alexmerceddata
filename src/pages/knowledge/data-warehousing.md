@@ -33,7 +33,7 @@ Early data warehouses (Teradata, Oracle Exadata) were physical hardware applianc
 Companies like **Snowflake**, **Amazon Redshift**, and **Google BigQuery** revolutionized the industry. They moved the warehouse to the cloud and **Decoupled Compute from Storage**. Organizations could store petabytes of data on cheap cloud storage and instantly spin up massive compute clusters just for the 10 minutes required to run a heavy query.
 
 ### Generation 3: The Threat of the Lakehouse (2020s)
-While Cloud Data Warehouses are phenomenal for structured BI, they struggle with unstructured AI data (images, text) and lock customers into proprietary, vendor-specific storage formats. This has led to the rise of the **Open Data Lakehouse** (Apache Iceberg). Lakehouses provide the high-speed SQL analytics of a Data Warehouse, but store the data in open-source formats on raw S3 storage, threatening the dominance of proprietary data warehouses.
+While Cloud Data Warehouses are phenomenal for structured BI, they struggle with unstructured AI data (images, text) and lock customers into proprietary, vendor-specific storage formats. This has led to the rise of the **Open [Data Lakehouse](/knowledge/data-lakehouse)** ([Apache Iceberg](/knowledge/apache-iceberg)). Lakehouses provide the high-speed SQL analytics of a Data Warehouse, but store the data in open-source formats on raw S3 storage, threatening the dominance of proprietary data warehouses.
 
 ## The Architecture: Dimensional Modeling
 

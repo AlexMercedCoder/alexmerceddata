@@ -65,7 +65,7 @@ Historically, data engineers had to build brutal ETL pipelines to "shred" or "fl
 
 ## Modern Solutions in the Lakehouse
 
-Modern Data Lakehouse engines have largely solved the JSON problem.
+Modern [Data Lakehouse](/knowledge/data-lakehouse) engines have largely solved the JSON problem.
 
 1.  **Native JSON Support**: Engines like [Dremio](/knowledge/dremio), Trino, and Snowflake now feature native functions to query JSON directly. An analyst can write SQL like `SELECT raw_data:address.city FROM logs` to instantly extract the deeply nested value without flattening it.
 2.  **Columnar JSON**: Because standard JSON text files are terrible for analytical scanning, tools often convert JSON into **[Apache Parquet](/knowledge/apache-parquet)**. Parquet is capable of preserving the nested, semi-structured hierarchy of the JSON while applying columnar compression to it, providing the flexibility of JSON with the analytical speed of a relational database.

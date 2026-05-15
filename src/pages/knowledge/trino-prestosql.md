@@ -13,7 +13,7 @@ In the early 2010s, Facebook possessed what was likely the largest Hadoop data w
 
 To solve this, a team of engineers at Facebook (including Martin Traverso, Dain Sundstrom, and David Phillips) built **Presto**—a distributed SQL query engine designed for blazing-fast, interactive analytics. 
 
-In 2018, the original creators left Facebook and forked the project, rebranding it as **Trino** (formerly PrestoSQL). Today, Trino is a fiercely independent open-source project and one of the most powerful and widely adopted query engines in the modern Data Lakehouse ecosystem.
+In 2018, the original creators left Facebook and forked the project, rebranding it as **Trino** (formerly PrestoSQL). Today, Trino is a fiercely independent open-source project and one of the most powerful and widely adopted query engines in the modern [Data Lakehouse](/knowledge/data-lakehouse) ecosystem.
 
 ## The Architecture of Trino
 
@@ -27,7 +27,7 @@ A Trino cluster consists of two types of nodes:
 
 ### The Connector Architecture
 The genius of Trino lies in its Connector API. Because Trino separates compute from storage, it uses "Connectors" to talk to the outside world. 
-Trino has native connectors for Apache Iceberg, [Amazon S3](/knowledge/amazon-s3), PostgreSQL, MySQL, Cassandra, Elasticsearch, and dozens of others. 
+Trino has native connectors for [Apache Iceberg](/knowledge/apache-iceberg), [Amazon S3](/knowledge/amazon-s3), PostgreSQL, MySQL, Cassandra, Elasticsearch, and dozens of others. 
 
 When a Worker node needs data, it uses the specific Connector to push down filters and retrieve data from the source system. This abstraction allows Trino to act as a universal SQL translator.
 
@@ -48,7 +48,7 @@ Trino pushes the Oracle query down to Oracle, pushes the S3 query down to the Ic
 
 ## Trino in the Modern Lakehouse
 
-While federated querying across databases is a great feature, Trino's primary use case today is acting as the massive SQL engine powering Open Data Lakehouses.
+While federated querying across databases is a great feature, Trino's primary use case today is acting as the massive SQL engine powering Open [Data Lakehouses](/knowledge/data-lakehouse).
 
 When paired with an open table format like **Apache Iceberg**, Trino transforms a cheap [Amazon S3](/knowledge/amazon-s3) bucket into a fully functional, high-speed data warehouse.
 *   **Performance**: Trino is heavily optimized for reading [Apache Parquet](/knowledge/apache-parquet) and ORC files. It utilizes advanced vectorized execution and highly tuned [Predicate Pushdown](/knowledge/predicate-pushdown) to skip irrelevant files.

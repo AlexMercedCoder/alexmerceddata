@@ -20,7 +20,7 @@ The **Cost-Based Optimizer (CBO)** revolutionized query execution. A CBO acts li
 ## How the CBO Calculates Cost
 
 To make intelligent decisions, the CBO relies entirely on **Metadata Statistics**. 
-Before executing a query, the CBO looks at the catalog (like the Hive Metastore or Apache Iceberg) to gather statistics about the involved tables.
+Before executing a query, the CBO looks at the catalog (like the Hive Metastore or [Apache Iceberg](/knowledge/apache-iceberg)) to gather statistics about the involved tables.
 
 It looks for:
 1.  **Row Count**: How many rows are in the table?

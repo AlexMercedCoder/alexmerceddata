@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organizati
 
 ## Introduction to Data Strategy
 
-A common failure mode in modern enterprises is the "Technology-First" approach to data. A company will spend $5 million migrating to a cutting-edge cloud Data Lakehouse, hire a dozen expensive Data Scientists, and buy the most advanced AI tools on the market. Two years later, the executives look at the balance sheet and realize this massive investment hasn't generated a single dollar of actual business value. 
+A common failure mode in modern enterprises is the "Technology-First" approach to data. A company will spend $5 million migrating to a cutting-edge cloud [Data Lakehouse](/knowledge/data-lakehouse), hire a dozen expensive Data Scientists, and buy the most advanced AI tools on the market. Two years later, the executives look at the balance sheet and realize this massive investment hasn't generated a single dollar of actual business value. 
 
 This happens because the company had a Data *Architecture*, but they lacked a **Data Strategy**.
 

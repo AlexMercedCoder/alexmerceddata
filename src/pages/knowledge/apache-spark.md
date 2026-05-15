@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Apache Spark
 
-In the early 2010s, the Big Data revolution was powered by Hadoop [MapReduce](/knowledge/mapreduce). While [MapReduce](/knowledge/mapreduce) allowed organizations to process unprecedented volumes of data by distributing tasks across clusters of commodity hardware, it was agonizingly slow. MapReduce was designed to read data from a hard drive, perform a calculation, and write the intermediate result back to the hard drive before starting the next step. This constant disk I/O throttled performance.
+In the early 2010s, the Big Data revolution was powered by Hadoop [MapReduce](/knowledge/mapreduce). While [MapReduce](/knowledge/mapreduce) allowed organizations to process unprecedented volumes of data by distributing tasks across clusters of commodity hardware, it was agonizingly slow. [MapReduce](/knowledge/mapreduce) was designed to read data from a hard drive, perform a calculation, and write the intermediate result back to the hard drive before starting the next step. This constant disk I/O throttled performance.
 
 **Apache Spark** was developed at UC Berkeley's AMPLab specifically to solve this problem. 
 
@@ -42,7 +42,7 @@ Spark's dominance is largely due to its unified nature. Instead of requiring dat
 
 While engines like Trino are designed specifically for fast, interactive ad-hoc queries, Apache Spark is the undisputed heavyweight champion of **Data Engineering and ETL**.
 
-When building an Open Data Lakehouse (using Apache Iceberg or [Delta Lake](/knowledge/delta-lake)), Spark is the primary engine used to physically manipulate the data. 
+When building an Open [Data Lakehouse](/knowledge/data-lakehouse) (using [Apache Iceberg](/knowledge/apache-iceberg) or [Delta Lake](/knowledge/delta-lake)), Spark is the primary engine used to physically manipulate the data. 
 *   Spark runs the massive nightly pipelines that clean, join, and aggregate raw Bronze data into refined Gold tables.
 *   Spark executes the heavy maintenance tasks essential for lakehouse health, such as asynchronous [Z-Ordering](/knowledge/z-ordering), small-file compaction, and vacuuming expired snapshots.
 

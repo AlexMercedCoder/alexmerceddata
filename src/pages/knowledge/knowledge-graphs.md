@@ -20,11 +20,11 @@ A Knowledge Graph is a data structure built specifically to represent entities a
 A Knowledge Graph is built upon three core mathematical concepts: Nodes, Edges, and Properties (often stored in a dedicated Graph Database like Neo4j or Amazon Neptune).
 
 ### 1. Nodes (Entities)
-A Node represents a distinct, real-world entity. This could be a Person (Alex), a Company ([Dremio](/knowledge/dremio)), a Concept (Data Lakehouse), or a Technology (Apache Iceberg).
+A Node represents a distinct, real-world entity. This could be a Person (Alex), a Company ([Dremio](/knowledge/dremio)), a Concept ([Data Lakehouse](/knowledge/data-lakehouse)), or a Technology ([Apache Iceberg](/knowledge/apache-iceberg)).
 
 ### 2. Edges (Relationships)
 An Edge is the directed line that connects two Nodes. Crucially, the edge itself has a name and a direction, providing explicit semantic meaning. 
-*   *Node A (Alex)* -> **Edge (WORKS_FOR)** -> *Node B (Dremio)*. 
+*   *Node A (Alex)* -> **Edge (WORKS_FOR)** -> *Node B ([Dremio](/knowledge/dremio))*. 
 *   *Node B (Dremio)* -> **Edge (MAKES)** -> *Node C (Sonar)*.
 
 ### 3. Properties (Metadata)

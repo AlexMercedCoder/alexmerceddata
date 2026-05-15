@@ -46,8 +46,8 @@ Retailer B instantly sees the table appear in their own Snowflake account. No da
 
 While Snowflake is incredibly powerful, its primary criticism has historically been vendor lock-in. Once your data is converted into Snowflake's proprietary micro-partitions, it is very difficult and expensive to move it out or analyze it with non-Snowflake tools.
 
-To adapt to the modern Open Data Lakehouse movement, Snowflake has heavily integrated with **Apache Iceberg**. 
-Today, organizations can store their data in their own private Amazon S3 buckets as open-source Iceberg tables, and configure Snowflake to query those External Tables. This allows organizations to leverage Snowflake's phenomenal compute engine and Cloud Services layer, while maintaining total, vendor-neutral ownership over their physical data files.
+To adapt to the modern Open [Data Lakehouse](/knowledge/data-lakehouse) movement, Snowflake has heavily integrated with **[Apache Iceberg](/knowledge/apache-iceberg)**. 
+Today, organizations can store their data in their own private [Amazon S3](/knowledge/amazon-s3) buckets as open-source Iceberg tables, and configure Snowflake to query those External Tables. This allows organizations to leverage Snowflake's phenomenal compute engine and Cloud Services layer, while maintaining total, vendor-neutral ownership over their physical data files.
 
 ## Conclusion
 

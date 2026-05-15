@@ -32,7 +32,7 @@ These expectations form a comprehensive contract for the dataset.
 Once the expectations are defined, they are bundled into a "Checkpoint." 
 The data engineer integrates this Checkpoint directly into their orchestration pipeline (e.g., [Apache Airflow](/knowledge/apache-airflow) or [Dagster](/knowledge/dagster)). 
 
-When the Airflow pipeline runs, it downloads the daily data. Before inserting it into the Apache Iceberg production table, it runs the Checkpoint. GX evaluates the data against the assertions. If the data fails (e.g., a bug caused all the emails to be null), GX flags a failure. The orchestrator halts the pipeline, sends a Slack alert to the team, and prevents the toxic data from corrupting the lakehouse.
+When the Airflow pipeline runs, it downloads the daily data. Before inserting it into the [Apache Iceberg](/knowledge/apache-iceberg) production table, it runs the Checkpoint. GX evaluates the data against the assertions. If the data fails (e.g., a bug caused all the emails to be null), GX flags a failure. The orchestrator halts the pipeline, sends a Slack alert to the team, and prevents the toxic data from corrupting the lakehouse.
 
 ## Core Features and Architecture
 

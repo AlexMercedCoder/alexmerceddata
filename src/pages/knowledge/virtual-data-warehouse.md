@@ -56,7 +56,7 @@ The historical knock against Virtual Data Warehouses was performance. Pulling ma
 
 Modern engines have largely solved this using two techniques:
 *   **Advanced [Compute Pushdown](/knowledge/compute-pushdown)**: Ensuring the source database does all the heavy filtering before any data crosses the network.
-*   **Data Reflections / Materialized Caching**: If a federated query is run frequently, engines like Dremio can automatically cache the joined result invisibly as an optimized [Apache Parquet](/knowledge/apache-parquet) file in S3. Subsequent queries hit the lightning-fast cache instead of burdening the source databases.
+*   **Data Reflections / Materialized Caching**: If a federated query is run frequently, engines like [Dremio](/knowledge/dremio) can automatically cache the joined result invisibly as an optimized [Apache Parquet](/knowledge/apache-parquet) file in S3. Subsequent queries hit the lightning-fast cache instead of burdening the source databases.
 
 ## Conclusion
 

@@ -29,7 +29,7 @@ Data-driven companies do not guess what users want; they test it.
 If Netflix wants to choose the best thumbnail image for a new movie, they don't ask the CEO which image he prefers. They deploy an **A/B Test**. They show Image A to 50,000 users and Image B to 50,000 users. If Image B results in a 12% higher click-through rate, Image B becomes the global default. The math makes the decision, removing all human ego from the equation.
 
 ### 3. The Single Source of Truth
-DDDM completely collapses if the data itself is untrustworthy. If the Marketing dashboard says the company made $10,000 yesterday, and the Finance dashboard says the company made $8,000, the executives will lose faith in the data and revert to their gut feelings. Data Engineering teams must build robust Data Lakehouses (using architectures like the [Medallion Architecture](/knowledge/medallion-architecture)) to guarantee that every department is pulling from the exact same, highly curated "Gold" tables.
+DDDM completely collapses if the data itself is untrustworthy. If the Marketing dashboard says the company made $10,000 yesterday, and the Finance dashboard says the company made $8,000, the executives will lose faith in the data and revert to their gut feelings. Data Engineering teams must build robust [Data Lakehouses](/knowledge/data-lakehouse) (using architectures like the [Medallion Architecture](/knowledge/medallion-architecture)) to guarantee that every department is pulling from the exact same, highly curated "Gold" tables.
 
 ## The Cultural Resistance
 

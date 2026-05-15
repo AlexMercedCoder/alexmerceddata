@@ -40,4 +40,4 @@ To solve this, distributed systems rely heavily on complex coordination algorith
 
 ## Conclusion
 
-Distributed Systems are the architectural compromise that enabled the modern internet. By sacrificing the simplicity and instantaneous communication of a single motherboard, software engineers gained the ability to scale computational power and storage across thousands of cheap, redundant machines, creating the indestructible, globe-spanning architectures of the modern Data Lakehouse.
+Distributed Systems are the architectural compromise that enabled the modern internet. By sacrificing the simplicity and instantaneous communication of a single motherboard, software engineers gained the ability to scale computational power and storage across thousands of cheap, redundant machines, creating the indestructible, globe-spanning architectures of the modern [Data Lakehouse](/knowledge/data-lakehouse).

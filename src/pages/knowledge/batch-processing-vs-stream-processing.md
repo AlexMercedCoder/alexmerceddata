@@ -19,7 +19,7 @@ The choice between these two paradigms dictates the latency of your data (how ol
 
 ### How it Works
 Imagine an e-commerce website. Throughout the day, every user purchase is logged into a raw PostgreSQL database. The data is completely ignored by the analytics team all day.
-At exactly 2:00 AM, a massive [Apache Spark](/knowledge/apache-spark) cluster wakes up. It pulls the entire day's worth of transactions (e.g., 5 million rows), cleans them, aggregates the total revenue, writes the final numbers to an Apache Iceberg table, and then shuts down at 3:00 AM. 
+At exactly 2:00 AM, a massive [Apache Spark](/knowledge/apache-spark) cluster wakes up. It pulls the entire day's worth of transactions (e.g., 5 million rows), cleans them, aggregates the total revenue, writes the final numbers to an [Apache Iceberg](/knowledge/apache-iceberg) table, and then shuts down at 3:00 AM. 
 
 *   **Pros**: Highly efficient and cost-effective. Because you only turn the massive compute cluster on for 1 hour a day, you save massive amounts of money. It handles complex, massive table joins across petabytes of historical data flawlessly.
 *   **Cons**: **Latency**. If the CEO checks the dashboard at 4:00 PM, they are looking at data that is up to 24 hours old. It is useless for real-time operational decisions.

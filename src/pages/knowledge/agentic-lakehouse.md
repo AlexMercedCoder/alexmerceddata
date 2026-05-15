@@ -17,7 +17,7 @@ Unlike traditional predictive machine learning models or simple generative AI ch
 
 The problem is that traditional data lakehouses are not designed for non human consumers. If an AI agent is pointed at a raw data lake, it will struggle to understand cryptic column names, it may hallucinate SQL logic, and worse, it might accidentally execute a destructive operation against production data.
 
-This friction has given rise to a new architectural paradigm: the Agentic Lakehouse. An agentic lakehouse is an evolution of the open data lakehouse, purpose built to provide the semantic context, computational speed, and strict governance required to allow autonomous software systems to interact directly and safely with enterprise data. 
+This friction has given rise to a new architectural paradigm: the [Agentic Lakehouse](/knowledge/agentic-lakehouse). An [agentic lakehouse](/knowledge/agentic-lakehouse) is an evolution of the open [data lakehouse](/knowledge/data-lakehouse), purpose built to provide the semantic context, computational speed, and strict governance required to allow autonomous software systems to interact directly and safely with enterprise data. 
 
 This guide defines the agentic lakehouse, separates the vendor terminology from the underlying architectural pattern, and explores the mandatory layers required to build a trustworthy foundation for [Agentic Analytics](/knowledge/agentic-analytics).
 
@@ -31,7 +31,7 @@ This architecture works perfectly for a human data analyst. If a human analyst s
 
 An AI agent cannot do this. An AI agent requires explicit, machine readable context. It requires a system of guardrails that guarantees it cannot accidentally drop a table while trying to analyze it. It requires interfaces specifically designed for programmatic interaction rather than human dashboarding.
 
-Therefore, the distinction lies in the interfaces, the governance, and the metadata. An agentic lakehouse takes the foundational components of the standard data lakehouse and wraps them in a Universal Semantic Layer, fine grained role based access controls, and agent optimized protocols like the Model Context Protocol (MCP).
+Therefore, the distinction lies in the interfaces, the governance, and the metadata. An agentic lakehouse takes the foundational components of the standard data lakehouse and wraps them in a Universal [Semantic Layer](/knowledge/semantic-layer), fine grained role based access controls, and agent optimized protocols like the Model Context Protocol (MCP).
 
 ## The Four Required Layers of an Agentic Lakehouse
 
@@ -41,7 +41,7 @@ Building a true agentic lakehouse requires moving beyond a passive data reposito
 
 The foundation of the agentic lakehouse must be built on open standards. AI agents require access to diverse datasets, including structured transactional data, semi structured logs, and unstructured text documents used for Retrieval Augmented Generation (RAG). 
 
-Storing this data in proprietary, closed formats creates massive friction for AI workflows. Therefore, the agentic lakehouse relies on cloud object storage (like Amazon S3 or Azure Data Lake Storage) combined with [Open Table Formats](/knowledge/open-table-formats) like Apache Iceberg. 
+Storing this data in proprietary, closed formats creates massive friction for AI workflows. Therefore, the agentic lakehouse relies on cloud object storage (like [Amazon S3](/knowledge/amazon-s3) or Azure Data Lake Storage) combined with [Open Table Formats](/knowledge/open-table-formats) like [Apache Iceberg](/knowledge/apache-iceberg). 
 
 Apache Iceberg is particularly critical for the agentic lakehouse because of its rigorous approach to metadata. It provides the strict schema enforcement and transactional reliability (ACID compliance) that AI agents need. If an agent attempts to query a table while an ingestion job is writing to it, Iceberg guarantees that the agent will read a consistent, point in time snapshot of the data, rather than failing due to file locks or reading corrupted partial data.
 
@@ -59,7 +59,7 @@ When an AI agent connects to the lakehouse, it does not see thousands of cryptic
 
 The single biggest barrier to deploying AI agents in the enterprise is trust. Organizations are terrified of giving autonomous software systems access to sensitive data. 
 
-The agentic lakehouse addresses this through a Zero Trust governance model managed centrally at the catalog layer (using tools like [Apache Polaris](/knowledge/apache-polaris) or Project Nessie). 
+The agentic lakehouse addresses this through a Zero Trust governance model managed centrally at the catalog layer (using tools like [Apache Polaris](/knowledge/apache-polaris) or [Project Nessie](/knowledge/project-nessie)). 
 
 Because AI agents interact with the lakehouse programmatically, they must authenticate using dedicated service accounts or via OAuth tokens tied to the human user who invoked them. The catalog enforces strict Role Based Access Control (RBAC) at the row and column level. 
 
@@ -87,11 +87,11 @@ This multicloud capability is essential for [Lakehouse for AI Agents](/knowledge
 
 ## Autonomous Optimization
 
-Another distinct challenge of the agentic era is query unpredictability. Human analysts are relatively predictable. They arrive at work at 9:00 AM, open their Tableau dashboards, and generate a known set of SQL queries against a known set of tables. Data engineers can manually optimize the database to support this predictable workload.
+Another distinct challenge of the agentic era is query unpredictability. Human analysts are relatively predictable. They arrive at work at 9:00 AM, open their [Tableau](/knowledge/tableau) dashboards, and generate a known set of SQL queries against a known set of tables. Data engineers can manually optimize the database to support this predictable workload.
 
 AI agents are entirely unpredictable. An agent might generate a hyper complex, ten way join query at 2:00 AM that no human has ever run before. It is impossible for data engineering teams to manually anticipate and tune the database for the infinite variety of queries that a fleet of autonomous agents will generate.
 
-Therefore, the agentic lakehouse must be capable of autonomous optimization. Technologies like Dremio's Data Reflections provide this capability. When the lakehouse detects that an agent is repeatedly querying a heavy dataset, it automatically and invisibly creates a pre computed, highly optimized physical representation of that data in the background. When an agent submits a similar query in the future, the query planner intercepts it and routes it to the optimized reflection, returning results in milliseconds instead of minutes. This dynamic, self optimizing behavior ensures that the compute engine can handle the chaotic workload generated by AI agents without collapsing.
+Therefore, the agentic lakehouse must be capable of autonomous optimization. Technologies like [Dremio](/knowledge/dremio)'s Data Reflections provide this capability. When the lakehouse detects that an agent is repeatedly querying a heavy dataset, it automatically and invisibly creates a pre computed, highly optimized physical representation of that data in the background. When an agent submits a similar query in the future, the query planner intercepts it and routes it to the optimized reflection, returning results in milliseconds instead of minutes. This dynamic, self optimizing behavior ensures that the compute engine can handle the chaotic workload generated by AI agents without collapsing.
 
 ## Risks and Common Misconceptions
 

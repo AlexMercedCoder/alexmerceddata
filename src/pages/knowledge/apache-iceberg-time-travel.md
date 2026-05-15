@@ -11,11 +11,11 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 In traditional data engineering, modifying data in a data lake is a destructive process. When you overwrite a Parquet file or drop a Hive partition, the historical state of that data is permanently lost unless you have manually engineered complex, costly backup pipelines. If an erroneous ETL job corrupts a production table, restoring the data involves digging through object storage snapshots and enduring hours of downtime.
 
-**Apache Iceberg** completely revolutionizes this paradigm through its immutable metadata architecture, enabling a powerful feature known as **Time Travel**. 
+**[Apache Iceberg](/knowledge/apache-iceberg)** completely revolutionizes this paradigm through its immutable metadata architecture, enabling a powerful feature known as **Time Travel**. 
 
 Time travel allows data engineers, data scientists, and analysts to query the historical state of a table exactly as it existed at a specific point in time or at a specific snapshot ID. Because Iceberg treats data modification as a series of atomic, immutable commits, moving backward in time is not a costly data recovery operation—it is simply a matter of reading a different metadata file.
 
-In this guide, we will explore the mechanics of Iceberg snapshots, how Time Travel is executed across various compute engines, and the profound architectural benefits it brings to the modern data lakehouse.
+In this guide, we will explore the mechanics of Iceberg snapshots, how Time Travel is executed across various compute engines, and the profound architectural benefits it brings to the modern [data lakehouse](/knowledge/data-lakehouse).
 
 ## The Architecture of Time Travel: Snapshots
 
@@ -53,7 +53,7 @@ df = spark.read \
     .load("my_catalog.db.orders")
 ```
 
-**In Dremio / Trino:**
+**In [Dremio](/knowledge/dremio) / Trino:**
 ```sql
 SELECT * FROM my_catalog.db.orders 
 FOR SYSTEM_TIME AS OF TIMESTAMP '2026-05-14 02:00:00';
@@ -72,7 +72,7 @@ SELECT * FROM my_catalog.db.orders.history;
 
 Once you have the ID (e.g., `1098234791234`), you can query it directly:
 
-**In Apache Spark:**
+**In [Apache Spark](/knowledge/apache-spark):**
 ```sql
 SELECT * FROM my_catalog.db.orders 
 VERSION AS OF 1098234791234;

@@ -37,7 +37,7 @@ ADLS Gen2 is not just a hard drive; it is deeply integrated into the Microsoft A
 
 ## The Cost of the Hierarchy
 
-While the Hierarchical Namespace provides massive performance boosts for big data workloads, it does come with a slight cost overhead. Operations on ADLS Gen2 are slightly more expensive than operations on standard, flat Azure Blob Storage. For this reason, companies use standard Blob Storage for basic website backups, and explicitly reserve ADLS Gen2 for their high-performance Data Lakehouse architectures.
+While the Hierarchical Namespace provides massive performance boosts for big data workloads, it does come with a slight cost overhead. Operations on ADLS Gen2 are slightly more expensive than operations on standard, flat Azure Blob Storage. For this reason, companies use standard Blob Storage for basic website backups, and explicitly reserve ADLS Gen2 for their high-performance [Data Lakehouse](/knowledge/data-lakehouse) architectures.
 
 ## Conclusion
 

@@ -38,7 +38,7 @@ Data engineers curate the data into a central catalog (like Alation or [Apache P
 
 Historically, data democratization was technically impossible because traditional Data Warehouses charged licenses based on compute usage. If you let 5,000 employees run queries simultaneously, the database would crash, and the software bill would bankrupt the company.
 
-The modern **Open Data Lakehouse** (powered by Apache Iceberg and federated engines like [Dremio](/knowledge/dremio)) makes democratization economically viable. 
+The modern **Open [Data Lakehouse](/knowledge/data-lakehouse)** (powered by [Apache Iceberg](/knowledge/apache-iceberg) and federated engines like [Dremio](/knowledge/dremio)) makes democratization economically viable. 
 Because the architecture separates storage from compute, organizations can store an infinite amount of data on cheap S3 buckets. They can then spin up isolated, self-service compute clusters. The Marketing team gets their own compute engine, and the HR team gets theirs. Thousands of users can query the exact same data simultaneously without impacting the performance of the core ETL engineering pipelines.
 
 ## Conclusion

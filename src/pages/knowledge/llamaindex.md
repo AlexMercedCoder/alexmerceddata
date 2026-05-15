@@ -42,7 +42,7 @@ If the user asks: *"Compare the Q2 revenue to the Q3 revenue,"* LlamaIndex is sm
 A common point of confusion is whether to use LlamaIndex or [LangChain](/knowledge/langchain). In modern architectures, they are often used together.
 
 *   **LlamaIndex** is deeply specialized in **Data Storage, Indexing, and Retrieval**. If your application relies heavily on searching through thousands of complex PDF reports and retrieving highly accurate facts, LlamaIndex provides far superior tools for tuning the RAG pipeline (e.g., advanced chunking, metadata filtering, and re-ranking).
-*   **LangChain** is specialized in **Orchestration and Agents**. It is better at giving the LLM tools (like the ability to send an email or query an API) and managing complex, multi-step reasoning loops.
+*   **[LangChain](/knowledge/langchain)** is specialized in **Orchestration and Agents**. It is better at giving the LLM tools (like the ability to send an email or query an API) and managing complex, multi-step reasoning loops.
 
 Often, an architecture will use a LangChain Agent as the "brain," and that Agent will use LlamaIndex as a specialized "Tool" to retrieve documents.
 

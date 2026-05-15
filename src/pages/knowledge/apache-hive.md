@@ -28,13 +28,13 @@ The **Hive Metastore** was a relational database (usually MySQL) that stored the
 The Metastore mapped the logical SQL table to the physical files. It told the query engine: *"The 'users' table consists of all the files inside the `/data/users/` folder. The first column is a String called 'Name', and the second column is an Integer called 'Age'."*
 
 ### HiveQL (HQL)
-Hive introduced its own dialect of SQL, called HiveQL. While it looked exactly like SQL, it was designed specifically for batch processing massive datasets. Because it was translating SQL into MapReduce jobs (which read data from physical hard drives), a simple `SELECT count(*)` query on Hive might take 5 minutes to execute. It was built for massive analytical throughput, not for sub-second, real-time web applications.
+Hive introduced its own dialect of SQL, called HiveQL. While it looked exactly like SQL, it was designed specifically for batch processing massive datasets. Because it was translating SQL into [MapReduce](/knowledge/mapreduce) jobs (which read data from physical hard drives), a simple `SELECT count(*)` query on Hive might take 5 minutes to execute. It was built for massive analytical throughput, not for sub-second, real-time web applications.
 
 ## The Legacy of Hive
 
 While the Hive Query Engine (the part that translates SQL to MapReduce) has been entirely superseded by modern, lightning-fast in-memory engines like [Apache Spark](/knowledge/apache-spark), Presto, and [Dremio](/knowledge/dremio), **Hive fundamentally altered the trajectory of Data Engineering.**
 
-1.  **SQL on Big Data**: Hive proved that the traditional Data Warehouse paradigm (SQL) could be successfully mapped onto cheap, distributed Data Lakes. This birthed the modern "SQL-on-Hadoop" and "Data Lakehouse" movements.
+1.  **SQL on Big Data**: Hive proved that the traditional Data Warehouse paradigm (SQL) could be successfully mapped onto cheap, distributed Data Lakes. This birthed the modern "SQL-on-Hadoop" and "[Data Lakehouse](/knowledge/data-lakehouse)" movements.
 2.  **The Metastore Standard**: The Hive Metastore (HMS) became the undisputed, de-facto standard for tracking metadata across the entire Big Data ecosystem. Even today, if you use [Apache Spark](/knowledge/apache-spark) or Amazon Athena to query a data lake, they are almost certainly communicating with a Hive Metastore behind the scenes to find the files.
 
 ## Conclusion

@@ -13,7 +13,7 @@ In the realm of big data and modern lakehouses, the choice of file format dictat
 
 Enter **Apache Parquet**. 
 
-Developed collaboratively by Twitter and Cloudera in 2013, Apache Parquet is an open-source, column-oriented data file format. It is arguably the most important file format in the big data ecosystem, serving as the physical storage foundation for almost all modern data lakehouses (including those governed by Apache Iceberg or [Delta Lake](/knowledge/delta-lake)). 
+Developed collaboratively by Twitter and Cloudera in 2013, Apache Parquet is an open-source, column-oriented data file format. It is arguably the most important file format in the big data ecosystem, serving as the physical storage foundation for almost all modern data lakehouses (including those governed by [Apache Iceberg](/knowledge/apache-iceberg) or [Delta Lake](/knowledge/delta-lake)). 
 
 Parquet's genius lies in its hybrid storage architecture, aggressive compression algorithms, and its ability to drastically reduce the amount of disk I/O required to execute complex analytical queries.
 
@@ -60,4 +60,4 @@ Parquet is self-describing; the schema is embedded directly in the file. Parquet
 
 ## Conclusion
 
-Apache Parquet is the undisputed champion of analytical file formats. By reorienting data into columns, applying aggressive, type-aware compression, and embedding rich min/max statistics directly into the file footer, Parquet allows modern query engines to execute complex aggregations over petabytes of data at blazing speeds. When governed by a table format like Apache Iceberg (which manages thousands of Parquet files coherently), Parquet enables the modern data lakehouse to rival the performance of the world's most expensive proprietary data warehouses.
+Apache Parquet is the undisputed champion of analytical file formats. By reorienting data into columns, applying aggressive, type-aware compression, and embedding rich min/max statistics directly into the file footer, Parquet allows modern query engines to execute complex aggregations over petabytes of data at blazing speeds. When governed by a table format like Apache Iceberg (which manages thousands of Parquet files coherently), Parquet enables the modern [data lakehouse](/knowledge/data-lakehouse) to rival the performance of the world's most expensive proprietary data warehouses.

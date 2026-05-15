@@ -31,7 +31,7 @@ If an advertiser queries: `SELECT SUM(clicks) WHERE campaign = 'Summer_Sale'`, D
 
 ## Druid vs. The Data Lakehouse
 
-With the rise of the Open Data Lakehouse (Apache Iceberg) and high-speed engines ([Dremio](/knowledge/dremio), Trino), many organizations wonder if they still need Druid.
+With the rise of the Open [Data Lakehouse](/knowledge/data-lakehouse) ([Apache Iceberg](/knowledge/apache-iceberg)) and high-speed engines ([Dremio](/knowledge/dremio), Trino), many organizations wonder if they still need Druid.
 
 The answer lies in **Concurrency and Latency**.
 *   **The Lakehouse** is for internal business intelligence. If 50 analysts are running heavy, multi-table `JOIN` queries that take 5 seconds to return, the Lakehouse is perfect.

@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Apache Iceberg Metadata Architecture
 
-To understand the sheer performance and scalability of Apache Iceberg, one must look beyond the data files themselves and examine the elegant metadata tree that orchestrates them. Traditional data lakes (often reliant on Hive-style directory partitioning) struggle at scale. When a query is executed, engines are forced to perform slow, recursive file listing operations across object storage (like [Amazon S3](/knowledge/amazon-s3) or ADLS) to determine which files to read. 
+To understand the sheer performance and scalability of [Apache Iceberg](/knowledge/apache-iceberg), one must look beyond the data files themselves and examine the elegant metadata tree that orchestrates them. Traditional data lakes (often reliant on Hive-style directory partitioning) struggle at scale. When a query is executed, engines are forced to perform slow, recursive file listing operations across object storage (like [Amazon S3](/knowledge/amazon-s3) or ADLS) to determine which files to read. 
 
 Apache Iceberg solves this "listing bottleneck" by maintaining a precise, hierarchical metadata structure that tracks every single data file at the file level, rather than the directory level. This tree consists of three primary layers:
 1.  **Metadata Files (`.json`)**: Track the table state, schema, partitioning, and snapshots.
@@ -72,7 +72,7 @@ When a query planner runs, it has to download and open thousands of small manife
 ### Manifest Rewriting (Compaction)
 To maintain peak performance, data engineers must regularly perform maintenance on Iceberg tables. One of the most important maintenance tasks is **Rewrite Manifests**.
 
-Using [Apache Spark](/knowledge/apache-spark) or an automated service like Dremio Arctic, you can execute a procedure to compact these files:
+Using [Apache Spark](/knowledge/apache-spark) or an automated service like [Dremio](/knowledge/dremio) Arctic, you can execute a procedure to compact these files:
 ```sql
 CALL catalog.system.rewrite_manifests('my_namespace.my_table');
 ```

@@ -36,7 +36,7 @@ This phase analyzes how different columns and tables relate to each other, which
 
 ## How Profiling Drives Data Architecture
 
-Data profiling is not just an academic exercise; it dictates critical architectural decisions in the Data Lakehouse.
+Data profiling is not just an academic exercise; it dictates critical architectural decisions in the [Data Lakehouse](/knowledge/data-lakehouse).
 
 1.  **Storage Optimization ([Z-Ordering](/knowledge/z-ordering) and Partitioning)**: If a data engineer profiles a 10-Terabyte table and discovers that queries are almost exclusively filtered by `event_date` (low cardinality) and `customer_id` (high cardinality), they will physically partition the Iceberg table by `event_date` and apply [Z-Ordering](/knowledge/z-ordering) to the `customer_id`, drastically improving query speeds.
 2.  **Building [Data Contracts](/knowledge/data-contracts)**: Before deploying tools like **[Great Expectations](/knowledge/great-expectations)**, the data team runs an automated profiler. The profiler creates a baseline statistical model (e.g., "The mean transaction amount is $50"). The team uses this baseline to write automated [Data Quality](/knowledge/data-quality) tests, ensuring that future pipelines halt if the daily mean suddenly jumps to $5,000.

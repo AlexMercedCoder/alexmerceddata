@@ -25,7 +25,7 @@ If a company has petabytes of raw JSON logs sitting in an [Amazon S3](/knowledge
 
 ## The Lakehouse Solution
 
-The invention of [Open Table Formats](/knowledge/open-table-formats) (**Apache Iceberg**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)**) was heavily driven by the need to support native Row-Level Deletes directly on top of immutable cloud object storage.
+The invention of [Open Table Formats](/knowledge/open-table-formats) (**[Apache Iceberg](/knowledge/apache-iceberg)**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)**) was heavily driven by the need to support native Row-Level Deletes directly on top of immutable cloud object storage.
 
 By introducing an intelligent metadata layer above the raw Parquet files, these table formats finally allowed data lakes to behave like relational databases. 
 
@@ -43,4 +43,4 @@ Without row-level mutation capabilities, engineers had to write complex code to 
 
 ## Conclusion
 
-Row-Level Deletes are the defining feature that elevated the Data Lake into the Data Lakehouse. By providing standard SQL `DELETE`, `UPDATE`, and `MERGE` capabilities over massive, immutable cloud storage files, [Open Table Formats](/knowledge/open-table-formats) solved the most critical regulatory and architectural challenge of the big data era. They allow organizations to maintain strict GDPR compliance and execute real-time CDC streams without abandoning the infinite scalability and cost-efficiency of the data lake.
+Row-Level Deletes are the defining feature that elevated the Data Lake into the [Data Lakehouse](/knowledge/data-lakehouse). By providing standard SQL `DELETE`, `UPDATE`, and `MERGE` capabilities over massive, immutable cloud storage files, [Open Table Formats](/knowledge/open-table-formats) solved the most critical regulatory and architectural challenge of the big data era. They allow organizations to maintain strict GDPR compliance and execute real-time CDC streams without abandoning the infinite scalability and cost-efficiency of the data lake.

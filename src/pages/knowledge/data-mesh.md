@@ -38,7 +38,7 @@ The organization must build a centralized **Data Platform Team**. However, this 
 ### 4. Federated Computational Governance
 If every domain builds its own data products independently, how do you prevent the organization from returning to the chaotic days of disconnected data silos?
 The answer is federated governance. A governing body (comprising representatives from the domains, the security team, and the platform team) establishes global rules:
-*   "All domains must use Apache Iceberg."
+*   "All domains must use [Apache Iceberg](/knowledge/apache-iceberg)."
 *   "All domains must register their tables in the central [Apache Polaris](/knowledge/apache-polaris) catalog."
 *   "All PII must be masked according to standard policy."
 
@@ -46,14 +46,14 @@ The domains are free to innovate within their spheres, so long as they adhere to
 
 ## Implementing Data Mesh with the Lakehouse
 
-While Data Mesh is technology-agnostic, the modern **Data Lakehouse** (powered by open formats) is arguably the perfect physical implementation of the mesh.
+While Data Mesh is technology-agnostic, the modern **[Data Lakehouse](/knowledge/data-lakehouse)** (powered by open formats) is arguably the perfect physical implementation of the mesh.
 
 If every domain spins up its own proprietary data warehouse (e.g., Domain A uses Snowflake, Domain B uses BigQuery), querying across domains becomes a nightmare of data copying and egress fees.
 
 By standardizing on a decentralized Lakehouse:
 1.  **Storage**: Domain A owns an S3 bucket. Domain B owns a different S3 bucket.
 2.  **Format**: Both domains write their data products as Apache Iceberg tables.
-3.  **Catalog**: Both domains register their Iceberg tables into a central federated catalog (like Dremio Arctic or Polaris).
+3.  **Catalog**: Both domains register their Iceberg tables into a central federated catalog (like [Dremio](/knowledge/dremio) Arctic or Polaris).
 4.  **Compute**: When an executive needs to join HR data with Marketing data, they can use a federated query engine (like Trino or Dremio) to execute a single SQL query that seamlessly joins the data across the separate S3 buckets, without ever moving or copying the data.
 
 ## Conclusion

@@ -23,7 +23,7 @@ To understand Flight SQL, we must first understand the foundation it is built up
 
 Arrow Flight is an RPC (Remote Procedure Call) framework built on top of gRPC and HTTP/2. Its sole purpose is to transport massive datasets over the network as fast as physics will allow. 
 
-Because both the sending server (e.g., [Dremio](/knowledge/dremio)) and the receiving client (e.g., a Pandas dataframe) use the Apache Arrow in-memory format, Arrow Flight does not serialize or deserialize the data. It simply streams the raw Arrow memory buffers directly over the TCP socket. This results in data transfer rates that are bounded only by the physical bandwidth of the network (often achieving gigabytes per second), making it orders of magnitude faster than ODBC.
+Because both the sending server (e.g., [Dremio](/knowledge/dremio)) and the receiving client (e.g., a Pandas dataframe) use the [Apache Arrow](/knowledge/apache-arrow) in-memory format, Arrow Flight does not serialize or deserialize the data. It simply streams the raw Arrow memory buffers directly over the TCP socket. This results in data transfer rates that are bounded only by the physical bandwidth of the network (often achieving gigabytes per second), making it orders of magnitude faster than ODBC.
 
 ## What is Arrow Flight SQL?
 

@@ -46,7 +46,7 @@ If the NY server updates a profile picture, it immediately tells the user "Succe
 
 Historically, [Amazon S3](/knowledge/amazon-s3) (the foundation of the Data Lake) was only *Eventually Consistent*. If you wrote a massive file to S3 and immediately tried to list the files in the bucket, S3 might not show you the new file. This made building transactional databases on S3 nearly impossible.
 
-In late 2020, AWS upgraded S3 to provide **Strong Read-After-Write Consistency**. This monumental physical upgrade, combined with the ACID guarantees provided by [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**, finally allowed the Data Lakehouse to provide the Strong Consistency of a traditional Data Warehouse, ensuring that business analysts never accidentally query a half-written, corrupted dataset.
+In late 2020, AWS upgraded S3 to provide **Strong Read-After-Write Consistency**. This monumental physical upgrade, combined with the ACID guarantees provided by [Open Table Formats](/knowledge/open-table-formats) like **[Apache Iceberg](/knowledge/apache-iceberg)**, finally allowed the [Data Lakehouse](/knowledge/data-lakehouse) to provide the Strong Consistency of a traditional Data Warehouse, ensuring that business analysts never accidentally query a half-written, corrupted dataset.
 
 ## Conclusion
 

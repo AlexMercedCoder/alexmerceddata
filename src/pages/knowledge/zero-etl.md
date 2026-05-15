@@ -45,8 +45,8 @@ With HTAP, a Zero-ETL architecture is flawless. The live application writes to t
 
 ## The Role of Open Table Formats
 
-The Open Data Lakehouse is also pioneering a vendor-neutral approach to Zero-ETL. 
-By standardizing on **Apache Iceberg**, organizations can bypass proprietary syncs. Modern operational databases (like MongoDB or Confluent Kafka) are beginning to support native Iceberg exports. The operational database automatically writes its state changes directly into an Iceberg table in [Amazon S3](/knowledge/amazon-s3). Any query engine (Dremio, Spark, Snowflake) can then instantly query that S3 data without any ETL pipeline required to load it.
+The Open [Data Lakehouse](/knowledge/data-lakehouse) is also pioneering a vendor-neutral approach to Zero-ETL. 
+By standardizing on **[Apache Iceberg](/knowledge/apache-iceberg)**, organizations can bypass proprietary syncs. Modern operational databases (like MongoDB or Confluent Kafka) are beginning to support native Iceberg exports. The operational database automatically writes its state changes directly into an Iceberg table in [Amazon S3](/knowledge/amazon-s3). Any query engine ([Dremio](/knowledge/dremio), Spark, Snowflake) can then instantly query that S3 data without any ETL pipeline required to load it.
 
 ## Conclusion
 

@@ -56,10 +56,10 @@ Type 3 is a compromise. It tracks only the *previous* value of an attribute by a
 
 Historically, managing SCD Type 2 on a Data Lake was nearly impossible because data lakes relied on immutable Parquet files. Updating the `expiration_date` on an old row meant rewriting the entire massive file.
 
-Modern table formats like **Apache Iceberg** completely solved this. Because Iceberg supports ACID transactions and row-level `MERGE INTO` operations (Merge-on-Read), data engineers can now implement complex SCD Type 2 pipelines natively on S3.
+Modern table formats like **[Apache Iceberg](/knowledge/apache-iceberg)** completely solved this. Because Iceberg supports ACID transactions and row-level `MERGE INTO` operations (Merge-on-Read), data engineers can now implement complex SCD Type 2 pipelines natively on S3.
 
 Using a tool like **dbt (data build tool)** connected to a lakehouse engine (like Trino or Spark), engineers can define an "SCD Snapshot" configuration. Dbt will automatically detect changes in the source data, execute the complex Iceberg `MERGE` statements to expire the old records, and `INSERT` the new records, fully automating the SCD Type 2 lifecycle directly on the lake.
 
 ## Conclusion
 
-Mastering Slowly Changing Dimensions is a rite of passage for data engineers. Choosing between overwriting data (Type 1) and preserving a pristine historical timeline (Type 2) dictates the analytical capabilities of the entire business. Thanks to the evolution of the Data Lakehouse and table formats like Apache Iceberg, implementing rigorous historical tracking at a petabyte scale is now more efficient and automated than ever before.
+Mastering Slowly Changing Dimensions is a rite of passage for data engineers. Choosing between overwriting data (Type 1) and preserving a pristine historical timeline (Type 2) dictates the analytical capabilities of the entire business. Thanks to the evolution of the [Data Lakehouse](/knowledge/data-lakehouse) and table formats like Apache Iceberg, implementing rigorous historical tracking at a petabyte scale is now more efficient and automated than ever before.

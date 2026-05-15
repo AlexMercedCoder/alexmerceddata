@@ -20,7 +20,7 @@ If AWS suffered a massive regional outage, or if they abruptly doubled their pri
 Enterprises do not adopt multi-cloud architectures simply for technical novelty; it is driven by hard business requirements.
 
 ### 1. Avoiding Vendor Lock-In
-When an organization builds a data pipeline using proprietary, vendor-specific tools (like [AWS Glue](/knowledge/aws-glue) writing to Amazon Redshift), migrating to a different cloud provider requires rewriting the entire pipeline from scratch. This lock-in destroys negotiating power. A multi-cloud strategy prioritizes open-source, vendor-neutral technologies (like [Apache Spark](/knowledge/apache-spark), [Kubernetes](/knowledge/kubernetes), and Apache Iceberg) that can be lifted and shifted between clouds with minimal friction.
+When an organization builds a data pipeline using proprietary, vendor-specific tools (like [AWS Glue](/knowledge/aws-glue) writing to Amazon Redshift), migrating to a different cloud provider requires rewriting the entire pipeline from scratch. This lock-in destroys negotiating power. A multi-cloud strategy prioritizes open-source, vendor-neutral technologies (like [Apache Spark](/knowledge/apache-spark), [Kubernetes](/knowledge/kubernetes), and [Apache Iceberg](/knowledge/apache-iceberg)) that can be lifted and shifted between clouds with minimal friction.
 
 ### 2. Geographic Compliance and Data Sovereignty
 Global enterprises face strict regulatory environments (like GDPR in Europe). A company might be legally required to store German citizen data on servers physically located in Germany. If their primary cloud provider (e.g., Azure) does not have a data center in a specific mandated region, the organization must utilize a secondary cloud provider (e.g., AWS) that does, enforcing a multi-cloud reality.
@@ -32,7 +32,7 @@ A data science team might want to use Google's Vertex AI for training large lang
 
 Executing a multi-cloud strategy for web applications (using [Kubernetes](/knowledge/kubernetes)) is relatively straightforward. Doing it for petabyte-scale data analytics is incredibly difficult. Data possesses "gravity"—it is heavy, expensive to move, and charges massive egress fees when it leaves a cloud provider's network.
 
-The **Open Data Lakehouse** is the key enabling technology for multi-cloud data architecture.
+The **Open [Data Lakehouse](/knowledge/data-lakehouse)** is the key enabling technology for multi-cloud data architecture.
 
 ### The Role of Open Table Formats
 If an organization stores its data in a proprietary format (like Snowflake's internal storage), that data is locked to Snowflake. 
@@ -43,9 +43,9 @@ If the organization stores its data in [Amazon S3](/knowledge/amazon-s3) using *
 By standardizing on open formats, the data becomes universally accessible to any compute engine on any cloud.
 
 ### Federated Query Engines
-Moving petabytes of data across clouds incurs ruinous egress costs. Modern multi-cloud architectures rely on Virtual Data Warehouses and Federated Query Engines (like Trino or Dremio). 
+Moving petabytes of data across clouds incurs ruinous egress costs. Modern multi-cloud architectures rely on Virtual Data Warehouses and Federated Query Engines (like Trino or [Dremio](/knowledge/dremio)). 
 Instead of copying data from an Azure database to an AWS data lake, the engine (running in AWS) issues a federated SQL query to Azure. The engine leverages [Compute Pushdown](/knowledge/compute-pushdown) to filter the data in Azure, pulling only a few kilobytes of the final result over the network, drastically reducing egress fees and latency.
 
 ## Conclusion
 
-Multi-Cloud Architecture is the ultimate expression of enterprise IT maturity. It shifts power away from the cloud mega-vendors and back into the hands of the organization. While it introduces massive complexities in networking, security (IAM), and governance, standardizing on open-source infrastructure (like Kubernetes) and [Open Table Formats](/knowledge/open-table-formats) (like Apache Iceberg) allows organizations to build resilient, flexible, and heavily negotiated data ecosystems that span the entire global cloud landscape.
+Multi-Cloud Architecture is the ultimate expression of enterprise IT maturity. It shifts power away from the cloud mega-vendors and back into the hands of the organization. While it introduces massive complexities in networking, security (IAM), and governance, standardizing on open-source infrastructure (like [Kubernetes](/knowledge/kubernetes)) and [Open Table Formats](/knowledge/open-table-formats) (like Apache Iceberg) allows organizations to build resilient, flexible, and heavily negotiated data ecosystems that span the entire global cloud landscape.

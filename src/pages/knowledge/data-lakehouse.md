@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to the Data Lakehouse
 
-The data lakehouse represents a fundamental shift in how organizations store, manage, and analyze their information at scale. For decades, data strategy was defined by a strict division of labor. Operational databases handled the fast, transactional workloads of applications. Data warehouses provided a structured, reliable, and highly performant environment for business intelligence and reporting. Data lakes emerged later as a low cost dumping ground for raw, unstructured data that the warehouse could not affordably process.
+The [data lakehouse](/knowledge/data-lakehouse) represents a fundamental shift in how organizations store, manage, and analyze their information at scale. For decades, data strategy was defined by a strict division of labor. Operational databases handled the fast, transactional workloads of applications. Data warehouses provided a structured, reliable, and highly performant environment for business intelligence and reporting. Data lakes emerged later as a low cost dumping ground for raw, unstructured data that the warehouse could not affordably process.
 
 This two tier architecture forced companies to compromise. They had to choose between the structure and performance of the warehouse and the flexibility and scale of the lake. To bridge the gap, data engineering teams built fragile, complex Extract, Transform, Load (ETL) pipelines to copy subsets of data from the lake into the warehouse. This approach created data silos, bloated infrastructure costs, and guaranteed that business analysts were always querying stale data.
 
@@ -47,7 +47,7 @@ A modern data lakehouse is not a single piece of software that you buy from a ve
 
 ### 1. The Cloud Object Storage Layer
 
-The foundation of the lakehouse is the storage layer. This is almost exclusively built on cloud object storage, such as Amazon S3, Azure ADLS Gen2, or Google Cloud Storage. Object storage provides virtually infinite scalability, high durability, and the lowest cost per gigabyte of any storage medium. 
+The foundation of the lakehouse is the storage layer. This is almost exclusively built on cloud object storage, such as [Amazon S3](/knowledge/amazon-s3), Azure ADLS Gen2, or Google Cloud Storage. Object storage provides virtually infinite scalability, high durability, and the lowest cost per gigabyte of any storage medium. 
 
 The storage layer holds all types of data. It stores the structured tables needed for financial reporting alongside the unstructured text, images, and audio files required for training [Agentic AI](/knowledge/agentic-ai) models. 
 
@@ -71,7 +71,7 @@ Table formats also provide schema evolution, allowing engineers to add, drop, or
 
 As a lakehouse grows to encompass thousands of tables and petabytes of data, a central mechanism is needed to track everything. This is the role of the data catalog.
 
-The catalog acts as the central brain of the lakehouse. It maintains the authoritative list of every table, where its current metadata is located, and who is allowed to access it. For [Apache Iceberg](/knowledge/apache-iceberg) architectures, the [Iceberg REST Catalog](/knowledge/apache-iceberg-rest-catalog) specification has become the industry standard. Tools like [Apache Polaris](/knowledge/apache-polaris) and Project Nessie provide this cataloging capability.
+The catalog acts as the central brain of the lakehouse. It maintains the authoritative list of every table, where its current metadata is located, and who is allowed to access it. For [Apache Iceberg](/knowledge/apache-iceberg) architectures, the [Iceberg REST Catalog](/knowledge/apache-iceberg-rest-catalog) specification has become the industry standard. Tools like [Apache Polaris](/knowledge/apache-polaris) and [Project Nessie](/knowledge/project-nessie) provide this cataloging capability.
 
 The catalog also enforces governance. It is the integration point for Role Based Access Control (RBAC), data masking, and compliance audits, ensuring that sensitive information remains secure even when accessed by different compute engines.
 
@@ -104,13 +104,13 @@ A data lake is a centralized repository that allows you to store all your struct
 ### Data Lakehouse
 The lakehouse is the synthesis of both models. It uses the cheap, open storage of the lake and layers the management and performance optimizations of the warehouse on top.
 
-**Advantages:** It provides a single source of truth for all data. It eliminates the need for complex ETL pipelines that copy data between systems. It supports both BI and AI workloads natively. It prevents vendor lock in by relying on open table formats like Apache Iceberg.
+**Advantages:** It provides a single source of truth for all data. It eliminates the need for complex ETL pipelines that copy data between systems. It supports both BI and AI workloads natively. It prevents vendor lock in by relying on open table formats like [Apache Iceberg](/knowledge/apache-iceberg).
 
 **Disadvantages:** It requires more architectural planning and engineering maturity to set up than a fully managed SaaS data warehouse. Managing the interoperability between different open source components and query engines can be complex for smaller teams.
 
 ## The Role of Open Table Formats
 
-Open table formats are the engine that makes the lakehouse run. Before their invention, query engines had to rely on the Apache Hive metastore to understand the structure of a data lake. The Hive metastore tracked data at the folder level. If a query needed to find specific records, the engine often had to scan every single file in a folder, which could take hours for petabyte scale datasets.
+Open table formats are the engine that makes the lakehouse run. Before their invention, query engines had to rely on the [Apache Hive](/knowledge/apache-hive) metastore to understand the structure of a data lake. The Hive metastore tracked data at the folder level. If a query needed to find specific records, the engine often had to scan every single file in a folder, which could take hours for petabyte scale datasets.
 
 Table formats revolutionized this process by tracking data at the file level. Let us examine how this works using [Apache Iceberg](/knowledge/apache-iceberg) as the primary example.
 
@@ -128,7 +128,7 @@ The table format is also responsible for [Optimistic Concurrency Control (OCC)](
 
 While the technical architecture of the lakehouse solves problems for data engineers, it can still present a steep learning curve for business users. Business analysts do not want to worry about object storage paths, Parquet files, or Iceberg manifests. They want clean, understandable tables with reliable business metrics.
 
-This is where the Universal Semantic Layer becomes critical. The semantic layer sits between the diverse compute engines of the lakehouse and the downstream consumption tools like Tableau, Power BI, or AI agents.
+This is where the Universal [Semantic Layer](/knowledge/semantic-layer) becomes critical. The semantic layer sits between the diverse compute engines of the lakehouse and the downstream consumption tools like [Tableau](/knowledge/tableau), [Power BI](/knowledge/power-bi), or AI agents.
 
 Instead of exposing raw tables, data engineers use the semantic layer to define logical views, metrics, and relationships. They translate cryptic column names like `usr_txn_amt_04` into clear business terms like `Total Revenue`. 
 
@@ -138,7 +138,7 @@ Because the semantic layer is universal, it ensures consistency across the entir
 
 The data lakehouse is rapidly evolving to meet the demands of artificial intelligence, giving rise to the concept of the [Agentic Lakehouse](/knowledge/agentic-lakehouse). 
 
-Traditional analytics relied on humans writing SQL queries to extract insights. The agentic lakehouse shifts this paradigm by empowering autonomous AI agents to interact directly with enterprise data. These agents can interpret natural language questions, formulate the necessary SQL, execute the query against the lakehouse, analyze the results, and take action.
+Traditional analytics relied on humans writing SQL queries to extract insights. The [agentic lakehouse](/knowledge/agentic-lakehouse) shifts this paradigm by empowering autonomous AI agents to interact directly with enterprise data. These agents can interpret natural language questions, formulate the necessary SQL, execute the query against the lakehouse, analyze the results, and take action.
 
 For this to work safely and effectively, the underlying architecture must be perfect. AI agents cannot navigate a messy, ungoverned data swamp. They require the strict schema enforcement, high quality data, and rich metadata context that only a true lakehouse provides. 
 
@@ -170,7 +170,7 @@ This is false. Simply connecting a query engine like Presto to a bucket of raw C
 Many organizations adopt a hybrid approach. They use the lakehouse as the massive, scalable foundation for their entire data estate, handling heavy ETL, machine learning, and broad analytics. They may still maintain a smaller, highly optimized data warehouse instance for a specific set of ultra low latency, high concurrency dashboard queries, feeding that warehouse directly from the clean, structured data in the lakehouse.
 
 **Misconception 3: The lakehouse is slower than a data warehouse.**
-While early data lakes were undeniably slow, a modern lakehouse powered by columnar Parquet files, Iceberg metadata pruning, and a vectorized execution engine like Dremio or Apache Arrow can frequently match or exceed the performance of a traditional cloud data warehouse, especially on massive datasets.
+While early data lakes were undeniably slow, a modern lakehouse powered by columnar Parquet files, Iceberg metadata pruning, and a vectorized execution engine like [Dremio](/knowledge/dremio) or [Apache Arrow](/knowledge/apache-arrow) can frequently match or exceed the performance of a traditional cloud data warehouse, especially on massive datasets.
 
 ## Frequently Asked Questions
 

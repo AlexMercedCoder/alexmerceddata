@@ -13,7 +13,7 @@ In traditional database environments, creating a copy of a production table for 
 
 **Zero-Copy Cloning** is an architectural capability that solves this problem instantly. 
 
-Zero-Copy Cloning allows users to create a perfect, queryable replica of a database, schema, or table in milliseconds, regardless of its size, without physically duplicating any underlying data files. It is a defining feature of modern cloud data warehouses (like Snowflake) and open data lakehouses (using Apache Iceberg and Nessie).
+Zero-Copy Cloning allows users to create a perfect, queryable replica of a database, schema, or table in milliseconds, regardless of its size, without physically duplicating any underlying data files. It is a defining feature of modern cloud data warehouses (like Snowflake) and open data lakehouses (using [Apache Iceberg](/knowledge/apache-iceberg) and Nessie).
 
 ## The Architecture of Zero-Copy Cloning
 

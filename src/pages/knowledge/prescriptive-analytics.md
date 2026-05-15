@@ -28,7 +28,7 @@ The business defines a strict objective: *Maximize Profit*.
 The business also defines strict constraints: *We only have 5 delivery trucks, drivers cannot drive more than 8 hours a day, and packages must arrive before 5 PM.*
 
 ### 2. The Simulation (Monte Carlo)
-The system then runs a massive simulation. It calculates thousands of different delivery routes. It injects the Predictive Analytics (e.g., "There is a 40% chance of a traffic jam on Route A"). 
+The system then runs a massive simulation. It calculates thousands of different delivery routes. It injects the [Predictive Analytics](/knowledge/predictive-analytics) (e.g., "There is a 40% chance of a traffic jam on Route A"). 
 It evaluates the financial outcome of every single simulated route. 
 
 ### 3. The Prescription
@@ -48,7 +48,7 @@ Prescriptive Analytics is incredibly difficult to achieve because it requires ab
 
 If a Descriptive dashboard is wrong, an executive might make a slightly bad decision. If a Prescriptive, autonomous trading algorithm is wrong, it can lose $50 million in three seconds. 
 
-Because of this risk, Prescriptive systems require the highest maturity level of data engineering: flawless [Data Quality](/knowledge/data-quality) checks, robust [Data Observability](/knowledge/data-observability), and a perfectly synchronized **Data Lakehouse** that guarantees the optimization engine is always making decisions based on the absolute ground truth.
+Because of this risk, Prescriptive systems require the highest maturity level of data engineering: flawless [Data Quality](/knowledge/data-quality) checks, robust [Data Observability](/knowledge/data-observability), and a perfectly synchronized **[Data Lakehouse](/knowledge/data-lakehouse)** that guarantees the optimization engine is always making decisions based on the absolute ground truth.
 
 ## Conclusion
 

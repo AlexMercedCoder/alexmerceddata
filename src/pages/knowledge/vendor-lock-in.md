@@ -27,7 +27,7 @@ If a massive enterprise signed a contract with a legacy, proprietary Data Wareho
 
 ## Breaking the Lock: The Open Data Architecture
 
-The modern **Data Lakehouse** architecture was explicitly designed to shatter Vendor Lock-in. Modern Chief Data Officers (CDOs) construct their platforms using an "Open Architecture" philosophy.
+The modern **[Data Lakehouse](/knowledge/data-lakehouse)** architecture was explicitly designed to shatter Vendor Lock-in. Modern Chief Data Officers (CDOs) construct their platforms using an "Open Architecture" philosophy.
 
 ### 1. Open Storage (Cloud Agnostic)
 Companies no longer store their data inside the database. They store their raw data in cheap, neutral Cloud Object Storage (like [Amazon S3](/knowledge/amazon-s3) or Azure ADLS). Because the data lives outside the database, the company retains absolute ownership of the physical files.
@@ -35,7 +35,7 @@ Companies no longer store their data inside the database. They store their raw d
 ### 2. Open File and Table Formats
 Companies mandate that data must be saved using Open-Source, non-proprietary formats:
 *   **Open File Formats**: [Apache Parquet](/knowledge/apache-parquet) or Apache ORC.
-*   **[Open Table Formats](/knowledge/open-table-formats)**: Apache Iceberg.
+*   **[Open Table Formats](/knowledge/open-table-formats)**: [Apache Iceberg](/knowledge/apache-iceberg).
 Because Apache Iceberg is open-source, any compute engine in the world knows how to read it. 
 
 ### The Result: Compute Agnosticism

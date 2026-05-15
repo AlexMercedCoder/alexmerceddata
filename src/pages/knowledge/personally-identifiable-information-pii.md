@@ -24,7 +24,7 @@ PII is generally broken down into two categories based on how easily it can iden
 ### 1. Direct PII (Sensitive PII)
 This is information that points directly to a single, specific person with no additional context needed. It is heavily protected by laws like GDPR and HIPAA.
 *   **Examples**: Social Security Numbers (SSN), Driver's License numbers, Passport numbers, Biometric data (fingerprints, retina scans), Credit Card numbers.
-*   **Governance Standard**: This data must *always* be encrypted at rest and in transit. In a Data Lakehouse, Data Engineers often use [Data Masking](/knowledge/data-masking) to ensure that even internal Data Analysts cannot view this data in plaintext.
+*   **Governance Standard**: This data must *always* be encrypted at rest and in transit. In a [Data Lakehouse](/knowledge/data-lakehouse), Data Engineers often use [Data Masking](/knowledge/data-masking) to ensure that even internal Data Analysts cannot view this data in plaintext.
 
 ### 2. Indirect PII (Non-Sensitive PII / Quasi-Identifiers)
 This is information that, on its own, cannot identify a specific person. However, if an attacker combines two or three pieces of Indirect PII together (a Linkage Attack), they can easily identify a specific human.

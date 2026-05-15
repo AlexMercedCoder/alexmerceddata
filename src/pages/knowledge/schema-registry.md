@@ -41,9 +41,9 @@ Because data inevitably changes, developers must be able to evolve schemas (add 
 
 ## The Impact on the Data Lakehouse
 
-While Schema Registries were born in the software engineering / microservices world, they are a critical component of the modern Data Lakehouse.
+While Schema Registries were born in the software engineering / microservices world, they are a critical component of the modern [Data Lakehouse](/knowledge/data-lakehouse).
 
-When a massive ingestion engine (like [Apache Flink](/knowledge/apache-flink)) pulls CDC (Change Data Capture) streams from Kafka to populate an Apache Iceberg table, it relies entirely on the Schema Registry. 
+When a massive ingestion engine (like [Apache Flink](/knowledge/apache-flink)) pulls CDC (Change Data Capture) streams from Kafka to populate an [Apache Iceberg](/knowledge/apache-iceberg) table, it relies entirely on the Schema Registry. 
 If the upstream database schema evolves (e.g., a new column is added), Flink detects the new Schema ID from the Registry. Flink can then automatically execute an `ALTER TABLE` command against the Iceberg metadata, perfectly syncing the lakehouse schema with the upstream database without any human intervention.
 
 ## Conclusion

@@ -45,7 +45,7 @@ Now, the model is much more likely to "roll the dice" and select a statistically
 Tuning the Temperature is a critical aspect of **[Prompt Engineering](/knowledge/prompt-engineering)** and application design. The ideal temperature depends entirely on the specific use case.
 
 ### 1. Analytical and Coding Tasks (Low Temperature: 0.0 - 0.2)
-If you are asking an LLM to generate a complex SQL query for an Apache Iceberg table, or using an AI Agent to extract specific JSON metadata from a legal contract, you want zero creativity. You want absolute factual precision and determinism. 
+If you are asking an LLM to generate a complex SQL query for an [Apache Iceberg](/knowledge/apache-iceberg) table, or using an AI Agent to extract specific JSON metadata from a legal contract, you want zero creativity. You want absolute factual precision and determinism. 
 Setting the temperature to `0.0` ensures the model does not try to creatively invent a SQL syntax that doesn't exist. It provides the most mathematically rigid, reproducible answer.
 
 ### 2. Conversational Chatbots (Medium Temperature: 0.5 - 0.7)

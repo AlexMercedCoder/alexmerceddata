@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Predicate Pushdown
 
-When querying massive datasets stored in a Data Lakehouse, the most expensive operation is disk I/O—physically reading bytes off the storage medium (like [Amazon S3](/knowledge/amazon-s3) or HDFS) and moving them across the network into the RAM of the compute engine (like Trino, Spark, or [Dremio](/knowledge/dremio)).
+When querying massive datasets stored in a [Data Lakehouse](/knowledge/data-lakehouse), the most expensive operation is disk I/O—physically reading bytes off the storage medium (like [Amazon S3](/knowledge/amazon-s3) or HDFS) and moving them across the network into the RAM of the compute engine (like Trino, Spark, or [Dremio](/knowledge/dremio)).
 
 If a table contains 10 Terabytes of data, and an analyst runs a query that only needs 50 Megabytes of specific records (e.g., "Find all sales in London yesterday"), downloading the entire 10TB table just to filter it in memory is an architectural failure.
 
@@ -19,7 +19,7 @@ In database terminology, a "predicate" is a condition that evaluates to TRUE or 
 
 ## How Predicate Pushdown Works in the Lakehouse
 
-In a modern open lakehouse (typically built on Apache Iceberg and [Apache Parquet](/knowledge/apache-parquet)), predicate pushdown happens in two distinct phases: The Metadata Layer and the File Layer.
+In a modern open lakehouse (typically built on [Apache Iceberg](/knowledge/apache-iceberg) and [Apache Parquet](/knowledge/apache-parquet)), predicate pushdown happens in two distinct phases: The Metadata Layer and the File Layer.
 
 ### Phase 1: Metadata Filtering (Apache Iceberg)
 Before the query engine touches a single data file, it consults the Iceberg metadata tree. 

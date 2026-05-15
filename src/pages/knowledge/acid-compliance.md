@@ -45,7 +45,7 @@ Durability guarantees that once a transaction is successfully committed and the 
 The original Hadoop Data Lakes were emphatically NOT ACID compliant. 
 If an [Apache Spark](/knowledge/apache-spark) job was writing a massive 1-Terabyte dataset to the Data Lake and crashed halfway through, 500 Gigabytes of corrupted, partial data was left sitting in the folder. If a business analyst ran a [Tableau](/knowledge/tableau) dashboard at that exact moment, their charts would include the corrupted data. 
 
-**Apache Iceberg**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)** were invented specifically to solve this. 
+**[Apache Iceberg](/knowledge/apache-iceberg)**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)** were invented specifically to solve this. 
 By introducing a transactional metadata layer (a log of snapshots), these [Open Table Formats](/knowledge/open-table-formats) brought full ACID compliance to cheap cloud object storage (S3). 
 
 Now, when Spark writes data to an Iceberg table, it writes the Parquet files invisibly. The data is hidden from business users. Only when the Spark job finishes 100% successfully does Iceberg execute an *Atomic* commit, updating the metadata pointer. The business analysts instantly see the new data. If Spark crashes at 99%, the partial files are ignored, and the analysts are protected from the corrupted state.

@@ -13,7 +13,7 @@ For the past twenty years, the architecture of enterprise data has been defined 
 
 These two systems represent fundamentally different philosophies regarding how data should be stored, processed, and consumed. While they have historically competed for IT budgets, the overwhelming explosion of data volume and the rise of Machine Learning forced organizations to realize that they desperately needed the capabilities of both.
 
-Understanding the strengths and weaknesses of both architectures is essential to understanding why the industry ultimately abandoned the divide in favor of the modern **Data Lakehouse**.
+Understanding the strengths and weaknesses of both architectures is essential to understanding why the industry ultimately abandoned the divide in favor of the modern **[Data Lakehouse](/knowledge/data-lakehouse)**.
 
 ## The Data Warehouse: Order and Speed
 
@@ -45,6 +45,6 @@ They dumped all raw data into the Data Lake (Tier 1). Then, they wrote incredibl
 
 The fundamental limitations of the Warehouse and the Lake ultimately birthed the **Data Lakehouse**.
 
-By utilizing [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**, organizations can superimpose the transactional guarantees, schema enforcement, and high-speed indexing of a Data Warehouse directly on top of the cheap, scalable files of a Data Lake. 
+By utilizing [Open Table Formats](/knowledge/open-table-formats) like **[Apache Iceberg](/knowledge/apache-iceberg)**, organizations can superimpose the transactional guarantees, schema enforcement, and high-speed indexing of a Data Warehouse directly on top of the cheap, scalable files of a Data Lake. 
 
 Coupled with high-speed federated query engines like [Dremio](/knowledge/dremio), the Lakehouse eliminates the need for the two-tier architecture entirely. Data is stored once in cheap S3 buckets, yet it is instantly queryable by both business analysts running sub-second SQL dashboards and data scientists training deep learning models, unifying the enterprise data stack for the first time in history.

@@ -50,7 +50,7 @@ While Polyglot Persistence is the absolute standard for building high-performanc
 
 If the CEO wants a report combining sales (PostgreSQL), product catalog (MongoDB), and web clicks (Elasticsearch), a data analyst cannot write a single SQL query across three different query languages.
 
-This is the exact reason the **Open Data Lakehouse** (powered by Apache Iceberg) is so critical. The data engineering team utilizes Change Data Capture (CDC) to extract data from all these specialized polyglot databases and stream it into a single, unified format (Iceberg) in [Amazon S3](/knowledge/amazon-s3). Once centralized in the Lakehouse, query engines like [Dremio](/knowledge/dremio) can provide unified SQL analytics across the entire organization.
+This is the exact reason the **Open [Data Lakehouse](/knowledge/data-lakehouse)** (powered by [Apache Iceberg](/knowledge/apache-iceberg)) is so critical. The data engineering team utilizes Change Data Capture (CDC) to extract data from all these specialized polyglot databases and stream it into a single, unified format (Iceberg) in [Amazon S3](/knowledge/amazon-s3). Once centralized in the Lakehouse, query engines like [Dremio](/knowledge/dremio) can provide unified SQL analytics across the entire organization.
 
 ## Conclusion
 

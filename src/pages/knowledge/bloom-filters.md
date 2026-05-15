@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Bloom Filters
 
-In the quest for ultimate query performance in massive Data Lakehouses, the primary goal is always to read as little data from disk as possible. We use techniques like **[Predicate Pushdown](/knowledge/predicate-pushdown)** to check the min/max statistics of a Parquet or ORC file. If we are looking for `customer_id = 50`, and the file's metadata says its minimum ID is 100 and its maximum ID is 200, we instantly skip the file.
+In the quest for ultimate query performance in massive [Data Lakehouses](/knowledge/data-lakehouse), the primary goal is always to read as little data from disk as possible. We use techniques like **[Predicate Pushdown](/knowledge/predicate-pushdown)** to check the min/max statistics of a Parquet or ORC file. If we are looking for `customer_id = 50`, and the file's metadata says its minimum ID is 100 and its maximum ID is 200, we instantly skip the file.
 
 However, min/max statistics have a severe limitation: they are completely useless for data that is unsorted or highly randomized. 
 
@@ -50,7 +50,7 @@ In big data analytics, false positives are completely acceptable. If the filter 
 
 Modern analytical file formats like **[Apache Parquet](/knowledge/apache-parquet)** and **Apache ORC** support native Bloom Filters embedded directly in their file footers. 
 
-When configuring a Data Lakehouse, data engineers actively choose which columns should have Bloom Filters built for them during the ingestion process. 
+When configuring a [Data Lakehouse](/knowledge/data-lakehouse), data engineers actively choose which columns should have Bloom Filters built for them during the ingestion process. 
 *   **Good Candidates**: High-cardinality, unique identifiers like UUIDs, email addresses, phone numbers, or session IDs.
 *   **Bad Candidates**: Low-cardinality columns (like `Gender` or `State`), because every bit in the array would quickly turn to `1`, rendering the filter useless.
 

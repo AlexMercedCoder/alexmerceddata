@@ -28,7 +28,7 @@ When the query engine receives a SQL statement, the optimizer analyzes the capab
 
 ### 1. Filter Pushdown (Predicate Pushdown)
 This is the most common form of pushdown. In the example above, the query contains a `WHERE region = 'EMEA'` clause.
-Instead of downloading all 10 billion rows, the Trino/Dremio engine rewrites the query and sends the exact SQL string `SELECT * FROM sales_data WHERE region = 'EMEA'` directly to the Oracle database. 
+Instead of downloading all 10 billion rows, the Trino/[Dremio](/knowledge/dremio) engine rewrites the query and sends the exact SQL string `SELECT * FROM sales_data WHERE region = 'EMEA'` directly to the Oracle database. 
 Oracle, which is highly optimized for its own storage, executes the filter natively. It only returns the 5 million rows that belong to EMEA over the network. Network I/O is reduced by 99.9%.
 
 ### 2. Projection Pushdown (Column Pruning)
@@ -40,11 +40,11 @@ In our example, the engine can push the entire `SUM()` and `GROUP BY` operation 
 
 ## Compute Pushdown in the Lakehouse (Iceberg/Parquet)
 
-While pushdown is conceptually easy to understand when querying another relational database, it becomes slightly more complex—and vastly more important—when querying flat files in a Data Lakehouse.
+While pushdown is conceptually easy to understand when querying another relational database, it becomes slightly more complex—and vastly more important—when querying flat files in a [Data Lakehouse](/knowledge/data-lakehouse).
 
 Object storage (like [Amazon S3](/knowledge/amazon-s3)) has no native compute capabilities; S3 cannot execute a SQL `SUM()`. Therefore, compute pushdown in a lakehouse refers to pushing the logic down into the *file reader* processes (the low-level software libraries scanning the Parquet files).
 
-**Apache Iceberg** and **[Apache Parquet](/knowledge/apache-parquet)** are designed explicitly to support aggressive pushdown:
+**[Apache Iceberg](/knowledge/apache-iceberg)** and **[Apache Parquet](/knowledge/apache-parquet)** are designed explicitly to support aggressive pushdown:
 1.  **Metadata Level (Iceberg)**: When Dremio evaluates `WHERE date = '2026-01-01'`, it pushes that filter into the Iceberg manifest files. Iceberg instantly identifies that 9,000 out of 10,000 Parquet files do not contain data for that date, and Dremio completely skips downloading them.
 2.  **File Level (Parquet)**: For the 1,000 files Dremio does download, the Parquet reader uses the file's footer statistics (min/max values) to skip irrelevant chunks of data (Row Groups) within the file itself.
 

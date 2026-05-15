@@ -26,7 +26,7 @@ The engineering team executes a massive batch job. It takes a perfect copy of th
 *   **Con**: It requires massive storage duplication (you are copying the whole database) and slow, heavy batch processing.
 
 ### 2. Dynamic Data Masking (DDM)
-DDM is the modern standard for analytical environments (like the Data Lakehouse). The data is never physically altered on disk. The masking happens "on the fly" in the computer's RAM exactly at the moment a user queries it.
+DDM is the modern standard for analytical environments (like the [Data Lakehouse](/knowledge/data-lakehouse)). The data is never physically altered on disk. The masking happens "on the fly" in the computer's RAM exactly at the moment a user queries it.
 
 If the CEO (who has `Clearance_Level = High`) runs `SELECT credit_card FROM customers`, the database returns: `4555-1234-5678-9999`.
 If a Junior Analyst (who has `Clearance_Level = Low`) runs the exact same `SELECT credit_card FROM customers` query, the query engine intercepts the request, checks their identity, and alters the result in flight. The analyst receives: `XXXX-XXXX-XXXX-9999`.

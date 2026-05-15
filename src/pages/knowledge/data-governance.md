@@ -47,7 +47,7 @@ Technology alone cannot govern data; human accountability is required. A success
 ## Compliance and Regulatory Frameworks
 
 Perhaps the strongest driver for data governance is avoiding regulatory disaster. Modern governance architectures must be designed to comply seamlessly with global frameworks:
-*   **GDPR (Europe) & CCPA (California)**: These laws grant consumers the "Right to be Forgotten." If a user requests deletion, the organization must be able to locate and definitively delete their PII across petabytes of historical files. Table formats like Apache Iceberg make this possible by enabling [Row-Level Deletes](/knowledge/row-level-deletes) (Merge-on-Read) directly on the data lake.
+*   **GDPR (Europe) & CCPA (California)**: These laws grant consumers the "Right to be Forgotten." If a user requests deletion, the organization must be able to locate and definitively delete their PII across petabytes of historical files. Table formats like [Apache Iceberg](/knowledge/apache-iceberg) make this possible by enabling [Row-Level Deletes](/knowledge/row-level-deletes) (Merge-on-Read) directly on the data lake.
 *   **HIPAA & SOC 2**: Require rigorous audit logging. Governance systems must track exactly which user queried which table, at what time, and what specific data was returned.
 
 ## Conclusion

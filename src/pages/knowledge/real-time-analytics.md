@@ -37,8 +37,8 @@ The industry relies on specialized **Real-Time OLAP Databases** (like **[Apache 
 
 Historically, building a real-time system meant building an entirely separate, expensive data stack alongside your traditional Data Lake. This "[Lambda Architecture](/knowledge/lambda-architecture)" forced engineers to write two different sets of code (one for streaming, one for batch).
 
-The modern **Data Lakehouse** is actively bridging this gap. 
-With the introduction of [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**, which support high-velocity Merge-on-Read (MoR) operations, organizations can now stream data directly from Kafka into [Amazon S3](/knowledge/amazon-s3) with latency as low as 1 to 5 minutes. 
+The modern **[Data Lakehouse](/knowledge/data-lakehouse)** is actively bridging this gap. 
+With the introduction of [Open Table Formats](/knowledge/open-table-formats) like **[Apache Iceberg](/knowledge/apache-iceberg)**, which support high-velocity Merge-on-Read (MoR) operations, organizations can now stream data directly from Kafka into [Amazon S3](/knowledge/amazon-s3) with latency as low as 1 to 5 minutes. 
 While this isn't the "sub-second" latency required for autonomous fraud detection, it provides "near real-time" analytics for human dashboards. It allows the business to monitor live sales trends throughout the day using standard BI tools, completely eliminating the need for expensive, specialized Real-Time OLAP databases for 90% of business use cases.
 
 ## Conclusion

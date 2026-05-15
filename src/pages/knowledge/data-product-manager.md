@@ -22,7 +22,7 @@ The DPM operates on the core principle of **Data as a Product** (a foundational 
 
 A "Data Product" is not necessarily a piece of software sold to external customers. It is any curated, high-quality data asset that is actively consumed by users. 
 Examples of internal Data Products include:
-*   A clean, perfectly maintained `360_Customer_Profile` table in the Data Lakehouse.
+*   A clean, perfectly maintained `360_Customer_Profile` table in the [Data Lakehouse](/knowledge/data-lakehouse).
 *   A highly accurate Machine Learning model predicting inventory shortages.
 *   A real-time executive dashboard tracking supply chain metrics.
 

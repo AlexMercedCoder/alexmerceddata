@@ -22,7 +22,7 @@ It is common to confuse Data Fabric with [Data Mesh](/knowledge/data-mesh), as b
 *   **[Data Mesh](/knowledge/data-mesh)** is a *socio-technical, organizational* pattern. It solves scaling issues by decentralizing human teams and assigning data ownership to business domains.
 *   **Data Fabric** is a *technology-centric* pattern. It solves scaling issues by deploying an intelligent software layer over existing infrastructure to automate integration and governance across silos.
 
-In practice, many advanced enterprises implement both simultaneously: using a Data Fabric to provide the technical interoperability required to support a decentralized Data Mesh organization.
+In practice, many advanced enterprises implement both simultaneously: using a Data Fabric to provide the technical interoperability required to support a decentralized [Data Mesh](/knowledge/data-mesh) organization.
 
 ## The Architecture of a Data Fabric
 

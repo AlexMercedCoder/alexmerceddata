@@ -15,11 +15,11 @@ The fundamental challenge of modern data engineering is managing data at petabyt
 
 This architecture fundamentally changes how compute engines interact with data. By shifting the source of truth from slow directory listings to explicit metadata files, Iceberg enables query engines to perform massive analytical operations with unprecedented speed and safety. 
 
-This guide provides a comprehensive technical deep dive into the Apache Iceberg architecture. It explores the components of the metadata tree, the mechanisms of optimistic concurrency control, the write commit flow, and the garbage collection processes required to maintain a healthy data lakehouse.
+This guide provides a comprehensive technical deep dive into the Apache [Iceberg architecture](/knowledge/apache-iceberg-architecture). It explores the components of the metadata tree, the mechanisms of optimistic concurrency control, the write commit flow, and the garbage collection processes required to maintain a healthy [data lakehouse](/knowledge/data-lakehouse).
 
 ## The Problem with Directory Based Tables
 
-Before examining Iceberg's architecture, we must understand the legacy approach it replaces: the Apache Hive directory structure. 
+Before examining Iceberg's architecture, we must understand the legacy approach it replaces: the [Apache Hive](/knowledge/apache-hive) directory structure. 
 
 In the traditional data lake, a table is defined implicitly by a directory path in object storage (e.g., `s3://data-lake/sales/`). Partitions are represented as nested subdirectories (e.g., `s3://data-lake/sales/year=2026/month=05/`). When a query engine needs to read data, it must ask the object storage provider to perform a recursive listing of all the files inside these directories.
 
@@ -28,7 +28,7 @@ This implicit, directory based architecture suffers from several fatal flaws at 
 2.  **No Transactional State:** The file system has no concept of a "commit." If a job writes 500 files and crashes after writing 250, those 250 files immediately become visible to anyone querying the directory, resulting in corrupted reads.
 3.  **No File Level Statistics:** To know what is inside a file, the engine must open it and read the footer. This makes it impossible to skip irrelevant files without opening them first.
 
-Apache Iceberg eliminates these problems by completely decoupling the logical state of the table from the physical layout of the files on disk.
+[Apache Iceberg](/knowledge/apache-iceberg) eliminates these problems by completely decoupling the logical state of the table from the physical layout of the files on disk.
 
 ## The Iceberg Metadata Tree
 
@@ -41,7 +41,7 @@ The catalog acts as the authoritative entry point. Its primary responsibility is
 
 The catalog is also responsible for guaranteeing atomicity. When an engine commits new data to the table, it asks the catalog to update the pointer from the old metadata file to the new metadata file. The catalog ensures this operation is atomic. If two engines try to update the pointer simultaneously, the catalog allows one to succeed and forces the other to retry, preventing corruption. 
 
-Organizations typically implement the catalog using specialized services like [Apache Polaris](/knowledge/apache-polaris) or Project Nessie, which implement the [Iceberg REST Catalog](/knowledge/apache-iceberg-rest-catalog) specification.
+Organizations typically implement the catalog using specialized services like [Apache Polaris](/knowledge/apache-polaris) or [Project Nessie](/knowledge/project-nessie), which implement the [Iceberg REST Catalog](/knowledge/apache-iceberg-rest-catalog) specification.
 
 ### Level 2: The Metadata File
 The catalog pointer leads the query engine to a `.metadata.json` file. This file represents the absolute state of the table at a specific point in time. 
@@ -56,7 +56,7 @@ The metadata JSON file contains the foundational configuration of the table, inc
 When a query engine reads the metadata file, it identifies the current snapshot ID and proceeds to the next level of the tree.
 
 ### Level 3: The Manifest List
-Every snapshot points to exactly one Manifest List file. This file is written in Apache Avro format, which is a row based binary format highly optimized for rapid sequential reading.
+Every snapshot points to exactly one Manifest List file. This file is written in [Apache Avro](/knowledge/apache-avro) format, which is a row based binary format highly optimized for rapid sequential reading.
 
 The manifest list acts as a high level index for the snapshot. It contains a list of paths pointing to the underlying manifest files. Crucially, it does not just list paths; it stores aggregate statistics for each manifest file.
 
@@ -102,7 +102,7 @@ To appreciate the elegance of the Iceberg architecture, we must examine the sequ
 
 Apache Iceberg achieves ACID transactions through Optimistic Concurrency Control (OCC). This means it assumes that conflicts between writers are rare, so it allows multiple engines to prepare their writes simultaneously without locking the table.
 
-When an engine, such as Apache Spark, wants to append data to an Iceberg table, it executes the following commit flow:
+When an engine, such as [Apache Spark](/knowledge/apache-spark), wants to append data to an Iceberg table, it executes the following commit flow:
 
 1.  **Read Current State:** The engine contacts the catalog and reads the current `metadata.json` file to understand the schema and partition spec. It notes the current snapshot ID, which serves as the "base version" for its transaction.
 2.  **Write Data Files:** The engine processes the data and writes the new Parquet data files to object storage. These files are orphaned at this stage; no reader knows they exist.

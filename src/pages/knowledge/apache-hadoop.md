@@ -32,7 +32,7 @@ The central server sends a tiny Java program out to the 1,000 servers. Each serv
 ## The Hadoop Ecosystem Explosion
 
 Because HDFS was so revolutionary, an entire "Zoo" of open-source projects sprang up around it to make it easier to use:
-*   **[Apache Hive](/knowledge/apache-hive)**: Allowed analysts to write SQL queries against data sitting in HDFS, instead of writing complex Java MapReduce code.
+*   **[Apache Hive](/knowledge/apache-hive)**: Allowed analysts to write SQL queries against data sitting in HDFS, instead of writing complex Java [MapReduce](/knowledge/mapreduce) code.
 *   **Apache HBase**: A massive NoSQL database built on top of HDFS.
 *   **Apache Zookeeper**: A centralized service for maintaining configuration information across the cluster.
 
@@ -46,4 +46,4 @@ Why did it die?
 
 ## Conclusion
 
-While you will rarely spin up a new Hadoop cluster today, understanding its architecture is mandatory. Hadoop proved that distributed, scale-out commodity hardware was the future of data engineering, laying the philosophical and technical groundwork for the modern Data Lake and Data Lakehouse architectures that dominate the industry today.
+While you will rarely spin up a new Hadoop cluster today, understanding its architecture is mandatory. Hadoop proved that distributed, scale-out commodity hardware was the future of data engineering, laying the philosophical and technical groundwork for the modern Data Lake and [Data Lakehouse](/knowledge/data-lakehouse) architectures that dominate the industry today.

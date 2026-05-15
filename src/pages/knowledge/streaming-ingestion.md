@@ -34,7 +34,7 @@ Crucially, modern streaming engines manage **State** and **Exactly-Once Semantic
 ### 3. The Sink (The Data Lakehouse)
 Historically, the final destination for streaming data was a specialized, highly expensive real-time database (like [Apache Druid](/knowledge/apache-druid) or Elasticsearch). Traditional data lakes (based on raw Parquet files) were terrible sinks for streaming because continuously appending small amounts of data resulted in thousands of tiny files, destroying query performance (the "small file problem").
 
-The advent of **Apache Iceberg** changed everything. Iceberg was designed to be an exceptional streaming sink. 
+The advent of **[Apache Iceberg](/knowledge/apache-iceberg)** changed everything. Iceberg was designed to be an exceptional streaming sink. 
 When Flink writes a continuous stream into an Iceberg table, Iceberg manages the commits transactionally. Instead of rewriting files, Iceberg safely appends new Parquet files and updates its metadata tree without blocking readers. To solve the small file problem, Iceberg enables asynchronous, background compaction services that quietly merge the tiny streaming files into larger, read-optimized files without interrupting the live ingestion stream.
 
 ## Complexities in Streaming Ingestion

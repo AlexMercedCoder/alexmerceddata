@@ -29,11 +29,11 @@ For advanced data engineers and analysts, Superset features a highly advanced SQ
 
 ## Superset and the Modern Data Stack
 
-Superset was explicitly designed to pair with the modern **Data Lakehouse** and high-speed query engines.
+Superset was explicitly designed to pair with the modern **[Data Lakehouse](/knowledge/data-lakehouse)** and high-speed query engines.
 
 Because Superset itself does not store data, its performance is 100% dependent on the database it connects to. If Superset connects to an unoptimized Data Lake, a simple dashboard might take 5 minutes to load.
 
-However, when Superset is connected to a high-performance engine like **[Apache Druid](/knowledge/apache-druid)** (which it was originally built to pair with) or **Dremio** (using Data Reflections), the architecture becomes magically powerful. Superset passes the query to Dremio, Dremio hits its sub-second cache, and the Superset dashboard renders instantly for 10,000 concurrent users.
+However, when Superset is connected to a high-performance engine like **[Apache Druid](/knowledge/apache-druid)** (which it was originally built to pair with) or **[Dremio](/knowledge/dremio)** (using Data Reflections), the architecture becomes magically powerful. Superset passes the query to Dremio, Dremio hits its sub-second cache, and the Superset dashboard renders instantly for 10,000 concurrent users.
 
 ## Open Source vs. Proprietary BI
 

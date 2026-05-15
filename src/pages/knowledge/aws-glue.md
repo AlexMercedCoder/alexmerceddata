@@ -30,7 +30,7 @@ If you have data stored in [Amazon S3](/knowledge/amazon-s3), Amazon RDS (Relati
 
 The second half of AWS Glue is its compute engine for transforming data. 
 
-Historically, to convert raw JSON files into optimized Parquet files, a Data Engineer would have to spin up a 20-node Apache Spark cluster, pay for it 24/7, and manage the complex Java environment. 
+Historically, to convert raw JSON files into optimized Parquet files, a Data Engineer would have to spin up a 20-node [Apache Spark](/knowledge/apache-spark) cluster, pay for it 24/7, and manage the complex Java environment. 
 
 With AWS Glue, the engineer simply writes a Python or Scala script using Apache Spark (or the proprietary Glue library). They click "Run." 
 AWS Glue operates purely **Serverlessly**. It autonomously provisions a massive Spark cluster in the background, executes the data transformation job across terabytes of data, and instantly tears the cluster down when the job finishes. The company is billed by the second, only for the exact compute time used.
@@ -42,4 +42,4 @@ DataBrew is a visual data preparation tool that requires absolutely no coding. A
 
 ## Conclusion
 
-AWS Glue is the foundational connective tissue of the modern AWS Data Lakehouse. By providing a serverless, unified Data Catalog that autonomously tracks data schemas across the entire cloud, coupled with an auto-scaling ETL engine that abstracts away all Apache Spark infrastructure management, AWS Glue allows Data Engineers to focus entirely on pipeline logic and data quality, rather than server maintenance.
+AWS Glue is the foundational connective tissue of the modern AWS [Data Lakehouse](/knowledge/data-lakehouse). By providing a serverless, unified Data Catalog that autonomously tracks data schemas across the entire cloud, coupled with an auto-scaling ETL engine that abstracts away all Apache Spark infrastructure management, AWS Glue allows Data Engineers to focus entirely on pipeline logic and data quality, rather than server maintenance.

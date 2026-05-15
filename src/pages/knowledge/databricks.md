@@ -27,7 +27,7 @@ While anyone can run open-source Spark on an AWS EMR cluster, managing the infra
 
 ### 2. The Storage Layer: Delta Lake
 Data Lakes are inherently messy and lack the transactional reliability of databases. To solve this, Databricks invented (and subsequently open-sourced) **[Delta Lake](/knowledge/delta-lake)**.
-[Delta Lake](/knowledge/delta-lake) sits on top of cheap cloud storage (S3/ADLS) and provides ACID transactions, schema enforcement, and time travel. This was the technological breakthrough that birthed the "Data Lakehouse" concept—bringing warehouse-like reliability to data lake storage. 
+[Delta Lake](/knowledge/delta-lake) sits on top of cheap cloud storage (S3/ADLS) and provides ACID transactions, schema enforcement, and time travel. This was the technological breakthrough that birthed the "[Data Lakehouse](/knowledge/data-lakehouse)" concept—bringing warehouse-like reliability to data lake storage. 
 
 ### 3. The ML Lifecycle: MLflow
 To support the Data Science team, Databricks created MLflow. MLflow is an MLOps platform deeply integrated into the Databricks workspace. When a data scientist trains a model in a Databricks Notebook using Spark MLlib, MLflow automatically tracks the hyperparameters, versions the model, and provides a 1-click deployment mechanism to serve the model as a REST API.
@@ -36,10 +36,10 @@ To support the Data Science team, Databricks created MLflow. MLflow is an MLOps 
 
 Before Databricks, the term "Data Lakehouse" didn't exist. Organizations used the cumbersome Two-Tier Architecture (ETLing data from the Lake into the Warehouse).
 
-Databricks argued this was archaic. Because Delta Lake provided structure to the S3 files, and the Photon Engine provided blistering SQL query speeds, Databricks told organizations: *Stop copying data into Snowflake.*
+Databricks argued this was archaic. Because [Delta Lake](/knowledge/delta-lake) provided structure to the S3 files, and the Photon Engine provided blistering SQL query speeds, Databricks told organizations: *Stop copying data into Snowflake.*
 
 They integrated **Databricks SQL** into their platform—a dedicated, serverless query engine designed purely for BI tools. Now, a [Tableau](/knowledge/tableau) user can connect directly to Databricks SQL and execute sub-second queries against the exact same Delta Lake tables that the data scientists are simultaneously using to train neural networks.
 
 ## Conclusion
 
-Databricks represents the convergence of Data Engineering and Artificial Intelligence. By providing a managed, collaborative workspace built upon the immense processing power of Apache Spark and the structural reliability of Delta Lake, Databricks successfully merged the Data Lake and the Data Warehouse. It remains one of the most powerful and widely adopted platforms for organizations looking to build unified, AI-ready data lakehouses at enterprise scale.
+Databricks represents the convergence of Data Engineering and Artificial Intelligence. By providing a managed, collaborative workspace built upon the immense processing power of [Apache Spark](/knowledge/apache-spark) and the structural reliability of Delta Lake, Databricks successfully merged the Data Lake and the Data Warehouse. It remains one of the most powerful and widely adopted platforms for organizations looking to build unified, AI-ready data lakehouses at enterprise scale.

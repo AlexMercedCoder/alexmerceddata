@@ -17,7 +17,7 @@ This forced dichotomy resulted in the complex, fragile "two tier" architecture t
 
 Recently, a third architectural paradigm has emerged to resolve this tension: the [Data Lakehouse](/knowledge/data-lakehouse). By combining the rigorous management of a database with the open storage mechanics of a data lake, the lakehouse promises to unify the entire data estate.
 
-This guide provides a rigorous comparison of the Data Lakehouse, the Data Lake, and the Data Warehouse. It strips away the marketing terminology and examines the underlying physics of how each system stores data, executes queries, and manages compute costs.
+This guide provides a rigorous comparison of the [Data Lakehouse](/knowledge/data-lakehouse), the Data Lake, and the Data Warehouse. It strips away the marketing terminology and examines the underlying physics of how each system stores data, executes queries, and manages compute costs.
 
 ## The Data Warehouse: High Performance, High Cost
 
@@ -58,17 +58,17 @@ Because the storage is incredibly cheap and it accepts all data types, the data 
 The Data Lakehouse was invented to eliminate the forced compromise between the warehouse and the lake. It asks a simple question: What if we could apply the transactional rigor and query performance of a data warehouse directly to the cheap, open files sitting in the data lake?
 
 ### Architectural Mechanics
-A data lakehouse is not a single piece of software; it is a composable architecture. The foundation remains the cheap cloud object storage of the data lake. The data is serialized into highly optimized, open source columnar file formats like [Apache Parquet](/knowledge/apache-parquet).
+A [data lakehouse](/knowledge/data-lakehouse) is not a single piece of software; it is a composable architecture. The foundation remains the cheap cloud object storage of the data lake. The data is serialized into highly optimized, open source columnar file formats like [Apache Parquet](/knowledge/apache-parquet).
 
-The defining characteristic of the lakehouse is the introduction of an open table format, such as [Apache Iceberg](/knowledge/apache-iceberg), Delta Lake, or Apache Hudi. These table formats sit on top of the Parquet files and act as an intelligent metadata layer. 
+The defining characteristic of the lakehouse is the introduction of an open table format, such as [Apache Iceberg](/knowledge/apache-iceberg), [Delta Lake](/knowledge/delta-lake), or [Apache Hudi](/knowledge/apache-hudi). These table formats sit on top of the Parquet files and act as an intelligent metadata layer. 
 
 As detailed in our [Apache Iceberg vs Delta Lake vs Apache Hudi](/knowledge/apache-iceberg-vs-delta-lake-vs-hudi) guide, these formats track data at the individual file level. They provide the ACID transactions, schema enforcement, and indexing previously exclusive to proprietary data warehouses.
 
 ### Performance Profile
-Because the table format maintains granular statistics about every single file, the lakehouse query engines (like [Dremio](/knowledge/dremio) or Apache Spark) can perform massive file pruning. They can mathematically skip over 99 percent of the files in the lake without opening them, drastically accelerating query times. A well architected lakehouse can frequently match or exceed the performance of a proprietary data warehouse, even for interactive BI dashboards.
+Because the table format maintains granular statistics about every single file, the lakehouse query engines (like [Dremio](/knowledge/dremio) or [Apache Spark](/knowledge/apache-spark)) can perform massive file pruning. They can mathematically skip over 99 percent of the files in the lake without opening them, drastically accelerating query times. A well architected lakehouse can frequently match or exceed the performance of a proprietary data warehouse, even for interactive BI dashboards.
 
 ### The Cost and Openness Tradeoff
-The lakehouse is built entirely on open standards. Organizations pay the absolute minimum price for cloud object storage, and they retain complete ownership of their data. Because the data is stored in open Parquet files rather than a vendor's proprietary format, a company can point multiple compute engines at the exact same data. A data engineering team can use Spark for ETL, analysts can use Dremio for BI, and data scientists can use Python for machine learning—all reading the exact same copy of the data without moving it.
+The lakehouse is built entirely on open standards. Organizations pay the absolute minimum price for cloud object storage, and they retain complete ownership of their data. Because the data is stored in open Parquet files rather than a vendor's proprietary format, a company can point multiple compute engines at the exact same data. A data engineering team can use Spark for ETL, analysts can use [Dremio](/knowledge/dremio) for BI, and data scientists can use Python for machine learning—all reading the exact same copy of the data without moving it.
 
 The primary tradeoff of the lakehouse is architectural complexity. It requires a mature engineering team to manage the interoperability between the storage layer, the table format, the catalog, and the federated query engines, whereas a SaaS data warehouse handles all of this automatically behind the scenes.
 
@@ -116,7 +116,7 @@ Despite the momentum of the lakehouse, there is no single architecture that fits
 You should choose a proprietary cloud data warehouse if your organization has a relatively small data footprint (under a few terabytes) and your workloads consist entirely of structured, financial, or operational reporting. If you do not have a dedicated team of data engineers and you are willing to pay a premium for a fully managed, zero configuration experience, the data warehouse remains an excellent choice.
 
 ### When to Choose a Data Lake
-You should rely primarily on a raw data lake if your sole objective is cheap archival storage. If you are subject to regulatory requirements that demand you retain ten years of raw system logs, but you rarely ever query those logs, dumping them into Amazon S3 without a sophisticated table format is the most cost effective solution.
+You should rely primarily on a raw data lake if your sole objective is cheap archival storage. If you are subject to regulatory requirements that demand you retain ten years of raw system logs, but you rarely ever query those logs, dumping them into [Amazon S3](/knowledge/amazon-s3) without a sophisticated table format is the most cost effective solution.
 
 ### When to Choose a Data Lakehouse
 You should adopt a data lakehouse architecture if you are operating at scale (tens of terabytes to petabytes) and you are feeling the pain of the two tier architecture. 
@@ -127,4 +127,4 @@ If your data engineers are spending all their time managing ETL pipelines just t
 
 The evolution from Data Warehouse to Data Lake to Data Lakehouse represents the maturation of the data engineering discipline. We have finally realized that we do not have to choose between performance and scale, or between structure and flexibility.
 
-The data lakehouse proves that by utilizing intelligent, open source metadata layers like Apache Iceberg, we can apply the rigorous database management principles of the warehouse directly to the infinite, cheap storage of the cloud. This architectural convergence eliminates data silos, destroys the ETL bottleneck, and provides a future proof foundation capable of supporting both traditional business intelligence and the next generation of artificial intelligence.
+The data lakehouse proves that by utilizing intelligent, open source metadata layers like [Apache Iceberg](/knowledge/apache-iceberg), we can apply the rigorous database management principles of the warehouse directly to the infinite, cheap storage of the cloud. This architectural convergence eliminates data silos, destroys the ETL bottleneck, and provides a future proof foundation capable of supporting both traditional business intelligence and the next generation of artificial intelligence.

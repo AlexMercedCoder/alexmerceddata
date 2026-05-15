@@ -47,7 +47,7 @@ Historically, to use a CDP, you had to physically copy all your enterprise data 
 
 ### The Composable CDP (Modern)
 The modern solution is the **Composable CDP** (pioneered by tools like Hightouch and Census). 
-A Composable CDP acknowledges that the company already spent millions of dollars building a perfect **Data Lakehouse** (with Apache Iceberg) to store all their customer data. Instead of copying the data into a new database, the Composable CDP simply sits directly on top of the existing Lakehouse. It executes the audience segmentation queries directly against the Lakehouse via **[Reverse ETL](/knowledge/reverse-etl)**, and pushes the results to the marketing channels. 
+A Composable CDP acknowledges that the company already spent millions of dollars building a perfect **[Data Lakehouse](/knowledge/data-lakehouse)** (with [Apache Iceberg](/knowledge/apache-iceberg)) to store all their customer data. Instead of copying the data into a new database, the Composable CDP simply sits directly on top of the existing Lakehouse. It executes the audience segmentation queries directly against the Lakehouse via **[Reverse ETL](/knowledge/reverse-etl)**, and pushes the results to the marketing channels. 
 
 ## Conclusion
 

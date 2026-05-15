@@ -13,7 +13,7 @@ In the mid-2010s, organizations attempting to build massive data lakes on Hadoop
 
 This process was brutally slow, incredibly expensive, and impossible to scale for real-time streaming use cases.
 
-**Apache Hudi (Hadoop Upserts Deletes and Incrementals)** was created by Uber in 2016 to solve this exact problem. Hudi is an open-source data lakehouse table format that sits on top of raw storage. It brings database-like transactional capabilities (ACID) to the data lake, and it was the first open-source project to solve the massive engineering challenge of performing fast, record-level updates and deletes on cloud object storage.
+**Apache Hudi (Hadoop Upserts Deletes and Incrementals)** was created by Uber in 2016 to solve this exact problem. Hudi is an open-source [data lakehouse](/knowledge/data-lakehouse) table format that sits on top of raw storage. It brings database-like transactional capabilities (ACID) to the data lake, and it was the first open-source project to solve the massive engineering challenge of performing fast, record-level updates and deletes on cloud object storage.
 
 ## The Core Capabilities of Hudi
 
@@ -45,11 +45,11 @@ During a read query, the engine reads the base Parquet file, reads the Avro log 
 
 ## Hudi vs. Iceberg and Delta Lake
 
-Apache Hudi, Apache Iceberg, and [Delta Lake](/knowledge/delta-lake) form the "Big Three" of modern open table formats.
+Apache Hudi, [Apache Iceberg](/knowledge/apache-iceberg), and [Delta Lake](/knowledge/delta-lake) form the "Big Three" of modern open table formats.
 
 *   **Iceberg** was designed primarily by Netflix to solve massive metadata scaling and query planning issues, utilizing a hierarchical tree of manifest files. It excels in decoupled architectures spanning millions of files.
 *   **Hudi** was designed by Uber primarily to solve streaming ingestion and incremental processing. It excels in environments where the primary goal is quickly landing massive, continuous streams of database updates into the lake.
 
 ## Conclusion
 
-Apache Hudi was a pioneer in the evolution of the Data Lakehouse. By introducing native upserts, deletes, and incremental pulling to immutable object storage, it bridged the gap between the chaotic data lake and the structured data warehouse. For organizations dealing with heavy streaming workloads and complex Change Data Capture pipelines, Hudi remains one of the most powerful and mature table formats in the open-source ecosystem.
+Apache Hudi was a pioneer in the evolution of the [Data Lakehouse](/knowledge/data-lakehouse). By introducing native upserts, deletes, and incremental pulling to immutable object storage, it bridged the gap between the chaotic data lake and the structured data warehouse. For organizations dealing with heavy streaming workloads and complex Change Data Capture pipelines, Hudi remains one of the most powerful and mature table formats in the open-source ecosystem.

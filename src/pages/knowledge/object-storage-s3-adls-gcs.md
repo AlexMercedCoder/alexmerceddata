@@ -32,7 +32,7 @@ Because the system is flat, it scales infinitely. Adding the 1-Billionth object 
 
 ## How the "Folders" Trick Works
 
-If you log into the Amazon S3 console, it *looks* like there are folders. This is an illusion created by the user interface.
+If you log into the [Amazon S3](/knowledge/amazon-s3) console, it *looks* like there are folders. This is an illusion created by the user interface.
 
 If you upload a file named `sales/2026/january/report.pdf`, S3 does not create a `sales` folder, put a `2026` folder inside it, and so on. 
 The entire string `sales/2026/january/report.pdf` is simply the flat, Unique Identifier (the Key) for that single object. The UI just parses the slashes (`/`) and draws pictures of folders on your screen to make it easier for human brains to comprehend.
@@ -45,7 +45,7 @@ Instead of buying a $5 Million Teradata appliance, organizations realized they c
 
 However, Object Storage has a major limitation for databases: **It is immutable.** You cannot open a 1GB Parquet file in S3, change a single row, and save it. You must overwrite the entire 1GB file. This is why building databases directly on S3 was historically impossible.
 
-The **Open Data Lakehouse** (powered by Apache Iceberg) solved this. Iceberg acts as an intelligent abstraction layer. When a user runs a SQL `UPDATE` command, Iceberg handles the complex mechanics of rewriting the necessary Parquet files and managing the metadata, allowing high-performance query engines (like [Dremio](/knowledge/dremio)) to treat raw, immutable Object Storage exactly like a transactional relational database.
+The **Open [Data Lakehouse](/knowledge/data-lakehouse)** (powered by [Apache Iceberg](/knowledge/apache-iceberg)) solved this. Iceberg acts as an intelligent abstraction layer. When a user runs a SQL `UPDATE` command, Iceberg handles the complex mechanics of rewriting the necessary Parquet files and managing the metadata, allowing high-performance query engines (like [Dremio](/knowledge/dremio)) to treat raw, immutable Object Storage exactly like a transactional relational database.
 
 ## Conclusion
 

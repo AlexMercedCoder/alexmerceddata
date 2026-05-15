@@ -46,7 +46,7 @@ Upserts are the absolute foundational mechanism for **Change Data Capture (CDC)*
 
 In a CDC pipeline, a tool like Debezium constantly watches an operational database for changes. Whenever a row changes, it publishes a tiny JSON event to [Apache Kafka](/knowledge/apache-kafka): `{"operation": "update", "user_id": 123, "email": "new@email.com"}`. 
 
-A streaming engine (like [Apache Flink](/knowledge/apache-flink) or Spark Structured Streaming) reads these thousands of events per second from Kafka. Because events arrive continuously, and because networks can duplicate messages, the streaming engine relies entirely on Upserts. By executing continuous `MERGE INTO` operations against the Apache Iceberg table, the engine guarantees that no matter how many times an update arrives, the final Iceberg table remains perfectly synchronized with the upstream operational database.
+A streaming engine (like [Apache Flink](/knowledge/apache-flink) or Spark Structured Streaming) reads these thousands of events per second from Kafka. Because events arrive continuously, and because networks can duplicate messages, the streaming engine relies entirely on Upserts. By executing continuous `MERGE INTO` operations against the [Apache Iceberg](/knowledge/apache-iceberg) table, the engine guarantees that no matter how many times an update arrives, the final Iceberg table remains perfectly synchronized with the upstream operational database.
 
 ## Upserts in the Data Lakehouse
 
@@ -60,4 +60,4 @@ Depending on the configuration, they handle the Upsert in two ways:
 
 ## Conclusion
 
-The Upsert is the most important data mutation command in modern analytics. By abstracting the complex existence-checking logic away from the developer and pushing it deep into the database engine, Upserts enable resilient, idempotent data pipelines. They are the engine that powers real-time database replication, ensuring the Data Lakehouse remains an exact, mathematically perfect reflection of the operational business.
+The Upsert is the most important data mutation command in modern analytics. By abstracting the complex existence-checking logic away from the developer and pushing it deep into the database engine, Upserts enable resilient, idempotent data pipelines. They are the engine that powers real-time database replication, ensuring the [Data Lakehouse](/knowledge/data-lakehouse) remains an exact, mathematically perfect reflection of the operational business.

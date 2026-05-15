@@ -38,4 +38,4 @@ Monetizing data is incredibly lucrative, but it is fraught with extreme risk.
 
 ## Conclusion
 
-Data Monetization is the ultimate goal of the modern Chief Data Officer. Building a Data Lakehouse is expensive; the ROI must be justified. By strategically deploying data to aggressively cut internal costs, or safely packaging it into external Data Products, organizations can transform the massive financial burden of their data infrastructure into their most profitable revenue stream.
+Data Monetization is the ultimate goal of the modern Chief Data Officer. Building a [Data Lakehouse](/knowledge/data-lakehouse) is expensive; the ROI must be justified. By strategically deploying data to aggressively cut internal costs, or safely packaging it into external Data Products, organizations can transform the massive financial burden of their data infrastructure into their most profitable revenue stream.

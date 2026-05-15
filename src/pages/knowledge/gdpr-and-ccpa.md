@@ -39,7 +39,7 @@ While it shares the goals of GDPR, CCPA operates on a slightly different philoso
 These laws forced a massive shift in enterprise data architecture. 
 
 Before 2018, a Data Lake was often a "Data Swamp"—a chaotic dumping ground of unstructured files where nobody knew exactly what was stored. 
-Today, Data Engineers must implement strict **[Data Governance](/knowledge/data-governance)** platforms. They must use [Data Catalogs](/knowledge/data-catalogs) (like [Apache Polaris](/knowledge/apache-polaris) or Collibra) to mathematically map every column containing Personally Identifiable Information (PII). They must build complex architectures (like Apache Iceberg) that support rapid, targeted `DELETE` operations on massive analytical datasets to comply with "Right to be Forgotten" requests within the legal 30-day window.
+Today, Data Engineers must implement strict **[Data Governance](/knowledge/data-governance)** platforms. They must use [Data Catalogs](/knowledge/data-catalogs) (like [Apache Polaris](/knowledge/apache-polaris) or Collibra) to mathematically map every column containing Personally Identifiable Information (PII). They must build complex architectures (like [Apache Iceberg](/knowledge/apache-iceberg)) that support rapid, targeted `DELETE` operations on massive analytical datasets to comply with "Right to be Forgotten" requests within the legal 30-day window.
 
 ## Conclusion
 

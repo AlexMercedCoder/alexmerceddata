@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 In the early days of data warehousing, building an ETL (Extract, Transform, Load) pipeline was relatively simple. A data engineer would write a single Python script that downloaded a CSV, cleaned it, and inserted it into a database. To automate this, they used a basic time-based scheduler like Linux `cron` to run the script every night at 2:00 AM.
 
-However, modern data lakehouse architectures are infinitely more complex. A single analytical dashboard might depend on 50 different micro-processes: 
+However, modern [data lakehouse](/knowledge/data-lakehouse) architectures are infinitely more complex. A single analytical dashboard might depend on 50 different micro-processes: 
 1. Fetching data from three different APIs.
 2. Waiting for a massive [Apache Spark](/knowledge/apache-spark) cluster to finish a 2-hour transformation job.
 3. Triggering a dbt (data build tool) model to build a [Star Schema](/knowledge/star-schema).

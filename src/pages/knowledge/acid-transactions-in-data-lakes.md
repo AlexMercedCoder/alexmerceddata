@@ -13,7 +13,7 @@ For decades, the standard data architecture mandated a strict division of labor:
 
 In early data lakes, if a massive ETL job failed halfway through writing a dataset, the lake was left in a corrupted state with partial files. If a user queried a table while another process was writing to it, the query would crash or return incomplete data ("dirty reads"). Data engineering teams spent countless hours writing complex scripts to manage failure recovery, directory swapping, and file locking just to keep the data lake stable.
 
-The introduction of **ACID Transactions** directly onto the Data Lake completely eliminated these headaches. Driven by open table formats like Apache Iceberg, data lakes can now provide the exact same transactional reliability as traditional databases, at petabyte scale.
+The introduction of **ACID Transactions** directly onto the Data Lake completely eliminated these headaches. Driven by open table formats like [Apache Iceberg](/knowledge/apache-iceberg), data lakes can now provide the exact same transactional reliability as traditional databases, at petabyte scale.
 
 ## Understanding the ACID Principles
 
@@ -58,4 +58,4 @@ This lock-free concurrency model allows for massive parallelism without the perf
 
 ## Conclusion
 
-The implementation of ACID transactions via open table formats like Apache Iceberg marks the true maturity of the Data Lakehouse. It liberates data engineering teams from the drudgery of writing defensive, error-recovery code, allowing them to focus on building robust, concurrent data pipelines that business users can trust unconditionally.
+The implementation of ACID transactions via open table formats like Apache Iceberg marks the true maturity of the [Data Lakehouse](/knowledge/data-lakehouse). It liberates data engineering teams from the drudgery of writing defensive, error-recovery code, allowing them to focus on building robust, concurrent data pipelines that business users can trust unconditionally.

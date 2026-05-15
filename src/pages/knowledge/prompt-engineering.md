@@ -20,7 +20,7 @@ While initially viewed as simply "talking to AI," prompt engineering has rapidly
 A production-grade prompt is rarely a single sentence. It is a highly structured document comprising several distinct components designed to constraint the model's behavior and focus its attention.
 
 1.  **The System Persona (Role)**: Giving the AI a specific persona dramatically alters its latent space navigation, focusing its vocabulary and expertise.
-    *   *Example*: "You are an expert Principal Data Engineer with 20 years of experience in Apache Iceberg and Spark."
+    *   *Example*: "You are an expert Principal Data Engineer with 20 years of experience in [Apache Iceberg](/knowledge/apache-iceberg) and Spark."
 2.  **The Task**: A clear, unambiguous declaration of what needs to be done.
     *   *Example*: "Review the provided PySpark code and identify any performance bottlenecks related to data skew."
 3.  **The Context**: Background information necessary for the AI to understand the specific environment. In RAG pipelines, this is where external database documents are injected.

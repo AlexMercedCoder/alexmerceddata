@@ -17,7 +17,7 @@ TCO is a comprehensive financial metric. It calculates the true, holistic cost o
 
 ## The Hidden Costs of Data Infrastructure
 
-To calculate the true TCO of a modern Data Lakehouse or Data Warehouse, a Chief Data Officer must factor in both obvious (direct) and hidden (indirect) costs.
+To calculate the true TCO of a modern [Data Lakehouse](/knowledge/data-lakehouse) or Data Warehouse, a Chief Data Officer must factor in both obvious (direct) and hidden (indirect) costs.
 
 ### 1. Direct Infrastructure Costs
 *   **Compute (Processing)**: The cost of the CPUs running the SQL queries or the Spark ETL jobs. (Often billed per second or per query).
@@ -32,7 +32,7 @@ This is where TCO calculations usually fail.
 
 ## The TCO of On-Premise vs. Cloud
 
-The shift from On-Premise Hadoop to Cloud Data Lakehouses radically altered the TCO equation.
+The shift from On-Premise Hadoop to Cloud [Data Lakehouses](/knowledge/data-lakehouse) radically altered the TCO equation.
 
 *   **On-Premise (CapEx - Capital Expenditure)**: A company had to buy $5 million worth of physical servers upfront. The TCO included the electricity to run the servers, the real estate to house them, the air conditioning to cool them, and the devastating realization that the hardware would be obsolete in 3 years.
 *   **Cloud (OpEx - Operational Expenditure)**: The upfront cost is $0. However, the TCO can skyrocket if not managed. Because it is incredibly easy for a junior analyst to spin up a massive compute cluster to run a poorly optimized SQL query, cloud TCO requires aggressive monitoring and governance.
@@ -43,7 +43,7 @@ Modern architectures drastically lower TCO by **Decoupling Storage and Compute**
 
 In a legacy data warehouse, you paid a premium for both. If you had massive amounts of "cold" historical data that you rarely queried, you still paid premium database storage prices to hold it. 
 
-By moving to an Open Data Lakehouse (using Apache Iceberg and S3), the organization pays the absolute rock-bottom commodity price for storage (S3), and only spins up and pays for the expensive Compute engine (like [Dremio](/knowledge/dremio)) for the exact seconds a query is actively running.
+By moving to an Open Data Lakehouse (using [Apache Iceberg](/knowledge/apache-iceberg) and S3), the organization pays the absolute rock-bottom commodity price for storage (S3), and only spins up and pays for the expensive Compute engine (like [Dremio](/knowledge/dremio)) for the exact seconds a query is actively running.
 
 ## Conclusion
 

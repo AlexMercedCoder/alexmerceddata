@@ -9,11 +9,11 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Merge-on-Read (MoR)
 
-In the Data Lakehouse, updating data stored in immutable cloud storage is a massive challenge. The default strategy, **Copy-on-Write (CoW)**, solves this by completely rewriting the entire data file even if only a single row changes. 
+In the [Data Lakehouse](/knowledge/data-lakehouse), updating data stored in immutable cloud storage is a massive challenge. The default strategy, **Copy-on-Write (CoW)**, solves this by completely rewriting the entire data file even if only a single row changes. 
 
 While CoW is fantastic for read performance, it is catastrophic for real-time streaming architectures. If an [Apache Flink](/knowledge/apache-flink) cluster is processing a continuous stream of e-commerce updates (e.g., 50 order status changes per second), forcing the cluster to constantly rewrite massive 500MB Parquet files every second will instantly crash the system and generate astronomical cloud compute bills.
 
-To support high-velocity, continuous streaming ingestion, Apache Iceberg introduced a second, heavily write-optimized strategy: **Merge-on-Read (MoR)**.
+To support high-velocity, continuous streaming ingestion, [Apache Iceberg](/knowledge/apache-iceberg) introduced a second, heavily write-optimized strategy: **Merge-on-Read (MoR)**.
 
 ## How Merge-on-Read Works
 

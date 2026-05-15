@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organizati
 
 ## Introduction to Change Management
 
-A massive multinational corporation decides its legacy data infrastructure is too slow. The Chief Data Officer (CDO) secures a $10 million budget, hires top-tier data engineers, and spends a year migrating the entire company to a state-of-the-art Apache Iceberg Data Lakehouse. The technology is perfect. The queries are 100x faster. 
+A massive multinational corporation decides its legacy data infrastructure is too slow. The Chief Data Officer (CDO) secures a $10 million budget, hires top-tier data engineers, and spends a year migrating the entire company to a state-of-the-art [Apache Iceberg](/knowledge/apache-iceberg) [Data Lakehouse](/knowledge/data-lakehouse). The technology is perfect. The queries are 100x faster. 
 
 Six months after the launch, the CDO is fired.
 

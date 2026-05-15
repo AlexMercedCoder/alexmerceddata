@@ -13,7 +13,7 @@ When designing a Data Warehouse to serve analytical queries, data architects rel
 
 However, in certain architectural scenarios—particularly those strictly constrained by storage capacity or dealing with incredibly massive and complex hierarchical dimensions—the pure denormalization of the [Star Schema](/knowledge/star-schema) is not ideal. To address this, architects utilize a more structured variant known as the **Snowflake Schema**.
 
-The Snowflake Schema derives its name from its physical Entity-Relationship (ER) diagram. While a Star Schema has a single layer of dimension tables radiating from a central fact table, a Snowflake Schema normalizes those dimension tables into multiple secondary and tertiary tables, creating a complex, branching shape that resembles a snowflake.
+The Snowflake Schema derives its name from its physical Entity-Relationship (ER) diagram. While a [Star Schema](/knowledge/star-schema) has a single layer of dimension tables radiating from a central fact table, a Snowflake Schema normalizes those dimension tables into multiple secondary and tertiary tables, creating a complex, branching shape that resembles a snowflake.
 
 ## Understanding Normalization in Dimensions
 
@@ -54,7 +54,7 @@ To answer a simple question like "Total Sales for Electronics", a Star Schema re
 Business Intelligence (BI) tools and the analysts who use them struggle with Snowflaking. A business user wants to drag a "Category" pill onto a dashboard. In a Star Schema, they just pull it from the Product table. In a Snowflake Schema, they must navigate a complex maze of interconnected tables, writing complex SQL just to retrieve basic attributes.
 
 ### 3. Cloud Storage is Cheap
-The primary advantage of the Snowflake Schema—saving disk space—is largely irrelevant today. In a modern Data Lakehouse utilizing [Amazon S3](/knowledge/amazon-s3) or ADLS, storage costs fractions of a cent per gigabyte. Furthermore, modern columnar formats like **[Apache Parquet](/knowledge/apache-parquet)** automatically apply Dictionary Encoding to repetitive strings in a Star Schema, achieving massive compression without requiring physical normalization.
+The primary advantage of the Snowflake Schema—saving disk space—is largely irrelevant today. In a modern [Data Lakehouse](/knowledge/data-lakehouse) utilizing [Amazon S3](/knowledge/amazon-s3) or ADLS, storage costs fractions of a cent per gigabyte. Furthermore, modern columnar formats like **[Apache Parquet](/knowledge/apache-parquet)** automatically apply Dictionary Encoding to repetitive strings in a Star Schema, achieving massive compression without requiring physical normalization.
 
 ## Conclusion
 

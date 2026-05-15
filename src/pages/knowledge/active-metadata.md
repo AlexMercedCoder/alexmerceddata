@@ -10,7 +10,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 ## Introduction to Metadata Evolution
 
 Metadata is simply "data about data." 
-If your data is a photograph, the metadata is the timestamp and GPS coordinates hidden in the file. In an enterprise Data Lakehouse, if the data is a 10-billion row Parquet file, the metadata includes the column names, the file size, the data owner, and the security tags.
+If your data is a photograph, the metadata is the timestamp and GPS coordinates hidden in the file. In an enterprise [Data Lakehouse](/knowledge/data-lakehouse), if the data is a 10-billion row Parquet file, the metadata includes the column names, the file size, the data owner, and the security tags.
 
 Historically, metadata was **Passive**. 
 Organizations bought expensive [Data Catalogs](/knowledge/data-catalogs) (essentially massive wikis). A data steward had to manually log into the catalog, find the `Customer_Sales` table, and manually type a description: *"This table contains sales data."* 

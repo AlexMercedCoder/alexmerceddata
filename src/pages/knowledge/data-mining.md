@@ -42,7 +42,7 @@ This technique establishes a baseline of "normal" behavior and identifies data p
 
 In the 1990s and 2000s, Data Mining was performed using specialized desktop software (like SPSS or SAS). Today, Data Mining has been entirely subsumed by the fields of **Data Science** and **Machine Learning**. 
 
-Instead of running a manual clustering algorithm on a desktop, modern organizations use **[Apache Spark](/knowledge/apache-spark) (MLlib)** to run massive clustering algorithms across petabytes of data directly inside the **Data Lakehouse**. 
+Instead of running a manual clustering algorithm on a desktop, modern organizations use **[Apache Spark](/knowledge/apache-spark) (MLlib)** to run massive clustering algorithms across petabytes of data directly inside the **[Data Lakehouse](/knowledge/data-lakehouse)**. 
 
 Furthermore, the rise of Large Language Models (LLMs) has revolutionized text mining. Instead of relying on rigid keyword analysis to mine customer reviews, organizations use AI to semantically understand the reviews, automatically extracting the exact reasons why a product is failing.
 

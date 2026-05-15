@@ -32,7 +32,7 @@ When the pipeline runs the first time, the `MERGE` realizes the row doesn't exis
 If Airflow retries the pipeline 50 times, the `MERGE` command looks at the primary key, realizes the row already exists, and simply overwrites it with the exact same data 50 times. The end state of the database remains perfectly consistent.
 
 ### 3. The "Drop and Replace" Pattern (Overwrites)
-Another common idempotent pattern for massive batch processing in Data Lakehouses (like Apache Iceberg) is dynamic partition overwriting.
+Another common idempotent pattern for massive batch processing in [Data Lakehouses](/knowledge/data-lakehouse) (like [Apache Iceberg](/knowledge/apache-iceberg)) is dynamic partition overwriting.
 Instead of appending the daily data to a massive table, the pipeline executes `INSERT OVERWRITE ... PARTITION (date = '2026-05-14')`. 
 Even if the pipeline is retried 10 times, Iceberg simply deletes the entire 2026-05-14 folder and replaces it with the new data. The previous days' data is never touched, and the current day's data is never duplicated.
 

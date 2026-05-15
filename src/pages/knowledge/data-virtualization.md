@@ -44,7 +44,7 @@ With Data Virtualization, the data only exists in one place. All queries pass th
 
 The main criticism of Data Virtualization has historically been network latency. Pulling data from a slow, on-premises Oracle database over a network will always be slower than querying a native Data Warehouse.
 
-Modern Virtualization engines (specifically Dremio) solve this through intelligent caching (e.g., **Data Reflections**). If the system notices that analysts are constantly querying a slow, federated join between Oracle and S3, it will automatically, invisibly execute the join in the background and cache the result as a highly optimized [Apache Parquet](/knowledge/apache-parquet) file in S3. 
+Modern Virtualization engines (specifically [Dremio](/knowledge/dremio)) solve this through intelligent caching (e.g., **Data Reflections**). If the system notices that analysts are constantly querying a slow, federated join between Oracle and S3, it will automatically, invisibly execute the join in the background and cache the result as a highly optimized [Apache Parquet](/knowledge/apache-parquet) file in S3. 
 When the next analyst runs the query, the engine bypasses Oracle entirely and instantly returns the cached Parquet data. This provides the speed of a Data Warehouse with the agility of Data Virtualization.
 
 ## Conclusion

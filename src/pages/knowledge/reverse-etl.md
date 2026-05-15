@@ -24,7 +24,7 @@ Before Reverse ETL tools existed, organizations attempted to solve this problem 
 Modern Reverse ETL platforms (such as Hightouch, Census, or RudderStack) formalize this process.
 
 ### How it Works
-1.  **The Source of Truth**: The modern Data Lakehouse (powered by Apache Iceberg or Snowflake) acts as the source. This is where all the complex logic lives—where customer support tickets are joined with billing history and product usage logs to create a 360-degree view of the customer.
+1.  **The Source of Truth**: The modern [Data Lakehouse](/knowledge/data-lakehouse) (powered by [Apache Iceberg](/knowledge/apache-iceberg) or Snowflake) acts as the source. This is where all the complex logic lives—where customer support tickets are joined with billing history and product usage logs to create a 360-degree view of the customer.
 2.  **The Sync Definition**: Within the Reverse ETL tool, data analysts write a standard SQL query to extract the enriched data (e.g., `SELECT user_id, churn_probability, lifetime_value FROM gold_customer_health`).
 3.  **Field Mapping**: The analyst uses a visual UI to map the columns from the SQL query to the specific fields in the destination SaaS application (e.g., mapping `churn_probability` to a custom field in Salesforce).
 4.  **Operational Sync**: The Reverse ETL tool executes the sync on a schedule or via webhooks. Crucially, the tool handles all the complex API logistics: batching requests to avoid rate limits, handling retries on failure, and performing incremental syncs (only updating records that actually changed in the warehouse to minimize API calls).

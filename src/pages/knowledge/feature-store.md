@@ -23,7 +23,7 @@ A Feature Store is not a single database; it is an architectural pattern that br
 
 ### 1. The Offline Store (For Training)
 When a data scientist is training a new machine learning model, they need historical data. They might need the exact `account_age_in_days` for 10 million users as it existed exactly one year ago. 
-The Offline Feature Store is usually built on top of a highly scalable Data Lakehouse (using Apache Iceberg and [Amazon S3](/knowledge/amazon-s3)). It stores massive volumes of historical feature data. The data scientist can query the Offline Store via a simple Python SDK to generate massive, perfectly formatted training datasets in minutes.
+The Offline Feature Store is usually built on top of a highly scalable [Data Lakehouse](/knowledge/data-lakehouse) (using [Apache Iceberg](/knowledge/apache-iceberg) and [Amazon S3](/knowledge/amazon-s3)). It stores massive volumes of historical feature data. The data scientist can query the Offline Store via a simple Python SDK to generate massive, perfectly formatted training datasets in minutes.
 
 ### 2. The Online Store (For Real-Time Inference)
 When the model is deployed into production, it needs data instantly. If a user swipes a credit card, the fraud-detection AI has 20 milliseconds to decide if it is legitimate. It cannot query [Amazon S3](/knowledge/amazon-s3) to find the user's `total_transactions_last_hour`. 

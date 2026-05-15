@@ -54,7 +54,7 @@ While a Data Vault is incredibly agile for data engineers to build and maintain,
 Therefore, Data Vault architecture dictates the creation of an **Information Delivery Layer** (often known as Data Marts). 
 Data Engineers write SQL views (often running on massive MPP engines like [Dremio](/knowledge/dremio) or Snowflake) that sit on top of the Data Vault. These views automatically join the Hubs, Links, and Satellites together and project them outwards as a beautiful, simple **[Star Schema](/knowledge/star-schema)**. 
 
-The business analyst connects [Tableau](/knowledge/tableau) to the Star Schema views, completely unaware of the complex Data Vault machinery churning beneath the surface.
+The business analyst connects [Tableau](/knowledge/tableau) to the [Star Schema](/knowledge/star-schema) views, completely unaware of the complex Data Vault machinery churning beneath the surface.
 
 ## Conclusion
 

@@ -94,6 +94,22 @@ def main():
             
     print(f"Loaded {len(articles)} articles for cross-linking.")
     
+    PILLAR_ALIASES = {
+        "data-lakehouse": ["Data Lakehouse", "Data Lakehouses", "data lakehouse"],
+        "apache-iceberg": ["Apache Iceberg", "apache iceberg"],
+        "agentic-lakehouse": ["Agentic Lakehouse", "Agentic Analytics", "agentic lakehouse"],
+        "apache-iceberg-architecture": ["Apache Iceberg Architecture", "Iceberg Architecture", "Iceberg architecture"],
+        "apache-iceberg-vs-delta-lake-vs-hudi": ["Apache Iceberg vs Delta Lake vs Apache Hudi", "Iceberg vs Delta", "Iceberg vs Hudi", "Delta Lake vs Iceberg", "Hudi vs Iceberg"],
+        "data-lakehouse-vs-data-lake-vs-data-warehouse": ["Data Lakehouse vs Data Lake vs Data Warehouse", "Lakehouse vs Data Warehouse"]
+    }
+    
+    for slug, aliases in PILLAR_ALIASES.items():
+        for alias in aliases:
+            articles.append({
+                'title': alias,
+                'slug': slug
+            })
+    
     # Second pass: cross-link
     updated_count = 0
     for f in files:

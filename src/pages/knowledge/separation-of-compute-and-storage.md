@@ -13,7 +13,7 @@ For decades, the dominant paradigm in data architecture was the monolithic, tigh
 
 While this architecture maximized local I/O speeds over slower legacy networks, it created a fundamental problem: **inflexible scaling**. If your storage filled up, you had to buy a new server (adding compute you didn't need). If your processing demands spiked, you had to buy a new server (adding storage you didn't need).
 
-The **Separation of Compute and Storage** is the foundational architectural shift that enabled the modern cloud data ecosystem. By decoupling the layer that holds the data from the layer that queries it, organizations unlocked infinite scalability, elasticity, and massive cost optimizations. This principle is the bedrock upon which the entire Data Lakehouse architecture is built.
+The **Separation of Compute and Storage** is the foundational architectural shift that enabled the modern cloud data ecosystem. By decoupling the layer that holds the data from the layer that queries it, organizations unlocked infinite scalability, elasticity, and massive cost optimizations. This principle is the bedrock upon which the entire [Data Lakehouse](/knowledge/data-lakehouse) architecture is built.
 
 ## How Decoupling Works
 
@@ -42,7 +42,7 @@ In a decoupled architecture, you simply dump the 10PB into S3 for a low monthly 
 Because the data lives in a passive, centralized object store rather than being locked inside a proprietary database engine, the data is "democratized." 
 *   Data Engineers can use [Apache Spark](/knowledge/apache-spark) to write ETL pipelines to the S3 bucket.
 *   Data Scientists can use Python/Pandas or Ray to read the exact same files for machine learning.
-*   Business Analysts can use Dremio to execute real-time BI dashboards against the same data.
+*   Business Analysts can use [Dremio](/knowledge/dremio) to execute real-time BI dashboards against the same data.
 
 There is no need to copy or move the data. The single source of truth remains in storage, while specialized compute engines are brought to the data.
 
@@ -60,7 +60,7 @@ The obvious drawback to decoupling is the network. Fetching data from S3 is phys
 
 The industry solved this through two major innovations:
 1.  **Columnar Formats ([Apache Parquet](/knowledge/apache-parquet))**: Instead of downloading entire rows of data, Parquet allows the compute engine to use HTTP Range requests to download only the specific columns needed for a query.
-2.  **Advanced Metadata (Apache Iceberg)**: As discussed in the Iceberg Manifest Lists architecture, Iceberg tracks data at the file and partition level. Before the compute engine ever reaches out to S3, it reads the Iceberg metadata to prune 99% of the files. The compute engine only requests the exact files containing relevant data over the network.
+2.  **Advanced Metadata ([Apache Iceberg](/knowledge/apache-iceberg))**: As discussed in the Iceberg Manifest Lists architecture, Iceberg tracks data at the file and partition level. Before the compute engine ever reaches out to S3, it reads the Iceberg metadata to prune 99% of the files. The compute engine only requests the exact files containing relevant data over the network.
 
 Furthermore, modern compute engines like Dremio utilize sophisticated local caching (e.g., C3 - Columnar Cloud Cache) on NVMe drives. If a file is fetched from S3, it is cached locally on the compute node. If a subsequent query needs the same file, it is read at local NVMe speeds, achieving the performance of a coupled architecture with all the flexibility of a decoupled one.
 

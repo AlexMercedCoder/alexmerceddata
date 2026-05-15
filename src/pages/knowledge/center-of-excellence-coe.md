@@ -25,7 +25,7 @@ The Center of Excellence does not exist to do the daily, operational work for th
 
 ### 1. Establishing Standards and Architecture
 The CoE defines the architectural guardrails for the company. 
-*   *Mandate*: "All data analysts must use Apache Iceberg table formats."
+*   *Mandate*: "All data analysts must use [Apache Iceberg](/knowledge/apache-iceberg) table formats."
 *   *Mandate*: "All Machine Learning models must be registered in the central MLFlow registry before being deployed to production."
 By enforcing these standards, the CoE ensures that all 50 decentralized data teams are building systems that can actually communicate with each other.
 

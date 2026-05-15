@@ -21,7 +21,7 @@ Dagster introduced a fundamentally different philosophy: **Data-Aware Orchestrat
 
 The defining feature of Dagster is the **Software-Defined Asset (SDA)**. 
 
-In Dagster, a data engineer does not write a generic Python function called `run_etl_job()`. Instead, they write a Python function that explicitly defines a physical asset that should exist in the real world (e.g., an Apache Iceberg table, a machine learning model, or a Snowflake view).
+In Dagster, a data engineer does not write a generic Python function called `run_etl_job()`. Instead, they write a Python function that explicitly defines a physical asset that should exist in the real world (e.g., an [Apache Iceberg](/knowledge/apache-iceberg) table, a machine learning model, or a Snowflake view).
 
 ```python
 @asset
@@ -62,4 +62,4 @@ Because Dagster is data-aware, it naturally doubles as a basic Data Catalog and 
 
 ## Conclusion
 
-Dagster represents the second generation of data orchestration. By shifting the focus away from "When should I run this script?" to "What is the state of my data assets?", it bridges the gap between software engineering, data orchestration, and data governance. For organizations building complex, interconnected Data Lakehouses, Dagster provides a level of visibility, testability, and intelligence that traditional task-based orchestrators simply cannot match.
+Dagster represents the second generation of data orchestration. By shifting the focus away from "When should I run this script?" to "What is the state of my data assets?", it bridges the gap between software engineering, data orchestration, and data governance. For organizations building complex, interconnected [Data Lakehouses](/knowledge/data-lakehouse), Dagster provides a level of visibility, testability, and intelligence that traditional task-based orchestrators simply cannot match.

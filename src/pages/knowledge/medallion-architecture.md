@@ -51,7 +51,7 @@ The Gold layer is the presentation layer. It is highly refined, aggregated, and 
 
 ## Implementing Medallion Architecture in an Iceberg Lakehouse
 
-Apache Iceberg is uniquely suited to power the Medallion Architecture due to its transactional guarantees (ACID compliance) and table format features.
+[Apache Iceberg](/knowledge/apache-iceberg) is uniquely suited to power the Medallion Architecture due to its transactional guarantees (ACID compliance) and table format features.
 
 ### Handling Streaming Upserts
 Moving data from Bronze to Silver often requires handling Change Data Capture (CDC) streams. If an `UPDATE` event arrives from a source PostgreSQL database, the Silver layer must reflect this update. Iceberg's support for row-level deletes (Merge-on-Read) allows data engineers to execute efficient `MERGE INTO` SQL commands to synchronize the Silver layer incrementally, without rewriting entire datasets.

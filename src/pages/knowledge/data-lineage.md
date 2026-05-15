@@ -31,7 +31,7 @@ When data engineers need to change a schema or deprecate a table, they must know
 
 ## How Lineage is Captured
 
-Capturing lineage in a decoupled, multi-engine data lakehouse is technologically difficult because no single engine controls the entire pipeline. Modern lineage platforms (like Atlan, Monte Carlo, or Collibra) use two primary methods to build the lineage graph.
+Capturing lineage in a decoupled, multi-engine [data lakehouse](/knowledge/data-lakehouse) is technologically difficult because no single engine controls the entire pipeline. Modern lineage platforms (like Atlan, Monte Carlo, or Collibra) use two primary methods to build the lineage graph.
 
 ### 1. Active Integration (The Push Model)
 Modern data pipeline tools are designed to actively broadcast their lineage.

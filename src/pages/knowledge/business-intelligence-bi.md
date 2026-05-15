@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Business Intelligence (BI)
 
-At the end of every massively complex data engineering pipeline—after the data has been ingested from Kafka, stored in Apache Iceberg, transformed by dbt, and governed by a [Semantic Layer](/knowledge/semantic-layer)—sits the ultimate consumer: The Business User.
+At the end of every massively complex data engineering pipeline—after the data has been ingested from Kafka, stored in [Apache Iceberg](/knowledge/apache-iceberg), transformed by dbt, and governed by a [Semantic Layer](/knowledge/semantic-layer)—sits the ultimate consumer: The Business User.
 
 The CEO does not care about Parquet files or [Vectorized Execution](/knowledge/vectorized-execution). The CEO cares about one thing: *"Are revenues going up or down?"*
 
@@ -40,9 +40,9 @@ A successful BI implementation relies on several key outputs:
 
 BI tools are only as good as the data they are connected to. The most beautiful [Tableau](/knowledge/tableau) dashboard in the world is useless if it takes 15 minutes to load because the underlying database is slow.
 
-This is why the **Open Data Lakehouse** and high-speed federated engines (like [Dremio](/knowledge/dremio)) are critical. 
-1.  **Speed**: Engines like Dremio use Data Reflections (caching) to ensure that when a CEO clicks a filter in [Power BI](/knowledge/power-bi), the massive SQL query executes in milliseconds.
-2.  **Consistency**: BI tools historically caused "Metrics Chaos" because analysts wrote different SQL logic inside different dashboards. Modern architectures push this logic down into a centralized **Semantic Layer**. The BI tool is stripped of its complex logic and relegated to being a "dumb glass" visualization layer, ensuring every dashboard across the company reports the exact same numbers.
+This is why the **Open [Data Lakehouse](/knowledge/data-lakehouse)** and high-speed federated engines (like [Dremio](/knowledge/dremio)) are critical. 
+1.  **Speed**: Engines like [Dremio](/knowledge/dremio) use Data Reflections (caching) to ensure that when a CEO clicks a filter in [Power BI](/knowledge/power-bi), the massive SQL query executes in milliseconds.
+2.  **Consistency**: BI tools historically caused "Metrics Chaos" because analysts wrote different SQL logic inside different dashboards. Modern architectures push this logic down into a centralized **[Semantic Layer](/knowledge/semantic-layer)**. The BI tool is stripped of its complex logic and relegated to being a "dumb glass" visualization layer, ensuring every dashboard across the company reports the exact same numbers.
 
 ## Conclusion
 

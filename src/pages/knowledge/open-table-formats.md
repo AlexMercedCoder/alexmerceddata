@@ -16,11 +16,11 @@ To understand the monumental importance of Open Table Formats, you must understa
 
 The industry needed a solution that provided the transactional perfection of a Data Warehouse, but kept the data stored in open, vendor-neutral files on cheap cloud storage.
 
-This solution is the **Open Table Format**. It is the architectural foundation of the modern **Data Lakehouse**.
+This solution is the **Open Table Format**. It is the architectural foundation of the modern **[Data Lakehouse](/knowledge/data-lakehouse)**.
 
 ## What is an Open Table Format?
 
-An Open Table Format (like Apache Iceberg, [Delta Lake](/knowledge/delta-lake), or [Apache Hudi](/knowledge/apache-hudi)) is not a query engine, and it is not a storage platform. It is a **Metadata Abstraction Layer**.
+An Open Table Format (like [Apache Iceberg](/knowledge/apache-iceberg), [Delta Lake](/knowledge/delta-lake), or [Apache Hudi](/knowledge/apache-hudi)) is not a query engine, and it is not a storage platform. It is a **Metadata Abstraction Layer**.
 
 When you write an Iceberg table, two things are saved to your [Amazon S3](/knowledge/amazon-s3) bucket:
 1.  **The Data Files**: Standard, open-source [Apache Parquet](/knowledge/apache-parquet) files.
@@ -37,8 +37,8 @@ When an engine (like [Dremio](/knowledge/dremio), Spark, or Snowflake) wants to 
 
 The Open Table Format wars began in the late 2010s, dominated by three major open-source projects.
 
-1.  **Apache Iceberg**: Originally developed at Netflix. It is widely considered the most truly "open" standard, boasting the largest ecosystem of native integrations across AWS, Google Cloud, Snowflake, Dremio, and open-source engines. It was designed from the ground up for massive, petabyte-scale table metadata management.
-2.  **[Delta Lake](/knowledge/delta-lake)**: Developed by [Databricks](/knowledge/databricks). It is heavily tied to the [Apache Spark](/knowledge/apache-spark) ecosystem and optimized for the [Databricks](/knowledge/databricks) platform. It is exceptionally popular due to its seamless developer experience within Databricks.
+1.  **Apache Iceberg**: Originally developed at Netflix. It is widely considered the most truly "open" standard, boasting the largest ecosystem of native integrations across AWS, Google Cloud, Snowflake, [Dremio](/knowledge/dremio), and open-source engines. It was designed from the ground up for massive, petabyte-scale table metadata management.
+2.  **[Delta Lake](/knowledge/delta-lake)**: Developed by [Databricks](/knowledge/databricks). It is heavily tied to the [Apache Spark](/knowledge/apache-spark) ecosystem and optimized for the [Databricks](/knowledge/databricks) platform. It is exceptionally popular due to its seamless developer experience within [Databricks](/knowledge/databricks).
 3.  **[Apache Hudi](/knowledge/apache-hudi)**: Originally developed at Uber. Hudi (Hadoop Upserts Deletes and Incrementals) was explicitly designed for massive streaming workloads and heavy real-time Upserts.
 
 ## The Promise of Interoperability

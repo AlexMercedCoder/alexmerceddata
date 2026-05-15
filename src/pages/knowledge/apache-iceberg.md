@@ -9,9 +9,9 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Apache Iceberg
 
-As organizations scale their data infrastructure to petabytes of storage, the traditional limitations of data lakes become impossible to ignore. A data lake provides incredibly cheap and scalable storage, but it fundamentally lacks the reliability, transactional guarantees, and performance optimization of a relational database. To bridge this gap, the industry relies on open table formats. Among these formats, Apache Iceberg has emerged as the definitive standard for building the modern [Data Lakehouse](/knowledge/data-lakehouse).
+As organizations scale their data infrastructure to petabytes of storage, the traditional limitations of data lakes become impossible to ignore. A data lake provides incredibly cheap and scalable storage, but it fundamentally lacks the reliability, transactional guarantees, and performance optimization of a relational database. To bridge this gap, the industry relies on open table formats. Among these formats, [Apache Iceberg](/knowledge/apache-iceberg) has emerged as the definitive standard for building the modern [Data Lakehouse](/knowledge/data-lakehouse).
 
-Apache Iceberg is a high performance, open source table format originally developed at Netflix. It is designed to manage massive analytic datasets stored in cloud object storage systems like [Amazon S3](/knowledge/amazon-s3), Azure Data Lake Storage, and Google Cloud Storage. Instead of forcing data engineers to rely on brittle directory structures and the legacy Apache Hive metastore, Iceberg tracks data at the individual file level. 
+Apache Iceberg is a high performance, open source table format originally developed at Netflix. It is designed to manage massive analytic datasets stored in cloud object storage systems like [Amazon S3](/knowledge/amazon-s3), Azure Data Lake Storage, and Google Cloud Storage. Instead of forcing data engineers to rely on brittle directory structures and the legacy [Apache Hive](/knowledge/apache-hive) metastore, Iceberg tracks data at the individual file level. 
 
 By treating the data lake like a fully functional database, Apache Iceberg brings ACID transactions, schema evolution, hidden partitioning, and time travel to the open data ecosystem. It allows disparate compute engines, including [Apache Spark](/knowledge/apache-spark), Trino, [Dremio](/knowledge/dremio), and Snowflake, to query and update the same data simultaneously without locking conflicts or data corruption. 
 
@@ -112,9 +112,9 @@ When a query is executed, the engine traverses this tree from top to bottom. It 
 
 ## Apache Iceberg vs Delta Lake vs Apache Hudi
 
-Apache Iceberg is not the only open table format on the market. It frequently competes with Delta Lake and Apache Hudi. A detailed comparison is available in our [Apache Iceberg vs Delta Lake vs Apache Hudi](/knowledge/apache-iceberg-vs-delta-lake-vs-hudi) guide, but the high level distinctions are important to understand.
+Apache Iceberg is not the only open table format on the market. It frequently competes with [Delta Lake](/knowledge/delta-lake) and [Apache Hudi](/knowledge/apache-hudi). A detailed comparison is available in our [Apache Iceberg vs Delta Lake vs Apache Hudi](/knowledge/apache-iceberg-vs-delta-lake-vs-hudi) guide, but the high level distinctions are important to understand.
 
-**Delta Lake** was originally developed by Databricks. While it is now fully open source, it still shares a strong historical and architectural alignment with the Spark ecosystem. Delta Lake tracks state using a chronological transaction log (the `_delta_log` directory) rather than Iceberg's hierarchical metadata tree.
+**Delta Lake** was originally developed by [Databricks](/knowledge/databricks). While it is now fully open source, it still shares a strong historical and architectural alignment with the Spark ecosystem. Delta Lake tracks state using a chronological transaction log (the `_delta_log` directory) rather than Iceberg's hierarchical metadata tree.
 
 **Apache Hudi** (Hadoop Upserts Deletes and Incrementals) was created at Uber. It is specifically optimized for heavy streaming workloads, fast incremental processing, and efficient record level upserts. 
 
@@ -125,7 +125,7 @@ Apache Iceberg is not the only open table format on the market. It frequently co
 One of the greatest strengths of Apache Iceberg is its vast ecosystem. Because it is an open standard governed by the Apache Software Foundation, no single vendor dictates its roadmap. This has resulted in broad adoption across the data industry.
 
 - **[Apache Spark](/knowledge/apache-spark):** Provides complete support for reading, writing, and streaming Iceberg tables.
-- **[Dremio](/knowledge/dremio):** Offers native, highly optimized read and write access to Iceberg, leveraging Apache Arrow for sub second BI performance.
+- **[Dremio](/knowledge/dremio):** Offers native, highly optimized read and write access to Iceberg, leveraging [Apache Arrow](/knowledge/apache-arrow) for sub second BI performance.
 - **Trino and Starburst:** Provide distributed SQL querying capabilities against Iceberg.
 - **Snowflake:** Can read Iceberg tables directly from external object storage, preventing vendor lock in while utilizing Snowflake's compute engine.
 - **[Apache Flink](/knowledge/apache-flink):** Ideal for continuous streaming ingestion directly into Iceberg tables.
@@ -150,4 +150,4 @@ Autonomous AI agents require highly reliable, strictly governed, and perfectly s
 
 Apache Iceberg has solved the fundamental scaling problems of the data lake. By tracking data at the file level and enforcing rigid ACID compliance through its hierarchical metadata tree, it provides the reliability of a proprietary data warehouse on top of open, cheap cloud storage. 
 
-As the foundation of the modern data lakehouse, Iceberg allows organizations to eliminate data silos, avoid vendor lock in, and deploy the best compute engines for their specific workloads. It is a mandatory technology for any modern data architecture seeking to operate at enterprise scale.
+As the foundation of the modern [data lakehouse](/knowledge/data-lakehouse), Iceberg allows organizations to eliminate data silos, avoid vendor lock in, and deploy the best compute engines for their specific workloads. It is a mandatory technology for any modern data architecture seeking to operate at enterprise scale.

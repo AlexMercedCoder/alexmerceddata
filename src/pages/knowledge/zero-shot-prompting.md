@@ -23,7 +23,7 @@ When OpenAI trained GPT-4, they did not train it to do specific tasks. They simp
 
 ### A Zero-Shot Example
 When you submit a Zero-Shot Prompt:
-> **Prompt**: *"Translate the following English sentence into French: 'The data lakehouse is highly scalable.'"*
+> **Prompt**: *"Translate the following English sentence into French: 'The [data lakehouse](/knowledge/data-lakehouse) is highly scalable.'"*
 
 You did not provide the LLM with a spreadsheet of English-to-French translation pairs. However, because its pre-training data included French literature, English grammar textbooks, and Wikipedia articles discussing the translation of technical terms, the neural network "understands" the concept of translation. It navigates its latent space, applies its generalized knowledge to this unseen task, and outputs the correct answer: *"Le lakehouse de données est hautement évolutif."*
 

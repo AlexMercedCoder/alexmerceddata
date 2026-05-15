@@ -32,10 +32,10 @@ The Broker knows exactly which Segments (both Real-time and Offline) contain the
 
 ## The Secret Weapon: Aggressive Indexing
 
-What makes Pinot unique is its fanatical approach to indexing. In a Data Lakehouse, you might scan an entire Parquet file. In Pinot, you almost never scan.
+What makes Pinot unique is its fanatical approach to indexing. In a [Data Lakehouse](/knowledge/data-lakehouse), you might scan an entire Parquet file. In Pinot, you almost never scan.
 
 Pinot automatically builds multiple indexes for every segment:
-1.  **Inverted Index**: Similar to a search engine. If you query `WHERE company = 'Dremio'`, Pinot uses the inverted index to instantly locate the exact row numbers, bypassing a full table scan.
+1.  **Inverted Index**: Similar to a search engine. If you query `WHERE company = '[Dremio](/knowledge/dremio)'`, Pinot uses the inverted index to instantly locate the exact row numbers, bypassing a full table scan.
 2.  **Star-Tree Index**: This is Pinot's crowning achievement. It is essentially a dynamic, intelligent Materialized View. If you frequently query aggregations (like "Total Views by Day"), the Star-Tree pre-calculates and stores these aggregations across different dimension hierarchies. This allows Pinot to return massive aggregations in single-digit milliseconds, regardless of how much underlying data exists.
 
 ## Apache Pinot vs. Apache Druid vs. ClickHouse

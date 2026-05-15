@@ -41,7 +41,7 @@ Extracting value from unstructured data requires Artificial Intelligence.
 
 The fundamental architectural problem of the 2020s is that structured data lives in the Data Warehouse, and unstructured data lives in the Data Lake. If a data scientist wants to predict customer churn, they need *both* (the user's structured purchase history AND the text of their unstructured complaint emails).
 
-The **Data Lakehouse** solves this. By centralizing all structured Parquet files and unstructured PDFs in the exact same [Amazon S3](/knowledge/amazon-s3) bucket, it provides a single repository. 
+The **[Data Lakehouse](/knowledge/data-lakehouse)** solves this. By centralizing all structured Parquet files and unstructured PDFs in the exact same [Amazon S3](/knowledge/amazon-s3) bucket, it provides a single repository. 
 
 With the advent of **[Agentic AI](/knowledge/agentic-ai)** and modern SQL functions (like [Dremio](/knowledge/dremio)'s AI integrations), analysts can finally bridge the gap. They can write a SQL query that selects the structured purchase history, and uses a native LLM function (`AI_CLASSIFY()`) to read the raw text of the complaint emails directly from the S3 bucket, joining the structured and unstructured data together in a single, unified view.
 

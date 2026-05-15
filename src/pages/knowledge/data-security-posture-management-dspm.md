@@ -45,4 +45,4 @@ It is important to differentiate DSPM from its older cousin, **CSPM (Cloud Secur
 
 ## Conclusion
 
-As companies aggressively transition to multi-cloud Data Lakehouses, the physical perimeter of the network has completely vanished. Data Security Posture Management (DSPM) is the mandatory security layer for this new reality. By automating the discovery, classification, and continuous risk assessment of data across thousands of fragmented cloud environments, DSPM allows organizations to aggressively leverage their data assets without inadvertently leaving their most sensitive information exposed to the public internet.
+As companies aggressively transition to multi-cloud [Data Lakehouses](/knowledge/data-lakehouse), the physical perimeter of the network has completely vanished. Data Security Posture Management (DSPM) is the mandatory security layer for this new reality. By automating the discovery, classification, and continuous risk assessment of data across thousands of fragmented cloud environments, DSPM allows organizations to aggressively leverage their data assets without inadvertently leaving their most sensitive information exposed to the public internet.

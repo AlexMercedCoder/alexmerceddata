@@ -35,7 +35,7 @@ If a data scientist pushes new feature-engineering code to Git, the CI/CD system
 
 ### 3. Model Deployment and Serving
 Once the model is packaged, it must be served to the business.
-*   **Batch Prediction**: The model wakes up at midnight, scores 10 million customer rows for "Churn Probability," and writes the results to an Apache Iceberg table.
+*   **Batch Prediction**: The model wakes up at midnight, scores 10 million customer rows for "Churn Probability," and writes the results to an [Apache Iceberg](/knowledge/apache-iceberg) table.
 *   **Real-Time API**: The model is deployed as a high-speed REST API on [Kubernetes](/knowledge/kubernetes). When a user swipes a credit card, the application pings the API, and the model returns a "Fraud" or "Not Fraud" prediction in 10 milliseconds.
 
 ### 4. Continuous Monitoring and Retraining

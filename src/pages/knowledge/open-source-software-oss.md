@@ -25,7 +25,7 @@ When a security vulnerability is discovered, the global community often patches 
 
 ### 2. Faster Innovation and Standards
 In the proprietary era, companies deliberately built incompatible software to trap users ([Vendor Lock-in](/knowledge/vendor-lock-in)). Open source drives the creation of universal standards. Because developers hate writing the same code twice, they collaborate on open-source foundations. 
-For example, instead of Apple, Netflix, and Uber all spending millions of dollars building their own proprietary table formats, they all collaborated to build **Apache Iceberg**, creating a single, vastly superior open standard that benefited the entire industry.
+For example, instead of Apple, Netflix, and Uber all spending millions of dollars building their own proprietary table formats, they all collaborated to build **[Apache Iceberg](/knowledge/apache-iceberg)**, creating a single, vastly superior open standard that benefited the entire industry.
 
 ## Open Source Licensing
 

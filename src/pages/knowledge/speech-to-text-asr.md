@@ -48,4 +48,4 @@ Because of this massive pre-training, Whisper achieved near-human levels of tran
 
 ## Conclusion
 
-Speech-to-Text (ASR) is the critical technology that digitizes human conversation. By transforming chaotic, unstructured audio recordings into structured, queryable text data, ASR allows enterprises to finally apply the massive analytical power of Large Language Models and Data Lakehouses to their voice communications, unlocking a massive new frontier of business intelligence.
+Speech-to-Text (ASR) is the critical technology that digitizes human conversation. By transforming chaotic, unstructured audio recordings into structured, queryable text data, ASR allows enterprises to finally apply the massive analytical power of Large Language Models and [Data Lakehouses](/knowledge/data-lakehouse) to their voice communications, unlocking a massive new frontier of business intelligence.

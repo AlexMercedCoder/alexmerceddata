@@ -17,7 +17,7 @@ Data Engineering, conversely, has historically operated without these safety net
 
 ## The Mechanics of Data as Code
 
-Data as Code is implemented through specialized [Data Catalogs](/knowledge/data-catalogs) (such as **[Project Nessie](/knowledge/project-nessie)** or **[Dremio](/knowledge/dremio) Arctic**) managing open table formats like **Apache Iceberg**.
+Data as Code is implemented through specialized [Data Catalogs](/knowledge/data-catalogs) (such as **[Project Nessie](/knowledge/project-nessie)** or **[Dremio](/knowledge/dremio) Arctic**) managing open table formats like **[Apache Iceberg](/knowledge/apache-iceberg)**.
 
 Because Iceberg data files (Parquet) are immutable and table states are managed entirely by metadata pointers, catalogs like Nessie can track the entire history of a lakehouse as a sequence of atomic commits. This enables Git-like operations at the catalog level.
 
@@ -47,4 +47,4 @@ The entire lakehouse instantly time-travels back to the exact state it was in pr
 
 ## Conclusion
 
-Data as Code is the final step in the maturation of [DataOps](/knowledge/dataops). By lifting Git semantics from the application layer and applying them directly to the data catalog layer, organizations can achieve a level of data reliability, isolation, and agility that was previously impossible. It transforms the data lakehouse from a brittle, scary environment where changes are feared, into a robust engineering platform where data can be branched, tested, and shipped with absolute confidence.
+Data as Code is the final step in the maturation of [DataOps](/knowledge/dataops). By lifting Git semantics from the application layer and applying them directly to the data catalog layer, organizations can achieve a level of data reliability, isolation, and agility that was previously impossible. It transforms the [data lakehouse](/knowledge/data-lakehouse) from a brittle, scary environment where changes are feared, into a robust engineering platform where data can be branched, tested, and shipped with absolute confidence.

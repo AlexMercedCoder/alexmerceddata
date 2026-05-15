@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Change Data Capture (CDC)
 
-In modern enterprise data architectures, keeping the analytical data lakehouse synchronized with the operational databases (the systems running the actual applications) is a foundational challenge. 
+In modern enterprise data architectures, keeping the analytical [data lakehouse](/knowledge/data-lakehouse) synchronized with the operational databases (the systems running the actual applications) is a foundational challenge. 
 
 Historically, data engineers solved this using **Batch ETL (Extract, Transform, Load)**. Every night at 2:00 AM, a script would wake up, query the operational database for all records modified in the last 24 hours (e.g., `SELECT * FROM orders WHERE updated_at > yesterday`), and dump the results into the data warehouse. 
 
@@ -38,7 +38,7 @@ The open-source industry standard for CDC is **Debezium**. Debezium operates as 
 
 Streaming CDC events into a traditional data lake was historically very difficult. Because data lakes consisted of immutable Parquet files, applying a single `UPDATE` or `DELETE` event required rewriting the entire Parquet file, which was disastrous for performance.
 
-**Apache Iceberg** solved this problem by introducing **[Row-Level Deletes](/knowledge/row-level-deletes)** (specifically Merge-on-Read).
+**[Apache Iceberg](/knowledge/apache-iceberg)** solved this problem by introducing **[Row-Level Deletes](/knowledge/row-level-deletes)** (specifically Merge-on-Read).
 
 When a CDC event arrives indicating that Row ID `123` was updated, the ingestion engine (e.g., Flink) does not rewrite the existing data files. Instead, it:
 1.  Writes the new, updated row into a new data file.
