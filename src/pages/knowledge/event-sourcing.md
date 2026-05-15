@@ -19,7 +19,7 @@ While simple, this "state-based" architecture loses crucial information. If a bu
 
 ## How Event Sourcing Works
 
-In an Event Sourcing architecture (often paired with systems like Apache Kafka), the database is essentially an append-only log.
+In an Event Sourcing architecture (often paired with systems like [Apache Kafka](/knowledge/apache-kafka)), the database is essentially an append-only log.
 
 ### The Immutable Event Log
 When a user interacts with the application, they generate "Events." An event is a record of something that has definitively happened in the past. Events are immutable; once written, they can never be altered or deleted.
@@ -42,7 +42,7 @@ CQRS is an architectural pattern that separates the infrastructure used for writ
 
 In a high-throughput microservices environment:
 1.  **The Write Side**: The application writes the raw, immutable events instantly to the Event Store (e.g., Kafka). This is incredibly fast because it is purely an append-only operation with no table locks.
-2.  **The Read Side**: Background processors listen to the Event Store. As new events arrive, these processors calculate the new state and write it into specialized read-optimized databases (like Elasticsearch for searching, or a PostgreSQL Star Schema for BI dashboards).
+2.  **The Read Side**: Background processors listen to the Event Store. As new events arrive, these processors calculate the new state and write it into specialized read-optimized databases (like Elasticsearch for searching, or a PostgreSQL [Star Schema](/knowledge/star-schema) for BI dashboards).
 
 ## Why Event Sourcing is Powerful
 

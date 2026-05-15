@@ -30,7 +30,7 @@ Before GPT, if you wanted an AI to translate English to French, you had to train
 GPT proved that **Massive Pre-training** alters the fundamental capabilities of a neural network.
 OpenAI did not train GPT-3 to do specific tasks. They simply scraped the entirety of the public internet (Wikipedia, Reddit, millions of books, GitHub repositories) and trained the model for months on thousands of massive GPUs (costing millions of dollars) simply to predict the next word.
 
-During this massive pre-training phase, the neural network developed a vast, high-dimensional "latent space." It didn't just memorize text; it learned the underlying syntax of language, the rules of logic, and vast amounts of factual knowledge. Because of this massive pre-training baseline, the model can perform **Zero-Shot Learning**, solving complex tasks it was never explicitly trained to do.
+During this massive pre-training phase, the neural network developed a vast, high-dimensional "latent space." It didn't just memorize text; it learned the underlying syntax of language, the rules of logic, and vast amounts of factual knowledge. Because of this massive pre-training baseline, the model can perform **[Zero-Shot Learning](/knowledge/zero-shot-learning)**, solving complex tasks it was never explicitly trained to do.
 
 ## 3. Transformer (The Architecture)
 

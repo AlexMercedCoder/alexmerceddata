@@ -22,23 +22,23 @@ In the modern digital economy, analyzing yesterday's data is often too late.
 Achieving sub-second analytics is impossible using traditional batch-oriented Data Warehouses. It requires a completely specialized, decoupled architecture consisting of three main pillars.
 
 ### 1. The Message Broker (The Nervous System)
-Real-time architecture abandons traditional databases as the point of ingestion. Instead, operational applications push events directly into a high-throughput message broker like **Apache Kafka** or **Amazon Kinesis**. 
+Real-time architecture abandons traditional databases as the point of ingestion. Instead, operational applications push events directly into a high-throughput message broker like **[Apache Kafka](/knowledge/apache-kafka)** or **Amazon Kinesis**. 
 When a user clicks a button, a JSON payload is instantly appended to a Kafka topic. Kafka acts as a massive, durable shock-absorber, capable of receiving millions of events per second without crashing.
 
 ### 2. The Stream Processing Engine (The Muscle)
-Instead of waiting for data to land on a hard drive, stream processing engines (like **Apache Flink**, **Spark Structured Streaming**, or **Kafka Streams**) intercept the data while it is still moving through the network.
+Instead of waiting for data to land on a hard drive, stream processing engines (like **[Apache Flink](/knowledge/apache-flink)**, **Spark Structured Streaming**, or **Kafka Streams**) intercept the data while it is still moving through the network.
 These engines perform continuous, stateful calculations in RAM. If the goal is to calculate "Total Sales in the Last 5 Minutes," Flink maintains a rolling time-window in memory. Every millisecond a new purchase arrives from Kafka, Flink updates the total and instantly emits the new result. 
 
 ### 3. The Real-Time OLAP Database (The Brain)
 While Flink is processing the stream, the data must be stored somewhere so a dashboard can query it. Traditional Data Warehouses (like Snowflake) are too slow at ingesting single-row updates to be truly real-time.
-The industry relies on specialized **Real-Time OLAP Databases** (like **Apache Druid**, **ClickHouse**, or **Pinot**). These databases are designed to ingest millions of rows per second directly from Kafka and make them queryable via SQL in less than 100 milliseconds.
+The industry relies on specialized **Real-Time OLAP Databases** (like **[Apache Druid](/knowledge/apache-druid)**, **[ClickHouse](/knowledge/clickhouse)**, or **Pinot**). These databases are designed to ingest millions of rows per second directly from Kafka and make them queryable via SQL in less than 100 milliseconds.
 
 ## Real-Time in the Lakehouse
 
-Historically, building a real-time system meant building an entirely separate, expensive data stack alongside your traditional Data Lake. This "Lambda Architecture" forced engineers to write two different sets of code (one for streaming, one for batch).
+Historically, building a real-time system meant building an entirely separate, expensive data stack alongside your traditional Data Lake. This "[Lambda Architecture](/knowledge/lambda-architecture)" forced engineers to write two different sets of code (one for streaming, one for batch).
 
 The modern **Data Lakehouse** is actively bridging this gap. 
-With the introduction of Open Table Formats like **Apache Iceberg**, which support high-velocity Merge-on-Read (MoR) operations, organizations can now stream data directly from Kafka into Amazon S3 with latency as low as 1 to 5 minutes. 
+With the introduction of [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**, which support high-velocity Merge-on-Read (MoR) operations, organizations can now stream data directly from Kafka into [Amazon S3](/knowledge/amazon-s3) with latency as low as 1 to 5 minutes. 
 While this isn't the "sub-second" latency required for autonomous fraud detection, it provides "near real-time" analytics for human dashboards. It allows the business to monitor live sales trends throughout the day using standard BI tools, completely eliminating the need for expensive, specialized Real-Time OLAP databases for 90% of business use cases.
 
 ## Conclusion

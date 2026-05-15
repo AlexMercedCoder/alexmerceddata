@@ -19,7 +19,7 @@ For decades, Data Engineering completely lacked this capability. If two data eng
 
 To understand Nessie, you must understand that it **does not store data**. It only stores metadata pointers.
 
-When a massive Apache Iceberg table is written to Amazon S3, it consists of thousands of Parquet data files and a few JSON metadata files. 
+When a massive Apache Iceberg table is written to [Amazon S3](/knowledge/amazon-s3), it consists of thousands of Parquet data files and a few JSON metadata files. 
 Instead of the query engine (like Dremio or Spark) keeping track of these metadata files manually, it registers them with Nessie.
 
 Nessie maintains a cryptographic, chronological log of every single change made to the metadata across the entire lakehouse. 
@@ -27,12 +27,12 @@ Nessie maintains a cryptographic, chronological log of every single change made 
 ### 1. Zero-Copy Branching
 When a data engineer wants to ingest a massive new dataset, they do not do it in production. They execute a command:
 `CREATE BRANCH dev_ingestion FROM main;`
-Nessie instantly creates a new pointer referencing the current state of the metadata. It takes milliseconds and consumes 0 bytes of extra storage. The engineer configures their Apache Spark job to write to the `dev_ingestion` branch.
+Nessie instantly creates a new pointer referencing the current state of the metadata. It takes milliseconds and consumes 0 bytes of extra storage. The engineer configures their [Apache Spark](/knowledge/apache-spark) job to write to the `dev_ingestion` branch.
 As Spark writes new data, Nessie updates the `dev_ingestion` metadata. The `main` branch is completely unaffected. Business users querying `main` see the exact same pristine data they saw yesterday.
 
 ### 2. Multi-Table Transactions (Merging)
 The most powerful feature of Nessie is the atomic merge.
-If the ETL pipeline updates 10 different tables on the `dev_ingestion` branch, the data engineer can run data quality tests (like Great Expectations) against that branch. 
+If the ETL pipeline updates 10 different tables on the `dev_ingestion` branch, the data engineer can run data quality tests (like [Great Expectations](/knowledge/great-expectations)) against that branch. 
 If the tests pass, they execute:
 `MERGE BRANCH dev_ingestion INTO main;`
 Nessie atomically updates the `main` pointer to point to the new metadata. In a single millisecond, all 10 tables in production are updated simultaneously. It is impossible for a user to query the system and see 5 tables updated and 5 tables outdated. 
@@ -48,4 +48,4 @@ Nessie was built specifically to replace the aging HMS. By utilizing a modern, G
 
 ## Conclusion
 
-Project Nessie fundamentally shifts the paradigm of DataOps. By elevating data management to the same rigorous, version-controlled standard as software application code, it eliminates the fear of deploying changes to the data lakehouse. It empowers data teams to experiment freely in isolated branches, test their data mathematically, and execute massive, instantaneous multi-table deployments with the absolute confidence that they can revert any mistake in milliseconds.
+Project Nessie fundamentally shifts the paradigm of [DataOps](/knowledge/dataops). By elevating data management to the same rigorous, version-controlled standard as software application code, it eliminates the fear of deploying changes to the data lakehouse. It empowers data teams to experiment freely in isolated branches, test their data mathematically, and execute massive, instantaneous multi-table deployments with the absolute confidence that they can revert any mistake in milliseconds.

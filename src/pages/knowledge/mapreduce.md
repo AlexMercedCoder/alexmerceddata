@@ -40,7 +40,7 @@ It executes the final aggregation, summing the list together to output: `("Apple
 
 ## The Apache Hadoop Era
 
-Google's paper inspired Doug Cutting to create **Apache Hadoop**, an open-source implementation of MapReduce coupled with a distributed file system (HDFS).
+Google's paper inspired Doug Cutting to create **[Apache Hadoop](/knowledge/apache-hadoop)**, an open-source implementation of MapReduce coupled with a distributed file system (HDFS).
 
 Hadoop and MapReduce dominated the "Big Data" era from 2008 to 2015. It allowed traditional enterprises (banks, retailers) to process petabytes of unstructured log data on cheap, commodity server racks instead of buying multi-million dollar Oracle mainframes.
 
@@ -51,7 +51,7 @@ Today, writing raw MapReduce code is considered a legacy skill.
 1.  **Developer Friction**: Writing a simple `JOIN` between two tables required hundreds of lines of complex Java MapReduce code. 
 2.  **Disk I/O Bottleneck**: MapReduce was designed to be incredibly fault-tolerant. To survive server crashes, it wrote the intermediate results (after the Map phase) directly to the physical hard drive. Writing to a hard drive is agonizingly slow.
 
-MapReduce was entirely superseded by **Apache Spark**. Spark utilizes the exact same distributed "Move the code to the data" philosophy, but it performs the intermediate processing entirely in **RAM (Memory)** instead of on disk, making Spark 100x faster than traditional Hadoop MapReduce.
+MapReduce was entirely superseded by **[Apache Spark](/knowledge/apache-spark)**. Spark utilizes the exact same distributed "Move the code to the data" philosophy, but it performs the intermediate processing entirely in **RAM (Memory)** instead of on disk, making Spark 100x faster than traditional Hadoop MapReduce.
 
 ## Conclusion
 

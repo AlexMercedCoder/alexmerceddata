@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddin
 
 ## Introduction to Vector Similarity
 
-In modern AI architectures (specifically RAG systems), searching through text does not involve looking for matching keywords. It involves **Semantic Search**—searching for matching *meaning*.
+In modern AI architectures (specifically RAG systems), searching through text does not involve looking for matching keywords. It involves **[Semantic Search](/knowledge/semantic-search)**—searching for matching *meaning*.
 
 To do this, text is passed through an Embedding Model, which converts a sentence into a **Vector** (a massive array of numbers, often 1,536 dimensions long). 
 
@@ -30,7 +30,7 @@ Imagine a 2D graph. Vector A points North-East. Vector B points North-East, but 
 ### 2. Euclidean Distance (L2 Norm)
 Euclidean Distance measures the literal, straight-line physical distance between the endpoints of two vectors. (Think of taking a ruler and measuring the distance between Point A and Point B). 
 
-*   **Why it's used**: It is highly sensitive to the *magnitude* (length) of the vector. It is rarely used for standard text embeddings (because document length skews the results). However, it is heavily used in Computer Vision and anomaly detection, where the absolute magnitude of the data point is mathematically important.
+*   **Why it's used**: It is highly sensitive to the *magnitude* (length) of the vector. It is rarely used for standard text embeddings (because document length skews the results). However, it is heavily used in [Computer Vision](/knowledge/computer-vision) and anomaly detection, where the absolute magnitude of the data point is mathematically important.
 
 ### 3. Dot Product (Inner Product)
 The Dot Product multiplies the two vectors together. It takes into account both the angle (like Cosine) AND the magnitude (like Euclidean). 

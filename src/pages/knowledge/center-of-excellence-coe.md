@@ -34,14 +34,14 @@ When a massive paradigm shift occurs (e.g., the explosion of Generative AI and L
 The CoE acts as the company's R&D wing. They spend three months aggressively testing new LLM architectures (like RAG and Vector Databases). Once they figure out exactly how to deploy the technology securely and cost-effectively, they package that knowledge into a standardized template and hand it out to the rest of the company.
 
 ### 3. Training and Data Literacy
-The CoE is the ultimate internal university for the company. They host "Lunch and Learns," write internal wikis, and provide advanced mentorship. If a junior data engineer in the HR department gets stuck writing a complex Apache Spark optimization script, they can escalate the problem to the "Jedi Council" (the CoE) for expert assistance.
+The CoE is the ultimate internal university for the company. They host "Lunch and Learns," write internal wikis, and provide advanced mentorship. If a junior data engineer in the HR department gets stuck writing a complex [Apache Spark](/knowledge/apache-spark) optimization script, they can escalate the problem to the "Jedi Council" (the CoE) for expert assistance.
 
 ### 4. Governance and Reusability
 If the Sales team writes a brilliantly optimized SQL script to calculate "Lifetime Customer Value," the CoE takes that code, cleans it up, and publishes it to the central repository so the Marketing team can use the exact same logic. This prevents the company from wasting thousands of hours reinventing the wheel.
 
 ## The Centralized vs. Decentralized Balance
 
-The CoE is the critical balancing mechanism in a **Data Mesh** architecture. 
+The CoE is the critical balancing mechanism in a **[Data Mesh](/knowledge/data-mesh)** architecture. 
 
 In a pure Hub-and-Spoke model, the central IT team becomes a massive bottleneck because every department must wait in line for the IT team to build their pipelines. In a purely decentralized model, the company descends into technological anarchy.
 

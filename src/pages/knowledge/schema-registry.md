@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to the Schema Registry
 
-In modern, event-driven architectures, hundreds of independent microservices communicate constantly by publishing and subscribing to data streams via message brokers like Apache Kafka. 
+In modern, event-driven architectures, hundreds of independent microservices communicate constantly by publishing and subscribing to data streams via message brokers like [Apache Kafka](/knowledge/apache-kafka). 
 
 A Python-based "Checkout Service" might publish thousands of "Order Events" to Kafka every second. A Java-based "Shipping Service" listens to that Kafka topic, reads the events, and prints shipping labels. 
 If the Python team decides to rename the `customer_name` field to `full_name`, the Java service (which is strictly expecting `customer_name`) will crash immediately upon reading the new event. The entire shipping operation grinds to a halt.
@@ -20,7 +20,7 @@ This authority is the **Schema Registry**.
 
 ## How a Schema Registry Works
 
-A Schema Registry (most notably the Confluent Schema Registry for Kafka) is an independent microservice that stores and retrieves schemas (usually written in Apache Avro, Protobuf, or JSON Schema). It acts as the singular source of truth for the structure of all messages flowing through the network.
+A Schema Registry (most notably the Confluent Schema Registry for Kafka) is an independent microservice that stores and retrieves schemas (usually written in [Apache Avro](/knowledge/apache-avro), Protobuf, or JSON Schema). It acts as the singular source of truth for the structure of all messages flowing through the network.
 
 ### The Serialization Flow
 The Schema Registry sits between the Producer (the app sending data) and the Consumer (the app reading data).
@@ -31,7 +31,7 @@ The Schema Registry sits between the Producer (the app sending data) and the Con
 
 ## Enforcing Schema Evolution (Compatibility Rules)
 
-The true power of the Schema Registry is its ability to act as a strict gatekeeper, enforcing **Data Contracts** through Compatibility Rules.
+The true power of the Schema Registry is its ability to act as a strict gatekeeper, enforcing **[Data Contracts](/knowledge/data-contracts)** through Compatibility Rules.
 
 Because data inevitably changes, developers must be able to evolve schemas (add columns, drop columns). The Schema Registry allows administrators to enforce strict rules on *how* schemas can evolve to guarantee that downstream services never break.
 
@@ -43,7 +43,7 @@ Because data inevitably changes, developers must be able to evolve schemas (add 
 
 While Schema Registries were born in the software engineering / microservices world, they are a critical component of the modern Data Lakehouse.
 
-When a massive ingestion engine (like Apache Flink) pulls CDC (Change Data Capture) streams from Kafka to populate an Apache Iceberg table, it relies entirely on the Schema Registry. 
+When a massive ingestion engine (like [Apache Flink](/knowledge/apache-flink)) pulls CDC (Change Data Capture) streams from Kafka to populate an Apache Iceberg table, it relies entirely on the Schema Registry. 
 If the upstream database schema evolves (e.g., a new column is added), Flink detects the new Schema ID from the Registry. Flink can then automatically execute an `ALTER TABLE` command against the Iceberg metadata, perfectly syncing the lakehouse schema with the upstream database without any human intervention.
 
 ## Conclusion

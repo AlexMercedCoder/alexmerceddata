@@ -9,9 +9,9 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Data Vault Architecture
 
-In the landscape of Enterprise Data Warehousing, two architectural paradigms have historically dominated: Ralph Kimball's Dimensional Modeling (Star Schemas) and Bill Inmon's Corporate Information Factory (3NF normalization). 
+In the landscape of Enterprise [Data Warehousing](/knowledge/data-warehousing), two architectural paradigms have historically dominated: Ralph Kimball's [Dimensional Modeling](/knowledge/dimensional-modeling) (Star Schemas) and Bill Inmon's Corporate Information Factory (3NF normalization). 
 
-While both are effective, they struggle with extreme agility. If a massive global enterprise undergoes a corporate merger and suddenly needs to ingest 50 new, fundamentally different operational databases into their existing data warehouse, modifying a rigidly structured Star Schema or heavily normalized 3NF database is a grueling, multi-month engineering effort that often breaks existing ETL pipelines.
+While both are effective, they struggle with extreme agility. If a massive global enterprise undergoes a corporate merger and suddenly needs to ingest 50 new, fundamentally different operational databases into their existing data warehouse, modifying a rigidly structured [Star Schema](/knowledge/star-schema) or heavily normalized 3NF database is a grueling, multi-month engineering effort that often breaks existing ETL pipelines.
 
 **Data Vault 2.0**, invented by Dan Linstedt, is a hybrid data modeling methodology designed explicitly for extreme agility, auditability, and massive scale. It is mathematically designed so that adding new data sources requires zero refactoring of the existing architecture.
 
@@ -54,7 +54,7 @@ While a Data Vault is incredibly agile for data engineers to build and maintain,
 Therefore, Data Vault architecture dictates the creation of an **Information Delivery Layer** (often known as Data Marts). 
 Data Engineers write SQL views (often running on massive MPP engines like Dremio or Snowflake) that sit on top of the Data Vault. These views automatically join the Hubs, Links, and Satellites together and project them outwards as a beautiful, simple **Star Schema**. 
 
-The business analyst connects Tableau to the Star Schema views, completely unaware of the complex Data Vault machinery churning beneath the surface.
+The business analyst connects [Tableau](/knowledge/tableau) to the Star Schema views, completely unaware of the complex Data Vault machinery churning beneath the surface.
 
 ## Conclusion
 

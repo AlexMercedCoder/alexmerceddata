@@ -11,7 +11,7 @@ cta_link: "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddin
 
 Computers, at their core, do not understand language, images, or abstract concepts; they only understand numbers. If you ask a standard computer to compare the word "King" with the word "Queen," it sees two completely unrelated ASCII character strings. It has no mechanism to understand that these words are conceptually related, represent royalty, and differ primarily by gender.
 
-**Vector Embeddings** are the brilliant mathematical solution to this problem. They are the foundational technology underlying the entire Generative AI revolution, powering everything from Large Language Models (LLMs) to Semantic Search and image generators.
+**Vector Embeddings** are the brilliant mathematical solution to this problem. They are the foundational technology underlying the entire Generative AI revolution, powering everything from Large Language Models (LLMs) to [Semantic Search](/knowledge/semantic-search) and image generators.
 
 An embedding is a translation of human information (text, audio, images) into a dense array of floating-point numbers—a vector. This vector represents the specific conceptual "location" of that information within a massive, high-dimensional mathematical space. By converting concepts into coordinates, we enable computers to measure the relationships between ideas using geometry.
 

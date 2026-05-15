@@ -41,14 +41,14 @@ Using Machine Learning, the platform establishes baselines for the data.
 If a bug causes the `null` rate to spike to 60%, or a currency conversion error causes the average `transaction_amount` to jump to $50,000, the observability tool flags the statistical anomaly immediately.
 
 ### 5. Lineage
-When an anomaly is detected in a downstream Gold table, engineers need to fix it fast. Observability platforms integrate **Data Lineage** to trace the anomaly backward to the exact upstream source table or Airflow job that caused the corruption, drastically reducing the Time to Resolution (TTR).
+When an anomaly is detected in a downstream Gold table, engineers need to fix it fast. Observability platforms integrate **[Data Lineage](/knowledge/data-lineage)** to trace the anomaly backward to the exact upstream source table or Airflow job that caused the corruption, drastically reducing the Time to Resolution (TTR).
 
 ## Implementation Strategies: Shift-Left vs. Continuous Monitoring
 
 Organizations typically deploy Data Observability using two complementary strategies.
 
 ### 1. Shift-Left (Pipeline Testing)
-Teams implement tools like **Great Expectations** or **dbt tests** directly inside their CI/CD and ETL pipelines. This is an active defense. Before a dbt model writes data into the Silver layer, it executes assertions (e.g., `assert customer_id is not null`). If the test fails, the pipeline halts, preventing the bad data from entering the lakehouse.
+Teams implement tools like **[Great Expectations](/knowledge/great-expectations)** or **dbt tests** directly inside their CI/CD and ETL pipelines. This is an active defense. Before a dbt model writes data into the Silver layer, it executes assertions (e.g., `assert customer_id is not null`). If the test fails, the pipeline halts, preventing the bad data from entering the lakehouse.
 
 ### 2. Continuous Monitoring (The Control Tower)
 You cannot write manual tests for every possible statistical anomaly across 10,000 tables. Continuous monitoring platforms connect to the query logs and metadata catalogs (like Dremio or Snowflake) to passively monitor everything in the background using ML-driven anomaly detection, providing a safety net for issues the engineers never thought to write tests for.

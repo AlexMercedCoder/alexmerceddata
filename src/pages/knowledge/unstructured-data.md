@@ -23,7 +23,7 @@ Unstructured data presents three massive challenges to enterprise architecture.
 
 ### 1. Storage Scale and Cost
 You cannot store 10 million MP4 video files inside a Snowflake or Oracle database. Relational databases charge a premium for high-speed block storage. 
-Unstructured data is massive. It requires incredibly cheap, infinitely scalable storage. This is why unstructured data is exclusively stored in **Object Storage** (like Amazon S3, Azure Blob, or Google Cloud Storage), which serves as the foundation of the Data Lake.
+Unstructured data is massive. It requires incredibly cheap, infinitely scalable storage. This is why unstructured data is exclusively stored in **Object Storage** (like [Amazon S3](/knowledge/amazon-s3), Azure Blob, or Google Cloud Storage), which serves as the foundation of the Data Lake.
 
 ### 2. Search and Retrieval
 If you want to find all customers named "Alex" in a structured database, you write a simple SQL query: `SELECT * FROM users WHERE name = 'Alex'`. The database uses a B-Tree index to find the answer in milliseconds.
@@ -33,7 +33,7 @@ Historically, organizations solved this using full-text search engines (like Ela
 ### 3. Extracting Value (The Rise of AI)
 A JPEG image of a receipt is useless to a financial dashboard. To extract the "Total Amount" from the image, you cannot use traditional code. 
 Extracting value from unstructured data requires Artificial Intelligence. 
-*   **Computer Vision** models analyze the receipt to extract the numbers.
+*   **[Computer Vision](/knowledge/computer-vision)** models analyze the receipt to extract the numbers.
 *   **Natural Language Processing (NLP)** models read 10,000 customer service emails and categorize them as "Angry" or "Happy" (Sentiment Analysis).
 *   **Speech-to-Text** models transcribe call-center recordings into text so they can be searched.
 
@@ -43,7 +43,7 @@ The fundamental architectural problem of the 2020s is that structured data lives
 
 The **Data Lakehouse** solves this. By centralizing all structured Parquet files and unstructured PDFs in the exact same Amazon S3 bucket, it provides a single repository. 
 
-With the advent of **Agentic AI** and modern SQL functions (like Dremio's AI integrations), analysts can finally bridge the gap. They can write a SQL query that selects the structured purchase history, and uses a native LLM function (`AI_CLASSIFY()`) to read the raw text of the complaint emails directly from the S3 bucket, joining the structured and unstructured data together in a single, unified view.
+With the advent of **[Agentic AI](/knowledge/agentic-ai)** and modern SQL functions (like Dremio's AI integrations), analysts can finally bridge the gap. They can write a SQL query that selects the structured purchase history, and uses a native LLM function (`AI_CLASSIFY()`) to read the raw text of the complaint emails directly from the S3 bucket, joining the structured and unstructured data together in a single, unified view.
 
 ## Conclusion
 

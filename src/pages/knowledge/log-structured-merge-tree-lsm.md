@@ -40,7 +40,7 @@ If a user runs `SELECT * FROM table WHERE ID=42`, the database has to check mult
 2.  If it doesn't find it, it checks the newest SSTable on the hard drive.
 3.  If it doesn't find it, it checks the next oldest SSTable, and the next, and the next.
 
-Searching 50 different files to find one record is slow. To mitigate this "Read Penalty," LSM trees use **Bloom Filters**—a highly efficient mathematical algorithm that can instantly tell the database, *"Do not check SSTable #4, I mathematically guarantee ID=42 is not in there."*
+Searching 50 different files to find one record is slow. To mitigate this "Read Penalty," LSM trees use **[Bloom Filters](/knowledge/bloom-filters)**—a highly efficient mathematical algorithm that can instantly tell the database, *"Do not check SSTable #4, I mathematically guarantee ID=42 is not in there."*
 
 ## Conclusion
 

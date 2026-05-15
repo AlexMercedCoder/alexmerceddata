@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to AWS Glue
 
-In the era of on-premise Hadoop, managing metadata and data integration was a nightmare. Companies had to manually set up servers to run the Hive Metastore (to track table schemas) and configure massive, brittle Apache Spark clusters to run ETL (Extract, Transform, Load) jobs to clean the data. 
+In the era of on-premise Hadoop, managing metadata and data integration was a nightmare. Companies had to manually set up servers to run the Hive Metastore (to track table schemas) and configure massive, brittle [Apache Spark](/knowledge/apache-spark) clusters to run ETL (Extract, Transform, Load) jobs to clean the data. 
 
 When the industry migrated to the cloud, Amazon Web Services (AWS) recognized that data engineers were spending 80% of their time managing infrastructure, and only 20% of their time writing actual business logic.
 
@@ -21,7 +21,7 @@ AWS Glue is a fully managed, serverless data integration service. It provides bo
 The most critical component of Glue is the **Data Catalog**. 
 
 The Glue Data Catalog is essentially AWS's modern, managed replacement for the legacy Hive Metastore. It serves as the central metadata repository for an organization's entire data estate on AWS.
-If you have data stored in Amazon S3, Amazon RDS (Relational Databases), and Amazon Redshift, the Glue Catalog maps it all. 
+If you have data stored in [Amazon S3](/knowledge/amazon-s3), Amazon RDS (Relational Databases), and Amazon Redshift, the Glue Catalog maps it all. 
 
 *   **Crawlers**: You do not have to manually define tables. You can point an **AWS Glue Crawler** at an S3 bucket filled with raw JSON files. The Crawler autonomously reads the files, infers the schema (e.g., "Column 1 is an Integer, Column 2 is a String"), and automatically creates the table definitions in the Glue Catalog.
 *   **The Hub**: Once the data is cataloged in Glue, it instantly becomes queryable by every other analytical service in AWS. A data analyst can open Amazon Athena, query the Glue Catalog, and instantly write SQL against the underlying S3 files.

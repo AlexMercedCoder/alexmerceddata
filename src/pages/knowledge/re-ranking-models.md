@@ -29,7 +29,7 @@ In standard vector search, the question and the document are processed completel
 ### The Cross-Encoder Intelligence (The Slow Re-rank)
 A Cross-Encoder model (like those provided by Cohere or BAAI) processes the Question and the Document *at the exact same time*. 
 It concatenates them: `[Question] + [Document]`. 
-It feeds this massive text block into its Transformer Attention Mechanism. Because the model can see both texts simultaneously, its Attention layers calculate the direct, complex linguistic relationships between the words in the question and the words in the document. 
+It feeds this massive text block into its Transformer [Attention Mechanism](/knowledge/attention-mechanism). Because the model can see both texts simultaneously, its Attention layers calculate the direct, complex linguistic relationships between the words in the question and the words in the document. 
 
 The Cross-Encoder acts almost like a human judge. It reads the document and outputs a highly accurate score (from 0 to 1) answering: *"Does this document explicitly answer the user's question?"*
 
@@ -37,7 +37,7 @@ The Cross-Encoder acts almost like a human judge. It reads the document and outp
 
 Because Cross-Encoders are incredibly computationally expensive, you cannot run them across a database of a million documents. The search would take an hour. Therefore, Re-ranking is always implemented as a two-stage pipeline.
 
-1.  **Stage 1: Retrieval (Broad & Fast)**. The Vector Database uses fast, cheap Bi-Encoders (or BM25 Hybrid Search) to rapidly scan 1,000,000 documents and retrieve the Top 50 most likely candidates in 50 milliseconds.
+1.  **Stage 1: Retrieval (Broad & Fast)**. The Vector Database uses fast, cheap Bi-Encoders (or BM25 [Hybrid Search](/knowledge/hybrid-search)) to rapidly scan 1,000,000 documents and retrieve the Top 50 most likely candidates in 50 milliseconds.
 2.  **Stage 2: Re-ranking (Narrow & Slow)**. The system takes those 50 documents and passes them to the Cross-Encoder. The Cross-Encoder deeply analyzes the 50 documents against the user's query and assigns them a true relevance score. This takes maybe 500 milliseconds.
 3.  **Stage 3: Generation**. The system takes the Top 5 newly re-ranked documents (discarding the other 45) and feeds them into the LLM prompt.
 

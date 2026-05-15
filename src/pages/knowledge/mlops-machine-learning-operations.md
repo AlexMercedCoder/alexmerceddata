@@ -36,10 +36,10 @@ If a data scientist pushes new feature-engineering code to Git, the CI/CD system
 ### 3. Model Deployment and Serving
 Once the model is packaged, it must be served to the business.
 *   **Batch Prediction**: The model wakes up at midnight, scores 10 million customer rows for "Churn Probability," and writes the results to an Apache Iceberg table.
-*   **Real-Time API**: The model is deployed as a high-speed REST API on Kubernetes. When a user swipes a credit card, the application pings the API, and the model returns a "Fraud" or "Not Fraud" prediction in 10 milliseconds.
+*   **Real-Time API**: The model is deployed as a high-speed REST API on [Kubernetes](/knowledge/kubernetes). When a user swipes a credit card, the application pings the API, and the model returns a "Fraud" or "Not Fraud" prediction in 10 milliseconds.
 
 ### 4. Continuous Monitoring and Retraining
-This is the most critical phase. Once the model is live, the MLOps platform continuously monitors it for **Model Drift** (when the model's predictions become less accurate because real-world behavior changed).
+This is the most critical phase. Once the model is live, the MLOps platform continuously monitors it for **[Model Drift](/knowledge/model-drift)** (when the model's predictions become less accurate because real-world behavior changed).
 If the monitoring system detects that the model's accuracy has dropped below 90%, it automatically triggers Phase 2. The pipeline wakes up, grabs the last 30 days of fresh data, retrains the model, verifies the accuracy has improved, and seamlessly hot-swaps the new model into production without any human intervention.
 
 ## Conclusion

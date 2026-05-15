@@ -20,19 +20,19 @@ This paradigm created a massive bottleneck, stifling innovation and ensuring tha
 Democratizing data is not as simple as granting everyone administrative access to the production database (which would lead to security disasters and crashed servers). It requires a delicate balance of culture, tooling, and governance.
 
 ### 1. Technological Accessibility (Self-Service Tooling)
-The primary barrier to data has always been the requirement to know SQL or Python. Democratization relies on deploying **Self-Service Analytics** platforms.
-Tools like Tableau, Power BI, and modern Semantic Layers abstract away the complex database code. They provide intuitive, drag-and-drop interfaces. A marketing manager can log into a dashboard, drag the "Campaign Name" metric next to the "Revenue" metric, and instantly see a visual graph of their ROI, all powered by automated SQL generated behind the scenes.
+The primary barrier to data has always been the requirement to know SQL or Python. Democratization relies on deploying **[Self-Service Analytics](/knowledge/self-service-analytics)** platforms.
+Tools like [Tableau](/knowledge/tableau), [Power BI](/knowledge/power-bi), and modern Semantic Layers abstract away the complex database code. They provide intuitive, drag-and-drop interfaces. A marketing manager can log into a dashboard, drag the "Campaign Name" metric next to the "Revenue" metric, and instantly see a visual graph of their ROI, all powered by automated SQL generated behind the scenes.
 
 ### 2. Data Literacy and Culture
-Giving a sophisticated BI tool to an employee who doesn't understand data is useless. Data Democratization requires a massive investment in **Data Literacy**.
+Giving a sophisticated BI tool to an employee who doesn't understand data is useless. Data Democratization requires a massive investment in **[Data Literacy](/knowledge/data-literacy)**.
 Organizations must train their non-technical staff not just on *how* to use the dashboard, but *how* to think about data. 
 *   What is the difference between median and average? 
 *   Why does correlation not equal causation? 
 A truly democratized culture is one where employees feel confident challenging assumptions using empirical data, rather than relying on the "Highest Paid Person's Opinion" (HIPPO).
 
 ### 3. Data Discovery and Governance (The Semantic Layer)
-If you give 100 employees access to raw data, they will calculate 100 different definitions of "Revenue." To prevent this chaos, democratization heavily relies on the **Semantic Layer** and **Data Catalogs**.
-Data engineers curate the data into a central catalog (like Alation or Apache Polaris) and define a single, unified business metric for "Revenue." When the marketing manager searches for data, they find a clearly labeled, IT-approved "Revenue" metric. They can trust that the data is accurate, secure, and mathematically consistent with the numbers the CEO is looking at.
+If you give 100 employees access to raw data, they will calculate 100 different definitions of "Revenue." To prevent this chaos, democratization heavily relies on the **[Semantic Layer](/knowledge/semantic-layer)** and **[Data Catalogs](/knowledge/data-catalogs)**.
+Data engineers curate the data into a central catalog (like Alation or [Apache Polaris](/knowledge/apache-polaris)) and define a single, unified business metric for "Revenue." When the marketing manager searches for data, they find a clearly labeled, IT-approved "Revenue" metric. They can trust that the data is accurate, secure, and mathematically consistent with the numbers the CEO is looking at.
 
 ## The Architectural Enabler: The Data Lakehouse
 

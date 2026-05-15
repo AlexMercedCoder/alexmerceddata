@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to Apache Polaris
 
-In the rapidly evolving landscape of modern data lakehouses, the separation of compute and storage has unlocked unprecedented scalability and cost-efficiency. However, this decoupling introduces a critical challenge: how do disparate compute engines (such as Dremio, Apache Spark, Trino, and Apache Flink) discover, access, and consistently manage the underlying data stored in object storage? 
+In the rapidly evolving landscape of modern data lakehouses, the separation of compute and storage has unlocked unprecedented scalability and cost-efficiency. However, this decoupling introduces a critical challenge: how do disparate compute engines (such as Dremio, [Apache Spark](/knowledge/apache-spark), Trino, and [Apache Flink](/knowledge/apache-flink)) discover, access, and consistently manage the underlying data stored in object storage? 
 
 The answer lies in the **data catalog**, the centralized metadata layer that serves as the definitive source of truth. As Apache Iceberg has emerged as the de facto standard for open table formats, the ecosystem required a robust, standardized way to interact with Iceberg tables across various tools. **Apache Polaris** was introduced to solve this exact problem.
 
@@ -21,7 +21,7 @@ To understand the value of Apache Polaris, we must dissect its architectural fou
 
 ### The Iceberg REST Catalog Specification
 
-Historically, compute engines interacted with Iceberg tables using various catalog implementations, such as the Hive Metastore (HMS), AWS Glue, or direct Hadoop/filesystem catalogs. Each of these implementations had its own quirks, client-side dependencies, and limitations.
+Historically, compute engines interacted with Iceberg tables using various catalog implementations, such as the Hive Metastore (HMS), [AWS Glue](/knowledge/aws-glue), or direct Hadoop/filesystem catalogs. Each of these implementations had its own quirks, client-side dependencies, and limitations.
 
 The Iceberg REST Catalog specification was introduced to standardize these interactions. It defines a set of HTTP endpoints for common catalog operations:
 *   `GET /v1/{prefix}/namespaces`: List namespaces.
@@ -40,7 +40,7 @@ Polaris organizes metadata using a hierarchical structure common to enterprise d
 
 ### The Storage Backend
 
-Apache Polaris itself does not store the massive data files (Parquet) or the detailed table-level metadata files (Manifests, Manifest Lists). These remain in your cloud object storage (Amazon S3, Azure ADLS, Google Cloud Storage). 
+Apache Polaris itself does not store the massive data files (Parquet) or the detailed table-level metadata files (Manifests, Manifest Lists). These remain in your cloud object storage ([Amazon S3](/knowledge/amazon-s3), Azure ADLS, Google Cloud Storage). 
 
 Polaris only stores the *catalog-level metadata*—the pointers to the current state of the tables and the authorization policies. By default, Polaris utilizes a lightweight relational database (such as PostgreSQL) for its backend storage, ensuring high availability and transactional consistency for catalog operations.
 

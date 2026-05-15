@@ -11,7 +11,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 In the Data Lakehouse, updating data stored in immutable cloud storage is a massive challenge. The default strategy, **Copy-on-Write (CoW)**, solves this by completely rewriting the entire data file even if only a single row changes. 
 
-While CoW is fantastic for read performance, it is catastrophic for real-time streaming architectures. If an Apache Flink cluster is processing a continuous stream of e-commerce updates (e.g., 50 order status changes per second), forcing the cluster to constantly rewrite massive 500MB Parquet files every second will instantly crash the system and generate astronomical cloud compute bills.
+While CoW is fantastic for read performance, it is catastrophic for real-time streaming architectures. If an [Apache Flink](/knowledge/apache-flink) cluster is processing a continuous stream of e-commerce updates (e.g., 50 order status changes per second), forcing the cluster to constantly rewrite massive 500MB Parquet files every second will instantly crash the system and generate astronomical cloud compute bills.
 
 To support high-velocity, continuous streaming ingestion, Apache Iceberg introduced a second, heavily write-optimized strategy: **Merge-on-Read (MoR)**.
 
@@ -45,7 +45,7 @@ If a table is heavily updated using MoR over several months, it might accumulate
 
 ## The Compaction Solution
 
-Because MoR eventually destroys read performance, it requires aggressive maintenance. Data Engineering teams must schedule **Compaction Jobs** (usually running Apache Spark overnight).
+Because MoR eventually destroys read performance, it requires aggressive maintenance. Data Engineering teams must schedule **Compaction Jobs** (usually running [Apache Spark](/knowledge/apache-spark) overnight).
 
 The Compaction Job acts as a garbage collector. It wakes up, reads the massive `Data_File_A` and the 10,000 Delete Files, mathematically merges them all together, and writes out a brand new, perfectly pristine `Data_File_C`. It then deletes all the old files. 
 The table is now fully optimized, and read performance returns to blistering speeds.

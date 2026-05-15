@@ -11,7 +11,7 @@ cta_link: "https://www.amazon.com/Governing-AI-Systems/dp/B0GSMVQ1TH/ref=sr_1_21
 
 In 2006, Netflix famously released a dataset of 100 million anonymous movie ratings, only for researchers to successfully cross-reference the data with IMDb and unmask the identities and political leanings of specific individuals. 
 
-This disaster proved a terrifying truth about Data Governance: **Anonymization does not work.** If you simply delete a user's name and SSN from a database, a clever hacker can use the remaining data (like the specific dates the user watched specific obscure movies) to mathematically triangulate their identity.
+This disaster proved a terrifying truth about [Data Governance](/knowledge/data-governance): **Anonymization does not work.** If you simply delete a user's name and SSN from a database, a clever hacker can use the remaining data (like the specific dates the user watched specific obscure movies) to mathematically triangulate their identity.
 
 To safely share massive datasets for machine learning or public research without destroying the privacy of the individuals inside that dataset, the industry required a radical new mathematical approach. 
 

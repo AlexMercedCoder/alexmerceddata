@@ -41,7 +41,7 @@ Predictive Analytics powers the most advanced features of the modern economy.
 
 ## The Limitations of Prediction
 
-Predictive Analytics is not magic; it is simply statistics. It is heavily constrained by **Model Drift**. 
+Predictive Analytics is not magic; it is simply statistics. It is heavily constrained by **[Model Drift](/knowledge/model-drift)**. 
 
 If a predictive model was trained on data from 2018 to 2019, it learned the patterns of a normal global economy. When the COVID-19 pandemic hit in 2020, human behavior changed overnight. Every predictive model in the world (from supply chain forecasting to airline ticketing) failed catastrophically because the future no longer looked like the past. 
 

@@ -13,7 +13,7 @@ If you ask a Large Language Model (LLM) a complex math or logic problem (e.g., *
 
 This happens because of how the neural network generates text. It attempts to predict the final answer instantly in a single, massive calculation. Because the intermediate mathematical steps are complex and require tracking state, the single-shot calculation fails.
 
-In 2022, Google researchers discovered a breathtakingly simple Prompt Engineering technique that dramatically increased the reasoning capabilities of LLMs: **Chain of Thought (CoT) Prompting**. 
+In 2022, Google researchers discovered a breathtakingly simple [Prompt Engineering](/knowledge/prompt-engineering) technique that dramatically increased the reasoning capabilities of LLMs: **Chain of Thought (CoT) Prompting**. 
 
 By simply forcing the AI to "think out loud," the model's accuracy on complex logic tasks skyrockets.
 
@@ -44,7 +44,7 @@ Instead of just providing `[Question -> Answer]`, the developer provides `[Quest
 
 ## The Evolution: ReAct and O1
 
-Chain of Thought is the foundational concept behind modern **Agentic AI**. 
+Chain of Thought is the foundational concept behind modern **[Agentic AI](/knowledge/agentic-ai)**. 
 Frameworks like **ReAct (Reasoning and Acting)** build upon CoT by forcing the AI to generate a "Thought," use a tool to take an "Action" (like searching Wikipedia), observe the "Result," and then generate the next "Thought."
 
 Furthermore, model builders are now baking CoT directly into the neural network architecture. Models like **OpenAI's o1** do not require the user to type "Let's think step by step." The model has been explicitly trained (via reinforcement learning) to generate thousands of invisible "thinking tokens" in the background for 10 to 20 seconds before it ever begins typing the final answer to the user, mimicking deep human contemplation.

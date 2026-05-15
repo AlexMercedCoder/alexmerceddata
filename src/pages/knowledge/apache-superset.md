@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Apache Superset
 
-For many years, the Business Intelligence (BI) market was entirely dominated by expensive, proprietary software like Tableau and Power BI. Organizations had to pay massive per-seat licensing fees just to allow their employees to view a dashboard. 
+For many years, the Business Intelligence (BI) market was entirely dominated by expensive, proprietary software like [Tableau](/knowledge/tableau) and [Power BI](/knowledge/power-bi). Organizations had to pay massive per-seat licensing fees just to allow their employees to view a dashboard. 
 
 In 2015, Maxime Beauchemin (while working at Airbnb) created **Apache Superset** to break this monopoly. Superset is an open-source, enterprise-ready BI web application that allows users to build highly interactive, beautiful dashboards without writing any code. It was explicitly designed to operate at massive scale, natively integrating with modern, high-speed analytical databases.
 
@@ -33,12 +33,12 @@ Superset was explicitly designed to pair with the modern **Data Lakehouse** and 
 
 Because Superset itself does not store data, its performance is 100% dependent on the database it connects to. If Superset connects to an unoptimized Data Lake, a simple dashboard might take 5 minutes to load.
 
-However, when Superset is connected to a high-performance engine like **Apache Druid** (which it was originally built to pair with) or **Dremio** (using Data Reflections), the architecture becomes magically powerful. Superset passes the query to Dremio, Dremio hits its sub-second cache, and the Superset dashboard renders instantly for 10,000 concurrent users.
+However, when Superset is connected to a high-performance engine like **[Apache Druid](/knowledge/apache-druid)** (which it was originally built to pair with) or **Dremio** (using Data Reflections), the architecture becomes magically powerful. Superset passes the query to Dremio, Dremio hits its sub-second cache, and the Superset dashboard renders instantly for 10,000 concurrent users.
 
 ## Open Source vs. Proprietary BI
 
 The primary advantage of Apache Superset is its open-source nature.
-*   **Cost**: There are zero per-seat licensing fees. An organization can deploy Superset to 50,000 employees for free, paying only for the underlying cloud infrastructure (Kubernetes/EC2) to host the web server.
+*   **Cost**: There are zero per-seat licensing fees. An organization can deploy Superset to 50,000 employees for free, paying only for the underlying cloud infrastructure ([Kubernetes](/knowledge/kubernetes)/EC2) to host the web server.
 *   **Extensibility**: Because the codebase is open, organizations can write custom Python code or React plugins to create completely new types of visualizations that do not exist in proprietary tools.
 
 However, because it is open-source, organizations must manage the hosting, security, and infrastructure themselves, or rely on managed hosting providers like Preset (founded by the creator of Superset).

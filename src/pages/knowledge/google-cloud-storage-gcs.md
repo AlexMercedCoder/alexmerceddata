@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Google Cloud Storage
 
-When building a Data Lakehouse in the modern cloud, the choice of foundational storage dictates the architecture of the entire platform. While Amazon S3 popularized the concept of Object Storage, **Google Cloud Storage (GCS)**—the object storage foundation of the Google Cloud Platform (GCP)—offers unique, deeply integrated capabilities tailored specifically for massive analytical workloads.
+When building a Data Lakehouse in the modern cloud, the choice of foundational storage dictates the architecture of the entire platform. While [Amazon S3](/knowledge/amazon-s3) popularized the concept of Object Storage, **Google Cloud Storage (GCS)**—the object storage foundation of the Google Cloud Platform (GCP)—offers unique, deeply integrated capabilities tailored specifically for massive analytical workloads.
 
 GCS is a unified object storage system. It allows developers to store and retrieve any amount of data at any time. It is the storage backbone that powers Google's own massive internal products, like YouTube, Gmail, and Google Photos.
 

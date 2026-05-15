@@ -9,9 +9,9 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Storage Abstraction
 
-In the early days of Big Data, the storage layer and the compute layer were inextricably linked. If you built a massive data lake using Hadoop in 2010, your data was locked into HDFS (Hadoop Distributed File System). Your processing engines (like MapReduce or early Spark) had to be specifically coded to understand the low-level API commands of HDFS.
+In the early days of Big Data, the storage layer and the compute layer were inextricably linked. If you built a massive data lake using Hadoop in 2010, your data was locked into HDFS (Hadoop Distributed File System). Your processing engines (like [MapReduce](/knowledge/mapreduce) or early Spark) had to be specifically coded to understand the low-level API commands of HDFS.
 
-If your organization later decided to migrate to the cloud (e.g., moving data to Amazon S3), the migration was a nightmare. Every single data pipeline, every ETL script, and every machine learning model had to be manually rewritten because the code that knew how to read `hdfs://` had no idea how to read `s3://`.
+If your organization later decided to migrate to the cloud (e.g., moving data to [Amazon S3](/knowledge/amazon-s3)), the migration was a nightmare. Every single data pipeline, every ETL script, and every machine learning model had to be manually rewritten because the code that knew how to read `hdfs://` had no idea how to read `s3://`.
 
 **Storage Abstraction** is the architectural design pattern that solves this tight coupling. It introduces a generic middleware layer that hides the physical location and specific API of the underlying storage hardware from the analytical compute engines.
 
@@ -19,11 +19,11 @@ If your organization later decided to migrate to the cloud (e.g., moving data to
 
 A Storage Abstraction layer acts as a universal translator. 
 
-Instead of an Apache Spark job requesting data directly from Amazon S3, the Spark job requests data from the Abstraction Layer using a universal, standardized URI. 
+Instead of an [Apache Spark](/knowledge/apache-spark) job requesting data directly from Amazon S3, the Spark job requests data from the Abstraction Layer using a universal, standardized URI. 
 The Abstraction Layer receives the request, determines where the data actually lives physically, translates the generic request into the proprietary API call (e.g., the specific REST API required by Azure ADLS or Google Cloud Storage), retrieves the bytes, and hands them back to Spark.
 
 ### Example: Apache Arrow Flight
-While not exclusively a storage abstraction, **Apache Arrow Flight** acts as a high-performance, network-level abstraction. An analyst can use Python to connect to a Flight endpoint. The Python client doesn't need to know if the data is stored in Parquet files on S3, or sitting in memory on a Dremio server. It just asks for the data, and Flight streams the columnar bytes over the network instantly.
+While not exclusively a storage abstraction, **[Apache Arrow](/knowledge/apache-arrow) Flight** acts as a high-performance, network-level abstraction. An analyst can use Python to connect to a Flight endpoint. The Python client doesn't need to know if the data is stored in Parquet files on S3, or sitting in memory on a Dremio server. It just asks for the data, and Flight streams the columnar bytes over the network instantly.
 
 ## The Role of Open Table Formats
 

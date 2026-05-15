@@ -31,7 +31,7 @@ Does the table `sales` actually exist? Does the user have the RBAC permissions t
 ### 3. The Logical Plan (Rule-Based Optimization)
 Once validated, the planner constructs an initial **Logical Plan**. This is a theoretical map of relational algebra operators (Filter, Project, Join).
 At this stage, the planner applies **Rule-Based Optimization (RBO)**. It uses hard-coded heuristic rules to rewrite the logical plan to be inherently faster, regardless of the underlying data.
-*   **Predicate Pushdown**: If the query filters `WHERE year = 2026` *after* the join, the RBO rewrites the plan to filter the data *before* the join, mathematically ensuring less data is processed.
+*   **[Predicate Pushdown](/knowledge/predicate-pushdown)**: If the query filters `WHERE year = 2026` *after* the join, the RBO rewrites the plan to filter the data *before* the join, mathematically ensuring less data is processed.
 *   **Constant Folding**: If a query has `WHERE price > 10 * 5`, the planner rewrites it to `WHERE price > 50` so the math isn't calculated millions of times during execution.
 
 ### 4. The Physical Plan (Cost-Based Optimization)
@@ -47,7 +47,7 @@ The winning Physical Plan is compiled into executable code (often using advanced
 
 In a traditional, monolithic database (like Oracle), the Query Planner is tightly coupled to the storage engine. It knows exactly where every byte sits on the spinning hard drive.
 
-In a modern, decoupled Data Lakehouse, the Query Planner (living inside an engine like Dremio or Trino) does not own the storage. The data sits as raw Parquet files on Amazon S3. 
+In a modern, decoupled Data Lakehouse, the Query Planner (living inside an engine like Dremio or Trino) does not own the storage. The data sits as raw Parquet files on [Amazon S3](/knowledge/amazon-s3). 
 
 To plan queries effectively, modern lakehouse planners rely heavily on open table formats like **Apache Iceberg**. Iceberg acts as the metadata layer, providing the Query Planner with the precise file locations, partition maps, and min/max column statistics required to accurately feed the Cost-Based Optimizer and generate highly efficient, distributed execution plans.
 

@@ -38,11 +38,11 @@ You cannot force behavioral change entirely from the top. The data team must ide
 The data team trains these Champions intimately on the new tools. When the Sales team struggles to use the new analytics platform, they don't call the IT helpdesk; they ask their peer (the Champion), which drastically reduces friction and increases trust.
 
 ### 3. Hyper-Targeted Training and Literacy
-Generic, 4-hour corporate training videos do not work. Training must be highly specific to the user's daily workflow. The Finance team must be trained on how to pull the specific revenue metrics they need, while the Logistics team is trained solely on supply-chain tracking. This targeted Data Literacy training ensures employees immediately see how the new tool makes their specific job easier.
+Generic, 4-hour corporate training videos do not work. Training must be highly specific to the user's daily workflow. The Finance team must be trained on how to pull the specific revenue metrics they need, while the Logistics team is trained solely on supply-chain tracking. This targeted [Data Literacy](/knowledge/data-literacy) training ensures employees immediately see how the new tool makes their specific job easier.
 
 ### 4. Phased Rollouts
 Do not force the entire 10,000-person company onto a new architecture overnight (The "Big Bang" approach). Start with a single, highly motivated department. Prove the massive ROI of the new system in that specific department, and use that success story to generate organic excitement (FOMO) across the rest of the company.
 
 ## Conclusion
 
-The greatest risk to a modern Data Strategy is not a bug in the Python code or a misconfigured AWS server; it is human stubbornness. By treating Change Management with the exact same rigor, budget, and executive focus as the technical architecture, organizations can overcome the natural friction of technological progress and ensure their massive infrastructure investments actually translate into cultural transformation.
+The greatest risk to a modern [Data Strategy](/knowledge/data-strategy) is not a bug in the Python code or a misconfigured AWS server; it is human stubbornness. By treating Change Management with the exact same rigor, budget, and executive focus as the technical architecture, organizations can overcome the natural friction of technological progress and ensure their massive infrastructure investments actually translate into cultural transformation.

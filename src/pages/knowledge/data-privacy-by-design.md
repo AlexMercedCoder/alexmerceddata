@@ -20,7 +20,7 @@ This reactive approach fails completely in the era of GDPR and aggressive data b
 The concept was developed in the 1990s by Dr. Ann Cavoukian, and its framework rests on seven core principles that modern Data Architects must follow:
 
 ### 1. Proactive, Not Reactive
-Do not wait for a data breach to occur before securing the database. Anticipate the privacy risks during the Threat Modeling phase and engineer them out of the system before the system is built.
+Do not wait for a data breach to occur before securing the database. Anticipate the privacy risks during the [Threat Modeling](/knowledge/threat-modeling) phase and engineer them out of the system before the system is built.
 
 ### 2. Privacy as the Default Setting
 If a user creates an account on a software platform, their profile should be completely private by default. They should not have to dig through 10 pages of complex settings menus to turn off GPS tracking. The company must assume the user wants maximum privacy unless the user explicitly clicks a button to opt-in.

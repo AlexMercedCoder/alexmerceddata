@@ -14,7 +14,7 @@ To win the battle, all 5 generals must attack at the exact same time. If only 2 
 
 However, messengers can be killed (Network Packet Loss). A general might be a traitor (Byzantine Fault). A general might fall asleep (Server Crash). How do the generals mathematically guarantee they all agree on the attack time, despite the chaos?
 
-This is the fundamental problem of Distributed Systems. If you have a database cluster of 5 servers, and a user tries to change their password, how do you mathematically guarantee that all 5 servers agree on the new password, even if a router crashes during the transaction?
+This is the fundamental problem of [Distributed Systems](/knowledge/distributed-systems). If you have a database cluster of 5 servers, and a user tries to change their password, how do you mathematically guarantee that all 5 servers agree on the new password, even if a router crashes during the transaction?
 
 To solve this, computer science relies on **Consensus Algorithms**.
 
@@ -45,7 +45,7 @@ If the Leader catches fire, the Followers detect the silence via a heartbeat tim
 Consensus algorithms are not used for everything (they are too slow for massive data storage). They are used for the "Brain" of the distributed system—storing critical metadata and managing cluster state.
 
 *   **Apache ZooKeeper**: Uses a Paxos-like algorithm (ZAB) to manage configuration for Hadoop and Kafka clusters.
-*   **etcd**: Uses the **Raft** algorithm. It is the critical "brain" that stores the entire state of every Kubernetes cluster in the world.
+*   **etcd**: Uses the **Raft** algorithm. It is the critical "brain" that stores the entire state of every [Kubernetes](/knowledge/kubernetes) cluster in the world.
 *   **HashiCorp Consul**: Uses **Raft** for service discovery and configuration.
 
 ## Conclusion

@@ -34,7 +34,7 @@ Because the old data files are never deleted by the transaction itself (they are
 
 ## Executing Time Travel Queries
 
-Apache Iceberg’s time travel capabilities are exposed seamlessly through standard SQL extensions across modern compute engines like Dremio, Apache Spark, and Trino.
+Apache Iceberg’s time travel capabilities are exposed seamlessly through standard SQL extensions across modern compute engines like Dremio, [Apache Spark](/knowledge/apache-spark), and Trino.
 
 ### Time Travel by Timestamp
 

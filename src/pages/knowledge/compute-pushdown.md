@@ -22,7 +22,7 @@ Compute Pushdown is the process where a high-level query engine intelligently de
 
 ## The Mechanics of Compute Pushdown
 
-Compute pushdown relies on a sophisticated component within the query engine called the **Query Planner** or **Cost-Based Optimizer (CBO)**.
+Compute pushdown relies on a sophisticated component within the query engine called the **[Query Planner](/knowledge/query-planner)** or **Cost-Based Optimizer (CBO)**.
 
 When the query engine receives a SQL statement, the optimizer analyzes the capabilities of the underlying storage system.
 
@@ -42,15 +42,15 @@ In our example, the engine can push the entire `SUM()` and `GROUP BY` operation 
 
 While pushdown is conceptually easy to understand when querying another relational database, it becomes slightly more complex—and vastly more important—when querying flat files in a Data Lakehouse.
 
-Object storage (like Amazon S3) has no native compute capabilities; S3 cannot execute a SQL `SUM()`. Therefore, compute pushdown in a lakehouse refers to pushing the logic down into the *file reader* processes (the low-level software libraries scanning the Parquet files).
+Object storage (like [Amazon S3](/knowledge/amazon-s3)) has no native compute capabilities; S3 cannot execute a SQL `SUM()`. Therefore, compute pushdown in a lakehouse refers to pushing the logic down into the *file reader* processes (the low-level software libraries scanning the Parquet files).
 
-**Apache Iceberg** and **Apache Parquet** are designed explicitly to support aggressive pushdown:
+**Apache Iceberg** and **[Apache Parquet](/knowledge/apache-parquet)** are designed explicitly to support aggressive pushdown:
 1.  **Metadata Level (Iceberg)**: When Dremio evaluates `WHERE date = '2026-01-01'`, it pushes that filter into the Iceberg manifest files. Iceberg instantly identifies that 9,000 out of 10,000 Parquet files do not contain data for that date, and Dremio completely skips downloading them.
 2.  **File Level (Parquet)**: For the 1,000 files Dremio does download, the Parquet reader uses the file's footer statistics (min/max values) to skip irrelevant chunks of data (Row Groups) within the file itself.
 
 ## The Importance in Data Virtualization
 
-Compute Pushdown is the primary enabling technology for **Data Virtualization** and the **Data Mesh**. 
+Compute Pushdown is the primary enabling technology for **[Data Virtualization](/knowledge/data-virtualization)** and the **[Data Mesh](/knowledge/data-mesh)**. 
 
 Without robust pushdown capabilities, organizations are forced to use brittle ETL pipelines to physically copy data from operational databases into a central data warehouse just to achieve decent query performance. 
 With advanced Compute Pushdown, an engine like Dremio can execute a SQL join between an Oracle database and a Snowflake database in real-time. By pushing the heavy filtering and aggregations down to the respective source systems simultaneously, the virtualized query returns in seconds without ever permanently moving or duplicating the underlying data.

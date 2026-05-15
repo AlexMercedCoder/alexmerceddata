@@ -13,7 +13,7 @@ In the realm of big data and modern lakehouses, the choice of file format dictat
 
 Enter **Apache Parquet**. 
 
-Developed collaboratively by Twitter and Cloudera in 2013, Apache Parquet is an open-source, column-oriented data file format. It is arguably the most important file format in the big data ecosystem, serving as the physical storage foundation for almost all modern data lakehouses (including those governed by Apache Iceberg or Delta Lake). 
+Developed collaboratively by Twitter and Cloudera in 2013, Apache Parquet is an open-source, column-oriented data file format. It is arguably the most important file format in the big data ecosystem, serving as the physical storage foundation for almost all modern data lakehouses (including those governed by Apache Iceberg or [Delta Lake](/knowledge/delta-lake)). 
 
 Parquet's genius lies in its hybrid storage architecture, aggressive compression algorithms, and its ability to drastically reduce the amount of disk I/O required to execute complex analytical queries.
 

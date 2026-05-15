@@ -40,7 +40,7 @@ It is crucial to understand why Containers replaced Virtual Machines for deployi
 
 ## The Foundation of Microservices
 
-Containerization is the absolute prerequisite for **Microservices Architecture**.
+Containerization is the absolute prerequisite for **[Microservices Architecture](/knowledge/microservices-architecture)**.
 In a massive enterprise application with 500 different microservices, it is impossible to manually install 500 different sets of dependencies on a server without them conflicting with each other. By wrapping every single microservice inside its own Docker container, engineers ensure that a legacy Java microservice and a cutting-edge Node.js microservice can run safely side-by-side on the exact same physical server, completely unaware of each other's existence.
 
 ## Conclusion

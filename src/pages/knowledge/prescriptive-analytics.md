@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVP
 
 ## Introduction to Prescriptive Analytics
 
-If **Predictive Analytics** is the technology that tells you *"What is going to happen"*, then **Prescriptive Analytics** is the ultimate evolution: it tells you *"Exactly what you should do about it."*
+If **[Predictive Analytics](/knowledge/predictive-analytics)** is the technology that tells you *"What is going to happen"*, then **Prescriptive Analytics** is the ultimate evolution: it tells you *"Exactly what you should do about it."*
 
 Imagine an airline. 
 *   **Descriptive Analytics**: "Flight 101 from NY to LA was only 60% full yesterday."
@@ -40,7 +40,7 @@ Prescriptive Analytics is the technology behind autonomous, algorithmic business
 
 *   **Algorithmic Trading**: Hedge funds don't just predict that a stock will go up. The prescriptive system calculates the exact number of shares to buy, and the exact millisecond to buy them, to optimize the portfolio's risk-to-reward ratio without destabilizing the market.
 *   **Dynamic Pricing (Surge Pricing)**: Uber uses prescriptive analytics continuously. The predictive model forecasts that demand will spike when a concert ends at 11 PM. The prescriptive engine automatically raises the price to 2.5x (Surge Pricing). This specific price point is mathematically calculated to maximize revenue while simultaneously incentivizing exactly enough new drivers to log onto the app to handle the crowd.
-*   **Agentic AI**: The future of prescriptive analytics is Agentic AI. Instead of simply generating a dashboard recommending that a company buy more inventory, an AI Agent uses its LLM reasoning capabilities to connect to the supplier's API and physically execute the purchase order autonomously.
+*   **[Agentic AI](/knowledge/agentic-ai)**: The future of prescriptive analytics is Agentic AI. Instead of simply generating a dashboard recommending that a company buy more inventory, an AI Agent uses its LLM reasoning capabilities to connect to the supplier's API and physically execute the purchase order autonomously.
 
 ## The Barrier to Entry
 
@@ -48,7 +48,7 @@ Prescriptive Analytics is incredibly difficult to achieve because it requires ab
 
 If a Descriptive dashboard is wrong, an executive might make a slightly bad decision. If a Prescriptive, autonomous trading algorithm is wrong, it can lose $50 million in three seconds. 
 
-Because of this risk, Prescriptive systems require the highest maturity level of data engineering: flawless Data Quality checks, robust Data Observability, and a perfectly synchronized **Data Lakehouse** that guarantees the optimization engine is always making decisions based on the absolute ground truth.
+Because of this risk, Prescriptive systems require the highest maturity level of data engineering: flawless [Data Quality](/knowledge/data-quality) checks, robust [Data Observability](/knowledge/data-observability), and a perfectly synchronized **Data Lakehouse** that guarantees the optimization engine is always making decisions based on the absolute ground truth.
 
 ## Conclusion
 

@@ -40,7 +40,7 @@ Image Classification (saying "This is a cat") is only the most basic form of Com
 While CNNs dominated the 2010s, the 2020s saw a massive architectural shift. 
 
 Google researchers realized that the **Transformer** architecture (which powers text LLMs like GPT-4) could be adapted for images. They created the **Vision Transformer (ViT)**. 
-Instead of sliding filters across an image like a CNN, a ViT takes an image, slices it into 16x16 pixel "patches," and treats each patch exactly like a "word" in a sentence. It uses the Attention Mechanism to figure out how every patch of the image relates to every other patch.
+Instead of sliding filters across an image like a CNN, a ViT takes an image, slices it into 16x16 pixel "patches," and treats each patch exactly like a "word" in a sentence. It uses the [Attention Mechanism](/knowledge/attention-mechanism) to figure out how every patch of the image relates to every other patch.
 
 Because Transformers are easier to scale on massive GPU clusters than CNNs, ViTs (and hybrid models) have largely taken over the absolute frontier of Computer Vision, serving as the visual "eyes" for natively Multi-Modal models like GPT-4o and Gemini.
 

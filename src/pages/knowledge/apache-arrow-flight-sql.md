@@ -15,7 +15,7 @@ While these protocols have served the industry well since the 1990s, they were d
 
 These legacy protocols transport data row-by-row. If a Python data science script queries 100 million rows from a modern MPP engine, the engine (which processes data in lightning-fast columnar memory) must painfully serialize the data back into rows, send it over the network via JDBC, where the Python client must deserialize it and reconstruct it. This serialization tax destroys performance.
 
-**Apache Arrow Flight SQL** is the modern replacement for ODBC and JDBC, designed specifically for the era of high-speed columnar analytics.
+**[Apache Arrow](/knowledge/apache-arrow) Flight SQL** is the modern replacement for ODBC and JDBC, designed specifically for the era of high-speed columnar analytics.
 
 ## The Architecture of Arrow Flight
 
@@ -52,7 +52,7 @@ One of the most profound advantages of Arrow Flight SQL over JDBC/ODBC is its na
 In a traditional JDBC setup, even if the database cluster has 100 compute nodes, the entire 100-million-row result set must be funneled through a single coordinator node before being sent down a single network pipe to the client.
 
 With Arrow Flight SQL, the `GetFlightInfo` response can return multiple tickets pointing to different physical nodes in the database cluster. 
-If the client application is also distributed (like an Apache Spark cluster or a Ray cluster), the client nodes can connect *directly* to the database executor nodes. They can stream the Arrow data in parallel across multiple network connections simultaneously, bypassing the coordinator node entirely. This enables infinite horizontal scaling for data egress.
+If the client application is also distributed (like an [Apache Spark](/knowledge/apache-spark) cluster or a Ray cluster), the client nodes can connect *directly* to the database executor nodes. They can stream the Arrow data in parallel across multiple network connections simultaneously, bypassing the coordinator node entirely. This enables infinite horizontal scaling for data egress.
 
 ## Conclusion
 

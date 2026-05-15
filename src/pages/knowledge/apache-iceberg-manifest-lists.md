@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Apache Iceberg Metadata Architecture
 
-To understand the sheer performance and scalability of Apache Iceberg, one must look beyond the data files themselves and examine the elegant metadata tree that orchestrates them. Traditional data lakes (often reliant on Hive-style directory partitioning) struggle at scale. When a query is executed, engines are forced to perform slow, recursive file listing operations across object storage (like Amazon S3 or ADLS) to determine which files to read. 
+To understand the sheer performance and scalability of Apache Iceberg, one must look beyond the data files themselves and examine the elegant metadata tree that orchestrates them. Traditional data lakes (often reliant on Hive-style directory partitioning) struggle at scale. When a query is executed, engines are forced to perform slow, recursive file listing operations across object storage (like [Amazon S3](/knowledge/amazon-s3) or ADLS) to determine which files to read. 
 
 Apache Iceberg solves this "listing bottleneck" by maintaining a precise, hierarchical metadata structure that tracks every single data file at the file level, rather than the directory level. This tree consists of three primary layers:
 1.  **Metadata Files (`.json`)**: Track the table state, schema, partitioning, and snapshots.
@@ -52,7 +52,7 @@ In a legacy Hive architecture, if you query `SELECT * FROM sensors WHERE event_d
 When the same query is executed against an Iceberg table, the engine (like Dremio or Spark) follows these steps:
 1.  **Read the Metadata JSON**: Identify the current snapshot and locate the Manifest List.
 2.  **Read the Manifest List**: The engine reads the single Manifest List Avro file into memory.
-3.  **Manifest Pruning (Predicate Pushdown)**: The engine evaluates the query predicate (`event_date = '2026-05-14'`) against the `partitions` array stored inside the Manifest List for *each* manifest file. 
+3.  **Manifest Pruning ([Predicate Pushdown](/knowledge/predicate-pushdown))**: The engine evaluates the query predicate (`event_date = '2026-05-14'`) against the `partitions` array stored inside the Manifest List for *each* manifest file. 
     *   If a manifest file's lower and upper bounds for `event_date` are `['2025-01-01', '2025-12-31']`, the engine instantly knows this manifest contains no relevant data. It **skips** the manifest file entirely.
     *   If a manifest file's bounds include `2026-05-14`, the engine adds that manifest file to a "must read" list.
 4.  **Read the Manifest Files**: The engine opens only the surviving manifest files to find the specific Parquet file paths.
@@ -65,14 +65,14 @@ By storing partition bounds in the Manifest List, Iceberg allows compute engines
 While Manifest Lists are highly efficient, they can become fragmented over time, especially in streaming workloads where small batches of data are committed frequently.
 
 ### The Problem of Small Manifests
-If a streaming job (like Apache Flink) commits every 1 minute, it creates a new snapshot, a new manifest file, and a new manifest list pointing to the previous manifests plus the new one. Over days and weeks, the Manifest List can grow to contain references to tens of thousands of tiny manifest files.
+If a streaming job (like [Apache Flink](/knowledge/apache-flink)) commits every 1 minute, it creates a new snapshot, a new manifest file, and a new manifest list pointing to the previous manifests plus the new one. Over days and weeks, the Manifest List can grow to contain references to tens of thousands of tiny manifest files.
 
 When a query planner runs, it has to download and open thousands of small manifest files to evaluate column-level statistics, causing the planning phase to slow down.
 
 ### Manifest Rewriting (Compaction)
 To maintain peak performance, data engineers must regularly perform maintenance on Iceberg tables. One of the most important maintenance tasks is **Rewrite Manifests**.
 
-Using Apache Spark or an automated service like Dremio Arctic, you can execute a procedure to compact these files:
+Using [Apache Spark](/knowledge/apache-spark) or an automated service like Dremio Arctic, you can execute a procedure to compact these files:
 ```sql
 CALL catalog.system.rewrite_manifests('my_namespace.my_table');
 ```

@@ -48,15 +48,15 @@ Is there only one record for a specific entity?
 Achieving high data quality is a continuous operational process, usually managed through a combination of defensive engineering and continuous observability.
 
 ### Shift-Left Testing
-The cheapest time to fix a data quality issue is before it enters the data warehouse. Data Engineering teams "shift-left" by embedding quality tests directly into their ETL pipelines (using tools like **dbt** or **Great Expectations**). 
+The cheapest time to fix a data quality issue is before it enters the data warehouse. Data Engineering teams "shift-left" by embedding quality tests directly into their ETL pipelines (using tools like **dbt** or **[Great Expectations](/knowledge/great-expectations)**). 
 Before a pipeline writes new sales data into the `gold_sales` Iceberg table, it runs a test to ensure no `revenue` values are negative. If the test fails, the pipeline halts (a "circuit breaker"), quarantining the bad data in a dead-letter queue before it can corrupt the production dashboards.
 
 ### Data Observability
-Because you cannot anticipate every possible data anomaly with manual tests, organizations deploy **Data Observability** platforms (like Monte Carlo). These tools use Machine Learning to constantly monitor the data warehouse in the background. If the standard deviation of the `transaction_amount` suddenly spikes by 400%, the observability tool alerts the engineering team to the anomaly immediately.
+Because you cannot anticipate every possible data anomaly with manual tests, organizations deploy **[Data Observability](/knowledge/data-observability)** platforms (like Monte Carlo). These tools use Machine Learning to constantly monitor the data warehouse in the background. If the standard deviation of the `transaction_amount` suddenly spikes by 400%, the observability tool alerts the engineering team to the anomaly immediately.
 
 ### Master Data Management (MDM)
 To solve issues of Consistency and Uniqueness, enterprises implement MDM strategies. MDM uses sophisticated algorithms (like Fuzzy Matching) to scan disparate systems (Salesforce, Zendesk, Oracle), identify the three different "John Doe" records, and automatically merge them into a single, pristine "Golden Record."
 
 ## Conclusion
 
-Data Quality is the bedrock of corporate trust. Without it, the most sophisticated Data Mesh or GenAI architecture is effectively useless ("Garbage In, Garbage Out"). Treating data quality as a proactive engineering discipline—enforced by CI/CD tests, observability, and strict Data Contracts—is the only way to ensure that an organization's analytical insights accurately reflect reality.
+Data Quality is the bedrock of corporate trust. Without it, the most sophisticated [Data Mesh](/knowledge/data-mesh) or GenAI architecture is effectively useless ("Garbage In, Garbage Out"). Treating data quality as a proactive engineering discipline—enforced by CI/CD tests, observability, and strict [Data Contracts](/knowledge/data-contracts)—is the only way to ensure that an organization's analytical insights accurately reflect reality.

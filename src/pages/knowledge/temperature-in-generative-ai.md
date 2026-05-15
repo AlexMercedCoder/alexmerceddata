@@ -42,7 +42,7 @@ Now, the model is much more likely to "roll the dice" and select a statistically
 
 ## Real-World Applications of Temperature
 
-Tuning the Temperature is a critical aspect of **Prompt Engineering** and application design. The ideal temperature depends entirely on the specific use case.
+Tuning the Temperature is a critical aspect of **[Prompt Engineering](/knowledge/prompt-engineering)** and application design. The ideal temperature depends entirely on the specific use case.
 
 ### 1. Analytical and Coding Tasks (Low Temperature: 0.0 - 0.2)
 If you are asking an LLM to generate a complex SQL query for an Apache Iceberg table, or using an AI Agent to extract specific JSON metadata from a legal contract, you want zero creativity. You want absolute factual precision and determinism. 

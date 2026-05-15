@@ -13,7 +13,7 @@ Imagine an organization where the finance department speaks French, the marketin
 
 In the modern enterprise, **Data** is the universal corporate language. Yet, millions of business professionals are functionally illiterate in it. 
 
-**Data Literacy** is the ability to read, work with, analyze, and argue with data. It is not about teaching a Marketing Manager how to write complex Python code or Apache Spark clusters. It is about teaching them how to look at a bar chart, understand what the data is actually saying, and confidently make a business decision based on that mathematical reality.
+**Data Literacy** is the ability to read, work with, analyze, and argue with data. It is not about teaching a Marketing Manager how to write complex Python code or [Apache Spark](/knowledge/apache-spark) clusters. It is about teaching them how to look at a bar chart, understand what the data is actually saying, and confidently make a business decision based on that mathematical reality.
 
 ## The Data Literacy Crisis
 
@@ -43,7 +43,7 @@ In a data-driven culture, an employee does not win an argument because they have
 
 Organizations cannot fix this problem by forcing every employee to take a weekend coding bootcamp. Data Literacy must be institutionalized.
 
-*   **Democratized Access**: Employees cannot become data literate if the data is locked away by the IT department. Companies must use self-service BI tools (like Superset or Tableau) to allow non-technical users to safely explore data themselves.
+*   **Democratized Access**: Employees cannot become data literate if the data is locked away by the IT department. Companies must use self-service BI tools (like Superset or [Tableau](/knowledge/tableau)) to allow non-technical users to safely explore data themselves.
 *   **Data Glossaries**: The company must establish a unified vocabulary. If Sales defines "Active User" as someone who logged in this month, and Marketing defines "Active User" as someone who clicked an email, the two departments will constantly argue over the dashboard metrics. A central Data Catalog must explicitly define these terms for the entire company.
 
 ## Conclusion

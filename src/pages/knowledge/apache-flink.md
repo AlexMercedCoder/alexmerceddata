@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 In the early evolution of Big Data, the industry clearly delineated between batch processing (analyzing massive amounts of historical data slowly using Hadoop/Spark) and stream processing (analyzing small amounts of live data quickly using Storm).
 
-However, organizations realized that treating streaming and batch as two fundamentally different domains resulted in complex, brittle architectures (like the Lambda Architecture). They needed a unified engine that could process an infinite stream of live events with absolute accuracy, while also handling massive historical batch jobs.
+However, organizations realized that treating streaming and batch as two fundamentally different domains resulted in complex, brittle architectures (like the [Lambda Architecture](/knowledge/lambda-architecture)). They needed a unified engine that could process an infinite stream of live events with absolute accuracy, while also handling massive historical batch jobs.
 
 **Apache Flink** is the realization of this vision. It is a distributed processing engine for stateful computations over *unbounded* and *bounded* data streams. 
 Unlike early streaming engines that simply triggered actions as events arrived, Flink introduced rigorous, mathematically sound mechanisms for managing state, time, and failure, becoming the undisputed global standard for enterprise stream processing.
@@ -51,7 +51,7 @@ When submitted, Flink does not run this query once and stop. It runs continuousl
 
 ## Flink in the Data Lakehouse
 
-Historically, Flink was used to feed specialized real-time databases (like Apache Druid). Today, Flink is heavily integrated with Open Table Formats like **Apache Iceberg**.
+Historically, Flink was used to feed specialized real-time databases (like [Apache Druid](/knowledge/apache-druid)). Today, Flink is heavily integrated with [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**.
 Flink is the engine of choice for continuous, real-time ingestion into the Lakehouse. It can read an unbounded stream of CDC (Change Data Capture) updates from Kafka and execute native row-level upserts into an Iceberg table, ensuring the lakehouse is always a perfect, sub-second reflection of the operational database.
 
 ## Conclusion

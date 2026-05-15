@@ -30,7 +30,7 @@ These expectations form a comprehensive contract for the dataset.
 
 ### 2. Validation (The Checkpoint)
 Once the expectations are defined, they are bundled into a "Checkpoint." 
-The data engineer integrates this Checkpoint directly into their orchestration pipeline (e.g., Apache Airflow or Dagster). 
+The data engineer integrates this Checkpoint directly into their orchestration pipeline (e.g., [Apache Airflow](/knowledge/apache-airflow) or [Dagster](/knowledge/dagster)). 
 
 When the Airflow pipeline runs, it downloads the daily data. Before inserting it into the Apache Iceberg production table, it runs the Checkpoint. GX evaluates the data against the assertions. If the data fails (e.g., a bug caused all the emails to be null), GX flags a failure. The orchestrator halts the pipeline, sends a Slack alert to the team, and prevents the toxic data from corrupting the lakehouse.
 
@@ -46,7 +46,7 @@ Data documentation is typically written in a Wiki and becomes obsolete the next 
 Every time GX validates data, it automatically generates (or updates) "Data Docs"—clean, human-readable HTML reports. These reports visually display the rules, show exactly which tests passed or failed, and provide statistical summaries of the latest pipeline run. This creates a living, always-accurate data dictionary that business stakeholders can trust.
 
 ### Engine Agnostic Compute
-GX does not pull your 50 Terabyte table into your laptop's memory to test it. It translates your Python expectations into the native language of your underlying compute engine. It can push the validation compute down into a Pandas dataframe, an Apache Spark cluster, or directly into a SQL data warehouse (like Snowflake or PostgreSQL), ensuring high performance.
+GX does not pull your 50 Terabyte table into your laptop's memory to test it. It translates your Python expectations into the native language of your underlying compute engine. It can push the validation compute down into a Pandas dataframe, an [Apache Spark](/knowledge/apache-spark) cluster, or directly into a SQL data warehouse (like Snowflake or PostgreSQL), ensuring high performance.
 
 ## Conclusion
 

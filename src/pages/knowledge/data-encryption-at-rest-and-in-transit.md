@@ -17,7 +17,7 @@ In modern Data Engineering, security is typically divided into two entirely sepa
 
 ## 1. Encryption At Rest
 
-**Data At Rest** refers to data that is physically stored on a digital medium (like a laptop hard drive, a USB stick, or an Amazon S3 bucket).
+**Data At Rest** refers to data that is physically stored on a digital medium (like a laptop hard drive, a USB stick, or an [Amazon S3](/knowledge/amazon-s3) bucket).
 
 The goal of Encryption At Rest is to protect the data against *physical theft* or *unauthorized internal access*. 
 If a malicious server administrator copies the `employees.db` file onto a flash drive and takes it home, Encryption At Rest guarantees they cannot open the file because they do not have the decryption key (which is stored in a highly secure, separate Key Management System, like AWS KMS).

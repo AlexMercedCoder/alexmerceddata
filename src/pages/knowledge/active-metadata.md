@@ -13,7 +13,7 @@ Metadata is simply "data about data."
 If your data is a photograph, the metadata is the timestamp and GPS coordinates hidden in the file. In an enterprise Data Lakehouse, if the data is a 10-billion row Parquet file, the metadata includes the column names, the file size, the data owner, and the security tags.
 
 Historically, metadata was **Passive**. 
-Organizations bought expensive Data Catalogs (essentially massive wikis). A data steward had to manually log into the catalog, find the `Customer_Sales` table, and manually type a description: *"This table contains sales data."* 
+Organizations bought expensive [Data Catalogs](/knowledge/data-catalogs) (essentially massive wikis). A data steward had to manually log into the catalog, find the `Customer_Sales` table, and manually type a description: *"This table contains sales data."* 
 Because it relied entirely on human data entry, passive metadata was always outdated, inaccurate, and completely disconnected from the actual engineering pipelines. It was a static reference manual that nobody read.
 
 **Active Metadata** is the paradigm shift that transforms metadata from a static documentation burden into an autonomous, action-oriented intelligence layer that physically controls the data architecture.
@@ -23,7 +23,7 @@ Because it relied entirely on human data entry, passive metadata was always outd
 Active Metadata relies on the continuous, automated collection and application of metadata via API. It has three core characteristics:
 
 ### 1. Always-On Automation
-Active metadata platforms (like Atlan, DataHub, or Collibra) plug directly into the nervous system of the data stack (e.g., Snowflake, dbt, Airflow, Tableau). They continuously scrape logs, query histories, and API endpoints. 
+Active metadata platforms (like Atlan, DataHub, or Collibra) plug directly into the nervous system of the data stack (e.g., Snowflake, dbt, Airflow, [Tableau](/knowledge/tableau)). They continuously scrape logs, query histories, and API endpoints. 
 If a data engineer creates a new table in Snowflake, the Active Metadata platform detects it in seconds, automatically profiles the data, automatically infers the schema, and publishes the table to the catalog without a human touching a keyboard.
 
 ### 2. Machine Learning Intelligence
@@ -38,10 +38,10 @@ This is the defining feature of Active Metadata. Passive metadata only *displays
 
 ## The Foundation of the Data Fabric
 
-Active Metadata is the technological prerequisite for the **Data Fabric**—the ultimate vision of an intelligent, self-healing, and autonomous enterprise data ecosystem.
+Active Metadata is the technological prerequisite for the **[Data Fabric](/knowledge/data-fabric)**—the ultimate vision of an intelligent, self-healing, and autonomous enterprise data ecosystem.
 
-In a mature Data Fabric, Active Metadata controls orchestration. If the metadata detects that a crucial upstream data source has failed a Data Quality test (e.g., the data is 50% null), the Active Metadata platform will intercept the Airflow scheduler and automatically halt all downstream ETL jobs and BI dashboards, preventing the corrupted data from poisoning executive reports. 
+In a mature Data Fabric, Active Metadata controls orchestration. If the metadata detects that a crucial upstream data source has failed a [Data Quality](/knowledge/data-quality) test (e.g., the data is 50% null), the Active Metadata platform will intercept the Airflow scheduler and automatically halt all downstream ETL jobs and BI dashboards, preventing the corrupted data from poisoning executive reports. 
 
 ## Conclusion
 
-Active Metadata represents the automation of Data Governance. By replacing manual data stewardship with machine learning algorithms and bi-directional API integrations, it allows organizations to scale their data infrastructure infinitely while maintaining perfect security and observability. It proves that in the modern enterprise, the metadata is often more valuable and powerful than the data itself.
+Active Metadata represents the automation of [Data Governance](/knowledge/data-governance). By replacing manual data stewardship with machine learning algorithms and bi-directional API integrations, it allows organizations to scale their data infrastructure infinitely while maintaining perfect security and observability. It proves that in the modern enterprise, the metadata is often more valuable and powerful than the data itself.

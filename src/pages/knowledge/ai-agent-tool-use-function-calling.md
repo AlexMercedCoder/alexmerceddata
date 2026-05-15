@@ -52,4 +52,4 @@ To mitigate this, enterprise architectures mandate "Human-in-the-Loop" validatio
 
 ## Conclusion
 
-Tool Use is the catalyst for the Agentic AI era. By standardizing the format by which neural networks request external API execution (Function Calling), companies like OpenAI and Anthropic transformed LLMs from static encyclopedias into dynamic digital workers, capable of navigating the internet, manipulating enterprise software, and autonomously executing complex business workflows.
+Tool Use is the catalyst for the [Agentic AI](/knowledge/agentic-ai) era. By standardizing the format by which neural networks request external API execution (Function Calling), companies like OpenAI and Anthropic transformed LLMs from static encyclopedias into dynamic digital workers, capable of navigating the internet, manipulating enterprise software, and autonomously executing complex business workflows.

@@ -37,7 +37,7 @@ While Cloud Data Warehouses are phenomenal for structured BI, they struggle with
 
 ## The Architecture: Dimensional Modeling
 
-To achieve fast query speeds on massive historical datasets, Data Warehouses do not use standard database schemas (like 3rd Normal Form). They use **Dimensional Modeling** (The Star Schema), popularized by Ralph Kimball.
+To achieve fast query speeds on massive historical datasets, Data Warehouses do not use standard database schemas (like 3rd Normal Form). They use **[Dimensional Modeling](/knowledge/dimensional-modeling)** (The [Star Schema](/knowledge/star-schema)), popularized by Ralph Kimball.
 
 Data is split into two types of tables:
 *   **Fact Tables**: The core business events. Massive tables containing numbers (e.g., `Sales_Fact`: Date_ID, Store_ID, Product_ID, Revenue=$50).

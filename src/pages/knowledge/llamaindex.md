@@ -13,7 +13,7 @@ If you ask ChatGPT, *"What is my company's Q3 revenue?"*, it will fail to answer
 
 To solve this, developers use a technique called **Retrieval-Augmented Generation (RAG)**. RAG searches your private documents, finds the relevant paragraphs, and injects them into the LLM's prompt. 
 
-While frameworks like LangChain excel at creating autonomous Agents and general application logic, they can be clunky when dealing with massive volumes of unstructured data. 
+While frameworks like [LangChain](/knowledge/langchain) excel at creating autonomous Agents and general application logic, they can be clunky when dealing with massive volumes of unstructured data. 
 
 **LlamaIndex** (formerly GPT Index) was built specifically to solve the data problem. It is an advanced data framework specifically designed to connect custom, private data sources to Large Language Models.
 

@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to the Snowflake Schema
 
-When designing a Data Warehouse to serve analytical queries, data architects rely on dimensional modeling to organize data into Facts (the measurable numbers) and Dimensions (the descriptive context). The most famous implementation of this is the Star Schema.
+When designing a Data Warehouse to serve analytical queries, data architects rely on dimensional modeling to organize data into Facts (the measurable numbers) and Dimensions (the descriptive context). The most famous implementation of this is the [Star Schema](/knowledge/star-schema).
 
 However, in certain architectural scenarios—particularly those strictly constrained by storage capacity or dealing with incredibly massive and complex hierarchical dimensions—the pure denormalization of the Star Schema is not ideal. To address this, architects utilize a more structured variant known as the **Snowflake Schema**.
 
@@ -54,7 +54,7 @@ To answer a simple question like "Total Sales for Electronics", a Star Schema re
 Business Intelligence (BI) tools and the analysts who use them struggle with Snowflaking. A business user wants to drag a "Category" pill onto a dashboard. In a Star Schema, they just pull it from the Product table. In a Snowflake Schema, they must navigate a complex maze of interconnected tables, writing complex SQL just to retrieve basic attributes.
 
 ### 3. Cloud Storage is Cheap
-The primary advantage of the Snowflake Schema—saving disk space—is largely irrelevant today. In a modern Data Lakehouse utilizing Amazon S3 or ADLS, storage costs fractions of a cent per gigabyte. Furthermore, modern columnar formats like **Apache Parquet** automatically apply Dictionary Encoding to repetitive strings in a Star Schema, achieving massive compression without requiring physical normalization.
+The primary advantage of the Snowflake Schema—saving disk space—is largely irrelevant today. In a modern Data Lakehouse utilizing [Amazon S3](/knowledge/amazon-s3) or ADLS, storage costs fractions of a cent per gigabyte. Furthermore, modern columnar formats like **[Apache Parquet](/knowledge/apache-parquet)** automatically apply Dictionary Encoding to repetitive strings in a Star Schema, achieving massive compression without requiring physical normalization.
 
 ## Conclusion
 

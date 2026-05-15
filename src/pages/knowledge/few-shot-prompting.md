@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/dp/B0GQW7CTML"
 
 ## Introduction to Few-Shot Prompting
 
-When interacting with a Large Language Model (LLM) like GPT-4, the default interaction is **Zero-Shot Prompting**. You give the AI an instruction, and it uses its vast pre-trained knowledge to guess the format and logic of the answer you want.
+When interacting with a Large Language Model (LLM) like GPT-4, the default interaction is **[Zero-Shot Prompting](/knowledge/zero-shot-prompting)**. You give the AI an instruction, and it uses its vast pre-trained knowledge to guess the format and logic of the answer you want.
 
 If you prompt: *"Extract the names of the companies from this news article."*
 The model might output:
@@ -19,13 +19,13 @@ The model might output:
 
 While factually correct, the formatting is chaotic. If you are a software engineer trying to pipe this output into a strict JSON database, this response will break your code. You need the output to be a perfect comma-separated list of stock tickers, not full company names.
 
-**Few-Shot Prompting** is the foundational Prompt Engineering technique used to solve this. Instead of relying on the model to guess what you want, you provide a small number of perfect examples (the "shots") directly inside the prompt to guide the model's behavior.
+**Few-Shot Prompting** is the foundational [Prompt Engineering](/knowledge/prompt-engineering) technique used to solve this. Instead of relying on the model to guess what you want, you provide a small number of perfect examples (the "shots") directly inside the prompt to guide the model's behavior.
 
 ## How Few-Shot Learning Works (In-Context Learning)
 
 In traditional Machine Learning, teaching a model a new format required "Fine-Tuning"—physically altering the neural network's mathematical weights using thousands of examples. 
 
-LLMs possess an emergent capability called **In-Context Learning**. Because of the Attention Mechanism in the Transformer architecture, the model can dynamically analyze the pattern of the text inside its immediate Context Window and instantly mimic that pattern, without altering its internal weights at all.
+LLMs possess an emergent capability called **In-Context Learning**. Because of the [Attention Mechanism](/knowledge/attention-mechanism) in the Transformer architecture, the model can dynamically analyze the pattern of the text inside its immediate Context Window and instantly mimic that pattern, without altering its internal weights at all.
 
 ### A Few-Shot Example
 

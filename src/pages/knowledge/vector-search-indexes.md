@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSW
 
 ## Introduction to Vector Search Indexes
 
-As Generative AI and Retrieval-Augmented Generation (RAG) pipelines have moved from experimental prototypes into enterprise production, the underlying infrastructure has faced massive scaling challenges. The core of any semantic search or RAG application is the ability to compare a user's query against a massive database of **Vector Embeddings** to find the most conceptually similar documents.
+As Generative AI and Retrieval-Augmented Generation (RAG) pipelines have moved from experimental prototypes into enterprise production, the underlying infrastructure has faced massive scaling challenges. The core of any semantic search or RAG application is the ability to compare a user's query against a massive database of **[Vector Embeddings](/knowledge/vector-embeddings)** to find the most conceptually similar documents.
 
 If a database contains 10,000 documents, finding the most similar vector is trivial. The system performs an **Exact Nearest Neighbor (k-NN)** search. It mathematically calculates the exact distance (using Cosine Similarity or Euclidean Distance) between the query vector and *every single one* of the 10,000 document vectors, and returns the closest match.
 

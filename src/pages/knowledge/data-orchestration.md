@@ -13,8 +13,8 @@ In the early days of data warehousing, building an ETL (Extract, Transform, Load
 
 However, modern data lakehouse architectures are infinitely more complex. A single analytical dashboard might depend on 50 different micro-processes: 
 1. Fetching data from three different APIs.
-2. Waiting for a massive Apache Spark cluster to finish a 2-hour transformation job.
-3. Triggering a dbt (data build tool) model to build a Star Schema.
+2. Waiting for a massive [Apache Spark](/knowledge/apache-spark) cluster to finish a 2-hour transformation job.
+3. Triggering a dbt (data build tool) model to build a [Star Schema](/knowledge/star-schema).
 4. Sending an email report to the CEO.
 
 If you rely on time-based scheduling (e.g., "Run Step 2 at 3:00 AM"), and Step 1 fails or takes longer than expected, Step 2 will execute against missing data, corrupting the entire downstream pipeline. 
@@ -23,7 +23,7 @@ If you rely on time-based scheduling (e.g., "Run Step 2 at 3:00 AM"), and Step 1
 
 ## The Architecture: Directed Acyclic Graphs (DAGs)
 
-The foundation of modern Data Orchestration (popularized by tools like Apache Airflow, Prefect, and Dagster) is the mathematical concept of the **Directed Acyclic Graph (DAG)**.
+The foundation of modern Data Orchestration (popularized by tools like [Apache Airflow](/knowledge/apache-airflow), [Prefect](/knowledge/prefect), and [Dagster](/knowledge/dagster)) is the mathematical concept of the **Directed Acyclic Graph (DAG)**.
 
 A DAG is a visual and programmatic representation of a workflow.
 *   **Nodes (Tasks)**: Each step in the pipeline is a node (e.g., "Download API Data," "Run Spark Job").
@@ -49,7 +49,7 @@ If the data team deploys a new transformation algorithm, they often need to reru
 
 Historically, orchestrators (like early Apache Airflow) were purely task-based. Airflow didn't know *what* data it was moving; it just knew it had to trigger a Python script.
 
-Modern orchestrators (like Dagster) have shifted toward **Data-Aware Orchestration (Software-Defined Assets)**. Instead of defining a task ("Run this script"), engineers define the *asset* they want to produce ("I want the `gold_sales` Iceberg table to exist"). The orchestrator understands the physical data assets, tracking their lineage and freshness, blurring the lines between pure orchestration and Data Observability.
+Modern orchestrators (like Dagster) have shifted toward **Data-Aware Orchestration (Software-Defined Assets)**. Instead of defining a task ("Run this script"), engineers define the *asset* they want to produce ("I want the `gold_sales` Iceberg table to exist"). The orchestrator understands the physical data assets, tracking their lineage and freshness, blurring the lines between pure orchestration and [Data Observability](/knowledge/data-observability).
 
 ## Conclusion
 

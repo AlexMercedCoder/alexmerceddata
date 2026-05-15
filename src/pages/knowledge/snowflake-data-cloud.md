@@ -20,7 +20,7 @@ Founded in 2012, **Snowflake** revolutionized the data industry by designing the
 Snowflake operates on a unique three-layer architecture.
 
 ### 1. The Storage Layer (Centralized Data)
-When data is loaded into Snowflake, it is secretly stored in cloud object storage (like Amazon S3 or Azure ADLS). However, Snowflake heavily reorganizes this data into its own proprietary, highly compressed columnar format (micro-partitions). 
+When data is loaded into Snowflake, it is secretly stored in cloud object storage (like [Amazon S3](/knowledge/amazon-s3) or Azure ADLS). However, Snowflake heavily reorganizes this data into its own proprietary, highly compressed columnar format (micro-partitions). 
 Because it uses cloud storage, an organization can store 10 Petabytes of data and only pay the exact, incredibly cheap cost of Amazon S3 storage. 
 
 ### 2. The Compute Layer (Virtual Warehouses)

@@ -39,7 +39,7 @@ The organization sets strict **Budgets and Alerts**. If the Data Science team su
 
 The rise of the Open Data Lakehouse has drastically altered the FinOps landscape. 
 
-By aggressively decoupling storage (cheap Amazon S3) from compute (expensive engines like Dremio or Spark), and standardizing on Open Table Formats like Apache Iceberg, organizations achieve ultimate FinOps leverage. 
+By aggressively decoupling storage (cheap [Amazon S3](/knowledge/amazon-s3)) from compute (expensive engines like Dremio or Spark), and standardizing on [Open Table Formats](/knowledge/open-table-formats) like Apache Iceberg, organizations achieve ultimate FinOps leverage. 
 Because the data is not locked inside a proprietary database, the FinOps team can continuously monitor the market. If a competing query engine drops its prices by 30%, the company can instantly route their queries to the cheaper engine without having to migrate a single byte of data, ensuring they always pay the absolute lowest market rate for analytical compute.
 
 ## Conclusion

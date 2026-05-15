@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to DSPM
 
-In the modern enterprise, data does not sit neatly in a single, well-guarded Oracle database. It is incredibly fragmented. A massive corporation might have data scattered across 500 Amazon S3 buckets, 50 Snowflake instances, 200 Azure SQL databases, and thousands of employee Google Drive folders.
+In the modern enterprise, data does not sit neatly in a single, well-guarded Oracle database. It is incredibly fragmented. A massive corporation might have data scattered across 500 [Amazon S3](/knowledge/amazon-s3) buckets, 50 Snowflake instances, 200 Azure SQL databases, and thousands of employee Google Drive folders.
 
 This phenomenon is called **Data Sprawl**. It creates a terrifying reality for the Chief Information Security Officer (CISO): *You cannot protect what you cannot see.*
 

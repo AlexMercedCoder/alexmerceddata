@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Trino
 
-In the early 2010s, Facebook possessed what was likely the largest Hadoop data warehouse in the world, storing over 300 petabytes of data. Their data scientists were using Apache Hive to run SQL queries against this massive dataset. However, Hive translated SQL into MapReduce jobs, meaning even a simple `SELECT COUNT(*)` query could take 30 minutes to execute. Interactive, ad-hoc analytics were impossible.
+In the early 2010s, Facebook possessed what was likely the largest Hadoop data warehouse in the world, storing over 300 petabytes of data. Their data scientists were using [Apache Hive](/knowledge/apache-hive) to run SQL queries against this massive dataset. However, Hive translated SQL into [MapReduce](/knowledge/mapreduce) jobs, meaning even a simple `SELECT COUNT(*)` query could take 30 minutes to execute. Interactive, ad-hoc analytics were impossible.
 
 To solve this, a team of engineers at Facebook (including Martin Traverso, Dain Sundstrom, and David Phillips) built **Presto**—a distributed SQL query engine designed for blazing-fast, interactive analytics. 
 
@@ -27,7 +27,7 @@ A Trino cluster consists of two types of nodes:
 
 ### The Connector Architecture
 The genius of Trino lies in its Connector API. Because Trino separates compute from storage, it uses "Connectors" to talk to the outside world. 
-Trino has native connectors for Apache Iceberg, Amazon S3, PostgreSQL, MySQL, Cassandra, Elasticsearch, and dozens of others. 
+Trino has native connectors for Apache Iceberg, [Amazon S3](/knowledge/amazon-s3), PostgreSQL, MySQL, Cassandra, Elasticsearch, and dozens of others. 
 
 When a Worker node needs data, it uses the specific Connector to push down filters and retrieve data from the source system. This abstraction allows Trino to act as a universal SQL translator.
 
@@ -51,7 +51,7 @@ Trino pushes the Oracle query down to Oracle, pushes the S3 query down to the Ic
 While federated querying across databases is a great feature, Trino's primary use case today is acting as the massive SQL engine powering Open Data Lakehouses.
 
 When paired with an open table format like **Apache Iceberg**, Trino transforms a cheap Amazon S3 bucket into a fully functional, high-speed data warehouse.
-*   **Performance**: Trino is heavily optimized for reading Apache Parquet and ORC files. It utilizes advanced vectorized execution and highly tuned Predicate Pushdown to skip irrelevant files.
+*   **Performance**: Trino is heavily optimized for reading [Apache Parquet](/knowledge/apache-parquet) and ORC files. It utilizes advanced vectorized execution and highly tuned [Predicate Pushdown](/knowledge/predicate-pushdown) to skip irrelevant files.
 *   **Cost Efficiency**: Because Trino scales horizontally, organizations can spin up a massive cluster of 100 Trino workers, execute complex end-of-month financial reports against an S3 lakehouse in minutes, and instantly spin the cluster down to zero, paying only for the exact compute used.
 
 ## Conclusion

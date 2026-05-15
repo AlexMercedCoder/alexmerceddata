@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to Data Governance
 
-In the era of Big Data, organizations raced to accumulate as much information as possible, dumping petabytes of customer records, financial transactions, and operational logs into sprawling data lakes. However, this unchecked accumulation quickly became a massive liability. Without oversight, data becomes untrusted, analysts base critical business decisions on flawed metrics, and organizations face millions of dollars in fines for violating privacy regulations like GDPR and CCPA.
+In the era of Big Data, organizations raced to accumulate as much information as possible, dumping petabytes of customer records, financial transactions, and operational logs into sprawling data lakes. However, this unchecked accumulation quickly became a massive liability. Without oversight, data becomes untrusted, analysts base critical business decisions on flawed metrics, and organizations face millions of dollars in fines for violating privacy regulations like [GDPR and CCPA](/knowledge/gdpr-and-ccpa).
 
 **Data Governance** is the strategic, organizational, and technical framework designed to bring order to this chaos. 
 
@@ -21,19 +21,19 @@ A robust data governance program rests on several foundational pillars, bridging
 
 ### 1. Data Quality and Trust
 Data is useless if business users do not trust it. Data governance establishes strict Service Level Agreements (SLAs) for data accuracy, completeness, consistency, and timeliness.
-*   **Technical Implementation**: Data engineers implement automated data quality checks within their ETL pipelines (e.g., using frameworks like Great Expectations). If a pipeline attempts to insert `NULL` into a critical `customer_email` column, the pipeline fails, quarantining the bad data before it can corrupt the Silver or Gold tables in the Medallion Architecture.
+*   **Technical Implementation**: Data engineers implement automated data quality checks within their ETL pipelines (e.g., using frameworks like [Great Expectations](/knowledge/great-expectations)). If a pipeline attempts to insert `NULL` into a critical `customer_email` column, the pipeline fails, quarantining the bad data before it can corrupt the Silver or Gold tables in the [Medallion Architecture](/knowledge/medallion-architecture).
 
 ### 2. Data Security and Access Control
 Governance ensures that the right people have access to the right data at the right time, and more importantly, that the *wrong* people do not.
-*   **Technical Implementation**: Organizations deploy sophisticated **Role-Based Access Control (RBAC)** systems. In a modern lakehouse, security policies are centralized in the Data Catalog (like Apache Polaris or Dremio). When an analyst queries a table, the catalog dynamically masks Personally Identifiable Information (PII), such as redacting credit card numbers, based strictly on the user's assigned corporate role.
+*   **Technical Implementation**: Organizations deploy sophisticated **Role-Based Access Control (RBAC)** systems. In a modern lakehouse, security policies are centralized in the Data Catalog (like [Apache Polaris](/knowledge/apache-polaris) or Dremio). When an analyst queries a table, the catalog dynamically masks Personally Identifiable Information (PII), such as redacting credit card numbers, based strictly on the user's assigned corporate role.
 
 ### 3. Data Discovery and Metadata Management
 If an analyst doesn't know a dataset exists, or doesn't understand what the columns mean, the data holds no value. Governance mandates that all data assets be cataloged and clearly defined.
-*   **Technical Implementation**: Organizations use Business Data Catalogs (like Alation or Collibra) to build a "Data Dictionary." Data Stewards write clear, business-friendly definitions for cryptic database columns (e.g., defining that `REV_Q3_ADJ` specifically means "Q3 Revenue adjusted for foreign exchange rates").
+*   **Technical Implementation**: Organizations use Business [Data Catalogs](/knowledge/data-catalogs) (like Alation or Collibra) to build a "Data Dictionary." Data Stewards write clear, business-friendly definitions for cryptic database columns (e.g., defining that `REV_Q3_ADJ` specifically means "Q3 Revenue adjusted for foreign exchange rates").
 
 ### 4. Data Lineage and Auditing
 When regulators audit a financial institution, the institution must prove exactly where a specific metric originated and how it was transformed.
-*   **Technical Implementation**: Governance platforms automatically track **Data Lineage**. They map the journey of a data point from the operational PostgreSQL database, through the Apache Spark transformation pipelines, all the way to the final Tableau dashboard. This provides total transparency and simplifies root-cause analysis when metrics break.
+*   **Technical Implementation**: Governance platforms automatically track **[Data Lineage](/knowledge/data-lineage)**. They map the journey of a data point from the operational PostgreSQL database, through the [Apache Spark](/knowledge/apache-spark) transformation pipelines, all the way to the final [Tableau](/knowledge/tableau) dashboard. This provides total transparency and simplifies root-cause analysis when metrics break.
 
 ## The People: Roles in Data Governance
 
@@ -47,7 +47,7 @@ Technology alone cannot govern data; human accountability is required. A success
 ## Compliance and Regulatory Frameworks
 
 Perhaps the strongest driver for data governance is avoiding regulatory disaster. Modern governance architectures must be designed to comply seamlessly with global frameworks:
-*   **GDPR (Europe) & CCPA (California)**: These laws grant consumers the "Right to be Forgotten." If a user requests deletion, the organization must be able to locate and definitively delete their PII across petabytes of historical files. Table formats like Apache Iceberg make this possible by enabling Row-Level Deletes (Merge-on-Read) directly on the data lake.
+*   **GDPR (Europe) & CCPA (California)**: These laws grant consumers the "Right to be Forgotten." If a user requests deletion, the organization must be able to locate and definitively delete their PII across petabytes of historical files. Table formats like Apache Iceberg make this possible by enabling [Row-Level Deletes](/knowledge/row-level-deletes) (Merge-on-Read) directly on the data lake.
 *   **HIPAA & SOC 2**: Require rigorous audit logging. Governance systems must track exactly which user queried which table, at what time, and what specific data was returned.
 
 ## Conclusion

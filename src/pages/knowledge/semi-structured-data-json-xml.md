@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Semi-Structured Data
 
-In data architecture, data generally falls into two extremes. **Structured Data** is highly rigid, perfectly organized into relational rows and columns. **Unstructured Data** is completely chaotic, like a raw text file or a JPEG image.
+In data architecture, data generally falls into two extremes. **Structured Data** is highly rigid, perfectly organized into relational rows and columns. **[Unstructured Data](/knowledge/unstructured-data)** is completely chaotic, like a raw text file or a JPEG image.
 
 **Semi-Structured Data** occupies the middle ground. It does not obey the strict rules of a relational database (there are no predefined tables or columns), but it is not chaotic. It utilizes internal tags or markers to separate semantic elements and enforce a hierarchy of records and fields. 
 
@@ -68,7 +68,7 @@ Historically, data engineers had to build brutal ETL pipelines to "shred" or "fl
 Modern Data Lakehouse engines have largely solved the JSON problem.
 
 1.  **Native JSON Support**: Engines like Dremio, Trino, and Snowflake now feature native functions to query JSON directly. An analyst can write SQL like `SELECT raw_data:address.city FROM logs` to instantly extract the deeply nested value without flattening it.
-2.  **Columnar JSON**: Because standard JSON text files are terrible for analytical scanning, tools often convert JSON into **Apache Parquet**. Parquet is capable of preserving the nested, semi-structured hierarchy of the JSON while applying columnar compression to it, providing the flexibility of JSON with the analytical speed of a relational database.
+2.  **Columnar JSON**: Because standard JSON text files are terrible for analytical scanning, tools often convert JSON into **[Apache Parquet](/knowledge/apache-parquet)**. Parquet is capable of preserving the nested, semi-structured hierarchy of the JSON while applying columnar compression to it, providing the flexibility of JSON with the analytical speed of a relational database.
 
 ## Conclusion
 

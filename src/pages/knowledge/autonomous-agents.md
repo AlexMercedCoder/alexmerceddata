@@ -16,7 +16,7 @@ An Autonomous Agent is an AI system that is given a high-level goal, and then us
 
 ## The Architecture of an Agent
 
-To build an Autonomous Agent (using frameworks like AutoGPT, LangChain, or CrewAI), developers combine a Foundation Model with three critical structural components:
+To build an Autonomous Agent (using frameworks like AutoGPT, [LangChain](/knowledge/langchain), or CrewAI), developers combine a Foundation Model with three critical structural components:
 
 ### 1. Planning (The Reasoning Loop)
 Agents do not just blindly generate text; they utilize strict reasoning frameworks (like **ReAct** - Reason + Act).
@@ -41,11 +41,11 @@ The Agent might have a `web_browser` tool, a `read_pdf` tool, and a `send_email`
 In early 2023, an open-source project called **AutoGPT** went viral. It was a crude, early implementation of an Autonomous Agent. A user could give it a prompt like *"Start an e-commerce business selling shoes."* 
 AutoGPT would connect to the internet, spin up a Python environment, attempt to write a website, attempt to search for suppliers, and run in a continuous, endless loop. 
 
-While AutoGPT largely failed (it frequently got stuck in infinite loops because LLMs at the time lacked the deep logical reasoning required to correct their own coding mistakes), it proved the conceptual viability of Agentic AI. 
+While AutoGPT largely failed (it frequently got stuck in infinite loops because LLMs at the time lacked the deep logical reasoning required to correct their own coding mistakes), it proved the conceptual viability of [Agentic AI](/knowledge/agentic-ai). 
 
 ## The Future: Multi-Agent Systems
 
-The modern enterprise is not adopting single, massive agents; they are adopting **Multi-Agent Systems**.
+The modern enterprise is not adopting single, massive agents; they are adopting **[Multi-Agent Systems](/knowledge/multi-agent-systems)**.
 Instead of one AI trying to do everything, developers build specialized AI workers. 
 *   **Agent A (The Researcher)**: Given the `web_search` tool. It researches the CRM market and passes a rough draft to Agent B.
 *   **Agent B (The Writer)**: Given the `grammar` tool. It rewrites the draft into professional corporate speak.

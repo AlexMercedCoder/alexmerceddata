@@ -12,7 +12,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 To understand the monumental importance of Open Table Formats, you must understand the two major flaws of the previous data generation.
 
 1.  **The Data Warehouse Lock-in**: If you loaded data into a proprietary warehouse (like Oracle or Teradata), they converted your data into a secret, proprietary file format. If you wanted to leave Oracle, or use a different tool to analyze that data, you couldn't. Your data was held hostage by the vendor.
-2.  **The Data Lake Chaos**: To escape lock-in, companies dumped their data as open-source Parquet files into Amazon S3 (the Data Lake). But S3 is just a hard drive. It has no transactional guarantees. If two people tried to write a file at the same time, the data corrupted. You couldn't run a SQL `UPDATE` or `DELETE` command. 
+2.  **The Data Lake Chaos**: To escape lock-in, companies dumped their data as open-source Parquet files into [Amazon S3](/knowledge/amazon-s3) (the Data Lake). But S3 is just a hard drive. It has no transactional guarantees. If two people tried to write a file at the same time, the data corrupted. You couldn't run a SQL `UPDATE` or `DELETE` command. 
 
 The industry needed a solution that provided the transactional perfection of a Data Warehouse, but kept the data stored in open, vendor-neutral files on cheap cloud storage.
 
@@ -20,10 +20,10 @@ This solution is the **Open Table Format**. It is the architectural foundation o
 
 ## What is an Open Table Format?
 
-An Open Table Format (like Apache Iceberg, Delta Lake, or Apache Hudi) is not a query engine, and it is not a storage platform. It is a **Metadata Abstraction Layer**.
+An Open Table Format (like Apache Iceberg, [Delta Lake](/knowledge/delta-lake), or [Apache Hudi](/knowledge/apache-hudi)) is not a query engine, and it is not a storage platform. It is a **Metadata Abstraction Layer**.
 
 When you write an Iceberg table, two things are saved to your Amazon S3 bucket:
-1.  **The Data Files**: Standard, open-source Apache Parquet files.
+1.  **The Data Files**: Standard, open-source [Apache Parquet](/knowledge/apache-parquet) files.
 2.  **The Metadata Files**: A collection of JSON and Avro files that explicitly map out exactly which Parquet files belong to the table.
 
 ### How it Solves the Problem
@@ -38,7 +38,7 @@ When an engine (like Dremio, Spark, or Snowflake) wants to query the table, it d
 The Open Table Format wars began in the late 2010s, dominated by three major open-source projects.
 
 1.  **Apache Iceberg**: Originally developed at Netflix. It is widely considered the most truly "open" standard, boasting the largest ecosystem of native integrations across AWS, Google Cloud, Snowflake, Dremio, and open-source engines. It was designed from the ground up for massive, petabyte-scale table metadata management.
-2.  **Delta Lake**: Developed by Databricks. It is heavily tied to the Apache Spark ecosystem and optimized for the Databricks platform. It is exceptionally popular due to its seamless developer experience within Databricks.
+2.  **Delta Lake**: Developed by [Databricks](/knowledge/databricks). It is heavily tied to the [Apache Spark](/knowledge/apache-spark) ecosystem and optimized for the Databricks platform. It is exceptionally popular due to its seamless developer experience within Databricks.
 3.  **Apache Hudi**: Originally developed at Uber. Hudi (Hadoop Upserts Deletes and Incrementals) was explicitly designed for massive streaming workloads and heavy real-time Upserts.
 
 ## The Promise of Interoperability
@@ -46,7 +46,7 @@ The Open Table Format wars began in the late 2010s, dominated by three major ope
 The defining characteristic of these formats is the word **Open**. 
 
 Because the specifications for Iceberg are public and open-source, any vendor can build an engine to read and write it. 
-An organization can use Apache Flink to ingest streaming data into an Iceberg table, use Apache Spark to run a massive batch transformation on that table, use Snowflake to run a highly secure executive dashboard on it, and use Dremio to federate it—all without moving or copying a single byte of data.
+An organization can use [Apache Flink](/knowledge/apache-flink) to ingest streaming data into an Iceberg table, use Apache Spark to run a massive batch transformation on that table, use Snowflake to run a highly secure executive dashboard on it, and use Dremio to federate it—all without moving or copying a single byte of data.
 
 ## Conclusion
 

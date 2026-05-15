@@ -33,7 +33,7 @@ If a model has an 8,000 token limit, and you provide a 7,500 token prompt, the m
 
 ## The Engineering Challenge: The Attention Mechanism
 
-Why can't we simply build models with infinite context windows? The limitation lies in the core architecture of the Transformer neural network: the **Self-Attention Mechanism**.
+Why can't we simply build models with infinite context windows? The limitation lies in the core architecture of the Transformer neural network: the **Self-[Attention Mechanism](/knowledge/attention-mechanism)**.
 
 When a Transformer processes text, it compares every single token in the sequence to every other token in the sequence to understand context and relationships. This mathematical operation scales quadratically ($O(N^2)$). 
 
@@ -66,4 +66,4 @@ There are algorithmic tools designed to compress prompts before sending them to 
 
 ## Conclusion
 
-The context window is the defining operational constraint of generative AI. While the industry is aggressively pushing toward million-token capacities, the fundamental laws of compute cost and attention degradation remain. Mastery of Prompt Engineering and AI architecture ultimately comes down to treating the context window not as an infinite dumping ground, but as a highly valuable, constrained real estate where only the most relevant, compressed information should reside.
+The context window is the defining operational constraint of generative AI. While the industry is aggressively pushing toward million-token capacities, the fundamental laws of compute cost and attention degradation remain. Mastery of [Prompt Engineering](/knowledge/prompt-engineering) and AI architecture ultimately comes down to treating the context window not as an infinite dumping ground, but as a highly valuable, constrained real estate where only the most relevant, compressed information should reside.

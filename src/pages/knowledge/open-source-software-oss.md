@@ -13,7 +13,7 @@ In the 1980s and 1990s, the software industry was dominated by a strictly propri
 
 **Open-Source Software (OSS)** is a radically different approach to software development and intellectual property. It is software whose source code is made publicly available for anyone to inspect, modify, enhance, and distribute.
 
-Today, the entire modern internet and the entire Big Data ecosystem (Linux, Kubernetes, Apache Spark, Python) run almost exclusively on open-source software.
+Today, the entire modern internet and the entire Big Data ecosystem (Linux, [Kubernetes](/knowledge/kubernetes), [Apache Spark](/knowledge/apache-spark), Python) run almost exclusively on open-source software.
 
 ## The Power of the Open Source Model
 
@@ -24,7 +24,7 @@ If a company builds a proprietary database, only their 50 internal engineers can
 When a security vulnerability is discovered, the global community often patches it within hours. This phenomenon is famously summarized by Linus's Law: *"Given enough eyeballs, all bugs are shallow."*
 
 ### 2. Faster Innovation and Standards
-In the proprietary era, companies deliberately built incompatible software to trap users (Vendor Lock-in). Open source drives the creation of universal standards. Because developers hate writing the same code twice, they collaborate on open-source foundations. 
+In the proprietary era, companies deliberately built incompatible software to trap users ([Vendor Lock-in](/knowledge/vendor-lock-in)). Open source drives the creation of universal standards. Because developers hate writing the same code twice, they collaborate on open-source foundations. 
 For example, instead of Apple, Netflix, and Uber all spending millions of dollars building their own proprietary table formats, they all collaborated to build **Apache Iceberg**, creating a single, vastly superior open standard that benefited the entire industry.
 
 ## Open Source Licensing
@@ -38,8 +38,8 @@ For example, instead of Apple, Netflix, and Uber all spending millions of dollar
 
 If the code is free, how do open-source companies make billions of dollars?
 
-*   **Open Core Model**: The company gives away the core software for free (e.g., Apache Kafka), but sells a proprietary "Enterprise Edition" that includes advanced security, GUI dashboards, and 24/7 technical support.
-*   **Managed Cloud Services**: The company gives the software away for free, but recognizes that installing and managing it on AWS is incredibly difficult. They charge companies a premium to run the open-source software as a fully managed, serverless cloud service (e.g., Databricks managing Apache Spark, or Dremio managing Apache Iceberg).
+*   **Open Core Model**: The company gives away the core software for free (e.g., [Apache Kafka](/knowledge/apache-kafka)), but sells a proprietary "Enterprise Edition" that includes advanced security, GUI dashboards, and 24/7 technical support.
+*   **Managed Cloud Services**: The company gives the software away for free, but recognizes that installing and managing it on AWS is incredibly difficult. They charge companies a premium to run the open-source software as a fully managed, serverless cloud service (e.g., [Databricks](/knowledge/databricks) managing Apache Spark, or Dremio managing Apache Iceberg).
 
 ## Conclusion
 

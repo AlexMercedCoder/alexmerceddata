@@ -22,7 +22,7 @@ Introduced by Wes McKinney (the creator of Pandas) and Jacques Nadeau (the co-cr
 To understand Arrow's impact, we must look at how it organizes data in RAM.
 
 ### 1. In-Memory Columnar Format
-While formats like Apache Parquet and ORC are optimized for *disk storage*, Apache Arrow is optimized for *CPU and RAM*. 
+While formats like [Apache Parquet](/knowledge/apache-parquet) and ORC are optimized for *disk storage*, Apache Arrow is optimized for *CPU and RAM*. 
 Like Parquet, Arrow organizes data by column rather than by row. If an engine needs to calculate the average of a `sales_amount` column, it can read a contiguous block of memory containing only those numbers. This allows modern CPUs to leverage **SIMD (Single Instruction, Multiple Data)** operations, processing dozens of values in a single CPU clock cycle, accelerating analytical queries by orders of magnitude.
 
 ### 2. Zero-Copy Reads

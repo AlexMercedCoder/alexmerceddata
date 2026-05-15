@@ -26,19 +26,19 @@ Nearly all robust relational databases (PostgreSQL, MySQL, Oracle, SQL Server) m
 CDC tools exploit these logs to extract data without ever executing a SQL query against the database engine.
 
 ### The Debezium Architecture
-The open-source industry standard for CDC is **Debezium**. Debezium operates as a connector, typically deployed alongside Apache Kafka.
+The open-source industry standard for CDC is **Debezium**. Debezium operates as a connector, typically deployed alongside [Apache Kafka](/knowledge/apache-kafka).
 
 1.  **Log Reading**: Debezium connects directly to the PostgreSQL WAL. It reads the raw byte-stream of the transaction log. Because it reads the log file from disk (or via replication protocols) rather than executing `SELECT` queries, the performance impact on the operational database is near zero.
 2.  **Event Generation**: When an application updates a customer's address, the database writes this to the WAL. Debezium instantly detects the write, parses it, and transforms it into a structured JSON or Avro event. 
     *   The event payload contains the *before* state of the row, the *after* state of the row, and the type of operation (`u` for update, `i` for insert, `d` for delete).
 3.  **Streaming**: Debezium publishes this event to an Apache Kafka topic (e.g., `customer_db.public.users`). 
-4.  **Ingestion**: A downstream streaming engine (like Apache Flink or Kafka Connect) consumes the Kafka topic and immediately applies the changes to the analytical table in the data lakehouse.
+4.  **Ingestion**: A downstream streaming engine (like [Apache Flink](/knowledge/apache-flink) or Kafka Connect) consumes the Kafka topic and immediately applies the changes to the analytical table in the data lakehouse.
 
 ## Applying CDC to the Data Lakehouse
 
 Streaming CDC events into a traditional data lake was historically very difficult. Because data lakes consisted of immutable Parquet files, applying a single `UPDATE` or `DELETE` event required rewriting the entire Parquet file, which was disastrous for performance.
 
-**Apache Iceberg** solved this problem by introducing **Row-Level Deletes** (specifically Merge-on-Read).
+**Apache Iceberg** solved this problem by introducing **[Row-Level Deletes](/knowledge/row-level-deletes)** (specifically Merge-on-Read).
 
 When a CDC event arrives indicating that Row ID `123` was updated, the ingestion engine (e.g., Flink) does not rewrite the existing data files. Instead, it:
 1.  Writes the new, updated row into a new data file.

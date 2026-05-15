@@ -32,7 +32,7 @@ You did not provide the LLM with a spreadsheet of English-to-French translation 
 Zero-Shot Prompting is the ultimate goal of user-friendly AI, but it is not always the best engineering choice.
 
 *   **Zero-Shot** is perfect for generalized, common-sense tasks: Summarize this email, write a poem about a dog, classify this sentiment. It is fast, cheap (consumes very few API tokens), and requires zero engineering overhead.
-*   **Few-Shot Prompting** becomes necessary when the task requires a highly specific, non-standard, or proprietary format. If you ask an LLM to "Extract the names and format them as a proprietary XML schema" using a Zero-Shot prompt, it will likely hallucinate the XML tags because it has never seen your proprietary schema. In this case, you must provide 2 or 3 examples (shots) in the prompt to show the model exactly what you want.
+*   **[Few-Shot Prompting](/knowledge/few-shot-prompting)** becomes necessary when the task requires a highly specific, non-standard, or proprietary format. If you ask an LLM to "Extract the names and format them as a proprietary XML schema" using a Zero-Shot prompt, it will likely hallucinate the XML tags because it has never seen your proprietary schema. In this case, you must provide 2 or 3 examples (shots) in the prompt to show the model exactly what you want.
 
 ## The "Instruction Tuned" Breakthrough
 

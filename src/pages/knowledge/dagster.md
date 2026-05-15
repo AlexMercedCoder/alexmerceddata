@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to Dagster
 
-For years, Apache Airflow was the undisputed king of data orchestration. However, as data engineering matured, Airflow's core philosophy—orchestrating "tasks"—began to show limitations. 
+For years, [Apache Airflow](/knowledge/apache-airflow) was the undisputed king of data orchestration. However, as data engineering matured, Airflow's core philosophy—orchestrating "tasks"—began to show limitations. 
 
 In a task-based orchestrator, the system only cares about execution. It knows "Task A (Run Python Script)" must run before "Task B (Run SQL Query)." But the orchestrator has absolutely no idea *what* those tasks are actually doing. It doesn't know what data is being moved, what tables are being created, or if the underlying data has even changed.
 
@@ -43,7 +43,7 @@ Because Dagster knows exactly what assets are being produced, the UI is revoluti
 1.  The Python code that generated it.
 2.  When it was last materialized (updated).
 3.  Its upstream dependencies (what tables it relies on).
-4.  Its downstream dependencies (which Tableau dashboards will break if it fails).
+4.  Its downstream dependencies (which [Tableau](/knowledge/tableau) dashboards will break if it fails).
 
 ## The Advantages of Data-Aware Orchestration
 

@@ -18,7 +18,7 @@ To solve this, the industry created the **Data Product Manager (DPM)**. This rol
 
 ## The Philosophy of "Data as a Product"
 
-The DPM operates on the core principle of **Data as a Product** (a foundational concept of the Data Mesh architecture). 
+The DPM operates on the core principle of **Data as a Product** (a foundational concept of the [Data Mesh](/knowledge/data-mesh) architecture). 
 
 A "Data Product" is not necessarily a piece of software sold to external customers. It is any curated, high-quality data asset that is actively consumed by users. 
 Examples of internal Data Products include:

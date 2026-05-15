@@ -32,12 +32,12 @@ Historically, on-premises Data Warehouses (like Oracle or Teradata) were incredi
 
 ## The Modern Approach: ELT (Extract, Load, Transform)
 
-The advent of cloud data warehouses (Snowflake, BigQuery) and cloud data lakehouses (Dremio, Databricks) changed the economic constraints of data architecture. Storage in cloud object stores (like S3) became effectively free, and cloud compute became instantly scalable.
+The advent of cloud data warehouses (Snowflake, BigQuery) and cloud data lakehouses (Dremio, [Databricks](/knowledge/databricks)) changed the economic constraints of data architecture. Storage in cloud object stores (like S3) became effectively free, and cloud compute became instantly scalable.
 
 This gave rise to ELT.
 
 1.  **Extract**: Data is pulled from the source system.
-2.  **Load**: The raw, untouched data is loaded *immediately* into the Data Lakehouse or Warehouse (often landing in the "Bronze" layer of a Medallion Architecture).
+2.  **Load**: The raw, untouched data is loaded *immediately* into the Data Lakehouse or Warehouse (often landing in the "Bronze" layer of a [Medallion Architecture](/knowledge/medallion-architecture)).
 3.  **Transform**: The transformation logic is executed *inside* the target database using the database's own massive, distributed compute power (typically using pure SQL via tools like **dbt**).
 
 ### Advantages of ELT
@@ -54,7 +54,7 @@ While ELT is the overwhelming choice for modern cloud architectures, ETL still h
 *   **Legacy Systems**: When moving data into older, strictly constrained on-premises databases where compute cannot scale.
 
 **When to use ELT:**
-*   **Cloud Data Lakehouses**: When writing to S3/Iceberg tables, ELT is the default. Raw JSON/CSV is loaded into S3, and engines like Apache Spark or Dremio are spun up to transform the raw files into optimized Parquet/Iceberg formats.
+*   **Cloud Data Lakehouses**: When writing to S3/Iceberg tables, ELT is the default. Raw JSON/CSV is loaded into S3, and engines like [Apache Spark](/knowledge/apache-spark) or Dremio are spun up to transform the raw files into optimized Parquet/Iceberg formats.
 *   **Rapid Prototyping**: When the downstream reporting requirements are constantly changing, keeping raw data loaded via ELT allows for infinite flexibility in downstream modeling.
 
 ## Conclusion

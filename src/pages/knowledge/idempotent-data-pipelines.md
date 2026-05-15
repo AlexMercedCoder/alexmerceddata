@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 In the chaotic world of distributed systems and network latency, failure is not a possibility; it is a mathematical certainty. Third-party APIs will go offline, database clusters will run out of memory, and cloud regions will experience blips. 
 
-When a data pipeline fails halfway through execution, the orchestrator (like Apache Airflow or Dagster) will naturally attempt to retry it. 
+When a data pipeline fails halfway through execution, the orchestrator (like [Apache Airflow](/knowledge/apache-airflow) or [Dagster](/knowledge/dagster)) will naturally attempt to retry it. 
 
 If the pipeline was written poorly, retrying it will cause catastrophic damage. If the pipeline's job was to "Add $50 to all user accounts," and it failed on the last user, retrying the pipeline blindly will add *another* $50 to all the users it already processed, corrupting the entire financial system.
 
@@ -38,7 +38,7 @@ Even if the pipeline is retried 10 times, Iceberg simply deletes the entire 2026
 
 ## Why Idempotency is Critical for Orchestration
 
-Modern Data Orchestrators (Airflow, Prefect, Dagster) are essentially built on the assumption that your code is idempotent. 
+Modern Data Orchestrators (Airflow, [Prefect](/knowledge/prefect), Dagster) are essentially built on the assumption that your code is idempotent. 
 
 These orchestrators provide massive power through features like:
 *   **Automated Retries**: Automatically running a failed task 3 times if an API times out.

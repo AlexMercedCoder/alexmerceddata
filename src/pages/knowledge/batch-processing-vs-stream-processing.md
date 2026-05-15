@@ -19,7 +19,7 @@ The choice between these two paradigms dictates the latency of your data (how ol
 
 ### How it Works
 Imagine an e-commerce website. Throughout the day, every user purchase is logged into a raw PostgreSQL database. The data is completely ignored by the analytics team all day.
-At exactly 2:00 AM, a massive Apache Spark cluster wakes up. It pulls the entire day's worth of transactions (e.g., 5 million rows), cleans them, aggregates the total revenue, writes the final numbers to an Apache Iceberg table, and then shuts down at 3:00 AM. 
+At exactly 2:00 AM, a massive [Apache Spark](/knowledge/apache-spark) cluster wakes up. It pulls the entire day's worth of transactions (e.g., 5 million rows), cleans them, aggregates the total revenue, writes the final numbers to an Apache Iceberg table, and then shuts down at 3:00 AM. 
 
 *   **Pros**: Highly efficient and cost-effective. Because you only turn the massive compute cluster on for 1 hour a day, you save massive amounts of money. It handles complex, massive table joins across petabytes of historical data flawlessly.
 *   **Cons**: **Latency**. If the CEO checks the dashboard at 4:00 PM, they are looking at data that is up to 24 hours old. It is useless for real-time operational decisions.
@@ -29,17 +29,17 @@ At exactly 2:00 AM, a massive Apache Spark cluster wakes up. It pulls the entire
 **Stream Processing** is the modern method of handling data, treating data not as static tables, but as a continuous, never-ending river of events.
 
 ### How it Works
-Instead of waiting for 2:00 AM, the e-commerce website pushes every single purchase instantly into a message broker like **Apache Kafka**. 
-A stream processing engine (like **Apache Flink**) runs 24/7. The exact millisecond a user buys a product, Flink intercepts the event, adds it to a running total in memory, and updates the database instantly. 
+Instead of waiting for 2:00 AM, the e-commerce website pushes every single purchase instantly into a message broker like **[Apache Kafka](/knowledge/apache-kafka)**. 
+A stream processing engine (like **[Apache Flink](/knowledge/apache-flink)**) runs 24/7. The exact millisecond a user buys a product, Flink intercepts the event, adds it to a running total in memory, and updates the database instantly. 
 
 *   **Pros**: **Sub-second Latency**. The dashboard is always a mathematically perfect representation of the exact current state of the business. It enables autonomous systems (like fraud detection and algorithmic trading) that require instant reflexes.
 *   **Cons**: Extremely expensive and complex. The compute cluster must run 24/7/365. Handling delayed data, network outages, and stateful memory management (e.g., "windowing" calculations over a 5-minute period) requires specialized, highly complex engineering.
 
 ## The Convergence: The Unified Model
 
-Historically, organizations had to build two completely separate pipelines (The Lambda Architecture): a Batch pipeline for deep historical analytics, and a Streaming pipeline for real-time alerts.
+Historically, organizations had to build two completely separate pipelines (The [Lambda Architecture](/knowledge/lambda-architecture)): a Batch pipeline for deep historical analytics, and a Streaming pipeline for real-time alerts.
 
-Modern architectures (The Kappa Architecture) and modern frameworks are converging. 
+Modern architectures (The [Kappa Architecture](/knowledge/kappa-architecture)) and modern frameworks are converging. 
 *   **Apache Flink** allows engineers to write one set of code that treats batch data simply as a "stream that eventually stops." 
 *   **Micro-batching** (used by Spark Structured Streaming) blurs the lines by running batch jobs every 30 seconds.
 

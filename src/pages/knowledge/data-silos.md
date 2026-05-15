@@ -36,11 +36,11 @@ To solve silos, data engineers are forced to build brittle, point-to-point ETL p
 Solving the Data Silo problem is the primary focus of modern Data Architecture.
 
 ### The Lakehouse Approach (Centralization)
-The dominant strategy of the 2020s is the **Open Data Lakehouse**. Instead of copying data between 15 different silos, the data engineering team sets up automated Change Data Capture (CDC) streams. Every time a row changes in Salesforce, HubSpot, or PostgreSQL, it is instantly streamed into a single, centralized Amazon S3 bucket and stored as an Apache Iceberg table. 
+The dominant strategy of the 2020s is the **Open Data Lakehouse**. Instead of copying data between 15 different silos, the data engineering team sets up automated Change Data Capture (CDC) streams. Every time a row changes in Salesforce, HubSpot, or PostgreSQL, it is instantly streamed into a single, centralized [Amazon S3](/knowledge/amazon-s3) bucket and stored as an Apache Iceberg table. 
 The silos are destroyed. All enterprise data lives in one unified location, allowing analysts to instantly join Sales data with Engineering data.
 
 ### The Data Virtualization Approach (Federation)
-For massive enterprises where physically centralizing all data into S3 is impossible (due to regulatory compliance or legacy on-premises databases), the solution is **Data Virtualization** (using engines like Dremio).
+For massive enterprises where physically centralizing all data into S3 is impossible (due to regulatory compliance or legacy on-premises databases), the solution is **[Data Virtualization](/knowledge/data-virtualization)** (using engines like Dremio).
 Virtualization leaves the data inside its original silo. Instead, it places an intelligent query engine over the top. When an analyst writes a query joining Salesforce and PostgreSQL, the engine translates the query, fetches the required data from both silos over the network, joins it in memory, and returns the unified result. 
 
 ## Conclusion

@@ -17,7 +17,7 @@ Weeks later, researchers cross-referenced the "anonymous" Netflix data with publ
 
 ## Masking vs. Anonymization
 
-It is critical to distinguish Anonymization from simple Data Masking (or Pseudonymization).
+It is critical to distinguish Anonymization from simple [Data Masking](/knowledge/data-masking) (or Pseudonymization).
 
 If you have a medical record: `[John Doe, Male, Age 42, Zip Code 32801, Diagnosis: Cancer]`.
 If you use **Data Masking** to remove the name: `[REDACTED, Male, Age 42, Zip Code 32801, Diagnosis: Cancer]`.

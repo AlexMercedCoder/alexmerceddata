@@ -47,7 +47,7 @@ The Gold layer is the presentation layer. It is highly refined, aggregated, and 
     *   Complex joins across multiple Silver tables.
     *   Aggregations (e.g., daily sales rollups, monthly active users).
     *   Business logic application (e.g., calculating net revenue, churning metrics).
-*   **Purpose**: Gold tables are built for consumption by Business Intelligence (BI) tools (Tableau, Power BI, Apache Superset) and business analysts. They are optimized for low-latency queries and strictly enforce business definitions.
+*   **Purpose**: Gold tables are built for consumption by Business Intelligence (BI) tools ([Tableau](/knowledge/tableau), [Power BI](/knowledge/power-bi), [Apache Superset](/knowledge/apache-superset)) and business analysts. They are optimized for low-latency queries and strictly enforce business definitions.
 
 ## Implementing Medallion Architecture in an Iceberg Lakehouse
 
@@ -57,7 +57,7 @@ Apache Iceberg is uniquely suited to power the Medallion Architecture due to its
 Moving data from Bronze to Silver often requires handling Change Data Capture (CDC) streams. If an `UPDATE` event arrives from a source PostgreSQL database, the Silver layer must reflect this update. Iceberg's support for row-level deletes (Merge-on-Read) allows data engineers to execute efficient `MERGE INTO` SQL commands to synchronize the Silver layer incrementally, without rewriting entire datasets.
 
 ### Data as Code and Branching
-When altering the transformation logic from Silver to Gold, organizations using an open catalog like Project Nessie or Apache Polaris can leverage **Data Branching**. An engineer can create a branch of the Gold table, test the new transformation logic in isolation using Trino or Spark, validate the metrics, and then atomically merge the branch back into the main production branch.
+When altering the transformation logic from Silver to Gold, organizations using an open catalog like [Project Nessie](/knowledge/project-nessie) or [Apache Polaris](/knowledge/apache-polaris) can leverage **Data Branching**. An engineer can create a branch of the Gold table, test the new transformation logic in isolation using Trino or Spark, validate the metrics, and then atomically merge the branch back into the main production branch.
 
 ### Time Travel for Pipeline Reprocessing
 If a bug is introduced in the Silver layer, Iceberg's Time Travel allows engineers to rollback the Silver table to a snapshot from 24 hours ago. They can then effortlessly replay the pipeline from the Bronze layer using the corrected transformation code.

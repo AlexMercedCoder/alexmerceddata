@@ -22,7 +22,7 @@ The **Virtual Data Warehouse** (also known as a Logical Data Warehouse or Data F
 
 ## How a Virtual Data Warehouse Works
 
-A Virtual Data Warehouse (powered by federated query engines like Dremio or Trino) looks and feels exactly like a traditional relational database to the end user. When a business analyst connects Tableau to it, they see a clean list of schemas and tables, and they can write standard SQL queries against them.
+A Virtual Data Warehouse (powered by federated query engines like Dremio or Trino) looks and feels exactly like a traditional relational database to the end user. When a business analyst connects [Tableau](/knowledge/tableau) to it, they see a clean list of schemas and tables, and they can write standard SQL queries against them.
 
 However, the Virtual Data Warehouse **stores no data**.
 
@@ -33,7 +33,7 @@ Imagine an analyst runs the following query:
 `SELECT c.customer_name, s.lifetime_spend FROM postgres_crm.customers c JOIN s3_lake.sales_history s ON c.id = s.user_id`
 
 1.  **Interception**: The Virtual Data Warehouse receives the query.
-2.  **Compute Pushdown**: The Virtual engine's Query Planner analyzes the request. It dynamically translates the `postgres_crm` part of the query into the specific SQL dialect PostgreSQL understands. It sends the command to PostgreSQL: *"Please filter your customers and send me the names."*
+2.  **[Compute Pushdown](/knowledge/compute-pushdown)**: The Virtual engine's [Query Planner](/knowledge/query-planner) analyzes the request. It dynamically translates the `postgres_crm` part of the query into the specific SQL dialect PostgreSQL understands. It sends the command to PostgreSQL: *"Please filter your customers and send me the names."*
 3.  **Parallel Execution**: Simultaneously, it translates the S3 part of the query, distributing tasks to its own worker nodes to scan the Parquet files in the data lake.
 4.  **In-Memory Join**: The engine pulls the tiny result set from PostgreSQL over the network, joins it in its own RAM with the S3 data, and returns the final answer to Tableau in seconds.
 
@@ -56,7 +56,7 @@ The historical knock against Virtual Data Warehouses was performance. Pulling ma
 
 Modern engines have largely solved this using two techniques:
 *   **Advanced Compute Pushdown**: Ensuring the source database does all the heavy filtering before any data crosses the network.
-*   **Data Reflections / Materialized Caching**: If a federated query is run frequently, engines like Dremio can automatically cache the joined result invisibly as an optimized Apache Parquet file in S3. Subsequent queries hit the lightning-fast cache instead of burdening the source databases.
+*   **Data Reflections / Materialized Caching**: If a federated query is run frequently, engines like Dremio can automatically cache the joined result invisibly as an optimized [Apache Parquet](/knowledge/apache-parquet) file in S3. Subsequent queries hit the lightning-fast cache instead of burdening the source databases.
 
 ## Conclusion
 

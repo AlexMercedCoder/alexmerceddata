@@ -33,12 +33,12 @@ These formats serialize data into dense, unreadable binary streams.
 
 ## Serialization in Big Data: Apache Avro and Parquet
 
-While JSON is fine for sending a single user profile to a web browser, it is catastrophic for big data. If you serialize 10 Terabytes of data as JSON and store it in Amazon S3, you will pay exorbitant storage fees and queries will take days to parse the text.
+While JSON is fine for sending a single user profile to a web browser, it is catastrophic for big data. If you serialize 10 Terabytes of data as JSON and store it in [Amazon S3](/knowledge/amazon-s3), you will pay exorbitant storage fees and queries will take days to parse the text.
 
 Big Data systems rely exclusively on specialized binary serialization formats.
 
 ### Apache Avro
-Avro is a row-based binary format. It heavily utilizes schema-based serialization. The schema (written in JSON) is actually embedded directly in the file alongside the binary data. Avro is the industry standard for **Streaming Data** (like Apache Kafka). Because it serializes row-by-row, it is incredibly fast at appending single events as they occur in real-time.
+Avro is a row-based binary format. It heavily utilizes schema-based serialization. The schema (written in JSON) is actually embedded directly in the file alongside the binary data. Avro is the industry standard for **Streaming Data** (like [Apache Kafka](/knowledge/apache-kafka)). Because it serializes row-by-row, it is incredibly fast at appending single events as they occur in real-time.
 
 ### Apache Parquet
 Parquet is a columnar binary format. While Avro serializes data horizontally, Parquet serializes data vertically. It groups all the values for a specific column together, allowing for massive binary compression (like Dictionary Encoding). Parquet is the industry standard for **Historical Batch Analytics**. It is terrible for streaming single rows, but unparalleled for executing analytical queries over massive datasets.
@@ -47,7 +47,7 @@ Parquet is a columnar binary format. While Avro serializes data horizontally, Pa
 
 Historically, even binary formats required a heavy CPU tax. When Spark (Java) read a Parquet file, it had to deserialize the binary disk format into Java objects. When it sent that data to Pandas (Python), it had to serialize it again.
 
-**Apache Arrow** revolutionized serialization by proposing an alternative: *What if we didn't serialize at all?*
+**[Apache Arrow](/knowledge/apache-arrow)** revolutionized serialization by proposing an alternative: *What if we didn't serialize at all?*
 
 Arrow defines a standardized, language-independent columnar memory format. When data is formatted in Arrow, a Java process and a Python process can literally share the exact same memory pointer. Data can be passed between languages and systems instantly, with zero CPU cycles wasted on serialization or deserialization (Zero-Copy).
 

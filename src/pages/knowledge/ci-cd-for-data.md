@@ -25,7 +25,7 @@ If they made a typo in the math, the dashboard used by the CEO the next morning 
 
 ## Implementing CI/CD for Data (DataOps)
 
-To bring the rigor of software engineering to the data warehouse, the industry pioneered **DataOps**, heavily utilizing tools like **dbt (Data Build Tool)** and modern Git-like catalogs (like Project Nessie / Dremio Arctic).
+To bring the rigor of software engineering to the data warehouse, the industry pioneered **[DataOps](/knowledge/dataops)**, heavily utilizing tools like **dbt (Data Build Tool)** and modern Git-like catalogs (like [Project Nessie](/knowledge/project-nessie) / Dremio Arctic).
 
 A modern CI/CD pipeline for Data Engineering works exactly like a software pipeline:
 
@@ -47,4 +47,4 @@ If all tests pass, a Senior Data Engineer reviews the code and clicks "Merge." T
 
 ## Conclusion
 
-CI/CD for Data is the architectural shift from "Hope-Driven Development" to mathematically guaranteed Data Quality. By forcing all analytical SQL code through a rigorous, automated gauntlet of version control and data testing, data teams can confidently deploy complex pipeline updates multiple times a day, ensuring that business executives never lose trust in the accuracy of the enterprise dashboard.
+CI/CD for Data is the architectural shift from "Hope-Driven Development" to mathematically guaranteed [Data Quality](/knowledge/data-quality). By forcing all analytical SQL code through a rigorous, automated gauntlet of version control and data testing, data teams can confidently deploy complex pipeline updates multiple times a day, ensuring that business executives never lose trust in the accuracy of the enterprise dashboard.

@@ -39,7 +39,7 @@ Microservices solve organizational scaling problems, but they introduce massive 
 
 1.  **Network Latency**: In a monolith, functions call each other in RAM (nanoseconds). In Microservices, services must communicate over the network (milliseconds). A single user click might trigger a chain of 15 API calls between 15 different microservices. If any of those network calls fail or lag, the user experiences terrible performance.
 2.  **Tracing and Debugging**: If an error occurs in a Monolith, the developer looks at the stack trace on one server. If an error occurs in a microservice architecture, the developer must trace the chaotic flow of network requests across 50 different servers to figure out which specific service failed. 
-3.  **Data Consistency**: Because microservices do not share a database, maintaining ACID transactions across multiple services is incredibly difficult, forcing architects to rely on complex patterns like Eventual Consistency and the Saga Pattern.
+3.  **[Data Consistency](/knowledge/data-consistency)**: Because microservices do not share a database, maintaining ACID transactions across multiple services is incredibly difficult, forcing architects to rely on complex patterns like [Eventual Consistency](/knowledge/eventual-consistency) and the Saga Pattern.
 
 ## Conclusion
 

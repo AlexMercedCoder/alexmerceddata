@@ -9,9 +9,9 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Row-Level Deletes
 
-In the traditional Data Lake era (built on Apache Hive and raw Hadoop), data was treated as append-only. Because data was stored in massive text or Parquet files on rigid distributed file systems, the concept of deleting a specific row was practically impossible.
+In the traditional Data Lake era (built on [Apache Hive](/knowledge/apache-hive) and raw Hadoop), data was treated as append-only. Because data was stored in massive text or Parquet files on rigid distributed file systems, the concept of deleting a specific row was practically impossible.
 
-If a company stored 10 years of sales data in a massive folder partitioned by year, and they discovered a single fraudulent transaction in the 2018 folder, fixing it was a nightmare. The data engineer had to write a MapReduce job to read the entire 2018 dataset (terabytes of data), manually filter out the single bad row, completely delete the old 2018 folder, and write the new terabytes of data back to disk.
+If a company stored 10 years of sales data in a massive folder partitioned by year, and they discovered a single fraudulent transaction in the 2018 folder, fixing it was a nightmare. The data engineer had to write a [MapReduce](/knowledge/mapreduce) job to read the entire 2018 dataset (terabytes of data), manually filter out the single bad row, completely delete the old 2018 folder, and write the new terabytes of data back to disk.
 
 The inability to easily execute **Row-Level Deletes** (and the related `UPDATE` and `MERGE` commands) was the primary reason Data Lakes were considered inferior to traditional Data Warehouses.
 
@@ -21,11 +21,11 @@ The inability to delete specific rows shifted from an engineering annoyance to a
 
 These laws introduced the "Right to be Forgotten." If a customer emails a company and demands that all their personal data be deleted, the company has a strict legal window (usually 30 days) to scrub that specific user's data from every system, database, and data lake they own.
 
-If a company has petabytes of raw JSON logs sitting in an Amazon S3 Data Lake, and they have no native SQL mechanism to execute `DELETE FROM raw_logs WHERE user_email = 'alex@example.com'`, they face massive regulatory fines. Organizations were forced to build incredibly expensive, brittle pipelines just to execute compliance deletes.
+If a company has petabytes of raw JSON logs sitting in an [Amazon S3](/knowledge/amazon-s3) Data Lake, and they have no native SQL mechanism to execute `DELETE FROM raw_logs WHERE user_email = 'alex@example.com'`, they face massive regulatory fines. Organizations were forced to build incredibly expensive, brittle pipelines just to execute compliance deletes.
 
 ## The Lakehouse Solution
 
-The invention of Open Table Formats (**Apache Iceberg**, **Delta Lake**, and **Apache Hudi**) was heavily driven by the need to support native Row-Level Deletes directly on top of immutable cloud object storage.
+The invention of [Open Table Formats](/knowledge/open-table-formats) (**Apache Iceberg**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)**) was heavily driven by the need to support native Row-Level Deletes directly on top of immutable cloud object storage.
 
 By introducing an intelligent metadata layer above the raw Parquet files, these table formats finally allowed data lakes to behave like relational databases. 
 

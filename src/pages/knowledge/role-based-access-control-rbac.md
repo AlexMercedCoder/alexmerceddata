@@ -46,14 +46,14 @@ When John moves to the HR department, the DBA simply removes him from the `marke
 
 ## Implementing RBAC in the Data Lakehouse
 
-Applying RBAC to a single PostgreSQL database is easy. Applying RBAC to a decoupled Data Lakehouse—where data sits in Amazon S3 and is queried by five different compute engines (Spark, Dremio, Flink, Trino, Snowflake)—is incredibly complex.
+Applying RBAC to a single PostgreSQL database is easy. Applying RBAC to a decoupled Data Lakehouse—where data sits in [Amazon S3](/knowledge/amazon-s3) and is queried by five different compute engines (Spark, Dremio, Flink, Trino, Snowflake)—is incredibly complex.
 
-If you define an RBAC policy inside Apache Spark, that policy is completely useless if the user logs into Trino to query the same S3 bucket.
+If you define an RBAC policy inside [Apache Spark](/knowledge/apache-spark), that policy is completely useless if the user logs into Trino to query the same S3 bucket.
 
 ### The Solution: Centralized Catalog Security
 To secure a lakehouse, RBAC must be lifted out of the compute engines and pushed down into the central **Data Catalog**.
 
-Tools like **Apache Polaris** (which implements the Iceberg REST Catalog specification) solve this by acting as the unified gatekeeper. 
+Tools like **[Apache Polaris](/knowledge/apache-polaris)** (which implements the Iceberg REST Catalog specification) solve this by acting as the unified gatekeeper. 
 
 1.  **Centralized Definition**: The organization defines all Roles and Privileges directly inside Apache Polaris.
 2.  **Engine Independence**: When a user logs into Dremio and runs a `SELECT` query, Dremio sends an API request to Polaris asking for the physical location of the Iceberg data files.

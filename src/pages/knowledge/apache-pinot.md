@@ -23,7 +23,7 @@ Pinot achieves its blistering speeds through a combination of columnar storage, 
 
 ### 1. Ingestion (Real-time and Offline)
 Pinot ingests data in two ways simultaneously:
-*   **Real-time Nodes**: These nodes connect directly to a message broker (like Apache Kafka). They ingest streaming events and store them entirely in RAM. This ensures that the moment an event occurs, it is instantly queryable.
+*   **Real-time Nodes**: These nodes connect directly to a message broker (like [Apache Kafka](/knowledge/apache-kafka)). They ingest streaming events and store them entirely in RAM. This ensures that the moment an event occurs, it is instantly queryable.
 *   **Offline Nodes**: Periodically, the Real-time nodes flush their RAM and convert the data into highly compressed, columnar chunks (called Segments) and store them on disk (or in cloud storage like S3). 
 
 ### 2. The Scatter-Gather Query Execution
@@ -40,7 +40,7 @@ Pinot automatically builds multiple indexes for every segment:
 
 ## Apache Pinot vs. Apache Druid vs. ClickHouse
 
-Pinot exists in the same architectural space as Druid and ClickHouse (Real-Time OLAP). 
+Pinot exists in the same architectural space as Druid and [ClickHouse](/knowledge/clickhouse) (Real-Time OLAP). 
 *   **ClickHouse** is often the fastest for brute-force scanning of massive, wide tables without indexes.
 *   **Druid** is excellent for log analytics and high-cardinality time-series data.
 *   **Pinot** is widely considered the best choice when dealing with incredibly high concurrency (e.g., 100,000 external users clicking a dashboard simultaneously) because its Star-Tree index guarantees predictable, sub-second latency regardless of user load.

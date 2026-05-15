@@ -11,7 +11,7 @@ cta_link: "https://www.amazon.com/dp/B0GQW7CTML"
 
 For the first several years of the deep learning boom, artificial intelligence was strictly partitioned by human senses.
 *   If you wanted to process text, you used a Large Language Model (LLM) like GPT-3.
-*   If you wanted to process images, you used a Computer Vision model like a Convolutional Neural Network (CNN) or Midjourney.
+*   If you wanted to process images, you used a [Computer Vision](/knowledge/computer-vision) model like a Convolutional Neural Network (CNN) or Midjourney.
 *   If you wanted to process audio, you used a Speech-to-Text model like Whisper.
 
 These models were entirely separate. If you showed a text model a picture of a dog, it would crash. If you showed an image model a complex math word problem, it would crash. 

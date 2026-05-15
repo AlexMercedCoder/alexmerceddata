@@ -26,7 +26,7 @@ Early computer scientists tried to teach computers language the same way you tea
 Researchers abandoned grammar rules and turned to Statistics. They fed millions of documents into algorithms (like Support Vector Machines or Naive Bayes). The algorithms simply counted word frequencies. If the words "terrible," "boring," and "waste" appeared frequently in a movie review, the algorithm mathematically classified it as a "Negative" review. This was the era of basic Spam Filters and early Sentiment Analysis.
 
 ### 3. The Deep Learning & Transformer Era (2017 - Present)
-The invention of the **Transformer** architecture (and the Attention Mechanism) revolutionized NLP. Instead of just counting words, Neural Networks learned the deep semantic *context* of words. This era birthed Large Language Models (LLMs) like GPT and BERT, transitioning NLP from basic classification tasks to flawless, human-level text generation and complex reasoning.
+The invention of the **Transformer** architecture (and the [Attention Mechanism](/knowledge/attention-mechanism)) revolutionized NLP. Instead of just counting words, Neural Networks learned the deep semantic *context* of words. This era birthed Large Language Models (LLMs) like GPT and BERT, transitioning NLP from basic classification tasks to flawless, human-level text generation and complex reasoning.
 
 ## Core NLP Tasks in the Enterprise
 

@@ -25,7 +25,7 @@ A Data Contract is not a gentlemen's agreement in an email thread; it is a techn
 A robust Data Contract typically includes:
 1.  **Schema Definition**: The exact column names, data types, and nullability constraints (e.g., `user_id` must be an Integer and cannot be Null).
 2.  **Semantics and Business Meaning**: Clear definitions of what the data actually represents (e.g., "The `revenue` column represents gross revenue *before* taxes are applied").
-3.  **Data Quality Expectations**: Statistical boundaries for the data (e.g., "The `age` column must be between 18 and 120").
+3.  **[Data Quality](/knowledge/data-quality) Expectations**: Statistical boundaries for the data (e.g., "The `age` column must be between 18 and 120").
 4.  **Operational SLAs**: Guarantees around freshness and volume (e.g., "This Kafka topic will receive at least 10,000 events per day, delayed by no more than 5 minutes").
 5.  **Ownership**: The specific software engineering team (and contact information) responsible for maintaining the upstream data source.
 
@@ -39,12 +39,12 @@ When a software engineer submits a Pull Request (PR) to change the application's
 If the PR attempts to drop a column that the Data Contract explicitly guarantees, the CI/CD pipeline fails the build. The software engineer cannot deploy their code until they either revert the change or negotiate a new version of the contract with the data team.
 
 ### 2. Schema Registries and Dead Letter Queues
-In streaming environments (like Apache Kafka), Data Contracts are enforced at runtime using a **Schema Registry**. 
+In streaming environments (like [Apache Kafka](/knowledge/apache-kafka)), Data Contracts are enforced at runtime using a **[Schema Registry](/knowledge/schema-registry)**. 
 When the upstream application attempts to publish an event to Kafka, the Schema Registry checks the event payload against the contract. If the payload violates the schema (e.g., sending a String instead of an Integer), the event is rejected and routed to a "Dead Letter Queue" for debugging, ensuring that malformed data never enters the data lakehouse.
 
 ## The Cultural Impact of Data Contracts
 
-Implementing Data Contracts is as much a cultural shift as it is a technical one. It forces organizations to adopt the principles of **Data Mesh**.
+Implementing Data Contracts is as much a cultural shift as it is a technical one. It forces organizations to adopt the principles of **[Data Mesh](/knowledge/data-mesh)**.
 
 Historically, software developers viewed the database merely as the state-store for their application. Analytical data was "not their problem." 
 Data Contracts force the producers of the data to take ownership of the analytical exhaust their applications generate. It enforces the concept of "Data as a Product." If a software team owns a microservice, they also own the analytical data product that microservice generates, and they are held accountable for its reliability.

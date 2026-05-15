@@ -30,7 +30,7 @@ Unlike standard stateless chat completions, agents must remember what they have 
 ### 3. Tool Use (Function Calling)
 This is the defining feature of an agent. Tool use (also known as function calling) allows the LLM to interact with the outside world.
 Developers provide the LLM with a JSON schema defining available tools (e.g., `execute_sql_query`, `search_web`, `send_slack_message`). 
-When the LLM realizes it lacks the information to answer a question, it outputs a structured JSON response requesting to call a specific tool. The agent framework (like LangChain or AutoGen) executes the tool on the LLM's behalf and feeds the result back into the prompt.
+When the LLM realizes it lacks the information to answer a question, it outputs a structured JSON response requesting to call a specific tool. The agent framework (like [LangChain](/knowledge/langchain) or AutoGen) executes the tool on the LLM's behalf and feeds the result back into the prompt.
 
 ### 4. Planning and Execution Strategies
 Agents do not simply guess the answer; they follow structured reasoning frameworks.
@@ -40,7 +40,7 @@ Agents do not simply guess the answer; they follow structured reasoning framewor
 
 ## Multi-Agent Systems
 
-As agentic workflows become more complex, relying on a single, monolithic agent to handle everything becomes inefficient. The industry is rapidly shifting toward **Multi-Agent Systems (MAS)**.
+As agentic workflows become more complex, relying on a single, monolithic agent to handle everything becomes inefficient. The industry is rapidly shifting toward **[Multi-Agent Systems](/knowledge/multi-agent-systems) (MAS)**.
 
 In a MAS framework (such as CrewAI or Microsoft AutoGen), multiple specialized agents collaborate to achieve a goal. 
 For example, to build a data dashboard, you might have:

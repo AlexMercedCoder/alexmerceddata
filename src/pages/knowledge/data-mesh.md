@@ -32,14 +32,14 @@ In a legacy system, data is treated as a byproduct of software applications. In 
 The domain team is responsible for ensuring their "data product" meets strict Service Level Agreements (SLAs) regarding uptime, schema stability, and documentation. They must provide clear interfaces (APIs, Iceberg tables, or SQL endpoints) so that other domains can easily "consume" their data product.
 
 ### 3. Self-Serve Data Infrastructure as a Platform
-Decentralizing data engineering does not mean forcing the Marketing team to learn how to deploy Kubernetes clusters or configure Apache Spark from scratch. 
+Decentralizing data engineering does not mean forcing the Marketing team to learn how to deploy [Kubernetes](/knowledge/kubernetes) clusters or configure [Apache Spark](/knowledge/apache-spark) from scratch. 
 The organization must build a centralized **Data Platform Team**. However, this team no longer builds data pipelines. Instead, they build self-serve, automated infrastructure tooling. They provide the HR or Marketing domains with push-button templates to deploy object storage buckets, Dremio query engines, and Iceberg catalogs, lowering the technical barrier to entry for domain teams.
 
 ### 4. Federated Computational Governance
 If every domain builds its own data products independently, how do you prevent the organization from returning to the chaotic days of disconnected data silos?
 The answer is federated governance. A governing body (comprising representatives from the domains, the security team, and the platform team) establishes global rules:
 *   "All domains must use Apache Iceberg."
-*   "All domains must register their tables in the central Apache Polaris catalog."
+*   "All domains must register their tables in the central [Apache Polaris](/knowledge/apache-polaris) catalog."
 *   "All PII must be masked according to standard policy."
 
 The domains are free to innovate within their spheres, so long as they adhere to these globally automated, interoperable standards.

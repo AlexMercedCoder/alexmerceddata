@@ -33,8 +33,8 @@ External monetization involves treating the data itself as a physical product (a
 
 Monetizing data is incredibly lucrative, but it is fraught with extreme risk.
 
-*   **The Privacy Minefield**: The fastest way to destroy a company's brand is to monetize user data unethically. Selling data without explicit user consent violates GDPR and CCPA, resulting in catastrophic fines and public relations disasters. All external monetization *must* heavily utilize anonymization and Differential Privacy.
-*   **Data Quality**: If you sell a "Data Product" to a third party, that data must be perfect. If you sell a dataset to a hedge fund, and a pipeline bug causes the data to be corrupted for 3 days, the hedge fund will lose millions of dollars and sue you. Data Monetization requires the engineering team to adopt strict Data Contracts and CI/CD testing pipelines.
+*   **The Privacy Minefield**: The fastest way to destroy a company's brand is to monetize user data unethically. Selling data without explicit user consent violates [GDPR and CCPA](/knowledge/gdpr-and-ccpa), resulting in catastrophic fines and public relations disasters. All external monetization *must* heavily utilize anonymization and [Differential Privacy](/knowledge/differential-privacy).
+*   **[Data Quality](/knowledge/data-quality)**: If you sell a "Data Product" to a third party, that data must be perfect. If you sell a dataset to a hedge fund, and a pipeline bug causes the data to be corrupted for 3 days, the hedge fund will lose millions of dollars and sue you. Data Monetization requires the engineering team to adopt strict [Data Contracts](/knowledge/data-contracts) and CI/CD testing pipelines.
 
 ## Conclusion
 

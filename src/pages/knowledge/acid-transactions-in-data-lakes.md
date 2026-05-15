@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to ACID in the Data Lake
 
-For decades, the standard data architecture mandated a strict division of labor: operational databases (like PostgreSQL or MySQL) handled transactional, day-to-day operations with strict reliability guarantees, while Data Lakes (like Hadoop HDFS or raw Amazon S3) handled massive-scale analytics without any transactional safety nets.
+For decades, the standard data architecture mandated a strict division of labor: operational databases (like PostgreSQL or MySQL) handled transactional, day-to-day operations with strict reliability guarantees, while Data Lakes (like Hadoop HDFS or raw [Amazon S3](/knowledge/amazon-s3)) handled massive-scale analytics without any transactional safety nets.
 
 In early data lakes, if a massive ETL job failed halfway through writing a dataset, the lake was left in a corrupted state with partial files. If a user queried a table while another process was writing to it, the query would crash or return incomplete data ("dirty reads"). Data engineering teams spent countless hours writing complex scripts to manage failure recovery, directory swapping, and file locking just to keep the data lake stable.
 
@@ -42,7 +42,7 @@ Delivering ACID guarantees on a distributed filesystem without a central running
 ### The Commit Flow
 1.  **Write Data**: The compute engine (e.g., Spark) writes all new Parquet data files to S3.
 2.  **Write Metadata**: The engine writes the new Manifest files and Manifest Lists, which point to the new data files.
-3.  **The Atomic Swap**: The engine sends a request to the Catalog (like Apache Polaris or Dremio Arctic). The request says: *"I want to update the table pointer to `metadata-v2.json`. I expect the current pointer to be `metadata-v1.json`."*
+3.  **The Atomic Swap**: The engine sends a request to the Catalog (like [Apache Polaris](/knowledge/apache-polaris) or Dremio Arctic). The request says: *"I want to update the table pointer to `metadata-v2.json`. I expect the current pointer to be `metadata-v1.json`."*
 4.  **Validation**: The Catalog checks the current state. If the current pointer is indeed `v1`, it atomically swaps it to `v2`. The transaction is complete. The new data is instantly visible.
 
 ### Handling Conflicts (OCC)

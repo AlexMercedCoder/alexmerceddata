@@ -24,7 +24,7 @@ A production-grade prompt is rarely a single sentence. It is a highly structured
 2.  **The Task**: A clear, unambiguous declaration of what needs to be done.
     *   *Example*: "Review the provided PySpark code and identify any performance bottlenecks related to data skew."
 3.  **The Context**: Background information necessary for the AI to understand the specific environment. In RAG pipelines, this is where external database documents are injected.
-    *   *Example*: "The data being processed is a 50 Terabyte table stored in Amazon S3, partitioned by `transaction_date`."
+    *   *Example*: "The data being processed is a 50 Terabyte table stored in [Amazon S3](/knowledge/amazon-s3), partitioned by `transaction_date`."
 4.  **The Constraints (Rules)**: Explicit boundaries to prevent hallucination or unwanted behavior.
     *   *Example*: "Do not suggest using external libraries. Return ONLY the refactored code without any markdown conversational filler."
 5.  **Output Formatting**: Defining exactly how the system should structure its response, which is critical if the output is being parsed by downstream software.

@@ -20,21 +20,21 @@ The **Data Catalog** was invented to solve this exact problem. A data catalog is
 Modern data catalogs (especially in an Apache Iceberg lakehouse) serve two distinctly different but equally important roles: **Technical Catalogs** and **Business Catalogs**.
 
 ### 1. The Technical Catalog (The Execution Layer)
-Compute engines (like Apache Spark, Dremio, or Trino) do not natively know how to read a data lake. They need a map. The Technical Catalog provides this map.
+Compute engines (like [Apache Spark](/knowledge/apache-spark), Dremio, or Trino) do not natively know how to read a data lake. They need a map. The Technical Catalog provides this map.
 When a user runs `SELECT * FROM sales.q3_revenue`, the compute engine asks the Technical Catalog:
 *   "Where exactly in S3 are the underlying data files for `sales.q3_revenue`?"
 *   "What is the schema of this table?"
 *   "Which files belong to the most recent committed snapshot?"
 
-Historically, the **Hive Metastore (HMS)** served this role. Today, open table format catalogs like **Apache Polaris**, **Project Nessie**, and **AWS Glue** act as the technical catalog, providing ACID transactional guarantees and atomic pointer swapping for concurrent writers.
+Historically, the **Hive Metastore (HMS)** served this role. Today, open table format catalogs like **[Apache Polaris](/knowledge/apache-polaris)**, **[Project Nessie](/knowledge/project-nessie)**, and **[AWS Glue](/knowledge/aws-glue)** act as the technical catalog, providing ACID transactional guarantees and atomic pointer swapping for concurrent writers.
 
 ### 2. The Business Catalog (The Discovery Layer)
 While the technical catalog is for machines, the Business Catalog is for humans. 
 Tools like Collibra, Alation, or Atlan sit on top of the technical catalog. When a data scientist logs into the Business Catalog, they are looking for context:
 *   "Who is the owner of this dataset?"
 *   "What does the column `usr_id_ext` actually mean?" (Data Dictionary)
-*   "Where did this data come from, and which dashboards rely on it?" (Data Lineage)
-*   "Is this data PII/HIPAA compliant?" (Data Classification)
+*   "Where did this data come from, and which dashboards rely on it?" ([Data Lineage](/knowledge/data-lineage))
+*   "Is this data PII/HIPAA compliant?" ([Data Classification](/knowledge/data-classification))
 
 ## Key Capabilities of a Data Catalog
 
@@ -50,7 +50,7 @@ Catalogs automate the extraction and storage of metadata.
 A catalog provides a Google-like search interface for the entire enterprise data footprint. A user can search for "Customer Churn," and the catalog will return all relevant tables, the dashboards that use those tables, and the data engineers responsible for maintaining them.
 
 ### Data Lineage
-When a CEO looks at a Tableau dashboard and asks, "Why did revenue drop 5%?", analysts need to trace the data backward. Data lineage maps the flow of data from its origin (e.g., a Salesforce API), through the Bronze, Silver, and Gold layers of the lakehouse, all the way to the dashboard. If a pipeline breaks, lineage tells engineers exactly which downstream reports will be affected.
+When a CEO looks at a [Tableau](/knowledge/tableau) dashboard and asks, "Why did revenue drop 5%?", analysts need to trace the data backward. Data lineage maps the flow of data from its origin (e.g., a Salesforce API), through the Bronze, Silver, and Gold layers of the lakehouse, all the way to the dashboard. If a pipeline breaks, lineage tells engineers exactly which downstream reports will be affected.
 
 ### Access Control and Governance
 Catalogs act as the central enforcement point for security. Instead of defining permissions in Spark, and then redefining them in Dremio, and then again in Trino, organizations define Role-Based Access Control (RBAC) policies once in the catalog (e.g., Apache Polaris). When any engine requests the data, the catalog evaluates the user's role and either grants or denies the request, ensuring consistent security across the entire ecosystem.

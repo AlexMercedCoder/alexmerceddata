@@ -26,16 +26,16 @@ Before writing a single line of SQL, the Data Team must understand the company's
 The technology serves the business case; the business case never serves the technology.
 
 ### 2. Data Architecture and Infrastructure (The "How")
-Once the business goal is defined, the Chief Data Officer (CDO) selects the technology. Will the company use a centralized Data Warehouse, a flexible Data Lakehouse, or a decentralized Data Mesh? This phase defines the tooling for ingestion, storage, and transformation, ensuring the infrastructure can actually scale to meet the business requirements.
+Once the business goal is defined, the Chief Data Officer (CDO) selects the technology. Will the company use a centralized Data Warehouse, a flexible Data Lakehouse, or a decentralized [Data Mesh](/knowledge/data-mesh)? This phase defines the tooling for ingestion, storage, and transformation, ensuring the infrastructure can actually scale to meet the business requirements.
 
 ### 3. Data Governance and Security (The "Rules")
 A massive data lake is a massive legal liability if left unmanaged. The Data Strategy must explicitly define:
 *   **Ownership**: Who is legally responsible if the "Revenue" dashboard is incorrect?
-*   **Privacy**: How does the company comply with GDPR and CCPA?
+*   **Privacy**: How does the company comply with [GDPR and CCPA](/knowledge/gdpr-and-ccpa)?
 *   **Quality**: What are the acceptable mathematical thresholds for missing data before a pipeline is halted?
 
 ### 4. Data Culture and Literacy (The "People")
-The best dashboard in the world is useless if the Marketing Manager doesn't know how to read a scatter plot. The Data Strategy must include a plan for democratizing data access. This involves training non-technical employees (Data Literacy) and fostering a culture where executives demand to see the data before making a "gut feeling" decision.
+The best dashboard in the world is useless if the Marketing Manager doesn't know how to read a scatter plot. The Data Strategy must include a plan for democratizing data access. This involves training non-technical employees ([Data Literacy](/knowledge/data-literacy)) and fostering a culture where executives demand to see the data before making a "gut feeling" decision.
 
 ## Offensive vs. Defensive Data Strategy
 

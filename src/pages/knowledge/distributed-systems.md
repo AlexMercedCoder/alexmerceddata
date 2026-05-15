@@ -17,7 +17,7 @@ The solution was the **Distributed System** (Horizontal Scaling or Scaling Out).
 
 ## The Core Advantages
 
-Distributed systems form the backbone of modern cloud computing and Big Data architectures (like Apache Hadoop, Apache Spark, and Amazon S3).
+Distributed systems form the backbone of modern cloud computing and Big Data architectures (like [Apache Hadoop](/knowledge/apache-hadoop), [Apache Spark](/knowledge/apache-spark), and [Amazon S3](/knowledge/amazon-s3)).
 
 1.  **Infinite Scalability**: If a distributed database (like Apache Cassandra) reaches its storage limit, you do not buy a bigger server. You simply buy another cheap 1TB hard drive server, plug it into the network, and the software automatically distributes the load across the new node. You can scale infinitely.
 2.  **Fault Tolerance (High Availability)**: In a single-server architecture, if the motherboard fries, the entire company goes offline. In a distributed system with 1,000 nodes, hardware failure is treated as a normal, expected event. The data is replicated. If Node 42 catches fire, the system instantly routes queries to Node 43, and the end-user never notices.

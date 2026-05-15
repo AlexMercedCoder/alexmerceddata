@@ -18,7 +18,7 @@ However, in modern distributed systems, databases are spread across hundreds of 
 
 ## The CAP Theorem
 
-Discussions around consistency in distributed systems are strictly governed by the **CAP Theorem** (Brewer's Theorem). It states that a distributed data store can only guarantee two out of the following three properties simultaneously:
+Discussions around consistency in distributed systems are strictly governed by the **[CAP Theorem](/knowledge/cap-theorem)** (Brewer's Theorem). It states that a distributed data store can only guarantee two out of the following three properties simultaneously:
 
 1.  **Consistency (C)**: Every read receives the most recent write, or an error. If Server A is updated, you cannot read from Server B until Server B is identical to A.
 2.  **Availability (A)**: Every request receives a non-error response, without the guarantee that it contains the most recent write. The system will always answer you, even if the answer is slightly outdated.
@@ -44,9 +44,9 @@ If the NY server updates a profile picture, it immediately tells the user "Succe
 
 ## Consistency in the Data Lakehouse
 
-Historically, Amazon S3 (the foundation of the Data Lake) was only *Eventually Consistent*. If you wrote a massive file to S3 and immediately tried to list the files in the bucket, S3 might not show you the new file. This made building transactional databases on S3 nearly impossible.
+Historically, [Amazon S3](/knowledge/amazon-s3) (the foundation of the Data Lake) was only *Eventually Consistent*. If you wrote a massive file to S3 and immediately tried to list the files in the bucket, S3 might not show you the new file. This made building transactional databases on S3 nearly impossible.
 
-In late 2020, AWS upgraded S3 to provide **Strong Read-After-Write Consistency**. This monumental physical upgrade, combined with the ACID guarantees provided by Open Table Formats like **Apache Iceberg**, finally allowed the Data Lakehouse to provide the Strong Consistency of a traditional Data Warehouse, ensuring that business analysts never accidentally query a half-written, corrupted dataset.
+In late 2020, AWS upgraded S3 to provide **Strong Read-After-Write Consistency**. This monumental physical upgrade, combined with the ACID guarantees provided by [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**, finally allowed the Data Lakehouse to provide the Strong Consistency of a traditional Data Warehouse, ensuring that business analysts never accidentally query a half-written, corrupted dataset.
 
 ## Conclusion
 

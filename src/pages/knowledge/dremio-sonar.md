@@ -13,32 +13,32 @@ For decades, the data industry operated on a fundamental compromise: if you want
 
 **Dremio Sonar** was built to eliminate this compromise. 
 
-Dremio Sonar is a high-performance, distributed SQL query engine designed explicitly for the Open Data Lakehouse. Its foundational philosophy is that you should leave your data where it is (in cheap cloud object storage like Amazon S3 or Azure ADLS, formatted as Apache Iceberg or Parquet) and bring the compute engine directly to the data. It delivers the interactive, sub-second query performance of a proprietary data warehouse directly on top of the open data lake.
+Dremio Sonar is a high-performance, distributed SQL query engine designed explicitly for the Open Data Lakehouse. Its foundational philosophy is that you should leave your data where it is (in cheap cloud object storage like [Amazon S3](/knowledge/amazon-s3) or Azure ADLS, formatted as Apache Iceberg or Parquet) and bring the compute engine directly to the data. It delivers the interactive, sub-second query performance of a proprietary data warehouse directly on top of the open data lake.
 
 ## The Architecture of Sonar
 
 Dremio Sonar achieves its extreme performance through a combination of several advanced architectural innovations.
 
 ### 1. Apache Arrow In-Memory Engine
-Dremio is built entirely upon **Apache Arrow**, the open-source standard for in-memory columnar analytics (co-created by Dremio founders). 
-When Sonar reads a Parquet file from S3, it instantly loads the data into RAM as an Apache Arrow buffer. All subsequent SQL operations (aggregations, joins, filters) are executed using Vectorized SIMD (Single Instruction, Multiple Data) processing directly on that columnar memory. This makes Sonar orders of magnitude faster than legacy engines (like Apache Hive) that relied on row-based memory or disk-spilling.
+Dremio is built entirely upon **[Apache Arrow](/knowledge/apache-arrow)**, the open-source standard for in-memory columnar analytics (co-created by Dremio founders). 
+When Sonar reads a Parquet file from S3, it instantly loads the data into RAM as an Apache Arrow buffer. All subsequent SQL operations (aggregations, joins, filters) are executed using Vectorized SIMD (Single Instruction, Multiple Data) processing directly on that columnar memory. This makes Sonar orders of magnitude faster than legacy engines (like [Apache Hive](/knowledge/apache-hive)) that relied on row-based memory or disk-spilling.
 
 ### 2. Data Reflections
 The ultimate superpower of Dremio Sonar is **Data Reflections**. 
 In a traditional data warehouse, if a dashboard query takes too long, a DBA must manually create OLAP cubes or materialized views. This requires writing complex maintenance scripts to keep them updated.
 
 Data Reflections are an automated, invisible optimization layer. A data engineer simply clicks a button in the Dremio UI to "Reflect" a dataset. Dremio automatically pre-computes the heavy aggregations or sorts the data and stores this optimized physical representation invisibly in the lake.
-When a Tableau dashboard sends a heavy SQL query to Dremio, Sonar's Query Planner intercepts the query. If the planner realizes it can answer the query using the pre-computed Reflection instead of scanning the raw 10TB table, it automatically rewrites the query and routes it to the Reflection. The query returns in milliseconds, and the user has no idea the data was swapped behind the scenes.
+When a [Tableau](/knowledge/tableau) dashboard sends a heavy SQL query to Dremio, Sonar's [Query Planner](/knowledge/query-planner) intercepts the query. If the planner realizes it can answer the query using the pre-computed Reflection instead of scanning the raw 10TB table, it automatically rewrites the query and routes it to the Reflection. The query returns in milliseconds, and the user has no idea the data was swapped behind the scenes.
 
 ### 3. Data Virtualization and Federation
-Sonar does not require you to move all your data to S3. It is a powerful **Data Virtualization** engine. 
-It can connect simultaneously to S3, Oracle, PostgreSQL, and Snowflake. A user can write a single SQL query in Dremio joining historical sales data in S3 with real-time inventory data in Oracle. Sonar utilizes advanced Compute Pushdown to force Oracle to do the heavy filtering locally, pulls the tiny result set into its own Arrow memory, joins it with the S3 data, and delivers the unified result to the user.
+Sonar does not require you to move all your data to S3. It is a powerful **[Data Virtualization](/knowledge/data-virtualization)** engine. 
+It can connect simultaneously to S3, Oracle, PostgreSQL, and Snowflake. A user can write a single SQL query in Dremio joining historical sales data in S3 with real-time inventory data in Oracle. Sonar utilizes advanced [Compute Pushdown](/knowledge/compute-pushdown) to force Oracle to do the heavy filtering locally, pulls the tiny result set into its own Arrow memory, joins it with the S3 data, and delivers the unified result to the user.
 
 ## The Semantic Layer
 
-Dremio Sonar is not just an engine; it provides an integrated **Semantic Layer**. 
+Dremio Sonar is not just an engine; it provides an integrated **[Semantic Layer](/knowledge/semantic-layer)**. 
 Instead of forcing business users to navigate cryptic folder structures in S3, data teams use Dremio to curate "Virtual Datasets" (Views). 
-They create a folder structure in Dremio that looks like `Finance -> Q3_Reports -> Golden_Sales`. The business user connects Power BI to Dremio, sees this clean folder structure, and queries the data. Because it is a virtual view, no data was actually copied or moved, maintaining strict single-source-of-truth governance.
+They create a folder structure in Dremio that looks like `Finance -> Q3_Reports -> Golden_Sales`. The business user connects [Power BI](/knowledge/power-bi) to Dremio, sees this clean folder structure, and queries the data. Because it is a virtual view, no data was actually copied or moved, maintaining strict single-source-of-truth governance.
 
 ## Conclusion
 

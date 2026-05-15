@@ -17,7 +17,7 @@ Data Engineering, conversely, has historically operated without these safety net
 
 ## The Mechanics of Data as Code
 
-Data as Code is implemented through specialized Data Catalogs (such as **Project Nessie** or **Dremio Arctic**) managing open table formats like **Apache Iceberg**.
+Data as Code is implemented through specialized [Data Catalogs](/knowledge/data-catalogs) (such as **[Project Nessie](/knowledge/project-nessie)** or **Dremio Arctic**) managing open table formats like **Apache Iceberg**.
 
 Because Iceberg data files (Parquet) are immutable and table states are managed entirely by metadata pointers, catalogs like Nessie can track the entire history of a lakehouse as a sequence of atomic commits. This enables Git-like operations at the catalog level.
 
@@ -34,7 +34,7 @@ As the ETL job progresses on the branch, every transaction is recorded as an imm
 The true power of Data as Code is realized during the Merge phase.
 In a traditional data lake, if an ETL pipeline needs to update 5 different tables, it must do so sequentially. If the pipeline crashes on the 4th table, the first 3 tables are already updated, leaving the database in an inconsistent, corrupted state.
 
-With Data as Code, the ETL job updates all 5 tables on the isolated branch. Once the job finishes, the engineer runs data quality tests (e.g., using Great Expectations) against the branch. 
+With Data as Code, the ETL job updates all 5 tables on the isolated branch. Once the job finishes, the engineer runs data quality tests (e.g., using [Great Expectations](/knowledge/great-expectations)) against the branch. 
 If the tests pass, they execute a merge:
 `MERGE BRANCH dev_sales_overhaul INTO main;`
 
@@ -47,4 +47,4 @@ The entire lakehouse instantly time-travels back to the exact state it was in pr
 
 ## Conclusion
 
-Data as Code is the final step in the maturation of DataOps. By lifting Git semantics from the application layer and applying them directly to the data catalog layer, organizations can achieve a level of data reliability, isolation, and agility that was previously impossible. It transforms the data lakehouse from a brittle, scary environment where changes are feared, into a robust engineering platform where data can be branched, tested, and shipped with absolute confidence.
+Data as Code is the final step in the maturation of [DataOps](/knowledge/dataops). By lifting Git semantics from the application layer and applying them directly to the data catalog layer, organizations can achieve a level of data reliability, isolation, and agility that was previously impossible. It transforms the data lakehouse from a brittle, scary environment where changes are feared, into a robust engineering platform where data can be branched, tested, and shipped with absolute confidence.

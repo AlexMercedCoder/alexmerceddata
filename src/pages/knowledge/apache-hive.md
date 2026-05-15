@@ -9,9 +9,9 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Apache Hive
 
-In the early days of "Big Data" (around 2008), companies were successfully dumping Petabytes of raw data into Apache Hadoop (HDFS). However, they encountered a massive human-resources problem. 
+In the early days of "Big Data" (around 2008), companies were successfully dumping Petabytes of raw data into [Apache Hadoop](/knowledge/apache-hadoop) (HDFS). However, they encountered a massive human-resources problem. 
 
-To actually read or analyze the data in Hadoop, a developer had to write complex, verbose Java code using the MapReduce framework. The business world, however, does not run on Java. It runs on SQL. The thousands of Data Analysts and Business Intelligence professionals at massive corporations could not access the data because they didn't know how to code in Java.
+To actually read or analyze the data in Hadoop, a developer had to write complex, verbose Java code using the [MapReduce](/knowledge/mapreduce) framework. The business world, however, does not run on Java. It runs on SQL. The thousands of Data Analysts and Business Intelligence professionals at massive corporations could not access the data because they didn't know how to code in Java.
 
 To solve this, engineers at Facebook created **Apache Hive**. 
 Hive is a data warehouse infrastructure built on top of Hadoop. Its sole purpose was to act as a translator: it allowed analysts to write standard, familiar SQL queries, and Hive would autonomously translate that SQL into complex Java MapReduce jobs behind the scenes.
@@ -32,7 +32,7 @@ Hive introduced its own dialect of SQL, called HiveQL. While it looked exactly l
 
 ## The Legacy of Hive
 
-While the Hive Query Engine (the part that translates SQL to MapReduce) has been entirely superseded by modern, lightning-fast in-memory engines like Apache Spark, Presto, and Dremio, **Hive fundamentally altered the trajectory of Data Engineering.**
+While the Hive Query Engine (the part that translates SQL to MapReduce) has been entirely superseded by modern, lightning-fast in-memory engines like [Apache Spark](/knowledge/apache-spark), Presto, and Dremio, **Hive fundamentally altered the trajectory of Data Engineering.**
 
 1.  **SQL on Big Data**: Hive proved that the traditional Data Warehouse paradigm (SQL) could be successfully mapped onto cheap, distributed Data Lakes. This birthed the modern "SQL-on-Hadoop" and "Data Lakehouse" movements.
 2.  **The Metastore Standard**: The Hive Metastore (HMS) became the undisputed, de-facto standard for tracking metadata across the entire Big Data ecosystem. Even today, if you use Apache Spark or Amazon Athena to query a data lake, they are almost certainly communicating with a Hive Metastore behind the scenes to find the files.

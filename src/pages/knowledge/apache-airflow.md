@@ -11,7 +11,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 As data architectures scaled in the mid-2010s, organizations found themselves managing hundreds of disparate ETL scripts written in different languages, scattered across different servers, all glued together by fragile `cron` jobs. If a single database script failed in the middle of the night, the entire downstream data pipeline cascaded into failure, requiring hours of manual debugging to untangle.
 
-In 2014, Maxime Beauchemin created a solution to this chaos while working at Airbnb. Open-sourced in 2015, **Apache Airflow** quickly became the undisputed, global industry standard for Data Orchestration.
+In 2014, Maxime Beauchemin created a solution to this chaos while working at Airbnb. Open-sourced in 2015, **Apache Airflow** quickly became the undisputed, global industry standard for [Data Orchestration](/knowledge/data-orchestration).
 
 Airflow is an open-source platform used to programmatically author, schedule, and monitor workflows. It fundamentally changed data engineering by allowing developers to define complex data pipelines entirely as standard Python code, managed via mathematical dependency graphs.
 
@@ -49,7 +49,7 @@ While Airflow is written in Python, you rarely use Airflow to actually *process*
 It does this through **Operators**. Operators are pre-built Python classes designed to trigger external systems.
 *   **BashOperator**: Executes a bash command.
 *   **PythonOperator**: Executes an arbitrary Python function.
-*   **SparkSubmitOperator**: Submits a massive data processing job to an Apache Spark cluster.
+*   **SparkSubmitOperator**: Submits a massive data processing job to an [Apache Spark](/knowledge/apache-spark) cluster.
 *   **SnowflakeOperator**: Executes a SQL query directly inside a Snowflake data warehouse.
 *   **HttpSensor**: Waits patiently and pings an external API until a file is ready to be downloaded.
 
@@ -59,7 +59,7 @@ By stringing these Operators together, an engineer can orchestrate a pipeline th
 
 While Airflow is the undisputed king of orchestration, its age has led to some challenges. Its original architecture was highly static and strictly schedule-based. It struggled with highly dynamic, event-driven pipelines (e.g., "Run this task exactly when a file lands in S3").
 
-However, the Airflow community has continuously evolved. Recent versions introduced **Dynamic Task Mapping** and **Data-Aware Scheduling**, allowing Airflow to trigger DAGs based on updates to physical datasets rather than strict time schedules, modernizing the platform to compete with newer orchestrators like Dagster and Prefect.
+However, the Airflow community has continuously evolved. Recent versions introduced **Dynamic Task Mapping** and **Data-Aware Scheduling**, allowing Airflow to trigger DAGs based on updates to physical datasets rather than strict time schedules, modernizing the platform to compete with newer orchestrators like [Dagster](/knowledge/dagster) and [Prefect](/knowledge/prefect).
 
 ## Conclusion
 

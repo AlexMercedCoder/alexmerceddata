@@ -25,16 +25,16 @@ Instead of gathering requirements for 6 months to build a monolithic "Enterprise
 ### 2. Version Control Everything (Data as Code)
 In a DataOps environment, absolutely nothing is done manually via a graphical interface.
 *   Data transformation logic is written in SQL (via **dbt**) and stored in Git.
-*   The orchestration pipeline is written in Python (via **Apache Airflow**) and stored in Git.
+*   The orchestration pipeline is written in Python (via **[Apache Airflow](/knowledge/apache-airflow)**) and stored in Git.
 *   The underlying infrastructure (like Snowflake warehouses or Dremio clusters) is defined using Terraform (Infrastructure as Code) and stored in Git.
 This guarantees that the entire data platform can be destroyed and perfectly recreated from scratch with a single command.
 
 ### 3. Automated Testing and CI/CD
 In legacy data teams, testing meant a human staring at a spreadsheet looking for errors. In DataOps, testing is entirely automated.
-When a data engineer modifies a SQL script and submits a Pull Request, a CI/CD pipeline (like GitHub Actions) automatically spins up a temporary database clone (often using Zero-Copy Cloning). It runs the new SQL script, executes hundreds of automated data quality assertions (using tools like Great Expectations), and explicitly verifies that the change will not break downstream Tableau dashboards. If the tests pass, the code is automatically merged and deployed to production.
+When a data engineer modifies a SQL script and submits a Pull Request, a CI/CD pipeline (like GitHub Actions) automatically spins up a temporary database clone (often using [Zero-Copy Cloning](/knowledge/zero-copy-cloning)). It runs the new SQL script, executes hundreds of automated data quality assertions (using tools like [Great Expectations](/knowledge/great-expectations)), and explicitly verifies that the change will not break downstream [Tableau](/knowledge/tableau) dashboards. If the tests pass, the code is automatically merged and deployed to production.
 
 ### 4. Continuous Observability
-Data pipelines will inevitably break because third-party APIs change or upstream software developers alter database schemas. DataOps embraces this reality by implementing robust Data Observability. The moment an anomaly occurs (e.g., a massive spike in null values), the DataOps platform instantly alerts the engineering team via Slack, often before the business users even notice the dashboard is broken.
+Data pipelines will inevitably break because third-party APIs change or upstream software developers alter database schemas. DataOps embraces this reality by implementing robust [Data Observability](/knowledge/data-observability). The moment an anomaly occurs (e.g., a massive spike in null values), the DataOps platform instantly alerts the engineering team via Slack, often before the business users even notice the dashboard is broken.
 
 ## The Cultural Shift
 

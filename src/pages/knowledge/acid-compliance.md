@@ -29,7 +29,7 @@ Atomicity guarantees that a transaction (which may consist of multiple SQL state
 In the bank transfer example, the database wraps Step 1 (Deduct) and Step 2 (Add) into a single Atomic Transaction. If the power fails after Step 1, the database guarantees that upon reboot, it will automatically rollback the deduction. Either both steps succeed completely, or neither step happens at all. There is no partial state.
 
 ### 2. Consistency (Rules Enforcement)
-*Note: This is different from the "Consistency" in the CAP Theorem.* 
+*Note: This is different from the "Consistency" in the [CAP Theorem](/knowledge/cap-theorem).* 
 ACID Consistency guarantees that a transaction can only bring the database from one valid state to another valid state, strictly enforcing all pre-defined rules (constraints, triggers, cascades).
 If the database schema has a rule that `account_balance >= 0`, and a transaction attempts to withdraw $1,000 from an account with only $500, the database will instantly abort and rollback the transaction, refusing to let the database enter an illegal state (a negative balance).
 
@@ -43,10 +43,10 @@ Durability guarantees that once a transaction is successfully committed and the 
 ## Bringing ACID to the Data Lakehouse
 
 The original Hadoop Data Lakes were emphatically NOT ACID compliant. 
-If an Apache Spark job was writing a massive 1-Terabyte dataset to the Data Lake and crashed halfway through, 500 Gigabytes of corrupted, partial data was left sitting in the folder. If a business analyst ran a Tableau dashboard at that exact moment, their charts would include the corrupted data. 
+If an [Apache Spark](/knowledge/apache-spark) job was writing a massive 1-Terabyte dataset to the Data Lake and crashed halfway through, 500 Gigabytes of corrupted, partial data was left sitting in the folder. If a business analyst ran a [Tableau](/knowledge/tableau) dashboard at that exact moment, their charts would include the corrupted data. 
 
-**Apache Iceberg**, **Delta Lake**, and **Apache Hudi** were invented specifically to solve this. 
-By introducing a transactional metadata layer (a log of snapshots), these Open Table Formats brought full ACID compliance to cheap cloud object storage (S3). 
+**Apache Iceberg**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)** were invented specifically to solve this. 
+By introducing a transactional metadata layer (a log of snapshots), these [Open Table Formats](/knowledge/open-table-formats) brought full ACID compliance to cheap cloud object storage (S3). 
 
 Now, when Spark writes data to an Iceberg table, it writes the Parquet files invisibly. The data is hidden from business users. Only when the Spark job finishes 100% successfully does Iceberg execute an *Atomic* commit, updating the metadata pointer. The business analysts instantly see the new data. If Spark crashes at 99%, the partial files are ignored, and the analysts are protected from the corrupted state.
 

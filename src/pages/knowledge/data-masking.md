@@ -31,7 +31,7 @@ DDM is the modern standard for analytical environments (like the Data Lakehouse)
 If the CEO (who has `Clearance_Level = High`) runs `SELECT credit_card FROM customers`, the database returns: `4555-1234-5678-9999`.
 If a Junior Analyst (who has `Clearance_Level = Low`) runs the exact same `SELECT credit_card FROM customers` query, the query engine intercepts the request, checks their identity, and alters the result in flight. The analyst receives: `XXXX-XXXX-XXXX-9999`.
 
-*   **Pro**: Zero data duplication. You maintain one single source of truth in Amazon S3, but serve different versions of reality to different users based on their security clearance.
+*   **Pro**: Zero data duplication. You maintain one single source of truth in [Amazon S3](/knowledge/amazon-s3), but serve different versions of reality to different users based on their security clearance.
 *   **Con**: Slight compute overhead, as the engine must apply the masking rules dynamically during query execution.
 
 ## Common Masking Techniques

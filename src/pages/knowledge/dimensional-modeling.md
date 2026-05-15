@@ -18,7 +18,7 @@ In 1996, Ralph Kimball published *The Data Warehouse Toolkit*, introducing a rev
 
 ## The Architecture: The Star Schema
 
-Dimensional Modeling abandons the fragmentation of 3NF. It reorganizes all enterprise data into two fundamental types of tables, creating what is universally known as the **Star Schema**.
+Dimensional Modeling abandons the fragmentation of 3NF. It reorganizes all enterprise data into two fundamental types of tables, creating what is universally known as the **[Star Schema](/knowledge/star-schema)**.
 
 ### 1. Fact Tables (The Verbs)
 The Fact table sits at the center of the "Star." It records the core, measurable events of the business (e.g., a Sale, a Website Click, an ATM Withdrawal). 
@@ -38,7 +38,7 @@ Dimension tables are small (thousands of rows) but very "wide." They contain all
 When an analyst queries a Star Schema, the database engine is highly optimized. If they want "Total Revenue for Blue Shirts in Q1," the engine filters the tiny `Product` and `Date` dimensions first, grabs the relevant IDs, and then executes a rapid, highly indexed scan of the massive Fact table. It requires minimal `JOIN` logic compared to a 3NF schema.
 
 ### 2. Human Intuition
-The Star Schema maps perfectly to human psychology. Business users naturally think in dimensions. A CEO asks: *"Show me Revenue (Fact) by Region (Dimension 1) by Quarter (Dimension 2)."* Because the database structure perfectly matches the business question, analysts can build Tableau or Power BI dashboards exponentially faster.
+The Star Schema maps perfectly to human psychology. Business users naturally think in dimensions. A CEO asks: *"Show me Revenue (Fact) by Region (Dimension 1) by Quarter (Dimension 2)."* Because the database structure perfectly matches the business question, analysts can build [Tableau](/knowledge/tableau) or [Power BI](/knowledge/power-bi) dashboards exponentially faster.
 
 ## Slowly Changing Dimensions (SCD)
 
@@ -52,4 +52,4 @@ This guarantees that historical Facts always join to the exact historical contex
 
 ## Conclusion
 
-Dimensional Modeling is the undisputed gold standard of Data Warehousing. Despite the invention of cloud computing, massive parallel processing, and the Data Lakehouse, Ralph Kimball's fundamental Star Schema design remains the most efficient, intuitive, and high-performance method for organizing enterprise data for business intelligence.
+Dimensional Modeling is the undisputed gold standard of [Data Warehousing](/knowledge/data-warehousing). Despite the invention of cloud computing, massive parallel processing, and the Data Lakehouse, Ralph Kimball's fundamental Star Schema design remains the most efficient, intuitive, and high-performance method for organizing enterprise data for business intelligence.

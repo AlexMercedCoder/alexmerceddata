@@ -24,7 +24,7 @@ The solution is the **Upsert** (a portmanteau of "Update" and "Insert"). An Upse
 
 ## The SQL Implementation: MERGE INTO
 
-In modern SQL databases and Open Table Formats, the Upsert logic is executed using the standard `MERGE INTO` statement. 
+In modern SQL databases and [Open Table Formats](/knowledge/open-table-formats), the Upsert logic is executed using the standard `MERGE INTO` statement. 
 
 Instead of writing Python logic to check for existence, the data engineer simply hands the 10,000 new records (the Source) to the database (the Target) and writes:
 
@@ -44,15 +44,15 @@ The database engine handles the complexity internally. It executes an incredibly
 
 Upserts are the absolute foundational mechanism for **Change Data Capture (CDC)** architectures. 
 
-In a CDC pipeline, a tool like Debezium constantly watches an operational database for changes. Whenever a row changes, it publishes a tiny JSON event to Apache Kafka: `{"operation": "update", "user_id": 123, "email": "new@email.com"}`. 
+In a CDC pipeline, a tool like Debezium constantly watches an operational database for changes. Whenever a row changes, it publishes a tiny JSON event to [Apache Kafka](/knowledge/apache-kafka): `{"operation": "update", "user_id": 123, "email": "new@email.com"}`. 
 
-A streaming engine (like Apache Flink or Spark Structured Streaming) reads these thousands of events per second from Kafka. Because events arrive continuously, and because networks can duplicate messages, the streaming engine relies entirely on Upserts. By executing continuous `MERGE INTO` operations against the Apache Iceberg table, the engine guarantees that no matter how many times an update arrives, the final Iceberg table remains perfectly synchronized with the upstream operational database.
+A streaming engine (like [Apache Flink](/knowledge/apache-flink) or Spark Structured Streaming) reads these thousands of events per second from Kafka. Because events arrive continuously, and because networks can duplicate messages, the streaming engine relies entirely on Upserts. By executing continuous `MERGE INTO` operations against the Apache Iceberg table, the engine guarantees that no matter how many times an update arrives, the final Iceberg table remains perfectly synchronized with the upstream operational database.
 
 ## Upserts in the Data Lakehouse
 
 Historically, executing an Upsert against a Data Lake (Hadoop/S3) was impossible because Parquet files are immutable. You couldn't update a row; you had to rewrite the entire file.
 
-The invention of **Apache Iceberg**, **Delta Lake**, and **Apache Hudi** explicitly solved this. These formats provide the metadata layer required to execute massive `MERGE INTO` operations against cloud object storage. 
+The invention of **Apache Iceberg**, **[Delta Lake](/knowledge/delta-lake)**, and **[Apache Hudi](/knowledge/apache-hudi)** explicitly solved this. These formats provide the metadata layer required to execute massive `MERGE INTO` operations against cloud object storage. 
 
 Depending on the configuration, they handle the Upsert in two ways:
 1.  **Copy-on-Write**: It copies the affected Parquet file, applies the Upserts in memory, and writes a new file to S3.

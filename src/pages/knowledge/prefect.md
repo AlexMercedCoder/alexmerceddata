@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/dp/B0GQW7CTML"
 
 ## Introduction to Prefect
 
-As data engineering matured beyond simple batch processing, the rigid, schedule-bound nature of early orchestrators (like Apache Airflow) became a severe liability. If an organization needed to trigger a pipeline dynamically (e.g., kicking off a machine learning job the exact millisecond a new image landed in an S3 bucket), Airflow's architecture struggled.
+As data engineering matured beyond simple batch processing, the rigid, schedule-bound nature of early orchestrators (like [Apache Airflow](/knowledge/apache-airflow)) became a severe liability. If an organization needed to trigger a pipeline dynamically (e.g., kicking off a machine learning job the exact millisecond a new image landed in an S3 bucket), Airflow's architecture struggled.
 
 **Prefect** emerged as a modern, Python-native orchestrator explicitly designed to solve the "Negative Engineering" problem—the massive amount of defensive code engineers write to handle retries, state management, and logging when things inevitably break.
 

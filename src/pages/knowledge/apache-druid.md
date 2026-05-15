@@ -18,7 +18,7 @@ In the modern data stack, traditional Data Warehouses (like Snowflake) are excep
 Druid achieves its blistering performance by combining the best features of a Data Warehouse, a Time-Series Database, and a Search System.
 
 ### 1. Ingestion: Real-Time and Batch
-Druid natively integrates with message brokers like **Apache Kafka** and Amazon Kinesis. It can ingest millions of streaming events per second. The moment an event hits Druid, it is instantly queryable. It does not wait for batch processing to complete.
+Druid natively integrates with message brokers like **[Apache Kafka](/knowledge/apache-kafka)** and Amazon Kinesis. It can ingest millions of streaming events per second. The moment an event hits Druid, it is instantly queryable. It does not wait for batch processing to complete.
 
 ### 2. Storage: The Segment Architecture
 Druid does not store data in raw Parquet files or rigid relational tables. It chunks data into highly optimized, time-partitioned blocks called **Segments**.

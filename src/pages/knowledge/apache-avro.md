@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Apache Avro
 
-In the landscape of big data file formats, Apache Parquet often receives the most attention due to its dominance in analytical workloads. However, the modern data architecture relies equally heavily on streaming ingestion (moving millions of events per second via systems like Apache Kafka). For these high-throughput, row-by-row streaming workloads, Parquet is highly inefficient.
+In the landscape of big data file formats, [Apache Parquet](/knowledge/apache-parquet) often receives the most attention due to its dominance in analytical workloads. However, the modern data architecture relies equally heavily on streaming ingestion (moving millions of events per second via systems like [Apache Kafka](/knowledge/apache-kafka)). For these high-throughput, row-by-row streaming workloads, Parquet is highly inefficient.
 
 This is where **Apache Avro** reigns supreme. 
 

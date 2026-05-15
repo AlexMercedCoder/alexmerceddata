@@ -28,9 +28,9 @@ When an application writes a new transaction to the Aurora database, the AWS sto
 *   **Cons**: It creates massive vendor lock-in. It only works if you use the specific operational database and the specific warehouse provided by the same vendor.
 
 ### 2. Data Virtualization (The "Federation" Approach)
-The truest form of Zero-ETL involves no data movement whatsoever. This is achieved using a **Virtual Data Warehouse** or federated query engine (like Dremio or Trino).
+The truest form of Zero-ETL involves no data movement whatsoever. This is achieved using a **[Virtual Data Warehouse](/knowledge/virtual-data-warehouse)** or federated query engine (like Dremio or Trino).
 
-In this architecture, the data remains permanently in the operational database. When a business analyst runs a Tableau dashboard, the federated query engine translates the query, pushes it directly down to the operational database in real-time, extracts only the necessary answer, and returns it.
+In this architecture, the data remains permanently in the operational database. When a business analyst runs a [Tableau](/knowledge/tableau) dashboard, the federated query engine translates the query, pushes it directly down to the operational database in real-time, extracts only the necessary answer, and returns it.
 *   **Pros**: Absolute real-time analytics. Prevents vendor lock-in. Saves massive amounts of storage costs because data is never duplicated.
 *   **Cons**: If analysts run poorly optimized, massive aggregations, they can overwhelm the operational database, potentially crashing the live application (e.g., taking down the e-commerce storefront).
 
@@ -46,7 +46,7 @@ With HTAP, a Zero-ETL architecture is flawless. The live application writes to t
 ## The Role of Open Table Formats
 
 The Open Data Lakehouse is also pioneering a vendor-neutral approach to Zero-ETL. 
-By standardizing on **Apache Iceberg**, organizations can bypass proprietary syncs. Modern operational databases (like MongoDB or Confluent Kafka) are beginning to support native Iceberg exports. The operational database automatically writes its state changes directly into an Iceberg table in Amazon S3. Any query engine (Dremio, Spark, Snowflake) can then instantly query that S3 data without any ETL pipeline required to load it.
+By standardizing on **Apache Iceberg**, organizations can bypass proprietary syncs. Modern operational databases (like MongoDB or Confluent Kafka) are beginning to support native Iceberg exports. The operational database automatically writes its state changes directly into an Iceberg table in [Amazon S3](/knowledge/amazon-s3). Any query engine (Dremio, Spark, Snowflake) can then instantly query that S3 data without any ETL pipeline required to load it.
 
 ## Conclusion
 

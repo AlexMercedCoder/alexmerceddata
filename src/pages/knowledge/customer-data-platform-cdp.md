@@ -15,7 +15,7 @@ In the digital age, a customer interacts with a brand across dozens of different
 3. They buy a product using a physical credit card in a brick-and-mortar store.
 4. They call the customer support hotline.
 
-Historically, this data was scattered across 4 different **Data Silos** (Google Analytics, Facebook Ads, the POS Database, and Zendesk). To the company, it looked like 4 completely different people. 
+Historically, this data was scattered across 4 different **[Data Silos](/knowledge/data-silos)** (Google Analytics, Facebook Ads, the POS Database, and Zendesk). To the company, it looked like 4 completely different people. 
 
 A **Customer Data Platform (CDP)** is a specialized, packaged software solution designed to solve this exact problem. It ingests this fragmented, multi-channel data, cleans it, and mathematically stitches it together to create a single, unified, 360-degree profile of the individual customer.
 
@@ -47,7 +47,7 @@ Historically, to use a CDP, you had to physically copy all your enterprise data 
 
 ### The Composable CDP (Modern)
 The modern solution is the **Composable CDP** (pioneered by tools like Hightouch and Census). 
-A Composable CDP acknowledges that the company already spent millions of dollars building a perfect **Data Lakehouse** (with Apache Iceberg) to store all their customer data. Instead of copying the data into a new database, the Composable CDP simply sits directly on top of the existing Lakehouse. It executes the audience segmentation queries directly against the Lakehouse via **Reverse ETL**, and pushes the results to the marketing channels. 
+A Composable CDP acknowledges that the company already spent millions of dollars building a perfect **Data Lakehouse** (with Apache Iceberg) to store all their customer data. Instead of copying the data into a new database, the Composable CDP simply sits directly on top of the existing Lakehouse. It executes the audience segmentation queries directly against the Lakehouse via **[Reverse ETL](/knowledge/reverse-etl)**, and pushes the results to the marketing channels. 
 
 ## Conclusion
 

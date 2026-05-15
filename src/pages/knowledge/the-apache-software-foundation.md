@@ -13,7 +13,7 @@ In the modern era of Big Data and Artificial Intelligence, the foundational tech
 
 **The Apache Software Foundation (ASF)** is the world's largest open-source foundation. Founded in 1999, it provides organizational, legal, and financial support for hundreds of the most critical software projects in existence. 
 
-If a piece of software has "Apache" in its name (e.g., Apache Spark), it means the project is officially governed by the ASF.
+If a piece of software has "Apache" in its name (e.g., [Apache Spark](/knowledge/apache-spark)), it means the project is officially governed by the ASF.
 
 ## The Apache Way
 
@@ -36,7 +36,7 @@ For example, Apache Iceberg was created by Netflix and Apple. However, the Proje
 
 A project does not become a Top-Level Apache Project overnight. It must go through the **Apache Incubator**.
 
-When a company (like Uber, who created Apache Hudi) wants to donate their code to the ASF, they enter the Incubator. During this phase, ASF Mentors teach the project's developers how to follow "The Apache Way." They must prove they can build a diverse community of contributors outside of Uber, and they must undergo strict legal audits to ensure the codebase contains no copyrighted or stolen code. 
+When a company (like Uber, who created [Apache Hudi](/knowledge/apache-hudi)) wants to donate their code to the ASF, they enter the Incubator. During this phase, ASF Mentors teach the project's developers how to follow "The Apache Way." They must prove they can build a diverse community of contributors outside of Uber, and they must undergo strict legal audits to ensure the codebase contains no copyrighted or stolen code. 
 
 Once a project graduates from the Incubator, it becomes a Top-Level Project (TLP), signaling to the enterprise world that the software is legally safe, mature, and backed by a resilient global community.
 

@@ -30,7 +30,7 @@ The CDO is responsible for turning raw data into money. They must work with the 
 The CDO is the ultimate guardian of corporate data privacy. If the company suffers a catastrophic data breach, or if the company is fined $100 Million by the European Union for violating the GDPR, the CDO is the executive held responsible. They must establish strict access controls, data quality metrics, and ethical AI frameworks to ensure the company uses data aggressively but legally.
 
 ### 3. Data Culture and Literacy
-The CDO must transform the human element of the company. They are responsible for destroying data silos (where the Marketing team refuses to share data with the Sales team) and championing a culture of **Data Literacy**, ensuring that every employee—from the call center to the boardroom—understands how to make decisions based on statistical reality rather than gut instinct.
+The CDO must transform the human element of the company. They are responsible for destroying data silos (where the Marketing team refuses to share data with the Sales team) and championing a culture of **[Data Literacy](/knowledge/data-literacy)**, ensuring that every employee—from the call center to the boardroom—understands how to make decisions based on statistical reality rather than gut instinct.
 
 ## CDO vs. CIO vs. CTO
 

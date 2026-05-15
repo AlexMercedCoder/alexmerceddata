@@ -15,7 +15,7 @@ In the era of on-premises computing, data was stored in two primary ways:
 
 As the internet exploded, companies needed to store billions of photos, videos, and log files. File and Block storage architectures simply broke at that scale.
 
-The solution was **Object Storage**, commercialized most famously by Amazon Web Services in 2006 as **Amazon S3** (Simple Storage Service). Object Storage completely abandoned the concept of folders and hard drives, creating an infinitely scalable, flat repository that became the foundational bedrock of the entire cloud computing revolution.
+The solution was **Object Storage**, commercialized most famously by Amazon Web Services in 2006 as **[Amazon S3](/knowledge/amazon-s3)** (Simple Storage Service). Object Storage completely abandoned the concept of folders and hard drives, creating an infinitely scalable, flat repository that became the foundational bedrock of the entire cloud computing revolution.
 
 ## The Architecture of Object Storage
 
@@ -24,7 +24,7 @@ In an Object Storage system (like Amazon S3, Azure Data Lake Storage [ADLS], or 
 Every piece of data is treated as a discrete **Object**.
 
 An Object consists of three things:
-1.  **The Data (The Payload)**: The actual sequence of bytes (a JPEG image, an Apache Parquet file, a JSON document).
+1.  **The Data (The Payload)**: The actual sequence of bytes (a JPEG image, an [Apache Parquet](/knowledge/apache-parquet) file, a JSON document).
 2.  **The Metadata**: Highly customizable tags attached directly to the object. Instead of relying on a folder name to provide context, you can tag an object with `{"author": "Alex", "project": "Lakehouse", "retention_days": "365"}`.
 3.  **A Globally Unique Identifier (URI/Key)**: A long, unique string used to retrieve the object.
 

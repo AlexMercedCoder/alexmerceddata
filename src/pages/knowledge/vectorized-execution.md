@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Vectorized Execution
 
-In the continuous quest to make databases faster, software engineers spent decades optimizing hard drives, memory management, and network I/O. However, as data architectures shifted from spinning hard drives to high-speed NVMe SSDs and entirely in-memory processing (like Apache Spark), a new, unexpected bottleneck emerged: **The CPU itself.**
+In the continuous quest to make databases faster, software engineers spent decades optimizing hard drives, memory management, and network I/O. However, as data architectures shifted from spinning hard drives to high-speed NVMe SSDs and entirely in-memory processing (like [Apache Spark](/knowledge/apache-spark)), a new, unexpected bottleneck emerged: **The CPU itself.**
 
 Traditional relational databases (like PostgreSQL or MySQL) execute queries using a "Volcano" or "Row-at-a-Time" processing model. 
 If an analyst runs `SELECT SUM(salary) FROM employees`, the database engine reads Row 1, extracts the salary, adds it to a running total. Then it calls a function to read Row 2, extracts the salary, adds it to the total. This continues for every single row. 
@@ -28,7 +28,7 @@ CPUs are incredibly fast, but RAM is relatively slow. To bridge the gap, CPUs ha
 In a traditional row-based database, a row contains mixed data types (e.g., `[String: John, Int: 35, String: NY]`). If the CPU only wants to sum the ages, it pulls the entire row into its tiny cache, wasting 80% of the cache space on irrelevant strings. It does the math, flushes the cache, and pulls the next row. This constant flushing and reloading is called a **Cache Miss**, and it destroys performance.
 
 ### Columnar Memory and Vectors
-Vectorized Execution engines (like Dremio, Snowflake, or ClickHouse) never use row-based memory. They use **Columnar Memory** (specifically, the **Apache Arrow** format). 
+Vectorized Execution engines (like Dremio, Snowflake, or [ClickHouse](/knowledge/clickhouse)) never use row-based memory. They use **Columnar Memory** (specifically, the **[Apache Arrow](/knowledge/apache-arrow)** format). 
 
 In Arrow, all the `salary` integers are stored perfectly next to each other in RAM. 
 Instead of processing one row at a time, a Vectorized engine grabs a "Vector" (a contiguous batch of, say, 4,096 salaries) and loads it into the CPU cache in one single swoop. Because the data is uniform, there is zero wasted cache space.
@@ -45,8 +45,8 @@ By eliminating 4,095 function calls and perfectly utilizing the CPU cache, Vecto
 
 Vectorized execution is the invisible technology that makes the modern Data Lakehouse viable.
 
-1.  **Synergy with Parquet**: Apache Parquet is a columnar storage format on disk. When a Vectorized engine reads a Parquet file, it does not need to parse the data into rows. It simply copies the column straight from the disk into a vectorized Apache Arrow memory buffer and immediately executes SIMD mathematics on it. The synergy between columnar storage and vectorized compute is the core of modern performance.
-2.  **Engine Evolution**: Legacy Hadoop engines (like Apache Hive) originally used row-at-a-time processing, which is why they were so slow. Modern engines like Trino, Dremio, and Apache Spark (via its Photon engine or DataFusion) have completely rebuilt their internal architectures around Vectorized Execution.
+1.  **Synergy with Parquet**: [Apache Parquet](/knowledge/apache-parquet) is a columnar storage format on disk. When a Vectorized engine reads a Parquet file, it does not need to parse the data into rows. It simply copies the column straight from the disk into a vectorized Apache Arrow memory buffer and immediately executes SIMD mathematics on it. The synergy between columnar storage and vectorized compute is the core of modern performance.
+2.  **Engine Evolution**: Legacy Hadoop engines (like [Apache Hive](/knowledge/apache-hive)) originally used row-at-a-time processing, which is why they were so slow. Modern engines like Trino, Dremio, and Apache Spark (via its Photon engine or DataFusion) have completely rebuilt their internal architectures around Vectorized Execution.
 3.  **Data Science Acceleration**: The transition from legacy Python libraries (which process data row-by-row) to modern libraries like **Polars** (which uses Apache Arrow and vectorized Rust execution) has brought this exact same 100x speed increase to laptops and local data science workflows.
 
 ## Conclusion

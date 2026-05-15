@@ -22,7 +22,7 @@ However, you cannot take a 300-page PDF of a corporate financial report, run it 
 There is no "one size fits all" chunking strategy. It requires analyzing the structure of your specific data.
 
 ### 1. Fixed-Size Chunking (The Naive Approach)
-The simplest method. You instruct the code (via LlamaIndex or LangChain) to split the document every 500 words. 
+The simplest method. You instruct the code (via [LlamaIndex](/knowledge/llamaindex) or [LangChain](/knowledge/langchain)) to split the document every 500 words. 
 To prevent accidentally cutting a sentence in half (which destroys the semantic meaning), engineers use an **Overlap**. 
 *   Chunk 1: Words 0 to 500.
 *   Chunk 2: Words 450 to 950 (A 50-word overlap).

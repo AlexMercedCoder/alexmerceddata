@@ -32,11 +32,11 @@ If your data pipeline enriches internal data by hitting an external API (e.g., S
 
 ## How to Execute a Backfill
 
-Modern Data Orchestrators (like Apache Airflow, Dagster, or Prefect) are explicitly designed to handle the complexity of backfills.
+Modern Data Orchestrators (like [Apache Airflow](/knowledge/apache-airflow), [Dagster](/knowledge/dagster), or [Prefect](/knowledge/prefect)) are explicitly designed to handle the complexity of backfills.
 
 1.  **Idempotency**: The absolute prerequisite for backfilling is that the pipeline must be idempotent. If the backfill accidentally processes July 4th twice, it must not duplicate the data. 
-2.  **Partitioning Strategy**: In an Apache Iceberg lakehouse, backfills rely heavily on partitions. The data engineer instructs Airflow to trigger the backfill. Airflow spins up 30 parallel Apache Spark clusters. Each cluster is assigned one specific day. Spark executes the logic and uses the `INSERT OVERWRITE PARTITION` command. Instead of updating rows one-by-one, Spark simply deletes the old folder for that specific day and replaces it entirely with the newly calculated data.
-3.  **Shadow Deployment**: Because backfills are dangerous, data teams often write the backfilled data to a temporary "Shadow Table." They then run Data Quality checks (e.g., Great Expectations) comparing the shadow table to the production table. Only when they mathematically prove the backfill is correct do they execute a simple metadata swap to push the backfill into production.
+2.  **Partitioning Strategy**: In an Apache Iceberg lakehouse, backfills rely heavily on partitions. The data engineer instructs Airflow to trigger the backfill. Airflow spins up 30 parallel [Apache Spark](/knowledge/apache-spark) clusters. Each cluster is assigned one specific day. Spark executes the logic and uses the `INSERT OVERWRITE PARTITION` command. Instead of updating rows one-by-one, Spark simply deletes the old folder for that specific day and replaces it entirely with the newly calculated data.
+3.  **Shadow Deployment**: Because backfills are dangerous, data teams often write the backfilled data to a temporary "Shadow Table." They then run [Data Quality](/knowledge/data-quality) checks (e.g., [Great Expectations](/knowledge/great-expectations)) comparing the shadow table to the production table. Only when they mathematically prove the backfill is correct do they execute a simple metadata swap to push the backfill into production.
 
 ## Conclusion
 

@@ -11,7 +11,7 @@ try {
 		link: item.link,
 		date: new Date(item.pubDate || item.isoDate).toLocaleDateString(),
 		description: item.contentSnippet ? item.contentSnippet.substring(0, 150) + '...' : ''
-	}));
+	})).filter(blog => !blog.link.endsWith('/index/'));
 } catch (error) {
 	console.error('Error fetching blog feed:', error);
 }

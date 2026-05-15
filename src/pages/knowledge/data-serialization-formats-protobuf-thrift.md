@@ -28,7 +28,7 @@ However, JSON is **terrible** for high-performance, internal microservice commun
 
 ## The Solution: Binary Serialization
 
-For massive, high-throughput distributed systems (like Google's internal microservices or an Apache Kafka stream), engineers use **Binary Serialization Formats** like **Protocol Buffers (Protobuf)** (developed by Google) or **Apache Thrift** (developed by Facebook).
+For massive, high-throughput distributed systems (like Google's internal microservices or an [Apache Kafka](/knowledge/apache-kafka) stream), engineers use **Binary Serialization Formats** like **Protocol Buffers (Protobuf)** (developed by Google) or **Apache Thrift** (developed by Facebook).
 
 These formats abandon human readability in exchange for blistering machine speed.
 

@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Z-Ordering
 
-To achieve maximum query performance in a Data Lakehouse, the golden rule is simple: **Read less data.** Query engines achieve this using Predicate Pushdown—checking the min/max statistics in a Parquet file's metadata to see if the file contains relevant data. 
+To achieve maximum query performance in a Data Lakehouse, the golden rule is simple: **Read less data.** Query engines achieve this using [Predicate Pushdown](/knowledge/predicate-pushdown)—checking the min/max statistics in a Parquet file's metadata to see if the file contains relevant data. 
 
 However, min/max statistics only work if the data inside the files is physically sorted. 
 
@@ -36,7 +36,7 @@ The result is data clustering that is evenly balanced across multiple columns.
 
 ## The Impact on Query Performance
 
-When a data engineering team applies Z-Ordering to a massive Lakehouse table (supported by formats like Delta Lake and Apache Iceberg), the impact on performance is profound.
+When a data engineering team applies Z-Ordering to a massive Lakehouse table (supported by formats like [Delta Lake](/knowledge/delta-lake) and Apache Iceberg), the impact on performance is profound.
 
 Because the data is clustered equally across the chosen dimensions, the min/max statistics for *all* the Z-Ordered columns become incredibly tight and highly effective.
 
@@ -46,7 +46,7 @@ Because the data is clustered equally across the chosen dimensions, the min/max 
 
 ## Best Practices for Implementing Z-Ordering
 
-While powerful, Z-Ordering is computationally expensive to execute. Re-clustering a petabyte table requires spinning up a massive Apache Spark cluster to shuffle and rewrite millions of Parquet files. Therefore, it must be used strategically.
+While powerful, Z-Ordering is computationally expensive to execute. Re-clustering a petabyte table requires spinning up a massive [Apache Spark](/knowledge/apache-spark) cluster to shuffle and rewrite millions of Parquet files. Therefore, it must be used strategically.
 
 1.  **Limit the Columns**: Z-Ordering loses its mathematical effectiveness if applied to too many dimensions. Best practices dictate Z-Ordering on 2 to 4 high-cardinality columns that are frequently used together in SQL `WHERE` clauses.
 2.  **Combine with Partitioning**: Z-Ordering does not replace traditional folder-based partitioning; it complements it. A massive table should be macro-partitioned by `Year/Month` (which is cheap and effective), and then Z-Ordered *within* those monthly partitions based on `customer_id` and `product_id`.

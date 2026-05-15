@@ -9,9 +9,9 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Business Intelligence (BI)
 
-At the end of every massively complex data engineering pipeline—after the data has been ingested from Kafka, stored in Apache Iceberg, transformed by dbt, and governed by a Semantic Layer—sits the ultimate consumer: The Business User.
+At the end of every massively complex data engineering pipeline—after the data has been ingested from Kafka, stored in Apache Iceberg, transformed by dbt, and governed by a [Semantic Layer](/knowledge/semantic-layer)—sits the ultimate consumer: The Business User.
 
-The CEO does not care about Parquet files or Vectorized Execution. The CEO cares about one thing: *"Are revenues going up or down?"*
+The CEO does not care about Parquet files or [Vectorized Execution](/knowledge/vectorized-execution). The CEO cares about one thing: *"Are revenues going up or down?"*
 
 **Business Intelligence (BI)** is the set of strategies, processes, applications, and technologies used by enterprises to analyze data and present actionable information. It is the final translation layer that converts billions of rows of raw database records into visual charts, dashboards, and KPIs (Key Performance Indicators) that executives use to make strategic decisions.
 
@@ -23,7 +23,7 @@ The BI industry has undergone three major evolutionary phases.
 In the 1990s and 2000s, BI tools (like early Cognos or SAP BusinessObjects) were incredibly complex. They required an IT professional to build "OLAP Cubes" and write complex SQL just to generate a static, printed PDF report for the executives. If an executive wanted to change a filter, they had to submit an IT ticket and wait two weeks.
 
 ### 2. Self-Service BI (The Dashboard Era)
-In the 2010s, tools like **Tableau**, **Microsoft Power BI**, and **Looker** revolutionized the industry. They introduced intuitive, drag-and-drop graphical interfaces. An accountant with zero SQL knowledge could connect to a database, drag the "Revenue" and "Region" metrics onto a canvas, and instantly generate an interactive map. This democratized data, allowing business users to explore data independently.
+In the 2010s, tools like **[Tableau](/knowledge/tableau)**, **Microsoft [Power BI](/knowledge/power-bi)**, and **[Looker](/knowledge/looker)** revolutionized the industry. They introduced intuitive, drag-and-drop graphical interfaces. An accountant with zero SQL knowledge could connect to a database, drag the "Revenue" and "Region" metrics onto a canvas, and instantly generate an interactive map. This democratized data, allowing business users to explore data independently.
 
 ### 3. Augmented BI (The AI Era)
 Modern BI platforms are integrating Generative AI and Machine Learning directly into the interface. Instead of building a dashboard, a user simply types a question in natural language: *"Why did sales dip in Germany last Q3?"* The BI tool uses an LLM to query the Semantic Layer, mathematically analyzes the anomalies, and generates both a chart and a written explanation instantly.

@@ -9,13 +9,13 @@ cta_link: "https://hello.dremio.com/wp-apache-polaris-guide-reg.html"
 
 ## Introduction to the Hive Metastore
 
-A Data Lake (whether built on Hadoop HDFS or Amazon S3) is inherently "dumb." It is just a massive digital filing cabinet filled with millions of raw Parquet, CSV, and JSON files. 
+A Data Lake (whether built on Hadoop HDFS or [Amazon S3](/knowledge/amazon-s3)) is inherently "dumb." It is just a massive digital filing cabinet filled with millions of raw Parquet, CSV, and JSON files. 
 
 If a Data Analyst writes a SQL query: `SELECT * FROM sales_table WHERE year = 2024`, the Cloud Object Storage has no idea what `sales_table` is. It doesn't understand SQL tables, columns, or data types.
 
-To bridge the gap between SQL engines and raw files, the industry relies on a **Data Catalog**. For over a decade, the absolute, undisputed king of Data Catalogs has been the **Hive Metastore (HMS)**.
+To bridge the gap between SQL engines and raw files, the industry relies on a **Data Catalog**. For over a decade, the absolute, undisputed king of [Data Catalogs](/knowledge/data-catalogs) has been the **Hive Metastore (HMS)**.
 
-Originally built as a subcomponent of Apache Hive, the HMS became so critical that every major compute engine in the world (Apache Spark, Presto, Trino, Dremio) adopted it as their central source of truth.
+Originally built as a subcomponent of [Apache Hive](/knowledge/apache-hive), the HMS became so critical that every major compute engine in the world ([Apache Spark](/knowledge/apache-spark), Presto, Trino, Dremio) adopted it as their central source of truth.
 
 ## How the Hive Metastore Works
 
@@ -41,7 +41,7 @@ This causes two massive problems:
 
 ## The Evolution: Apache Iceberg
 
-Because of the severe limitations of the Hive Metastore's directory-based tracking, the industry has aggressively moved toward modern Open Table Formats like **Apache Iceberg**. 
+Because of the severe limitations of the Hive Metastore's directory-based tracking, the industry has aggressively moved toward modern [Open Table Formats](/knowledge/open-table-formats) like **Apache Iceberg**. 
 
 Iceberg replaces the directory-level tracking of the HMS with strict, cryptographic **File-Level Tracking**. Iceberg keeps a manifest file that explicitly lists the exact name and path of *every single file* in the table. This completely eliminates the slow S3 "List" operations and provides mathematically guaranteed ACID transactions on the Data Lake. 
 

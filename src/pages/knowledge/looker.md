@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Looker
 
-In the mid-2010s, self-service BI tools like Tableau and Power BI empowered business analysts to build dashboards rapidly. However, this empowerment led to a massive enterprise crisis known as **Metrics Chaos**. 
+In the mid-2010s, self-service BI tools like [Tableau](/knowledge/tableau) and [Power BI](/knowledge/power-bi) empowered business analysts to build dashboards rapidly. However, this empowerment led to a massive enterprise crisis known as **Metrics Chaos**. 
 
 Because every analyst could download their own data and write their own math inside their own dashboard, the company lost its single source of truth. The Marketing dashboard said revenue was $10M, while the Finance dashboard said revenue was $8M. 
 
@@ -36,12 +36,12 @@ Looker operates strictly as a SQL generator.
 When a user clicks a filter on a Looker dashboard, Looker reads the LookML definitions, dynamically generates an incredibly complex, highly optimized SQL query, and pushes it down to the underlying Data Warehouse (like Google BigQuery, Snowflake, or an Iceberg Lakehouse powered by Dremio).
 
 This architecture has two massive advantages:
-1.  **No Data Silos**: Because Looker never extracts data, the organization's data remains perfectly centralized and governed in the main Data Warehouse.
+1.  **No [Data Silos](/knowledge/data-silos)**: Because Looker never extracts data, the organization's data remains perfectly centralized and governed in the main Data Warehouse.
 2.  **Infinite Scalability**: Looker's speed is entirely dependent on the underlying database. If you connect Looker to a 100-node BigQuery cluster, Looker can instantaneously query petabytes of data, a feat impossible for tools that try to load data into local RAM.
 
 ## The Headless BI Movement
 
-Looker's architectural philosophy pioneered what is now known as **Headless BI** or the **Universal Semantic Layer**. 
+Looker's architectural philosophy pioneered what is now known as **Headless BI** or the **Universal [Semantic Layer](/knowledge/semantic-layer)**. 
 
 Because the metrics are defined in code (LookML), they don't just have to be viewed in Looker dashboards. An engineer can use Looker's API to extract the mathematically perfect `total_revenue` number and embed it directly into a custom React web application, or feed it into a Python machine learning script. The "Head" (the visualization) is decoupled from the "Body" (the math).
 

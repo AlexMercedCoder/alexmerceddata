@@ -20,7 +20,7 @@ While effective, lexical search is fundamentally brittle. It fails to understand
 Semantic search abandons keyword indexing in favor of mathematical mapping. This is achieved through a multi-step process utilizing Embedding Models and Vector Databases.
 
 ### 1. Vector Embeddings
-The journey begins with an **Embedding Model** (such as BERT, OpenAI's `text-embedding-3`, or open-source models from Hugging Face). An embedding model is a neural network trained on vast amounts of human language. 
+The journey begins with an **Embedding Model** (such as BERT, OpenAI's `text-embedding-3`, or open-source models from [Hugging Face](/knowledge/hugging-face)). An embedding model is a neural network trained on vast amounts of human language. 
 
 When you pass a sentence into this model, it outputs a **Vector Embedding**—a dense array of hundreds or thousands of floating-point numbers (e.g., `[0.014, -0.832, 0.441, ...]`).
 
@@ -45,7 +45,7 @@ While semantic search feels like magic, it introduces unique engineering challen
 
 ### 1. The Exact Match Failure
 Semantic search models are trained to group concepts, but they struggle with highly specific identifiers. If a mechanic searches an inventory system for an exact part number like `TX-884-J`, the embedding model might group it loosely with "machine parts" and return completely irrelevant parts (like `TX-112-B`) simply because their vectors are close. 
-**Solution:** Modern architectures use **Hybrid Search**. This involves running a traditional BM25 keyword search in parallel with the semantic vector search. The results are merged using an algorithm like Reciprocal Rank Fusion (RRF), ensuring the user gets both semantic understanding and exact keyword precision.
+**Solution:** Modern architectures use **[Hybrid Search](/knowledge/hybrid-search)**. This involves running a traditional BM25 keyword search in parallel with the semantic vector search. The results are merged using an algorithm like Reciprocal Rank Fusion (RRF), ensuring the user gets both semantic understanding and exact keyword precision.
 
 ### 2. High Computational Cost (ANN Algorithms)
 Calculating the exact mathematical distance between a query vector and *one billion* document vectors in real-time is computationally impossible.

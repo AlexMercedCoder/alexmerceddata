@@ -9,9 +9,9 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to the ORC Format
 
-In the highly competitive landscape of big data storage formats, Apache Parquet often receives the most mainstream attention due to its tight integration with Apache Spark. However, Parquet is not the only heavy hitter in the arena. The **Optimized Row Columnar (ORC)** format is a highly advanced, fiercely competitive open-source file format designed explicitly for Hadoop-based analytical workloads, offering compression ratios and query speeds that frequently outpace its rivals in specific use cases.
+In the highly competitive landscape of big data storage formats, [Apache Parquet](/knowledge/apache-parquet) often receives the most mainstream attention due to its tight integration with [Apache Spark](/knowledge/apache-spark). However, Parquet is not the only heavy hitter in the arena. The **Optimized Row Columnar (ORC)** format is a highly advanced, fiercely competitive open-source file format designed explicitly for Hadoop-based analytical workloads, offering compression ratios and query speeds that frequently outpace its rivals in specific use cases.
 
-Created in 2013 as part of the "Stinger Initiative" to drastically accelerate Apache Hive, ORC was designed to overcome the severe limitations of legacy text formats (CSV, SequenceFile) and the older RCFile format. Today, ORC is a first-class citizen in the modern data lakehouse, fully supported by table formats like Apache Iceberg and compute engines like Trino and Dremio.
+Created in 2013 as part of the "Stinger Initiative" to drastically accelerate [Apache Hive](/knowledge/apache-hive), ORC was designed to overcome the severe limitations of legacy text formats (CSV, SequenceFile) and the older RCFile format. Today, ORC is a first-class citizen in the modern data lakehouse, fully supported by table formats like Apache Iceberg and compute engines like Trino and Dremio.
 
 ## The Architecture of an ORC File
 
@@ -39,9 +39,9 @@ Because ORC Stripes are so large (256MB+), the dictionaries built for string col
 Because ORC was built specifically to accelerate Hive, the integration is flawless. Hive supports ORC natively, including advanced features like ACID transactions within Hive (using delta files). For organizations migrating massive, legacy Hive data warehouses to the cloud, ORC is often the path of least resistance and maximum performance.
 
 ### 3. Predicate Pushdown and Bloom Filters
-Like Parquet, ORC supports aggressive Predicate Pushdown. When an engine evaluates a `WHERE` clause, it checks the file footer, skips irrelevant Stripes, checks the Stripe index, and skips irrelevant 10,000-row blocks. 
+Like Parquet, ORC supports aggressive [Predicate Pushdown](/knowledge/predicate-pushdown). When an engine evaluates a `WHERE` clause, it checks the file footer, skips irrelevant Stripes, checks the Stripe index, and skips irrelevant 10,000-row blocks. 
 
-Furthermore, ORC has native support for **Bloom Filters**. A Bloom Filter is a highly efficient probabilistic data structure embedded in the file metadata. If a query asks for `WHERE user_id = 'A123'`, the engine checks the Bloom Filter. The filter can say with 100% certainty if the `user_id` does *not* exist in the file, allowing the engine to instantly skip the entire 256MB stripe without reading a single row of data.
+Furthermore, ORC has native support for **[Bloom Filters](/knowledge/bloom-filters)**. A Bloom Filter is a highly efficient probabilistic data structure embedded in the file metadata. If a query asks for `WHERE user_id = 'A123'`, the engine checks the Bloom Filter. The filter can say with 100% certainty if the `user_id` does *not* exist in the file, allowing the engine to instantly skip the entire 256MB stripe without reading a single row of data.
 
 ### 4. Advanced Type Support
 ORC supports a highly complex, nested type system. It handles complex data structures (Arrays, Maps, Structs, and Unions) natively and efficiently, making it an excellent format for storing deeply nested, semi-structured data originating from JSON APIs.

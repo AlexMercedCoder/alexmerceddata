@@ -1,0 +1,258 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths({ paginate }) {
+	const allKnowledge = Object.values(import.meta.glob('./*.md', { eager: true }));
+	const sorted = allKnowledge.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+	return paginate(sorted, { pageSize: 24 });
+}
+
+const { page } = Astro.props;
+
+// For client-side search and filtering, we need all items
+const allKnowledgeForClient = Object.values(import.meta.glob('./*.md', { eager: true })).map(p => ({
+	title: p.frontmatter.title,
+	description: p.frontmatter.description,
+	date: new Date(p.frontmatter.date).toLocaleDateString(),
+	tags: p.frontmatter.tags || [],
+	url: p.url
+}));
+
+// Extract unique categories/tags for the filter dropdown
+const allTags = [...new Set(allKnowledgeForClient.flatMap(p => p.tags))].sort();
+---
+
+<Layout title="Data & AI Knowledge Base" description="Authoritative articles and concepts in Data Lakehouse, Apache Iceberg, and AI.">
+	<div class="container page-header">
+		<h1>Knowledge Base</h1>
+		<p>Explore authoritative guides, definitions, and concepts about Data Lakehouse, AI, and modern data architecture.</p>
+		
+		<div class="controls-container">
+			<input type="text" id="kbSearch" placeholder="Search articles by title or description..." />
+			<select id="kbCategory">
+				<option value="">All Categories</option>
+				{allTags.map(tag => (
+					<option value={tag}>{tag}</option>
+				))}
+			</select>
+		</div>
+	</div>
+
+	<div class="container">
+		<!-- Server rendered paginated list -->
+		<div id="serverList">
+			<div class="kb-grid">
+				{page.data.map(item => (
+					<a href={item.url} class="kb-card card">
+						<h3>{item.frontmatter.title}</h3>
+						<p class="date">{new Date(item.frontmatter.date).toLocaleDateString()}</p>
+						<p class="description">{item.frontmatter.description}</p>
+						<div class="tags">
+							{item.frontmatter.tags && item.frontmatter.tags.map(tag => (
+								<span class="tag">{tag}</span>
+							))}
+						</div>
+					</a>
+				))}
+			</div>
+			
+			<div class="pagination">
+				{page.url.prev ? <a href={page.url.prev} class="button">Previous</a> : <span class="button disabled">Previous</span>}
+				<span class="page-info">Page {page.currentPage} of {page.lastPage}</span>
+				{page.url.next ? <a href={page.url.next} class="button">Next</a> : <span class="button disabled">Next</span>}
+			</div>
+		</div>
+
+		<!-- Client rendered search/filter list (hidden by default) -->
+		<div id="clientList" style="display: none;">
+			<div class="kb-grid" id="clientGrid"></div>
+			<div id="noResults" style="display: none; text-align: center; width: 100%; grid-column: 1 / -1;">
+				<p>No articles found matching your criteria.</p>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<script define:vars={{ allItems: allKnowledgeForClient }}>
+	const searchInput = document.getElementById('kbSearch');
+	const categorySelect = document.getElementById('kbCategory');
+	const serverList = document.getElementById('serverList');
+	const clientList = document.getElementById('clientList');
+	const clientGrid = document.getElementById('clientGrid');
+	const noResults = document.getElementById('noResults');
+
+	function renderClientItems(items) {
+		clientGrid.innerHTML = '';
+		if (items.length === 0) {
+			noResults.style.display = 'block';
+		} else {
+			noResults.style.display = 'none';
+			items.forEach(item => {
+				const a = document.createElement('a');
+				a.href = item.url;
+				a.className = 'kb-card card';
+				
+				let tagsHtml = '';
+				if (item.tags && item.tags.length > 0) {
+					tagsHtml = '<div class="tags">' + item.tags.map(t => `<span class="tag">${t}</span>`).join('') + '</div>';
+				}
+
+				a.innerHTML = `
+					<h3>${item.title}</h3>
+					<p class="date">${item.date}</p>
+					<p class="description">${item.description}</p>
+					${tagsHtml}
+				`;
+				clientGrid.appendChild(a);
+			});
+		}
+	}
+
+	function handleFilter() {
+		const searchTerm = searchInput.value.toLowerCase();
+		const category = categorySelect.value;
+
+		if (searchTerm === '' && category === '') {
+			serverList.style.display = 'block';
+			clientList.style.display = 'none';
+		} else {
+			serverList.style.display = 'none';
+			clientList.style.display = 'block';
+
+			const filtered = allItems.filter(item => {
+				const matchesSearch = item.title.toLowerCase().includes(searchTerm) || 
+									  (item.description && item.description.toLowerCase().includes(searchTerm));
+				const matchesCategory = category === '' || (item.tags && item.tags.includes(category));
+				return matchesSearch && matchesCategory;
+			});
+
+			renderClientItems(filtered);
+		}
+	}
+
+	if (searchInput && categorySelect) {
+		searchInput.addEventListener('input', handleFilter);
+		categorySelect.addEventListener('change', handleFilter);
+	}
+</script>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		color: var(--accent);
+	}
+
+	.controls-container {
+		margin-top: 2rem;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		gap: 1rem;
+	}
+
+	.controls-container input, .controls-container select {
+		padding: 1rem;
+		border-radius: 8px;
+		border: 1px solid var(--secondary);
+		background-color: var(--primary);
+		color: var(--text);
+		font-size: 1rem;
+		outline: none;
+		transition: border-color 0.3s;
+	}
+
+	.controls-container input {
+		flex: 2;
+	}
+
+	.controls-container select {
+		flex: 1;
+		cursor: pointer;
+	}
+
+	.controls-container input:focus, .controls-container select:focus {
+		border-color: var(--accent);
+	}
+
+	.kb-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.kb-card {
+		display: flex;
+		flex-direction: column;
+		text-decoration: none;
+	}
+
+	.kb-card h3 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+		color: var(--text);
+		transition: color 0.3s;
+	}
+
+	.kb-card:hover h3 {
+		color: var(--accent);
+	}
+
+	.date {
+		font-size: 0.9rem;
+		color: var(--text-muted);
+		margin-bottom: 1rem;
+	}
+
+	.description {
+		flex: 1;
+		color: var(--text-muted);
+		margin-bottom: 1.5rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tag {
+		background-color: rgba(100, 255, 218, 0.1);
+		color: var(--accent);
+		padding: 0.2rem 0.6rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+	}
+
+	.pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+		margin-top: 4rem;
+	}
+
+	.page-info {
+		color: var(--text-muted);
+		font-weight: 500;
+	}
+
+	.button.disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	@media (max-width: 768px) {
+		.controls-container {
+			flex-direction: column;
+		}
+	}
+</style>

@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Compute and Storage Separation
 
-For decades, the dominant paradigm in data architecture was the monolithic, tightly-coupled system. Traditional on-premises relational databases (RDBMS) and early big data platforms like Apache Hadoop (HDFS) operated under the assumption that the disks storing the data and the CPUs processing the data must exist within the exact same physical server node. 
+For decades, the dominant paradigm in data architecture was the monolithic, tightly-coupled system. Traditional on-premises relational databases (RDBMS) and early big data platforms like [Apache Hadoop](/knowledge/apache-hadoop) (HDFS) operated under the assumption that the disks storing the data and the CPUs processing the data must exist within the exact same physical server node. 
 
 While this architecture maximized local I/O speeds over slower legacy networks, it created a fundamental problem: **inflexible scaling**. If your storage filled up, you had to buy a new server (adding compute you didn't need). If your processing demands spiked, you had to buy a new server (adding storage you didn't need).
 
@@ -20,11 +20,11 @@ The **Separation of Compute and Storage** is the foundational architectural shif
 In a decoupled architecture, the system is split across two independent cloud services connected by high-speed cloud networks.
 
 ### The Storage Layer (Object Storage)
-The storage layer is delegated to highly durable, infinitely scalable, and incredibly cheap cloud object stores such as Amazon S3, Azure Data Lake Storage (ADLS), or Google Cloud Storage (GCS). 
+The storage layer is delegated to highly durable, infinitely scalable, and incredibly cheap cloud object stores such as [Amazon S3](/knowledge/amazon-s3), Azure Data Lake Storage (ADLS), or Google Cloud Storage (GCS). 
 *   **Characteristics**: You pay only for the exact gigabytes you consume. The storage layer has no awareness of SQL, query execution, or data processing. It simply stores and retrieves binary objects (e.g., Parquet files).
 
 ### The Compute Layer (Query Engines)
-The compute layer consists of elastic, ephemeral clusters of servers running query engines like Apache Spark, Trino, Dremio, or Snowflake virtual warehouses.
+The compute layer consists of elastic, ephemeral clusters of servers running query engines like [Apache Spark](/knowledge/apache-spark), Trino, Dremio, or Snowflake virtual warehouses.
 *   **Characteristics**: You pay only for the compute time you use. Clusters can be spun up in seconds to execute a heavy query and completely shut down (scaling to zero) when idle. 
 
 When a query is executed, the compute nodes request the necessary byte-ranges directly from the object store over the network.
@@ -59,7 +59,7 @@ Because the compute nodes do not share CPU or RAM, there is zero resource conten
 The obvious drawback to decoupling is the network. Fetching data from S3 is physically slower than reading it from a local NVMe drive. Early attempts at decoupling suffered from severe latency issues.
 
 The industry solved this through two major innovations:
-1.  **Columnar Formats (Apache Parquet)**: Instead of downloading entire rows of data, Parquet allows the compute engine to use HTTP Range requests to download only the specific columns needed for a query.
+1.  **Columnar Formats ([Apache Parquet](/knowledge/apache-parquet))**: Instead of downloading entire rows of data, Parquet allows the compute engine to use HTTP Range requests to download only the specific columns needed for a query.
 2.  **Advanced Metadata (Apache Iceberg)**: As discussed in the Iceberg Manifest Lists architecture, Iceberg tracks data at the file and partition level. Before the compute engine ever reaches out to S3, it reads the Iceberg metadata to prune 99% of the files. The compute engine only requests the exact files containing relevant data over the network.
 
 Furthermore, modern compute engines like Dremio utilize sophisticated local caching (e.g., C3 - Columnar Cloud Cache) on NVMe drives. If a file is fetched from S3, it is cached locally on the compute node. If a subsequent query needs the same file, it is read at local NVMe speeds, achieving the performance of a coupled architecture with all the flexibility of a decoupled one.

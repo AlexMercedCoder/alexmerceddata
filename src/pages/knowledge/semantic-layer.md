@@ -10,8 +10,8 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 ## Introduction to the Semantic Layer
 
 Imagine an executive asking two different department heads a seemingly simple question: *"What was our total revenue last quarter?"*
-*   The Head of Marketing opens Tableau and reports **$10 Million**.
-*   The Head of Finance opens Power BI and reports **$8.5 Million**.
+*   The Head of Marketing opens [Tableau](/knowledge/tableau) and reports **$10 Million**.
+*   The Head of Finance opens [Power BI](/knowledge/power-bi) and reports **$8.5 Million**.
 
 Both are looking at the exact same underlying database. However, the Marketing team's dashboard defines "Revenue" as gross sales, while the Finance team's dashboard defines "Revenue" as gross sales *minus* refunds and taxes. 
 

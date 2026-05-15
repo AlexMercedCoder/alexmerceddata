@@ -25,20 +25,20 @@ HDFS takes that 1TB file and automatically chops it into 128-Megabyte "Blocks." 
 To guarantee fault tolerance, HDFS defaults to 3x replication. It makes three copies of every block and places them on different physical servers. If a server catches fire and dies, the system doesn't lose a single byte of data. The "NameNode" (the brain of HDFS) simply notices the missing blocks and instantly recreates them from the backups.
 
 ### 2. MapReduce
-MapReduce solved the compute problem. In a traditional database, you pull the data over the network to the CPU. If you try to pull Petabytes of data over a network cable, the network instantly crashes.
+[MapReduce](/knowledge/mapreduce) solved the compute problem. In a traditional database, you pull the data over the network to the CPU. If you try to pull Petabytes of data over a network cable, the network instantly crashes.
 MapReduce flips the paradigm: **It moves the code to the data.** 
 The central server sends a tiny Java program out to the 1,000 servers. Each server runs the code locally, right next to the physical hard drive where the 128MB block of data lives. The servers process their tiny chunk of data simultaneously, and send only the final aggregated answer back to the central server.
 
 ## The Hadoop Ecosystem Explosion
 
 Because HDFS was so revolutionary, an entire "Zoo" of open-source projects sprang up around it to make it easier to use:
-*   **Apache Hive**: Allowed analysts to write SQL queries against data sitting in HDFS, instead of writing complex Java MapReduce code.
+*   **[Apache Hive](/knowledge/apache-hive)**: Allowed analysts to write SQL queries against data sitting in HDFS, instead of writing complex Java MapReduce code.
 *   **Apache HBase**: A massive NoSQL database built on top of HDFS.
 *   **Apache Zookeeper**: A centralized service for maintaining configuration information across the cluster.
 
 ## The Fall of Hadoop
 
-Today, Hadoop is considered legacy technology, largely replaced by Cloud Object Storage (Amazon S3) and Apache Spark. 
+Today, Hadoop is considered legacy technology, largely replaced by Cloud Object Storage ([Amazon S3](/knowledge/amazon-s3)) and [Apache Spark](/knowledge/apache-spark). 
 
 Why did it die?
 1.  **Coupled Architecture**: In Hadoop, the hard drives (HDFS) and the CPUs (MapReduce/YARN) were physically trapped inside the exact same server racks. If you ran out of storage but had plenty of CPU, you still had to buy expensive servers containing both. The Cloud separated Storage and Compute, making Hadoop's architecture economically obsolete.

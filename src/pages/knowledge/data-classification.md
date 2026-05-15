@@ -45,8 +45,8 @@ The most dangerous data in the enterprise. Exposure of this data violates federa
 
 Historically, Data Classification was an impossible manual task. A data steward had to look at every single table in a 10,000-table database and manually type "Confidential" next to the columns.
 
-Today, classification is heavily automated using **Active Metadata** platforms and AI.
-Tools like BigID, Securiti.ai, or Collibra actively scan the Apache Iceberg tables in Amazon S3. They use Machine Learning and Regular Expressions to analyze the actual data in the columns. 
+Today, classification is heavily automated using **[Active Metadata](/knowledge/active-metadata)** platforms and AI.
+Tools like BigID, Securiti.ai, or Collibra actively scan the Apache Iceberg tables in [Amazon S3](/knowledge/amazon-s3). They use Machine Learning and Regular Expressions to analyze the actual data in the columns. 
 If the ML model detects a column filled with 16-digit numbers that pass the Luhn algorithm (the mathematical formula for credit cards), it autonomously applies the `PCI_RESTRICTED` tag to that column in the centralized Data Catalog.
 
 ## Driving Policy (Tag-Based Security)

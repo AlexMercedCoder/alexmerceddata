@@ -9,7 +9,7 @@ cta_link: "https://hello.dremio.com/wp-apache-iceberg-the-definitive-guide-reg.h
 
 ## Introduction to Power BI
 
-If Tableau pioneered the Self-Service BI revolution, Microsoft's **Power BI** conquered it through absolute corporate ubiquity.
+If [Tableau](/knowledge/tableau) pioneered the Self-Service BI revolution, Microsoft's **Power BI** conquered it through absolute corporate ubiquity.
 
 Launched in 2015, Power BI is an interactive data visualization and business intelligence tool designed to provide a unified, scalable platform for self-service and enterprise data analytics. Because Microsoft strategically bundled Power BI into existing Office 365 enterprise licenses, it rapidly became the default BI tool for the majority of the Fortune 500, offering an incredibly low barrier to entry for users already familiar with Microsoft Excel.
 
@@ -37,7 +37,7 @@ Similar to other enterprise BI tools, Power BI must manage how it interacts with
 
 Power BI heavily encourages organizations to build a centralized **Semantic Model** (previously called a Power BI Dataset).
 
-Instead of every analyst connecting directly to the raw database and writing their own DAX logic, a senior data architect connects Power BI Desktop to the database, imports the tables, establishes the relationships (the Star Schema), writes the master DAX formulas, and publishes this "Semantic Model" to the Power BI Cloud Service.
+Instead of every analyst connecting directly to the raw database and writing their own DAX logic, a senior data architect connects Power BI Desktop to the database, imports the tables, establishes the relationships (the [Star Schema](/knowledge/star-schema)), writes the master DAX formulas, and publishes this "Semantic Model" to the Power BI Cloud Service.
 
 Subsequently, hundreds of non-technical business users can connect Excel, PowerPoint, or Power BI to that centralized, certified Semantic Model to build their own visual dashboards, ensuring that everyone in the company is using the exact same underlying math.
 

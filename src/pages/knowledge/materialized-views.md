@@ -44,8 +44,8 @@ In traditional data warehouses, Materialized Views are manual. The data engineer
 
 Modern Data Lakehouse engines (like Dremio) have revolutionized this with concepts like **Data Reflections**.
 Data Reflections are essentially invisible, automated Materialized Views. 
-The data engineer tells Dremio to "Reflect" the `sales` table. Dremio automatically builds and refreshes the optimized aggregations invisibly in Amazon S3. 
-The business analyst does absolutely nothing. They continue querying the raw `sales` table. Dremio's highly intelligent **Query Planner** intercepts the query, realizes an invisible Reflection exists that can answer the question faster, and automatically rewrites the query to hit the cache. The analyst gets a 2-millisecond response time without ever knowing the Materialized View existed.
+The data engineer tells Dremio to "Reflect" the `sales` table. Dremio automatically builds and refreshes the optimized aggregations invisibly in [Amazon S3](/knowledge/amazon-s3). 
+The business analyst does absolutely nothing. They continue querying the raw `sales` table. Dremio's highly intelligent **[Query Planner](/knowledge/query-planner)** intercepts the query, realizes an invisible Reflection exists that can answer the question faster, and automatically rewrites the query to hit the cache. The analyst gets a 2-millisecond response time without ever knowing the Materialized View existed.
 
 ## Conclusion
 

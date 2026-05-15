@@ -39,7 +39,7 @@ The industry's shift toward the **Data Lakehouse** has radically changed how Tab
 
 Historically, organizations relied heavily on Tableau Extracts because their databases were too slow. Today, organizations have high-speed cloud data warehouses (like Snowflake) and federated Lakehouse engines (like Dremio). 
 
-Because engines like Dremio use sub-second caching (Data Reflections), organizations are abandoning Tableau Extracts. They configure Tableau to use strict **Live Connections** directly to the Semantic Layer. 
+Because engines like Dremio use sub-second caching (Data Reflections), organizations are abandoning Tableau Extracts. They configure Tableau to use strict **Live Connections** directly to the [Semantic Layer](/knowledge/semantic-layer). 
 This is the ultimate architectural pattern: Tableau acts purely as the "dumb glass" visualization layer, while the Lakehouse engine handles all the complex logic, security masking, and caching. This guarantees that the dashboards are both instantly fast and mathematically synchronized across the entire company.
 
 ## Conclusion

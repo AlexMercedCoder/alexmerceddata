@@ -39,6 +39,21 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 	</section>
+
+	<section class="container cta-section">
+		<div class="cta-grid">
+			<div class="card cta-card">
+				<h3>🎙️ Listen to the Podcast</h3>
+				<p>Join Alex Merced for deep dives into Data Engineering, open-source technology, and the future of the Data Lakehouse.</p>
+				<a href="https://open.spotify.com/show/2PRDrWVpgDvKxN6n1oUsJF?si=369a437441814254" target="_blank" rel="noopener noreferrer" class="button">Listen on Spotify</a>
+			</div>
+			<div class="card cta-card">
+				<h3>📧 Read the Newsletter</h3>
+				<p>Get the latest insights, tutorials, and architectural patterns delivered directly to your inbox every week.</p>
+				<a href="https://amdatalakehouse.substack.com/" target="_blank" rel="noopener noreferrer" class="button">Subscribe on Substack</a>
+			</div>
+		</div>
+	</section>
 </Layout>
 
 <style>
@@ -112,6 +127,35 @@ import Layout from '../layouts/Layout.astro';
 		color: var(--accent);
 		margin-bottom: 1rem;
 		font-size: 1.25rem;
+	}
+
+	.cta-section {
+		padding: 2rem 1.5rem 5rem;
+	}
+
+	.cta-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.cta-card {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.cta-card h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.cta-card p {
+		margin-bottom: 1.5rem;
+		flex-grow: 1;
 	}
 
 	@media (max-width: 768px) {

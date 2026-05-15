@@ -8,9 +8,9 @@ tags: ["Apache Iceberg", "Data Lakehouse", "Data Engineering", "Open Source"]
 
 ## Introduction to Apache Iceberg
 
-In the modern data ecosystem, the separation of storage and compute has led to the rise of the **Data Lakehouse**—a hybrid architecture combining the flexibility of a data lake with the reliability of a data warehouse. At the heart of this revolution is **Apache Iceberg**, an open table format originally developed at Netflix to solve the massive data challenges associated with Apache Hive.
+In the modern data ecosystem, the separation of storage and compute has led to the rise of the **Data Lakehouse**—a hybrid architecture combining the flexibility of a data lake with the reliability of a data warehouse. At the heart of this revolution is **Apache Iceberg**, an open table format originally developed at Netflix to solve the massive data challenges associated with [Apache Hive](/knowledge/apache-hive).
 
-Apache Iceberg is designed for huge analytic datasets, typically stored in cloud object storage like Amazon S3, Google Cloud Storage (GCS), or Azure Data Lake Storage (ADLS). It brings ACID transactions, schema evolution, and time travel to the data lake, allowing engines like Apache Spark, Trino, Dremio, and Snowflake to work with the same data simultaneously without locking or inconsistency.
+Apache Iceberg is designed for huge analytic datasets, typically stored in cloud object storage like [Amazon S3](/knowledge/amazon-s3), Google Cloud Storage (GCS), or Azure Data Lake Storage (ADLS). It brings ACID transactions, schema evolution, and time travel to the data lake, allowing engines like [Apache Spark](/knowledge/apache-spark), Trino, Dremio, and Snowflake to work with the same data simultaneously without locking or inconsistency.
 
 ## Why Do We Need a Table Format?
 
@@ -27,7 +27,7 @@ Apache Iceberg solves these problems by tracking data at the **file level** inst
 The magic of Iceberg lies in its metadata tree. When an engine reads an Iceberg table, it doesn't list directories; instead, it reads the metadata to find exactly which files to scan.
 
 ### 1. The Iceberg Catalog
-The catalog is the entry point. It stores the current location of the metadata pointer for every table. Catalogs can be implemented using Hive Metastore, AWS Glue, Nessie, Apache Polaris, or a simple JDBC database.
+The catalog is the entry point. It stores the current location of the metadata pointer for every table. Catalogs can be implemented using Hive Metastore, [AWS Glue](/knowledge/aws-glue), Nessie, [Apache Polaris](/knowledge/apache-polaris), or a simple JDBC database.
 
 ### 2. Metadata Files (JSON)
 The catalog points to a `.json` metadata file. This file contains:
@@ -66,7 +66,7 @@ Because Iceberg maintains a history of snapshots, you can query the table exactl
 
 Iceberg is engine-agnostic. It is supported by a massive ecosystem:
 - **Apache Spark:** Full support for reads, writes, and streaming.
-- **Apache Flink:** Excellent for real-time ingestion into Iceberg tables.
+- **[Apache Flink](/knowledge/apache-flink):** Excellent for real-time ingestion into Iceberg tables.
 - **Dremio:** Native, lightning-fast reads and writes with built-in optimizations.
 - **Trino/Starburst:** Highly optimized distributed SQL querying.
 - **Snowflake:** Can read Iceberg tables directly from your external cloud storage.

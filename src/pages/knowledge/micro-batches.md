@@ -17,11 +17,11 @@ Micro-batching is an ingestion and processing technique where continuous, incomi
 
 ## How Micro-Batching Works
 
-To understand micro-batching, one must look at the framework that popularized it: **Apache Spark Streaming** (and later, Structured Streaming). 
+To understand micro-batching, one must look at the framework that popularized it: **[Apache Spark](/knowledge/apache-spark) Streaming** (and later, Structured Streaming). 
 
-Spark's core architecture was built explicitly for massive, parallel batch processing. It was not originally designed to handle continuous, unending streams of single events like Apache Flink or Apache Storm. To process streams, the creators of Spark devised a clever workaround.
+Spark's core architecture was built explicitly for massive, parallel batch processing. It was not originally designed to handle continuous, unending streams of single events like [Apache Flink](/knowledge/apache-flink) or Apache Storm. To process streams, the creators of Spark devised a clever workaround.
 
-1.  **Ingestion**: A system like Apache Kafka continuously receives millions of raw events (e.g., user clicks on a website).
+1.  **Ingestion**: A system like [Apache Kafka](/knowledge/apache-kafka) continuously receives millions of raw events (e.g., user clicks on a website).
 2.  **Chunking**: The Spark Streaming engine connects to Kafka. Instead of processing each click the millisecond it arrives, Spark waits for a predefined interval—the "Batch Interval"—say, 5 seconds.
 3.  **Execution**: After 5 seconds, Spark takes all the events that arrived within that window, packages them into a small, bounded dataset (a Resilient Distributed Dataset, or RDD), and fires off a rapid, highly parallel batch job to process them.
 4.  **Output**: The results of that 5-second chunk are appended to a downstream database or Data Lakehouse table. The system then immediately moves on to processing the next 5-second chunk.

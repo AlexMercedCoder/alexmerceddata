@@ -9,7 +9,7 @@ cta_link: "https://www.manning.com/books/architecting-an-apache-iceberg-lakehous
 
 ## Introduction to Slowly Changing Dimensions
 
-In the realm of Data Warehousing and Dimensional Modeling (popularized by Ralph Kimball), a "Dimension" is a table that contains descriptive attributes about a business entity—such as Customers, Products, or Employees. These attributes provide the context for the numerical facts (e.g., the Sales amount).
+In the realm of [Data Warehousing](/knowledge/data-warehousing) and [Dimensional Modeling](/knowledge/dimensional-modeling) (popularized by Ralph Kimball), a "Dimension" is a table that contains descriptive attributes about a business entity—such as Customers, Products, or Employees. These attributes provide the context for the numerical facts (e.g., the Sales amount).
 
 While facts happen instantaneously (a sale occurs on Tuesday at 2:00 PM), dimensional attributes change slowly and unpredictably over time. 
 *   A customer gets married and changes their last name.

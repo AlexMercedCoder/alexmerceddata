@@ -9,7 +9,7 @@ cta_link: "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSW
 
 ## Introduction to Hybrid Search
 
-When the generative AI boom began, developers rushed to build RAG (Retrieval-Augmented Generation) applications using exclusively **Vector Search** (Semantic Search). 
+When the generative AI boom began, developers rushed to build RAG (Retrieval-Augmented Generation) applications using exclusively **Vector Search** ([Semantic Search](/knowledge/semantic-search)). 
 
 Vector Search is phenomenal at understanding intent. If a user searches for *"canines,"* a Vector Database will successfully retrieve documents about *"dogs"* and *"wolves"* because they are semantically related, even if the exact keyword "canines" never appears in the text. 
 
@@ -60,4 +60,4 @@ Engineers dynamically adjust this Alpha based on the application. A medical rese
 
 ## Conclusion
 
-Hybrid Search acknowledges that neither traditional databases nor modern AI models are perfect on their own. By fusing the exact-match precision of BM25 Keyword Search with the conceptual intelligence of Vector Embeddings, Hybrid Search guarantees that RAG applications can successfully retrieve both specific technical data and broad conceptual knowledge, vastly improving the reliability of the final LLM response.
+Hybrid Search acknowledges that neither traditional databases nor modern AI models are perfect on their own. By fusing the exact-match precision of BM25 Keyword Search with the conceptual intelligence of [Vector Embeddings](/knowledge/vector-embeddings), Hybrid Search guarantees that RAG applications can successfully retrieve both specific technical data and broad conceptual knowledge, vastly improving the reliability of the final LLM response.

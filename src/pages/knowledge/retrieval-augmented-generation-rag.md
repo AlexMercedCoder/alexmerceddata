@@ -33,7 +33,7 @@ Before a system can answer questions, it must process the enterprise knowledge b
 When a user submits a query (e.g., "What is our company's remote work policy?"), the RAG pipeline springs into action.
 
 1.  **Query Embedding**: The user's text query is converted into a vector embedding using the *exact same* embedding model used during ingestion.
-2.  **Semantic Search**: The system performs a similarity search in the Vector Database. It looks for the document vectors that are mathematically closest to the query vector (typically using Cosine Similarity). This step "retrieves" the top 3-5 most relevant text chunks.
+2.  **[Semantic Search](/knowledge/semantic-search)**: The system performs a similarity search in the Vector Database. It looks for the document vectors that are mathematically closest to the query vector (typically using Cosine Similarity). This step "retrieves" the top 3-5 most relevant text chunks.
 3.  **Context Injection (Prompt Augmentation)**: The system takes the retrieved text chunks and constructs a master prompt behind the scenes:
     ```text
     Answer the user's question based strictly on the following context. If the answer is not in the context, say "I don't know."
@@ -52,7 +52,7 @@ Basic "Naive RAG" (chunking text and doing a simple vector search) works well fo
 
 ### 1. Hybrid Search
 Vector search is excellent at understanding semantic meaning (knowing that "vacation" and "PTO" mean the same thing). However, it is notoriously bad at exact keyword matching (e.g., searching for an exact product SKU like `AX-992-B`). 
-**Hybrid Search** combines traditional keyword search (like BM25/Elasticsearch) with Vector Search. The system runs both searches simultaneously and merges the results, ensuring the LLM gets both semantic context and exact matches.
+**[Hybrid Search](/knowledge/hybrid-search)** combines traditional keyword search (like BM25/Elasticsearch) with Vector Search. The system runs both searches simultaneously and merges the results, ensuring the LLM gets both semantic context and exact matches.
 
 ### 2. Re-Ranking (Cross-Encoders)
 Vector databases are designed for speed, pulling the top 50 results out of millions in milliseconds. However, this speed sacrifices deep contextual accuracy. 

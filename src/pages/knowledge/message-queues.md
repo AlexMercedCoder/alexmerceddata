@@ -31,7 +31,7 @@ The Message Queue acts as a massive shock absorber. It absorbs the 100,000 messa
 
 ## Message Queues vs. Event Streaming (Kafka)
 
-There is a critical architectural distinction between traditional Message Queues (like RabbitMQ) and Event Streaming Platforms (like Apache Kafka).
+There is a critical architectural distinction between traditional Message Queues (like RabbitMQ) and Event Streaming Platforms (like [Apache Kafka](/knowledge/apache-kafka)).
 
 **Traditional Message Queues (RabbitMQ, SQS)**
 *   **"Smart Broker, Dumb Consumer"**: The Queue tracks the status of every message.
