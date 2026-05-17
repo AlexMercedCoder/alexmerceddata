@@ -1,17 +1,19 @@
 ---
 import Layout from './Layout.astro';
 const { frontmatter } = Astro.props;
+const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
+
 const schemaData = {
 	"@context": "https://schema.org",
 	"@graph": [
 		{
 			"@type": ["TechArticle", "Article"],
-			"@id": `https://alexmerceddata.com/knowledge/${frontmatter.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}/#article`,
+			"@id": `${currentUrl}#article`,
 			"headline": frontmatter.title,
 			"description": frontmatter.description,
 			"mainEntityOfPage": {
 				"@type": "WebPage",
-				"@id": `https://alexmerceddata.com/knowledge/${frontmatter.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}/`
+				"@id": currentUrl
 			},
 			"author": {
 				"@id": "https://alexmerceddata.com/#alexmerced"
@@ -20,7 +22,7 @@ const schemaData = {
 				"@id": "https://alexmerceddata.com/#organization"
 			},
 			"datePublished": new Date(frontmatter.date).toISOString(),
-			"dateModified": new Date(frontmatter.date).toISOString(),
+			"dateModified": new Date(frontmatter.lastUpdated || frontmatter.date).toISOString(),
 			"about": (frontmatter.tags || []).map((tag: string) => ({
 				"@type": "Thing",
 				"name": tag
@@ -46,7 +48,7 @@ const schemaData = {
 					"@type": "ListItem",
 					"position": 3,
 					"name": frontmatter.title,
-					"item": `https://alexmerceddata.com/knowledge/${frontmatter.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}/`
+					"item": currentUrl
 				}
 			]
 		}
@@ -54,7 +56,7 @@ const schemaData = {
 };
 ---
 
-<Layout title={frontmatter.title} description={frontmatter.description}>
+<Layout title={frontmatter.title} description={frontmatter.description} ogType="article">
 	<script type="application/ld+json" slot="head" set:html={JSON.stringify(schemaData)} />
 	
 	<article class="container kb-article">

@@ -23,6 +23,10 @@ const allTags = [...new Set(allKnowledgeForClient.flatMap(p => p.tags))].sort();
 ---
 
 <Layout title="Data & AI Knowledge Base" description="Authoritative articles and concepts in Data Lakehouse, Apache Iceberg, and AI.">
+	<Fragment slot="head">
+		{page.url.prev && <link rel="prev" href={new URL(page.url.prev, Astro.site)} />}
+		{page.url.next && <link rel="next" href={new URL(page.url.next, Astro.site)} />}
+	</Fragment>
 	<div class="container page-header">
 		<h1>Knowledge Base</h1>
 		<p>Explore authoritative guides, definitions, and concepts about Data Lakehouse, AI, and modern data architecture.</p>

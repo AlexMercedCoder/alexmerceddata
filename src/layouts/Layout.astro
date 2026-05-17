@@ -2,9 +2,19 @@
 interface Props {
 	title: string;
 	description?: string;
+	canonicalUrl?: string;
+	ogType?: string;
 }
 
-const { title, description = "Alex Merced is a Data Lakehouse & AI thought leader, educator, and author." } = Astro.props;
+const { 
+	title, 
+	description = "Alex Merced is a Data Lakehouse & AI thought leader, educator, and author.",
+	canonicalUrl,
+	ogType = "website"
+} = Astro.props;
+
+const currentUrl = new URL(Astro.url.pathname, Astro.site);
+const canonical = canonicalUrl || currentUrl.href;
 ---
 
 <!doctype html>
@@ -17,26 +27,36 @@ const { title, description = "Alex Merced is a Data Lakehouse & AI thought leade
 		<meta name="generator" content={Astro.generator} />
 		
 		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={canonical} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content="/og-image.jpg" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:url" content={canonical} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="/og-image.jpg" />
 		
 		<!-- Canonical URL -->
-		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+		<link rel="canonical" href={canonical} />
 
 		<!-- JSON-LD -->
 		<script type="application/ld+json" set:html={`{
 			"@context": "https://schema.org",
 			"@graph": [
+				{
+					"@type": "WebPage",
+					"@id": "${canonical}#webpage",
+					"url": "${canonical}",
+					"name": "${title}",
+					"description": "${description}",
+					"isPartOf": {
+						"@id": "https://alexmerceddata.com/#website"
+					}
+				},
 				{
 					"@type": "WebSite",
 					"@id": "https://alexmerceddata.com/#website",
