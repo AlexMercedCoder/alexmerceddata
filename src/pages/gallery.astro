@@ -10,11 +10,74 @@ const galleryItems = [
 		image: "/images/gallery/open-lakehouse-architecture.jpg"
 	},
 	{
+		id: "end-to-end-operational-data-to-ai-insights",
+		title: "End-to-End: Operational Data to AI Insights",
+		category: "Architecture",
+		description: "Continuous flow of trusted data from operational databases via CDC into an Apache Iceberg lakehouse powering analytics and AI applications.",
+		image: "/images/gallery/end-to-end-operational-data-to-ai-insights.png"
+	},
+	{
 		id: "architecture-of-apache-iceberg",
 		title: "The Architecture of Apache Iceberg",
 		category: "Architecture",
 		description: "Detailed internal breakdown of Apache Iceberg: Catalogs, Table Metadata Layer (JSON, Snapshots, Manifest Lists), Data File Layer, and Compute Engine integrations.",
 		image: "/images/gallery/architecture-of-apache-iceberg.jpg"
+	},
+	{
+		id: "inside-an-apache-iceberg-metadata-json-v3",
+		title: "Inside an Apache Iceberg metadata.json (V3)",
+		category: "Iceberg Internals",
+		description: "Internal JSON schema of Iceberg V3 table metadata: table UUID, location, schemas, partition specs, sort orders, snapshot logs, refs, and delete vector settings.",
+		image: "/images/gallery/inside-an-apache-iceberg-metadata-json-v3.png"
+	},
+	{
+		id: "inside-an-apache-iceberg-v3-manifest-list",
+		title: "Inside an Apache Iceberg V3 Manifest List",
+		category: "Iceberg Internals",
+		description: "Avro-encoded index pointing to manifest files per snapshot: sequence numbers, added/existing/deleted file counts, partition summaries, and aggregate column stats.",
+		image: "/images/gallery/inside-an-apache-iceberg-v3-manifest-list.png"
+	},
+	{
+		id: "inside-an-apache-iceberg-v3-manifest",
+		title: "Inside an Apache Iceberg V3 Manifest File",
+		category: "Iceberg Internals",
+		description: "File-level metadata listing data files: column sizes, value counts, null/nan counts, lower/upper bounds, and delete vector references for fast query planning.",
+		image: "/images/gallery/inside-an-apache-iceberg-v3-manifest.png"
+	},
+	{
+		id: "apache-iceberg-v3-equality-deletes-vs-deletion-vectors",
+		title: "Apache Iceberg V3: Equality Deletes vs Deletion Vectors",
+		category: "Iceberg Internals",
+		description: "In-depth comparison of Iceberg V3 row-level delete mechanisms: Equality Deletes (value-level) vs Deletion Vectors (bitsets), query performance, and sweet spots.",
+		image: "/images/gallery/apache-iceberg-v3-equality-deletes-vs-deletion-vectors.png"
+	},
+	{
+		id: "apache-iceberg-snapshot-management",
+		title: "Apache Iceberg Snapshot Management",
+		category: "Iceberg Maintenance",
+		description: "Managing snapshots for time travel, data protection, performance, and cost control: time-based, count-based, hybrid, and reference-aware retention.",
+		image: "/images/gallery/apache-iceberg-snapshot-management.png"
+	},
+	{
+		id: "apache-iceberg-table-compaction",
+		title: "Apache Iceberg Table Compaction",
+		category: "Iceberg Maintenance",
+		description: "Solving the small file problem: Full compaction, partition compaction, incremental/rolling, size-tiered, and sort-assisted compaction techniques.",
+		image: "/images/gallery/apache-iceberg-table-compaction.png"
+	},
+	{
+		id: "apache-iceberg-table-maintenance",
+		title: "Apache Iceberg Table Maintenance Operations",
+		category: "Iceberg Maintenance",
+		description: "Core maintenance operations: Optimize files, Vacuum, Expire Snapshots, Rewrite Data Files, Recalculate Stats, Clean Orphan Files, and Rebuild Manifests.",
+		image: "/images/gallery/apache-iceberg-table-maintenance.png"
+	},
+	{
+		id: "streaming-to-an-iceberg-lakehouse",
+		title: "Streaming to an Apache Iceberg Lakehouse",
+		category: "Streaming & Pipelines",
+		description: "Approaches, patterns, and best practices for streaming into Iceberg: Engine-native (Flink/Spark), Landing zone microbatch, CDC replication, and Append-only.",
+		image: "/images/gallery/streaming-to-an-iceberg-lakehouse.png"
 	},
 	{
 		id: "architecture-of-apache-polaris",
