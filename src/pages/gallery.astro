@@ -1,0 +1,597 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const galleryItems = [
+	{
+		id: "open-lakehouse-architecture",
+		title: "The Open Lakehouse Architecture",
+		category: "Architecture",
+		description: "High-level architectural stack of the Open Lakehouse featuring Ossie, Polaris Catalog, Apache Iceberg, Parquet, Apache Arrow, and object storage.",
+		image: "/images/gallery/open-lakehouse-architecture.jpg"
+	},
+	{
+		id: "architecture-of-apache-iceberg",
+		title: "The Architecture of Apache Iceberg",
+		category: "Architecture",
+		description: "Detailed internal breakdown of Apache Iceberg: Catalogs, Table Metadata Layer (JSON, Snapshots, Manifest Lists), Data File Layer, and Compute Engine integrations.",
+		image: "/images/gallery/architecture-of-apache-iceberg.jpg"
+	},
+	{
+		id: "architecture-of-apache-polaris",
+		title: "The Architecture of Apache Polaris",
+		category: "Architecture",
+		description: "An architectural overview of Apache Polaris Catalog: API layer, Metadata service layer, pluggable persistence, extension framework, and engine ecosystem.",
+		image: "/images/gallery/architecture-of-apache-polaris.jpg"
+	},
+	{
+		id: "architecture-of-apache-arrow",
+		title: "The Architecture of Apache Arrow",
+		category: "Architecture",
+		description: "Columnar in-memory data layout, validity bitmaps, offset buffers, data buffers, and the Apache Arrow ecosystem across languages and engines.",
+		image: "/images/gallery/architecture-of-apache-arrow.jpg"
+	},
+	{
+		id: "architecture-of-apache-parquet",
+		title: "The Architecture of an Apache Parquet File",
+		category: "Architecture",
+		description: "Deep dive into Apache Parquet file layout: File headers, horizontal Row Groups, vertical Column Chunks, statistics, and File Footers.",
+		image: "/images/gallery/architecture-of-apache-parquet.jpg"
+	},
+	{
+		id: "architecture-of-apache-ossie",
+		title: "The Architecture of Apache Ossie (Incubating)",
+		category: "Architecture",
+		description: "The open standard for semantic models in the Open Lakehouse: model structure, JSON serialization, transport, discovery, and projections.",
+		image: "/images/gallery/architecture-of-apache-ossie.png"
+	},
+	{
+		id: "architecture-of-model-context-protocol",
+		title: "The Architecture of Model Context Protocol (MCP)",
+		category: "AI & MCP",
+		description: "2026 specification breakdown of Model Context Protocol (MCP): hosts, stateless core, extensions framework, MCP servers, and enterprise integrations.",
+		image: "/images/gallery/architecture-of-model-context-protocol.jpg"
+	},
+	{
+		id: "productive-with-ai-and-agents-books",
+		title: "Be More Productive with AI and Agents",
+		category: "Books & Guides",
+		description: "Overview of Alex Merced's 6 practical AI guides covering OpenAI Codex, Claude Code, Open Models, Google AI, Microsoft Copilot, and Grok & Cursor.",
+		image: "/images/gallery/productive-with-ai-and-agents-books.jpg"
+	}
+];
+
+const categories = ["All", ...new Set(galleryItems.map(item => item.category))];
+---
+
+<Layout title="Infographics & Architecture Gallery" description="Explore high-resolution infographics and architecture diagrams on Data Lakehouse, Apache Iceberg, Apache Polaris, Apache Arrow, Parquet, MCP, and AI.">
+	<Fragment slot="head">
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "ImageGallery",
+			"name": "Alex Merced Data & AI Infographics Gallery",
+			"description": "High-resolution architecture diagrams and infographics covering Apache Iceberg, Apache Polaris, Arrow, Parquet, Model Context Protocol, and Open Lakehouse.",
+			"url": "https://alexmerceddata.com/gallery",
+			"image": galleryItems.map(item => `https://alexmerceddata.com${item.image}`)
+		})} />
+	</Fragment>
+
+	<div class="container page-header">
+		<h1>Infographics & Architecture Gallery</h1>
+		<p>Visual reference guides, architecture diagrams, and educational infographics created by Alex Merced for Data & AI engineers.</p>
+		
+		<div class="controls-container">
+			<div class="search-box">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+				<input type="text" id="gallerySearch" placeholder="Search diagrams by title or topic..." />
+			</div>
+			<div class="filter-tabs" id="categoryFilter">
+				{categories.map((cat, idx) => (
+					<button class={`filter-btn ${idx === 0 ? 'active' : ''}`} data-category={cat}>{cat}</button>
+				))}
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="gallery-grid" id="galleryGrid">
+			{galleryItems.map((item) => (
+				<div 
+					class="gallery-card card" 
+					data-category={item.category} 
+					data-title={item.title.toLowerCase()}
+					data-description={item.description.toLowerCase()}
+					data-full-img={item.image}
+					data-card-title={item.title}
+					data-card-desc={item.description}
+					data-card-cat={item.category}
+				>
+					<div class="image-wrapper">
+						<img src={item.image} alt={item.title} loading="lazy" />
+						<div class="image-overlay">
+							<span class="view-btn">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/></svg>
+								View Infographic
+							</span>
+						</div>
+					</div>
+					<div class="card-info">
+						<span class="category-badge">{item.category}</span>
+						<h3>{item.title}</h3>
+						<p>{item.description}</p>
+					</div>
+				</div>
+			))}
+		</div>
+		<div id="noResults" class="no-results" style="display: none;">
+			<p>No infographics found matching your search query.</p>
+		</div>
+	</div>
+
+	<!-- Lightbox Modal -->
+	<div id="lightboxModal" class="lightbox-modal" aria-hidden="true">
+		<div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+		<div class="lightbox-content card">
+			<button class="lightbox-close" id="lightboxClose" aria-label="Close modal">&times;</button>
+			<div class="lightbox-body">
+				<div class="lightbox-image-container">
+					<img id="lightboxImg" src="" alt="" />
+				</div>
+				<div class="lightbox-details">
+					<span id="lightboxCategory" class="category-badge"></span>
+					<h2 id="lightboxTitle"></h2>
+					<p id="lightboxDesc"></p>
+					<div class="lightbox-actions">
+						<a id="lightboxOpenLink" href="#" target="_blank" rel="noopener noreferrer" class="button primary">
+							Open Full Resolution
+						</a>
+						<a id="lightboxDownloadLink" href="#" download class="button">
+							Download Image
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	// Search and Filtering
+	const searchInput = document.getElementById('gallerySearch') as HTMLInputElement;
+	const filterBtns = document.querySelectorAll('.filter-btn');
+	const cards = document.querySelectorAll('.gallery-card');
+	const noResults = document.getElementById('noResults');
+
+	let activeCategory = 'All';
+
+	function filterGallery() {
+		const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+		let visibleCount = 0;
+
+		cards.forEach((card) => {
+			const cat = card.getAttribute('data-category');
+			const title = card.getAttribute('data-title') || '';
+			const desc = card.getAttribute('data-description') || '';
+
+			const matchesCategory = activeCategory === 'All' || cat === activeCategory;
+			const matchesQuery = query === '' || title.includes(query) || desc.includes(query);
+
+			if (matchesCategory && matchesQuery) {
+				(card as HTMLElement).style.display = 'flex';
+				visibleCount++;
+			} else {
+				(card as HTMLElement).style.display = 'none';
+			}
+		});
+
+		if (noResults) {
+			noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+		}
+	}
+
+	if (searchInput) {
+		searchInput.addEventListener('input', filterGallery);
+	}
+
+	filterBtns.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			filterBtns.forEach((b) => b.classList.remove('active'));
+			btn.classList.add('active');
+			activeCategory = btn.getAttribute('data-category') || 'All';
+			filterGallery();
+		});
+	});
+
+	// Lightbox Modal Logic
+	const modal = document.getElementById('lightboxModal');
+	const backdrop = document.getElementById('lightboxBackdrop');
+	const closeBtn = document.getElementById('lightboxClose');
+	const lightboxImg = document.getElementById('lightboxImg') as HTMLImageElement;
+	const lightboxTitle = document.getElementById('lightboxTitle');
+	const lightboxDesc = document.getElementById('lightboxDesc');
+	const lightboxCategory = document.getElementById('lightboxCategory');
+	const lightboxOpenLink = document.getElementById('lightboxOpenLink') as HTMLAnchorElement;
+	const lightboxDownloadLink = document.getElementById('lightboxDownloadLink') as HTMLAnchorElement;
+
+	function openModal(imgSrc: string, title: string, desc: string, cat: string) {
+		if (!modal || !lightboxImg || !lightboxTitle || !lightboxDesc || !lightboxCategory || !lightboxOpenLink || !lightboxDownloadLink) return;
+		
+		lightboxImg.src = imgSrc;
+		lightboxImg.alt = title;
+		lightboxTitle.textContent = title;
+		lightboxDesc.textContent = desc;
+		lightboxCategory.textContent = cat;
+		lightboxOpenLink.href = imgSrc;
+		lightboxDownloadLink.href = imgSrc;
+
+		modal.classList.add('active');
+		modal.setAttribute('aria-hidden', 'false');
+		document.body.style.overflow = 'hidden';
+	}
+
+	function closeModal() {
+		if (!modal) return;
+		modal.classList.remove('active');
+		modal.setAttribute('aria-hidden', 'true');
+		document.body.style.overflow = '';
+	}
+
+	cards.forEach((card) => {
+		card.addEventListener('click', () => {
+			const imgSrc = card.getAttribute('data-full-img') || '';
+			const title = card.getAttribute('data-card-title') || '';
+			const desc = card.getAttribute('data-card-desc') || '';
+			const cat = card.getAttribute('data-card-cat') || '';
+			openModal(imgSrc, title, desc, cat);
+		});
+	});
+
+	if (closeBtn) closeBtn.addEventListener('click', closeModal);
+	if (backdrop) backdrop.addEventListener('click', closeModal);
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && modal?.classList.contains('active')) {
+			closeModal();
+		}
+	});
+</script>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		color: var(--accent);
+		margin-bottom: 1rem;
+	}
+
+	.page-header p {
+		font-size: 1.2rem;
+		max-width: 800px;
+		margin: 0 auto 2.5rem;
+		color: var(--text-muted);
+	}
+
+	/* Controls */
+	.controls-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		align-items: center;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.search-box {
+		position: relative;
+		width: 100%;
+		max-width: 600px;
+	}
+
+	.search-box svg {
+		position: absolute;
+		left: 1rem;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--text-muted);
+	}
+
+	.search-box input {
+		width: 100%;
+		padding: 0.9rem 1rem 0.9rem 3rem;
+		border-radius: 8px;
+		border: 1px solid var(--secondary);
+		background-color: var(--primary);
+		color: var(--text);
+		font-size: 1.05rem;
+		outline: none;
+		transition: border-color 0.3s, box-shadow 0.3s;
+	}
+
+	.search-box input:focus {
+		border-color: var(--accent);
+		box-shadow: 0 0 15px rgba(100, 255, 218, 0.15);
+	}
+
+	.filter-tabs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		justify-content: center;
+	}
+
+	.filter-btn {
+		background-color: var(--secondary);
+		color: var(--text-muted);
+		border: 1px solid rgba(100, 255, 218, 0.1);
+		padding: 0.5rem 1.25rem;
+		border-radius: 9999px;
+		font-size: 0.95rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.filter-btn:hover {
+		color: var(--accent);
+		border-color: var(--accent);
+		background-color: rgba(100, 255, 218, 0.05);
+	}
+
+	.filter-btn.active {
+		background-color: var(--accent);
+		color: var(--primary);
+		border-color: var(--accent);
+		font-weight: 600;
+	}
+
+	/* Gallery Grid */
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.gallery-card {
+		display: flex;
+		flex-direction: column;
+		cursor: pointer;
+		padding: 0;
+		overflow: hidden;
+		border: 1px solid rgba(100, 255, 218, 0.1);
+		transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.gallery-card:hover {
+		transform: translateY(-6px);
+		border-color: var(--accent);
+		box-shadow: 0 12px 30px -10px rgba(100, 255, 218, 0.2);
+	}
+
+	.image-wrapper {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16/9;
+		overflow: hidden;
+		background-color: #050d1a;
+	}
+
+	.image-wrapper img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	.gallery-card:hover .image-wrapper img {
+		transform: scale(1.05);
+	}
+
+	.image-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(10, 25, 47, 0.75);
+		backdrop-filter: blur(3px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.gallery-card:hover .image-overlay {
+		opacity: 1;
+	}
+
+	.view-btn {
+		color: var(--accent);
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1rem;
+		border: 1px solid var(--accent);
+		padding: 0.6rem 1.2rem;
+		border-radius: 4px;
+		background: rgba(2, 12, 27, 0.8);
+	}
+
+	.card-info {
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	.category-badge {
+		align-self: flex-start;
+		background-color: rgba(100, 255, 218, 0.1);
+		color: var(--accent);
+		font-size: 0.8rem;
+		font-weight: 600;
+		padding: 0.25rem 0.75rem;
+		border-radius: 4px;
+		margin-bottom: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.card-info h3 {
+		font-size: 1.35rem;
+		color: var(--text);
+		margin-bottom: 0.75rem;
+		transition: color 0.3s ease;
+	}
+
+	.gallery-card:hover .card-info h3 {
+		color: var(--accent);
+	}
+
+	.card-info p {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		line-height: 1.5;
+		margin: 0;
+		flex: 1;
+	}
+
+	.no-results {
+		text-align: center;
+		padding: 4rem 1rem;
+		color: var(--text-muted);
+		font-size: 1.2rem;
+	}
+
+	/* Lightbox Modal */
+	.lightbox-modal {
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease;
+		padding: 2rem;
+	}
+
+	.lightbox-modal.active {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.lightbox-backdrop {
+		position: absolute;
+		inset: 0;
+		background-color: rgba(2, 12, 27, 0.9);
+		backdrop-filter: blur(8px);
+	}
+
+	.lightbox-content {
+		position: relative;
+		z-index: 1001;
+		max-width: 1100px;
+		width: 100%;
+		max-height: 90vh;
+		overflow-y: auto;
+		background-color: var(--primary);
+		border: 1px solid var(--accent);
+		box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+		border-radius: 12px;
+		padding: 2rem;
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: 1rem;
+		right: 1.25rem;
+		background: none;
+		border: none;
+		color: var(--text-muted);
+		font-size: 2.5rem;
+		cursor: pointer;
+		line-height: 1;
+		transition: color 0.2s ease;
+	}
+
+	.lightbox-close:hover {
+		color: var(--accent);
+	}
+
+	.lightbox-body {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.lightbox-image-container {
+		width: 100%;
+		max-height: 60vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #030914;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.lightbox-image-container img {
+		max-width: 100%;
+		max-height: 60vh;
+		object-fit: contain;
+	}
+
+	.lightbox-details {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.lightbox-details h2 {
+		font-size: 2rem;
+		color: var(--accent);
+		margin-top: 0.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.lightbox-details p {
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
+	}
+
+	.lightbox-actions {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 768px) {
+		.page-header h1 {
+			font-size: 2.2rem;
+		}
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+		.lightbox-content {
+			padding: 1.25rem;
+		}
+		.lightbox-details h2 {
+			font-size: 1.5rem;
+		}
+		.lightbox-actions {
+			flex-direction: column;
+			width: 100%;
+		}
+		.lightbox-actions .button {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>
