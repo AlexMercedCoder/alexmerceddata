@@ -85,14 +85,21 @@ const canonical = canonicalUrl || currentUrl.href;
 						"https://youtube.com/@alexmerceddata",
 						"https://datalakehousehub.com",
 						"https://whoisalexmerced.com",
-						"https://linkedin.com/in/alexmerced"
+						"https://linkedin.com/in/alexmerced",
+						"https://amdatalakehouse.substack.com/",
+						"https://open.spotify.com/show/2PRDrWVpgDvKxN6n1oUsJF"
 					],
-					"jobTitle": "Data Lakehouse & AI Thought Leader"
+					"jobTitle": "Head of Developer Relations",
+					"worksFor": {
+						"@type": "Organization",
+						"name": "Dremio",
+						"url": "https://www.dremio.com"
+					}
 				}
 			]
 		}`} />
 		
-		<title>{title} | Alex Merced Data</title>
+		<title>{title.includes('|') ? title : `${title} | Alex Merced Data`}</title>
 		<slot name="head" />
 	</head>
 	<body>

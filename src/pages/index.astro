@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Home & About" description="Learn about Alex Merced, a Technologist, Educator, Developer Advocate, and Author specializing in Data Lakehouses, AI, and Apache Iceberg.">
+<Layout title="Alex Merced | Apache Iceberg & Data Lakehouse Author, Educator" description="Learn about Alex Merced, Head of Developer Relations at Dremio, educator, and author of 'Apache Iceberg: The Definitive Guide' specializing in Data Lakehouses, AI, and Apache Iceberg.">
 	<div class="hero">
 		<div class="container hero-content">
 			<div class="hero-image">
@@ -37,6 +37,14 @@ import Layout from '../layouts/Layout.astro';
 				<h3>Educator</h3>
 				<p>With over a decade of teaching economics and finance in NYC, and extensive experience instructing software engineering and web development.</p>
 			</div>
+		</div>
+	</section>
+
+	<section class="container kb-section">
+		<div class="kb-feature card">
+			<h2>📚 Knowledge Base</h2>
+			<p>Explore a free library of 200+ in-depth articles covering Apache Iceberg, open table formats, data lakehouse architecture, data platforms (Dremio, Snowflake, Databricks, Trino), and AI engineering concepts — written as authoritative references for data engineers and architects.</p>
+			<a href="/knowledge" class="button primary">Browse the Knowledge Base</a>
 		</div>
 	</section>
 
@@ -127,6 +135,30 @@ import Layout from '../layouts/Layout.astro';
 		color: var(--accent);
 		margin-bottom: 1rem;
 		font-size: 1.25rem;
+	}
+
+	.kb-section {
+		padding: 0 1.5rem 3rem;
+	}
+
+	.kb-feature {
+		text-align: center;
+		padding: 3rem 2rem;
+		background: linear-gradient(to bottom, var(--secondary), rgba(2,12,27,0.5));
+		border-color: var(--accent);
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.kb-feature h2 {
+		color: var(--accent);
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.kb-feature p {
+		font-size: 1.15rem;
+		margin-bottom: 2rem;
 	}
 
 	.cta-section {

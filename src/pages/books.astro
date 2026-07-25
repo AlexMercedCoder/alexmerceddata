@@ -390,6 +390,37 @@ const books = [
 				}
 			}))
 		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Book",
+					"name": "Apache Iceberg: The Definitive Guide",
+					"author": { "@id": "https://alexmerceddata.com/#alexmerced" },
+					"publisher": { "@type": "Organization", "name": "O'Reilly Media" },
+					"isbn": "9781098148621",
+					"url": "https://www.amazon.com/dp/1098148622",
+					"description": "Flagship O'Reilly guide to Apache Iceberg and modern lakehouse architecture."
+				},
+				{
+					"@type": "Book",
+					"name": "Apache Polaris: The Definitive Guide",
+					"author": { "@id": "https://alexmerceddata.com/#alexmerced" },
+					"publisher": { "@type": "Organization", "name": "O'Reilly Media" },
+					"url": "https://www.amazon.com/dp/B0FBRJ7J1Y",
+					"description": "Flagship O'Reilly guide to open catalogs for Iceberg lakehouses."
+				},
+				{
+					"@type": "Book",
+					"name": "Architecting an Apache Iceberg Lakehouse",
+					"author": { "@id": "https://alexmerceddata.com/#alexmerced" },
+					"publisher": { "@type": "Organization", "name": "Manning Publications" },
+					"isbn": "9781633435104",
+					"url": "https://www.amazon.com/dp/1633435105",
+					"description": "Manning guide on architecture patterns for building Iceberg-based data platforms."
+				}
+			]
+		})} />
 	</Fragment>
 
 	<div class="container page-header">

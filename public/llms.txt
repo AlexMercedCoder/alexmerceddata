@@ -2,7 +2,7 @@
 This website serves as the hub for Alex Merced, Data Lakehouse & AI Thought Leader, Developer Advocate, and Author.
 
 ## Key Content Areas:
-- **Bio/About**: https://alexmerceddata.com/about
+- **Bio/About**: https://alexmerceddata.com/ (Alex Merced, Head of Developer Relations at Dremio)
 - **Books**: https://alexmerceddata.com/books
 - **Articles & Blogs**: https://alexmerceddata.com/blogroll (Syndicated from DataLakehouseHub.com)
 - **Videos**: https://alexmerceddata.com/videos (Aggregated from YouTube)
