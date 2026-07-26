@@ -103,10 +103,11 @@ const canonical = canonicalUrl || currentUrl.href;
 		<slot name="head" />
 	</head>
 	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<header class="site-header">
 			<nav class="container">
 				<a href="/" class="logo">AlexMerced<span>Data</span></a>
-				<ul class="nav-links">
+				<ul class="nav-links" id="primary-nav">
 					<li><a href="/">About</a></li>
 					<li><a href="/books">Books</a></li>
 					<li><a href="/blogroll">Blogroll</a></li>
@@ -114,13 +115,13 @@ const canonical = canonicalUrl || currentUrl.href;
 					<li><a href="/gallery">Gallery</a></li>
 					<li><a href="/knowledge">Knowledge Base</a></li>
 				</ul>
-				<button class="mobile-menu" aria-label="Toggle Menu">
+				<button class="mobile-menu" aria-label="Toggle Menu" aria-expanded="false" aria-controls="primary-nav">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
 				</button>
 			</nav>
 		</header>
 
-		<main>
+		<main id="main-content">
 			<slot />
 		</main>
 
@@ -161,7 +162,8 @@ const canonical = canonicalUrl || currentUrl.href;
 			const links = document.querySelector('.nav-links');
 			if(btn && links) {
 				btn.addEventListener('click', () => {
-					links.classList.toggle('active');
+					const isOpen = links.classList.toggle('active');
+					btn.setAttribute('aria-expanded', String(isOpen));
 				});
 			}
 		</script>
@@ -178,6 +180,25 @@ const canonical = canonicalUrl || currentUrl.href;
 		--bg: #020C1B;
 		--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 	}
+
+		/* Accessibility: skip-link + visible focus outline */
+		.skip-link {
+			position: absolute;
+			left: -9999px;
+			top: 0;
+			z-index: 1000;
+			padding: 0.75rem 1.25rem;
+			background: var(--accent);
+			color: var(--primary);
+			font-weight: 600;
+			text-decoration: none;
+			border-radius: 0 0 6px 0;
+		}
+		.skip-link:focus { left: 0; }
+		:focus-visible {
+			outline: 3px solid var(--accent);
+			outline-offset: 2px;
+		}
 
 	* {
 		margin: 0;
