@@ -3,6 +3,23 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Alex Merced | Apache Iceberg & Data Lakehouse Author, Educator" description="Learn about Alex Merced, Head of Developer Relations at Dremio, educator, and author of 'Apache Iceberg: The Definitive Guide' specializing in Data Lakehouses, AI, and Apache Iceberg.">
+	<Fragment slot="head">
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "VideoObject",
+			"name": "Who is Alex Merced?",
+			"description": "Who is Alex Merced — a short introduction",
+			"thumbnailUrl": "https://alexmerceddata.com/who-is-alex-merced.jpg",
+			"uploadDate": "2026-08-05",
+			"duration": "PT48S",
+			"contentUrl": "https://alexmerceddata.com/who-is-alex-merced.mp4",
+			"embedUrl": "https://alexmerceddata.com/#brand-video",
+			"about": { "@id": "https://alexmerceddata.com/#alexmerced" },
+			"author": { "@id": "https://alexmerceddata.com/#alexmerced" },
+			"publisher": { "@id": "https://alexmerceddata.com/#organization" }
+		})} />
+	</Fragment>
+
 	<div class="hero">
 		<div class="container hero-content">
 			<div class="hero-image">
@@ -22,6 +39,34 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 	</div>
+
+	<section class="container video-section" id="brand-video">
+		<div class="video-header">
+			<span class="video-label">Introduction</span>
+			<h2>Who is Alex Merced?</h2>
+			<p>A short introduction — the author, speaker, podcaster, and educator behind the work.</p>
+		</div>
+		<figure class="video-figure">
+			<div class="video-frame">
+				<video
+					controls
+					preload="metadata"
+					playsinline
+					poster="/who-is-alex-merced.jpg"
+					width="1920"
+					height="1080"
+				>
+					<source src="/who-is-alex-merced.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+					<a href="/who-is-alex-merced.mp4">Download the video</a>.
+				</video>
+			</div>
+			<figcaption>
+				48 seconds · Press play (with sound) for the short version. ·
+				<a href="/who-is-alex-merced.mp4" download>Download the video</a>
+			</figcaption>
+		</figure>
+	</section>
 
 	<section class="container about-section">
 		<div class="about-grid">
@@ -124,6 +169,71 @@ import Layout from '../layouts/Layout.astro';
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
+	}
+
+	.video-section {
+		padding: 4rem 1.5rem 1rem;
+	}
+
+	.video-header {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto 2.5rem;
+	}
+
+	.video-label {
+		display: inline-block;
+		color: var(--accent);
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		margin-bottom: 0.75rem;
+	}
+
+	.video-header h2 {
+		font-size: 2.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.video-header p {
+		color: var(--text-muted);
+		font-size: 1.1rem;
+		margin: 0;
+	}
+
+	.video-figure {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.video-frame {
+		position: relative;
+		aspect-ratio: 16 / 9;
+		border-radius: 12px;
+		overflow: hidden;
+		border: 1px solid var(--secondary);
+		background-color: var(--primary);
+		box-shadow: 0 20px 50px -20px rgba(2, 12, 27, 0.9);
+	}
+
+	.video-frame video {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+		background-color: var(--primary);
+	}
+
+	.video-figure figcaption {
+		margin-top: 1rem;
+		text-align: center;
+		font-size: 0.95rem;
+		color: var(--text-muted);
+	}
+
+	.video-figure figcaption a {
+		color: var(--accent);
 	}
 
 	.about-section {
