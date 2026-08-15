@@ -21,6 +21,63 @@ import Layout from '../layouts/Layout.astro';
 	</Fragment>
 
 	<div class="hero">
+		<svg class="hero-dag" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+			<defs>
+				<linearGradient id="amd-fade" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+					<stop offset="0" stop-color="#fff"/>
+					<stop offset="0.20" stop-color="#fff"/>
+					<stop offset="0.33" stop-color="#000"/>
+					<stop offset="0.67" stop-color="#000"/>
+					<stop offset="0.80" stop-color="#fff"/>
+					<stop offset="1" stop-color="#fff"/>
+				</linearGradient>
+				<mask id="amd-mask"><rect width="1440" height="800" fill="url(#amd-fade)"/></mask>
+			</defs>
+
+			<g mask="url(#amd-mask)">
+				<!-- Pipeline edges: sources fan in, transforms fan out -->
+				<g class="dag-edges">
+					<path d="M40 210 C160 210 180 310 300 310"/>
+					<path d="M40 390 C160 390 180 310 300 310"/>
+					<path d="M40 570 C160 570 180 490 300 490"/>
+					<path d="M300 310 C400 310 400 400 500 400"/>
+					<path d="M300 490 C400 490 400 400 500 400"/>
+					<path d="M1400 230 C1280 230 1260 340 1140 340"/>
+					<path d="M1400 420 C1280 420 1260 340 1140 340"/>
+					<path d="M1400 600 C1280 600 1260 520 1140 520"/>
+					<path d="M1140 340 C1040 340 1040 430 940 430"/>
+					<path d="M1140 520 C1040 520 1040 430 940 430"/>
+				</g>
+
+				<!-- Records moving through the pipeline -->
+				<g class="dag-flows">
+					<path pathLength="100" d="M40 210 C160 210 180 310 300 310" style="animation-duration:6s"/>
+					<path pathLength="100" d="M40 390 C160 390 180 310 300 310" style="animation-duration:7.5s;animation-delay:-2s"/>
+					<path pathLength="100" d="M300 310 C400 310 400 400 500 400" style="animation-duration:5s;animation-delay:-3s"/>
+					<path pathLength="100" d="M1400 420 C1280 420 1260 340 1140 340" style="animation-duration:6.5s;animation-delay:-1s"/>
+					<path pathLength="100" d="M1400 600 C1280 600 1260 520 1140 520" style="animation-duration:8s;animation-delay:-4s"/>
+					<path pathLength="100" d="M1140 520 C1040 520 1040 430 940 430" style="animation-duration:5.5s;animation-delay:-2.5s"/>
+				</g>
+
+				<!-- Sources, transforms and sinks -->
+				<g class="dag-nodes">
+					<rect x="26" y="196" width="28" height="28" rx="3"/>
+					<rect x="26" y="376" width="28" height="28" rx="3"/>
+					<rect x="26" y="556" width="28" height="28" rx="3"/>
+					<rect x="1386" y="216" width="28" height="28" rx="3"/>
+					<rect x="1386" y="406" width="28" height="28" rx="3"/>
+					<rect x="1386" y="586" width="28" height="28" rx="3"/>
+				</g>
+				<g class="dag-nodes dag-nodes--accent">
+					<rect x="284" y="294" width="32" height="32" rx="4" style="animation-delay:-0.5s"/>
+					<rect x="284" y="474" width="32" height="32" rx="4" style="animation-delay:-1.8s"/>
+					<rect x="486" y="386" width="28" height="28" rx="4" style="animation-delay:-3.1s"/>
+					<rect x="1124" y="324" width="32" height="32" rx="4" style="animation-delay:-2.4s"/>
+					<rect x="1124" y="504" width="32" height="32" rx="4" style="animation-delay:-0.9s"/>
+					<rect x="926" y="416" width="28" height="28" rx="4" style="animation-delay:-3.7s"/>
+				</g>
+			</g>
+		</svg>
 		<div class="container hero-content">
 			<div class="hero-image">
 				<img src="/images/alexmercedpic.jpg" alt="Alex Merced" />
@@ -117,12 +174,76 @@ import Layout from '../layouts/Layout.astro';
 <style>
 	.hero {
 		padding: 6rem 0;
+		position: relative;
+		overflow: hidden;
 		background: radial-gradient(circle at top right, rgba(100, 255, 218, 0.1), transparent 40%),
 					linear-gradient(to bottom, var(--primary), var(--bg));
 		border-bottom: 1px solid var(--secondary);
 	}
 
+	/* Pipeline DAG backdrop — desktop only */
+	.hero-dag { display: none; }
+
+	@media (min-width: 1100px) {
+		.hero-dag {
+			display: block;
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 0;
+		}
+	}
+
+	.dag-edges path {
+		fill: none;
+		stroke: var(--text-muted);
+		stroke-width: 1;
+		opacity: 0.3;
+	}
+
+	.dag-flows path {
+		fill: none;
+		stroke: var(--accent);
+		stroke-width: 2;
+		stroke-linecap: round;
+		stroke-dasharray: 10 90;
+		animation: dagFlow 6s linear infinite;
+	}
+
+	.dag-nodes rect {
+		fill: none;
+		stroke: var(--text-muted);
+		stroke-width: 1.5;
+		opacity: 0.4;
+	}
+
+	.dag-nodes--accent rect {
+		stroke: var(--accent);
+		opacity: 0.85;
+		animation: dagNode 5s ease-in-out infinite;
+	}
+
+	@keyframes dagFlow {
+		from { stroke-dashoffset: 100; }
+		to { stroke-dashoffset: 0; }
+	}
+
+	@keyframes dagNode {
+		0%, 100% { opacity: 0.35; }
+		50% { opacity: 1; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.dag-flows path, .dag-nodes--accent rect { animation: none; }
+		.dag-flows path { stroke-dashoffset: 55; }
+		.dag-nodes--accent rect { opacity: 0.7; }
+	}
+
 	.hero-content {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
