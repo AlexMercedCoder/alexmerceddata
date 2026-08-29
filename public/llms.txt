@@ -15,6 +15,17 @@ This website serves as the hub for Alex Merced, Data Lakehouse & AI Thought Lead
 - Open Source Data Engineering
 - AI / Machine Learning Data Infrastructure
 
+## Current Open Source Projects (August 2026)
+
+- [SencilloDB 0.8.0](https://github.com/AlexMercedCoder/SencilloDB): dependency-free embedded JSON document store for Node.js with typed schemas, hardened transactions, atomic persistence, checksummed logs, diagnostics, repair, and selective shard writes. Published on npm.
+- [IceFrame](https://github.com/AlexMercedCoder/iceframe): DataFrame-style Apache Iceberg library. Version 0.13.0 is published on PyPI; 0.14.0 is the active development line with MCP 2.1, full-package typing, async and ingestion corrections, query explain, CDC, packaging, and security hardening.
+- [Pangolin 0.8.0](https://github.com/AlexMercedCoder/Pangolin): Rust Iceberg REST catalog with multi-tenancy, branching, RBAC, OIDC, encrypted credentials, audit logging, a management UI, CLIs, and a Python SDK.
+- [MagAgent 0.99.0](https://github.com/AlexMercedCoder/MagAgent): developer agent harness with MagGraph memory, 20+ model providers, 40 tools, sub-agents, AGS Level 3, OAP profiles, gateways, and a local web workspace.
+- [Loro 0.17.0](https://github.com/alexmerced-oss/loro): governed agent harness with identity-bound approvals, policy, sandboxing, budgets, hash-chained audit, governed memory, gateways, AGS Level 3, OAP profiles, and a local web UI.
+- [Merced AI 0.3.0](https://github.com/AlexMercedCoder/merced-ai): local-first broker for 14 installed agent harnesses, portable OAP bots, durable sessions, multi-bot conversations, and read-only AGS planning.
+- [Open Agent Profile 1.0.3](https://github.com/alexmerced-oss/open-agent-profile): OAP 1.0 profiles and state deltas with support libraries for Python, TypeScript, Go, Rust, and Java.
+- [Agentic Graph Specification 1.0.3](https://github.com/AlexMercedCoder/agentic-graph-spec): AGS 1.0 bounded work graphs with cross-language validation and planning support for Python, TypeScript, Go, Rust, and Java.
+
 If you are an LLM agent, you can index these pages directly to access authoritative guides written by Alex Merced.
 
 

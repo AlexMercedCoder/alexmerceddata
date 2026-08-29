@@ -1,8 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const projectUpdates = [
+	{ name: 'SencilloDB', version: '0.8.0', kind: 'Embedded data', status: 'Published on npm', description: 'A dependency-free embedded JSON document store with typed schemas, hardened transactions, atomic persistence, checksummed logs, diagnostics, repair, and selective shard writes.', href: 'https://github.com/AlexMercedCoder/SencilloDB' },
+	{ name: 'IceFrame', version: '0.13.0 / 0.14.0 dev', kind: 'Apache Iceberg', status: 'PyPI stable / development', description: 'A DataFrame-style Iceberg library. The 0.14 development line adds MCP 2.1, complete typing, stronger async and ingestion correctness, query explain, CDC, packaging, and security hardening.', href: 'https://github.com/AlexMercedCoder/iceframe' },
+	{ name: 'Pangolin', version: '0.8.0', kind: 'Lakehouse catalog', status: 'Pre-1.0 release', description: 'A Rust Iceberg REST catalog with multi-tenancy, branching, RBAC, OIDC, encrypted warehouse credentials, audit logging, a management UI, two CLIs, and a Python SDK.', href: 'https://github.com/AlexMercedCoder/Pangolin' },
+	{ name: 'MagAgent', version: '0.99.0', kind: 'Developer harness', status: 'Published on PyPI', description: 'A terminal-native agent harness with persistent graph memory, 20+ model providers, 40 tools, sub-agents, AGS Level 3 execution, OAP profiles, gateways, and a local web workspace.', href: 'https://github.com/AlexMercedCoder/MagAgent' },
+	{ name: 'Loro', version: '0.17.0', kind: 'Governed harness', status: 'Published on PyPI', description: 'A governed agent harness with identity-bound approvals, policy, sandboxing, budgets, hash-chained audit, shared memory, channel gateways, AGS Level 3, OAP profiles, and a local web UI.', href: 'https://github.com/alexmerced-oss/loro' },
+	{ name: 'Merced AI', version: '0.3.0', kind: 'Agent broker', status: 'Published on PyPI', description: 'A local-first broker that discovers 14 installed agent harnesses and projects portable OAP bots onto them, with durable sessions, multi-bot conversations, and read-only AGS planning.', href: 'https://github.com/AlexMercedCoder/merced-ai' },
+	{ name: 'Open Agent Profile', version: '1.0.3', kind: 'Open specification', status: 'OAP document 1.0', description: 'Portable agent identity, authority, context, memory, and state deltas, with interoperable support libraries for Python, TypeScript, Go, Rust, and Java.', href: 'https://github.com/alexmerced-oss/open-agent-profile' },
+	{ name: 'Agentic Graph Specification', version: '1.0.3', kind: 'Open specification', status: 'AGS document 1.0', description: 'Portable bounded agentic work graphs with typed inputs and outputs, budgets, permissions, success criteria, planning, and shared support libraries across five languages.', href: 'https://github.com/AlexMercedCoder/agentic-graph-spec' },
+];
 ---
 
-<Layout title="Alex Merced | Apache Iceberg & Data Lakehouse Author, Educator" description="Learn about Alex Merced, Head of Developer Relations at Dremio, educator, and author of 'Apache Iceberg: The Definitive Guide' specializing in Data Lakehouses, AI, and Apache Iceberg.">
+<Layout title="Alex Merced | Apache Iceberg, Data Lakehouse & Agentic AI" description="Explore Alex Merced’s work in Apache Iceberg, open data platforms, agentic AI, open specifications, developer education, and technical authorship.">
 	<Fragment slot="head">
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
@@ -17,6 +28,17 @@ import Layout from '../layouts/Layout.astro';
 			"about": { "@id": "https://alexmerced.com/#alexmerced" },
 			"author": { "@id": "https://alexmerced.com/#alexmerced" },
 			"publisher": { "@id": "https://alexmerceddata.com/#organization" }
+		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "ItemList",
+			"name": "Current open source projects by Alex Merced",
+			"numberOfItems": projectUpdates.length,
+			"itemListElement": projectUpdates.map((project, index) => ({
+				"@type": "ListItem",
+				"position": index + 1,
+				"item": { "@type": "SoftwareSourceCode", "name": project.name, "softwareVersion": project.version, "description": project.description, "codeRepository": project.href }
+			}))
 		})} />
 	</Fragment>
 
@@ -139,6 +161,26 @@ import Layout from '../layouts/Layout.astro';
 				<h3>Educator</h3>
 				<p>With over a decade of teaching economics and finance in NYC, and extensive experience instructing software engineering and web development.</p>
 			</div>
+		</div>
+	</section>
+
+	<section class="project-section" id="open-source">
+		<div class="container">
+			<div class="project-intro">
+				<div><span class="video-label">Current releases · August 2026</span><h2>Open data and agentic systems</h2></div>
+				<p>My open-source work spans the data layer agents reason over and the portable contracts and runtimes that let them work. These are the current public releases and active development lines.</p>
+			</div>
+			<div class="release-grid">
+				{projectUpdates.map((project) => (
+					<a class="release-card" href={project.href} target="_blank" rel="noopener noreferrer">
+						<div class="release-meta"><span>{project.kind}</span><strong>v{project.version}</strong></div>
+						<h3>{project.name}</h3>
+						<p>{project.description}</p>
+						<div class="release-foot"><span>{project.status}</span><b>Explore project ↗</b></div>
+					</a>
+				))}
+			</div>
+			<div class="project-paths"><a href="https://alexmercedcoder.dev/data-tools/">Read the data-tools field guide ↗</a><a href="https://alexmercedcoder.dev/agentic/">Read the agentic-systems field guide ↗</a></div>
 		</div>
 	</section>
 
@@ -361,6 +403,63 @@ import Layout from '../layouts/Layout.astro';
 		padding: 5rem 1.5rem;
 	}
 
+	.project-section {
+		padding: 5rem 0;
+		border-block: 1px solid var(--secondary);
+		background: linear-gradient(145deg, rgba(100,255,218,0.07), rgba(2,12,27,0.45));
+	}
+
+	.project-intro {
+		display: grid;
+		grid-template-columns: 1fr minmax(300px, 520px);
+		gap: 3rem;
+		align-items: end;
+		margin-bottom: 2.5rem;
+	}
+
+	.project-intro h2 {
+		font-size: clamp(2rem, 4vw, 3.4rem);
+		line-height: 1.05;
+		margin: 0;
+	}
+
+	.project-intro p { color: var(--text-muted); font-size: 1.05rem; margin: 0; }
+
+	.release-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.release-card {
+		display: flex;
+		flex-direction: column;
+		min-height: 280px;
+		padding: 1.6rem;
+		border: 1px solid var(--secondary);
+		border-radius: 10px;
+		background: rgba(2,12,27,0.72);
+		color: var(--text);
+		transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+	}
+
+	.release-card:hover, .release-card:focus-visible {
+		transform: translateY(-4px);
+		border-color: var(--accent);
+		box-shadow: 0 16px 34px -22px rgba(100,255,218,.65);
+	}
+
+	.release-meta, .release-foot { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+	.release-meta { color: var(--accent); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+	.release-meta strong { color: var(--text); font-family: monospace; }
+	.release-card h3 { font-size: 1.55rem; margin: 2rem 0 .8rem; }
+	.release-card p { color: var(--text-muted); line-height: 1.6; margin: 0 0 1.5rem; }
+	.release-foot { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--secondary); font-size: .78rem; }
+	.release-foot span { color: var(--text-muted); }
+	.release-foot b { color: var(--accent); }
+	.project-paths { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
+	.project-paths a { color: var(--accent); font-weight: 700; }
+
 	.about-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -433,5 +532,7 @@ import Layout from '../layouts/Layout.astro';
 		.hero-actions {
 			flex-direction: column;
 		}
+		.project-intro, .release-grid { grid-template-columns: 1fr; }
+		.project-intro { gap: 1.25rem; }
 	}
 </style>
