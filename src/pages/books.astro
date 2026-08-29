@@ -1,373 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const books = [
-	// Flagship & Tech / AI Books
-	{
-		title: "Apache Iceberg: The Definitive Guide",
-		category: "tech",
-		description: "Flagship O'Reilly guide to Apache Iceberg and modern lakehouse architecture.",
-		image: "https://images.amazon.com/images/P/1098148622.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/1098148622"
-	},
-	{
-		title: "Apache Polaris: The Definitive Guide",
-		category: "tech",
-		description: "Flagship O'Reilly guide to open catalogs for Iceberg lakehouses.",
-		image: "https://images.amazon.com/images/P/B0FBRJ7J1Y.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0FBRJ7J1Y"
-	},
-	{
-		title: "Architecting an Apache Iceberg Lakehouse",
-		category: "tech",
-		description: "Manning guide on architecture patterns for building Iceberg-based data platforms.",
-		image: "https://images.amazon.com/images/P/1633435105.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/1633435105"
-	},
-	{
-		title: "The Book on Using Apache Iceberg with Python",
-		category: "tech",
-		description: "Hands-on guide using PyIceberg, PySpark, PyFlink, and DataFusion with Iceberg.",
-		image: "https://images.amazon.com/images/P/B0GNZ454FF.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GNZ454FF"
-	},
-	{
-		title: "The 2026 Guide to Lakehouses, Apache Iceberg and Agentic AI",
-		category: "tech",
-		description: "Comprehensive guide to lakehouse architecture, Iceberg, and AI agent integration.",
-		image: "https://images.amazon.com/images/P/B0GQNY21TD.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQNY21TD"
-	},
-	{
-		title: "The Book on Agentic Analytics",
-		category: "tech",
-		description: "Foundations of agentic data architecture, semantic layers, and autonomous analytics.",
-		image: "https://images.amazon.com/images/P/B0GQN4Q41Y.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQN4Q41Y"
-	},
-	{
-		title: "Enabling Agentic Analytics with Apache Iceberg and Dremio",
-		category: "tech",
-		description: "Building AI-ready lakehouse systems with open semantic layers and Apache Iceberg.",
-		image: "https://images.amazon.com/images/P/B0GQXT6W3N.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQXT6W3N"
-	},
-	{
-		title: "Using AI Agents for Data Engineering and Data Analysis",
-		category: "tech",
-		description: "Practical guide to AI-driven workflows, agentic ETL, and automated analysis.",
-		image: "https://images.amazon.com/images/P/B0GR6PYJT9.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GR6PYJT9"
-	},
-	{
-		title: "The AI Engineering Handbook",
-		category: "tech",
-		description: "Full-stack reference for building, deploying, and evaluating production AI systems.",
-		image: "https://images.amazon.com/images/P/B0GSS4R9FK.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GSS4R9FK"
-	},
-	{
-		title: "AI-Ready Data",
-		category: "tech",
-		description: "Designing Data Platforms for LLMs, AI Agents, and RAG architectures.",
-		image: "https://m.media-amazon.com/images/I/61ILD2jjU9L._SY522_.jpg",
-		link: "https://www.amazon.com/AI-Ready-Data-Designing-Platforms-Agents/dp/B0GSN7GLH2/ref=sr_1_3"
-	},
-	{
-		title: "The 2026 Guide to AI-Assisted Development",
-		category: "tech",
-		description: "Prompt engineering, agent workflows, and AI coding assistants for developers.",
-		image: "https://images.amazon.com/images/P/B0GQW7CTML.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQW7CTML"
-	},
-	{
-		title: "Apache Iceberg for Agentic AI: Connecting Structured Enterprise Data",
-		category: "tech",
-		description: "Enabling Agentic AI on an Iceberg Lakehouse with governed context.",
-		image: "https://m.media-amazon.com/images/I/8108U1UJbsL._SY522_.jpg",
-		link: "https://www.amazon.com/Apache-Iceberg-Agentic-Connecting-Structured-ebook/dp/B0DYTX2WZY/ref=sr_1_8"
-	},
-	{
-		title: "The Agentic Enterprise: Deploying AI Agents Across the Modern Organization",
-		category: "tech",
-		description: "Deploying AI agents at scale across enterprise architectures and teams.",
-		image: "https://m.media-amazon.com/images/I/712lLVxVrcL._SY522_.jpg",
-		link: "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/ref=sr_1_16"
-	},
-	{
-		title: "Constructing Context and Semantics for AI Agents",
-		category: "tech",
-		description: "Practical guide to embeddings, knowledge graphs, memory, RAG, and production AI.",
-		image: "https://m.media-amazon.com/images/I/71gkfSn8lSL._SL1430_.jpg",
-		link: "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddings/dp/B0GSHRZNZ5/ref=sr_1_21"
-	},
-	{
-		title: "The Open Source Lakehouse: Architecting the Decoupled Analytical Foundation",
-		category: "tech",
-		description: "Building an open analytical foundation using decoupled open source tools.",
-		image: "https://m.media-amazon.com/images/I/81q8SELxiKL._SL1500_.jpg",
-		link: "https://www.amazon.com/Open-Source-Lakehouse-Architecting-Analytical-ebook/dp/B0D46P3VB7/ref=sr_1_17"
-	},
-	{
-		title: "Evaluating AI Systems: Testing LLMs, RAG, and Agents",
-		category: "tech",
-		description: "Comprehensive testing, benchmarks, and evaluation frameworks for AI systems.",
-		image: "https://m.media-amazon.com/images/I/71i0+pwD0NL._SL1499_.jpg",
-		link: "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/ref=sr_1_19"
-	},
-	{
-		title: "The Economics of Labor in the AI Era: Disruption, Adaptation, and the Future of Work",
-		category: "tech",
-		description: "Analyzing the impact of rapid AI disruption on labor markets and productivity.",
-		image: "https://m.media-amazon.com/images/I/71yanjbGdEL._SL1499_.jpg",
-		link: "https://www.amazon.com/Economics-Labor-Era-Disruption-Adaptation/dp/B0GSQSL344/ref=sr_1_20"
-	},
-	{
-		title: "Governing AI Systems",
-		category: "tech",
-		description: "Security, compliance, and governance frameworks for organizational AI deployment.",
-		image: "https://m.media-amazon.com/images/I/715f6abCEqL._SL1499_.jpg",
-		link: "https://www.amazon.com/Governing-AI-Systems/dp/B0GSMVQ1TH/ref=sr_1_21"
-	},
-	{
-		title: "Shipping AI: From Prototype to Production Systems",
-		category: "tech",
-		description: "Engineering patterns to move AI prototypes into reliable production systems.",
-		image: "https://m.media-amazon.com/images/I/71V2oEyfaCL._SL1499_.jpg",
-		link: "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/ref=sr_1_22"
-	},
-	{
-		title: "Building Knowledge Systems for AI: Graphs, RAG, Memory, and Context",
-		category: "tech",
-		description: "Building resilient knowledge architectures for AI context engineering.",
-		image: "https://m.media-amazon.com/images/I/71AY0UlebPL._SL1499_.jpg",
-		link: "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/ref=sr_1_27"
-	},
-	{
-		title: "The AI Lakehouse: Architecting Data Platforms for AI",
-		category: "tech",
-		description: "Designing modern data lakehouses built specifically to serve AI workloads.",
-		image: "https://m.media-amazon.com/images/I/61ybHcw6c2L._SL1499_.jpg",
-		link: "https://www.amazon.com/AI-Lakehouse-Architecting-Data-Platforms/dp/B0GSMQ6M2J/ref=sr_1_29"
-	},
-	{
-		title: "AI Application Architecture: Patterns for Building Intelligent Systems",
-		category: "tech",
-		description: "Architectural design patterns for enterprise intelligent applications.",
-		image: "https://m.media-amazon.com/images/I/71Y2EL6xo1L._SL1499_.jpg",
-		link: "https://www.amazon.com/AI-Application-Architecture-Patterns-Intelligent/dp/B0GSVFT3H4/ref=sr_1_35"
-	},
-	{
-		title: "The Economics of AI: Cost, Latency, and Infrastructure Tradeoffs",
-		category: "tech",
-		description: "Understanding inference costs, token economics, latency, and hardware tradeoffs.",
-		image: "https://m.media-amazon.com/images/I/61X6ZAmfUoL._SL1499_.jpg",
-		link: "https://www.amazon.com/Economics-AI-Latency-Infrastructure-Tradeoffs/dp/B0GSPGSKXC/ref=sr_1_36"
-	},
-	{
-		title: "Alex Merced's Field Guide to Developer Relations",
-		category: "tech",
-		description: "Practical guide to developer relations, community building, and technical evangelism.",
-		image: "https://images.amazon.com/images/P/B0H15CJLNG.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0H15CJLNG"
-	},
-	{
-		title: "AI and Agents for Normal People",
-		category: "tech",
-		description: "Practical guide to using AI tools for everyday tasks without technical jargon.",
-		image: "https://m.media-amazon.com/images/I/71oCOTieqYL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H59GBTMW"
-	},
-	{
-		title: "The No Lock-in Apache Iceberg Lakehouse with Agentic Analytics",
-		category: "tech",
-		description: "Building a portable Apache Iceberg lakehouse with open catalogs and agentic analytics.",
-		image: "https://m.media-amazon.com/images/I/71bHiNYCPyL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H49TDNX3"
-	},
-	{
-		title: "Being Productive with Google AI",
-		category: "tech",
-		description: "Practical guide to Gemini, NotebookLM, Veo, Gemini Spark, and Jules.",
-		image: "https://m.media-amazon.com/images/I/71mp4ume8xL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H77DBD83"
-	},
-	{
-		title: "Being Productive with Open Models",
-		category: "tech",
-		description: "Practical guide to Opencode, PI, and Hermes for AI-assisted development.",
-		image: "https://m.media-amazon.com/images/I/71J0MZoCf-L._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H76JQ55R"
-	},
-	{
-		title: "Being Productive with Claude",
-		category: "tech",
-		description: "Practical guide to Claude.ai, Claude Code, and Claude Dispatch for AI development.",
-		image: "https://m.media-amazon.com/images/I/81Zc9EI0yCL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H76BTLMF"
-	},
-	{
-		title: "Being Productive with OpenAI Codex",
-		category: "tech",
-		description: "Building documents, images, video, websites, and apps with an AI agent using Codex.",
-		image: "https://m.media-amazon.com/images/I/71VVMIEsRCL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H766477L"
-	},
-	{
-		title: "Being Productive with Grok and Cursor",
-		category: "tech",
-		description: "Practical guide to xAI Grok and Cursor Composer agentic development workflows.",
-		image: "https://m.media-amazon.com/images/I/51+f2sIBG7L._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H7Z6RS5Y"
-	},
-	{
-		title: "Being Productive with Microsoft Copilot",
-		category: "tech",
-		description: "Practical guide to M365 Copilot, GitHub Copilot Agent Mode, and Copilot Studio.",
-		image: "https://m.media-amazon.com/images/I/71GdJ3aTnFL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0H7WZ19NJ"
-	},
-	{
-		title: "The Book on Data, Data Engineering, Data Analytics, and Agentic AI - Volume 2",
-		category: "tech",
-		description: "Complete guide to SQL analytics, BI, and agentic AI for modern data platforms.",
-		image: "https://m.media-amazon.com/images/I/71b1abVGM6L._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0GZVJB6ML"
-	},
-	{
-		title: "The Book on Data, Data Engineering, Data Analytics, and Agentic AI - Volume 1",
-		category: "tech",
-		description: "Complete guide to modern data systems, data engineering, analytics, and AI.",
-		image: "https://m.media-amazon.com/images/I/71Yh+fIviFL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0GZTXJQ1C"
-	},
-	{
-		title: "Dremio and the Semantic Layer",
-		category: "tech",
-		description: "Providing meaning and context for AI with Dremio's semantic layer.",
-		image: "https://m.media-amazon.com/images/I/61EsmTHqTnL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0GWF7PFDG"
-	},
-	{
-		title: "Hands-On Agentic Engineering: A Practical Guide to Building Multi-Agent Systems",
-		category: "tech",
-		description: "Practical guide to building multi-agent systems with Apache Iceberg.",
-		image: "https://m.media-amazon.com/images/I/718zXBgnjdL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0GWTZ1394"
-	},
-	{
-		title: "The Lakehouse Built for Everyone",
-		category: "tech",
-		description: "From laptop prototypes to enterprise-scale agentic AI with Apache Iceberg and Dremio.",
-		image: "https://m.media-amazon.com/images/I/61GClrHVxIL._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0GYL5Q5YV"
-	},
-	{
-		title: "The Book on Apache Polaris",
-		category: "tech",
-		description: "Building the open data lakehouse with the industry standard Iceberg REST catalog.",
-		image: "https://m.media-amazon.com/images/I/71CLqSXeI2L._SY522_.jpg",
-		link: "https://www.amazon.com/dp/B0GZDVCV24"
-	},
+import bookData from '../data/books.json';
 
-	// Economics & Philosophy Books
-	{
-		title: "Economic Ideas: From Beginning to Early 2026",
-		category: "economics",
-		description: "History of economic thought from ancient origins through the AI era.",
-		image: "https://images.amazon.com/images/P/B0GQQ68F63.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQQ68F63"
-	},
-	{
-		title: "The Field Guide to Libertarianism",
-		category: "economics",
-		description: "Comprehensive guide to libertarian ideas, history, and modern debates.",
-		image: "https://images.amazon.com/images/P/B0GQV4CK5B.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQV4CK5B"
-	},
-	{
-		title: "The Field Guide to Political Thought and Debates in the United States",
-		category: "economics",
-		description: "Mapping conservative, progressive, and libertarian political thought.",
-		image: "https://m.media-amazon.com/images/I/71xELzuacqL._SL1499_.jpg",
-		link: "https://www.amazon.com/dp/B0GTV6ZWHX"
-	},
-	{
-		title: "The Libertarian Heart",
-		category: "economics",
-		description: "Philosophy of consent, voluntary interaction, and individual peace.",
-		image: "https://images.amazon.com/images/P/035975211X.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/035975211X"
-	},
-	{
-		title: "Profits are Generosity, Entrepreneurship is Philanthropy",
-		category: "economics",
-		description: "Economic philosophy exploring voluntary exchange and wealth creation.",
-		image: "https://images.amazon.com/images/P/1387798421.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/1387798421"
-	},
-
-	// Fiction Books
-	{
-		title: "The Semantic Rebellion",
-		category: "fiction",
-		description: "A data engineer's journey through a changing technological world.",
-		image: "https://images.amazon.com/images/P/B0GPMNX78W.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GPMNX78W"
-	},
-	{
-		title: "The Emperors of A.I. Valley",
-		category: "fiction",
-		description: "Sci-fi thriller exploring power struggles in an AI-dominated future.",
-		image: "https://images.amazon.com/images/P/B0GQHKF4ZT.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQHKF4ZT"
-	},
-	{
-		title: "The Federation of Tides",
-		category: "fiction",
-		description: "Epic journey of a narwhal seeking knowledge across distant ocean realms.",
-		image: "https://images.amazon.com/images/P/B0GPRBTV6W.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GPRBTV6W"
-	},
-	{
-		title: "Plastic Punk",
-		category: "fiction",
-		description: "Cyberpunk journey through economic systems and futuristic societies.",
-		image: "https://images.amazon.com/images/P/B0GQGRFW2H.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQGRFW2H"
-	},
-	{
-		title: "Embers of Claim",
-		category: "fiction",
-		description: "Book 1 of the epic fantasy trilogy.",
-		image: "https://images.amazon.com/images/P/B0GQGW7VCY.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQGW7VCY"
-	},
-	{
-		title: "Crowns and Wings",
-		category: "fiction",
-		description: "Book 2 of the epic fantasy trilogy.",
-		image: "https://images.amazon.com/images/P/B0GQGHYL79.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQGHYL79"
-	},
-	{
-		title: "Thrones of Ash and Sky",
-		category: "fiction",
-		description: "Book 3 and epic conclusion of the fantasy trilogy.",
-		image: "https://images.amazon.com/images/P/B0GQCHRYHV.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQCHRYHV"
-	},
-	{
-		title: "Tales of Fur and Sky: Echoes of the Ages",
-		category: "fiction",
-		description: "Companion anthology to the fantasy trilogy.",
-		image: "https://images.amazon.com/images/P/B0GQGRGH93.01._SCLZZZZZZZ_.jpg",
-		link: "https://www.amazon.com/dp/B0GQGRGH93"
-	}
-];
+// The catalog is generated from the entity layer; see
+// alexmercedcom/scripts/build-network-booklists.mjs.
+const books = bookData.books.map((b) => ({
+	title: b.title,
+	category: b.categorySlug,
+	description: b.description,
+	image: b.cover,
+	link: b.amazon,
+	details: b.canonicalPage,
+	publisher: b.publisher,
+}));
 ---
 
-<Layout title="Books by Alex Merced" description="Explore the full library of 63 books by Alex Merced covering Apache Iceberg, Data Lakehouses, AI Engineering, Economics, and Fiction.">
+<Layout title="Books by Alex Merced" description={`The full library of ${books.length} books by Alex Merced covering Apache Iceberg, Data Lakehouses, AI Engineering, Economics, Fiction, and tabletop roleplaying.`}>
 	<Fragment slot="head">
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
@@ -384,7 +33,7 @@ const books = [
 						"@type": "Person",
 						"name": "Alex Merced"
 					},
-					"url": b.link,
+					"url": b.details,
 					"image": b.image,
 					"description": b.description
 				}
@@ -437,6 +86,7 @@ const books = [
 				<button class="filter-btn" data-category="tech">Data & AI ({books.filter(b => b.category === 'tech').length})</button>
 				<button class="filter-btn" data-category="economics">Economics ({books.filter(b => b.category === 'economics').length})</button>
 				<button class="filter-btn" data-category="fiction">Fiction ({books.filter(b => b.category === 'fiction').length})</button>
+				<button class="filter-btn" data-category="tabletop">Tabletop RPG ({books.filter(b => b.category === 'tabletop').length})</button>
 			</div>
 		</div>
 	</div>
@@ -454,10 +104,13 @@ const books = [
 						<img src={book.image} alt={book.title} loading="lazy" />
 					</div>
 					<div class="book-info">
-						<span class="category-badge">{book.category === 'tech' ? 'Data & AI' : book.category === 'economics' ? 'Economics' : 'Fiction'}</span>
+						<span class="category-badge">{book.category === 'tech' ? 'Data & AI' : book.category === 'economics' ? 'Economics' : book.category === 'tabletop' ? 'Tabletop RPG' : 'Fiction'}</span>
 						<h3>{book.title}</h3>
 						<p>{book.description}</p>
-						<a href={book.link} target="_blank" rel="noopener noreferrer" class="button">Get on Amazon</a>
+						<p class="book-links">
+							<a href={book.details} target="_blank" rel="noopener noreferrer">Details</a>
+							<a href={book.link} target="_blank" rel="noopener noreferrer" class="button">Get on Amazon</a>
+						</p>
 					</div>
 				</div>
 			))}
