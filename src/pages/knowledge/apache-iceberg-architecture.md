@@ -41,7 +41,7 @@ The catalog acts as the authoritative entry point. Its primary responsibility is
 
 The catalog is also responsible for guaranteeing atomicity. When an engine commits new data to the table, it asks the catalog to update the pointer from the old metadata file to the new metadata file. The catalog ensures this operation is atomic. If two engines try to update the pointer simultaneously, the catalog allows one to succeed and forces the other to retry, preventing corruption. 
 
-Organizations typically implement the catalog using specialized services like [Apache Polaris](/knowledge/apache-polaris) or [Project Nessie](/knowledge/project-nessie), which implement the [Iceberg REST Catalog](/knowledge/apache-iceberg-rest-catalog) specification.
+Organizations typically implement the catalog using specialized services like [Apache Polaris](/knowledge/apache-polaris) or [Project Nessie](/knowledge/project-nessie), which implement the Iceberg REST Catalog specification.
 
 ### Level 2: The Metadata File
 The catalog pointer leads the query engine to a `.metadata.json` file. This file represents the absolute state of the table at a specific point in time. 
@@ -90,7 +90,7 @@ A core concept in the Apache Iceberg architecture is the snapshot. A snapshot re
 
 Every time a write operation occurs, whether it is an `INSERT`, `UPDATE`, `DELETE`, or a schema change, Iceberg creates a new snapshot. It does this by creating a new metadata JSON file that contains a new snapshot ID. This new metadata file points to a new manifest list, which points to a combination of existing manifest files and newly created manifest files.
 
-Because existing metadata files and data files are immutable, they are left entirely intact. This architectural design enables powerful capabilities explored fully in our [Apache Iceberg Snapshots and Time Travel](/knowledge/apache-iceberg-snapshots-and-time-travel) guide.
+Because existing metadata files and data files are immutable, they are left entirely intact. This architectural design enables powerful capabilities explored fully in our [Apache Iceberg Snapshots and Time Travel](/knowledge/apache-iceberg-time-travel) guide.
 
 Because previous snapshots are preserved, users can execute time travel queries. By specifying an older snapshot ID or timestamp in the SQL query, the query engine simply reads the older metadata JSON file. The engine traverses the old manifest list and the old manifest files, completely ignoring any data inserted after that point in time. 
 

@@ -53,7 +53,7 @@ By moving the table state into explicit metadata, Apache Iceberg unlocks capabil
 
 ### ACID Transactions and Serializable Isolation
 
-Apache Iceberg provides full ACID (Atomicity, Consistency, Isolation, Durability) guarantees. It achieves this using a technique called [Optimistic Concurrency Control (OCC)](/knowledge/optimistic-concurrency-control-occ).
+Apache Iceberg provides full ACID (Atomicity, Consistency, Isolation, Durability) guarantees. It achieves this using a technique called [Optimistic Concurrency Control (OCC)](/knowledge/acid-transactions-in-data-lakes).
 
 When a query engine (like Spark) writes new data to an Iceberg table, it does not overwrite existing files. It creates new data files and attempts to commit a new metadata file that points to these new additions. Before committing, it checks the catalog to ensure no other engine has updated the table since the operation began. If another engine has made an update, the first engine simply reads the new metadata, rebases its changes, and retries the commit.
 
@@ -94,7 +94,7 @@ Additionally, if a data pipeline introduces corrupted data, a data engineer can 
 To understand how Iceberg achieves these capabilities, it is necessary to examine the physical structure of an Iceberg table. A complete deep dive into this topic is available in our [Apache Iceberg Architecture](/knowledge/apache-iceberg-architecture) guide, but the core structure consists of a catalog and three distinct layers of metadata.
 
 ### The Catalog
-The catalog is the absolute source of truth. Its only job is to map a table name (like `sales.transactions`) to the storage path of the most recent metadata file. When a query engine wants to read or write to Iceberg, it must consult the catalog first. The catalog enforces the atomic swap of metadata pointers during write operations, guaranteeing ACID compliance. The [Iceberg REST Catalog](/knowledge/apache-iceberg-rest-catalog) specification is the modern standard, enabling seamless interoperability across diverse compute engines.
+The catalog is the absolute source of truth. Its only job is to map a table name (like `sales.transactions`) to the storage path of the most recent metadata file. When a query engine wants to read or write to Iceberg, it must consult the catalog first. The catalog enforces the atomic swap of metadata pointers during write operations, guaranteeing ACID compliance. The Iceberg REST Catalog specification is the modern standard, enabling seamless interoperability across diverse compute engines.
 
 ### 1. Metadata Files
 The catalog points to a `.metadata.json` file. This file contains the complete logical state of the table. It stores the schema, the partitioning specification, and an array of all historical snapshots. It defines which snapshot is the current, active version of the table.

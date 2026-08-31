@@ -71,7 +71,7 @@ Table formats also provide schema evolution, allowing engineers to add, drop, or
 
 As a lakehouse grows to encompass thousands of tables and petabytes of data, a central mechanism is needed to track everything. This is the role of the data catalog.
 
-The catalog acts as the central brain of the lakehouse. It maintains the authoritative list of every table, where its current metadata is located, and who is allowed to access it. For [Apache Iceberg](/knowledge/apache-iceberg) architectures, the [Iceberg REST Catalog](/knowledge/apache-iceberg-rest-catalog) specification has become the industry standard. Tools like [Apache Polaris](/knowledge/apache-polaris) and [Project Nessie](/knowledge/project-nessie) provide this cataloging capability.
+The catalog acts as the central brain of the lakehouse. It maintains the authoritative list of every table, where its current metadata is located, and who is allowed to access it. For [Apache Iceberg](/knowledge/apache-iceberg) architectures, the Iceberg REST Catalog specification has become the industry standard. Tools like [Apache Polaris](/knowledge/apache-polaris) and [Project Nessie](/knowledge/project-nessie) provide this cataloging capability.
 
 The catalog also enforces governance. It is the integration point for Role Based Access Control (RBAC), data masking, and compliance audits, ensuring that sensitive information remains secure even when accessed by different compute engines.
 
@@ -122,7 +122,7 @@ Finally, it creates a snapshot metadata file that points to the manifest list.
 
 When a user executes a `SELECT` query with a specific filter (for example, `WHERE event_date = '2026-05-15'`), the query engine does not scan the massive data files. Instead, it reads the tiny metadata files. By checking the minimum and maximum values stored in the metadata, the engine can instantly eliminate 99 percent of the data files that do not match the filter. This is known as [Predicate Pushdown](/knowledge/predicate-pushdown) and file pruning. The engine then reads only the handful of files that actually contain the requested data, turning a query that used to take hours into one that takes milliseconds.
 
-The table format is also responsible for [Optimistic Concurrency Control (OCC)](/knowledge/optimistic-concurrency-control-occ). If two different engines try to update the same table simultaneously, the table format relies on the catalog to serialize the commits. Whichever engine commits first succeeds. The second engine realizes the table state has changed, reads the new metadata, and retries its operation, guaranteeing that data is never corrupted by conflicting writes.
+The table format is also responsible for [Optimistic Concurrency Control (OCC)](/knowledge/acid-transactions-in-data-lakes). If two different engines try to update the same table simultaneously, the table format relies on the catalog to serialize the commits. Whichever engine commits first succeeds. The second engine realizes the table state has changed, reads the new metadata, and retries its operation, guaranteeing that data is never corrupted by conflicting writes.
 
 ## The Universal Semantic Layer
 

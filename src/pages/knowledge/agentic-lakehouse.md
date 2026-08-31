@@ -19,7 +19,7 @@ The problem is that traditional data lakehouses are not designed for non human c
 
 This friction has given rise to a new architectural paradigm: the [Agentic Lakehouse](/knowledge/agentic-lakehouse). An [agentic lakehouse](/knowledge/agentic-lakehouse) is an evolution of the open [data lakehouse](/knowledge/data-lakehouse), purpose built to provide the semantic context, computational speed, and strict governance required to allow autonomous software systems to interact directly and safely with enterprise data. 
 
-This guide defines the agentic lakehouse, separates the vendor terminology from the underlying architectural pattern, and explores the mandatory layers required to build a trustworthy foundation for [Agentic Analytics](/knowledge/agentic-analytics).
+This guide defines the agentic lakehouse, separates the vendor terminology from the underlying architectural pattern, and explores the mandatory layers required to build a trustworthy foundation for Agentic Analytics.
 
 ## The Difference Between a Lakehouse and an Agentic Lakehouse
 
@@ -83,7 +83,7 @@ If an AI agent needs to analyze the correlation between marketing spend and supp
 
 The agentic lakehouse solves this through Zero ETL Data Federation. Using a high performance federated query engine, the lakehouse allows the AI agent to write a single SQL query that spans multiple physical locations. The engine utilizes advanced compute pushdown techniques to force the source systems (like the Oracle database) to filter the data locally, retrieving only the necessary results over the network. 
 
-This multicloud capability is essential for [Lakehouse for AI Agents](/knowledge/lakehouse-for-ai-agents). It allows organizations to maintain a single, governed control plane for their entire data estate. The AI agent operates under the illusion that all the data is stored in one massive, local database, drastically reducing the complexity of the agent's reasoning process.
+This multicloud capability is essential for [Lakehouse for AI Agents](/knowledge/agentic-lakehouse). It allows organizations to maintain a single, governed control plane for their entire data estate. The AI agent operates under the illusion that all the data is stored in one massive, local database, drastically reducing the complexity of the agent's reasoning process.
 
 ## Autonomous Optimization
 
