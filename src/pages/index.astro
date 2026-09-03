@@ -121,30 +121,15 @@ const projectUpdates = [
 
 	<section class="container video-section" id="brand-video">
 		<div class="video-header">
-			<span class="video-label">Introduction</span>
-			<h2>Who is Alex Merced?</h2>
-			<p>A short introduction — the author, speaker, podcaster, and educator behind the work.</p>
+			<span class="video-label">Featured films</span>
+			<h2>Three stories. One open future.</h2>
+			<p>Meet Alex, open the agentic stack, and travel through the Apache Iceberg lakehouse.</p>
 		</div>
-		<figure class="video-figure">
-			<div class="video-frame">
-				<video
-					controls
-					preload="metadata"
-					playsinline
-					poster="/who-is-alex-merced.jpg"
-					width="1920"
-					height="1080"
-				>
-					<source src="/who-is-alex-merced.mp4" type="video/mp4" />
-					Your browser does not support the video tag.
-					<a href="/who-is-alex-merced.mp4">Download the video</a>.
-				</video>
-			</div>
-			<figcaption>
-				48 seconds · Press play (with sound) for the short version. ·
-				<a href="/who-is-alex-merced.mp4" download>Download the video</a>
-			</figcaption>
-		</figure>
+		<div class="video-grid">
+			<figure class="video-figure"><div class="video-frame"><video controls preload="metadata" playsinline poster="https://alexmerced.com/my-name-is-alex-poster.jpg" aria-label="My Name Is Alex music video"><source src="https://alexmerced.com/my-name-is-alex.mp4" type="video/mp4" />Your browser does not support embedded video.</video></div><figcaption><strong>My Name Is Alex</strong><span>A personal, music-driven introduction.</span></figcaption></figure>
+			<figure class="video-figure"><div class="video-frame"><video controls preload="metadata" playsinline poster="https://openagenticplatform.com/open-the-stack-poster.jpg" aria-label="Open the Stack music video"><source src="https://openagenticplatform.com/open-the-stack.mp4" type="video/mp4" />Your browser does not support embedded video.</video></div><figcaption><strong>Open the Stack</strong><span>Composable agents, open standards, portable execution.</span></figcaption></figure>
+			<figure class="video-figure"><div class="video-frame"><video controls preload="metadata" playsinline poster="https://opendatalakehouse.com/the-iceberg-open-lakehouse-poster.jpg" aria-label="The Iceberg Open Lakehouse music video"><source src="https://opendatalakehouse.com/the-iceberg-open-lakehouse.mp4" type="video/mp4" />Your browser does not support embedded video.</video></div><figcaption><strong>The Iceberg Open Lakehouse</strong><span>Open data architecture from files to semantics.</span></figcaption></figure>
+		</div>
 	</section>
 
 	<section class="container about-section">
@@ -370,6 +355,12 @@ const projectUpdates = [
 		margin: 0 auto;
 	}
 
+	.video-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.5rem;
+	}
+
 	.video-frame {
 		position: relative;
 		aspect-ratio: 16 / 9;
@@ -394,6 +385,10 @@ const projectUpdates = [
 		font-size: 0.95rem;
 		color: var(--text-muted);
 	}
+
+	.video-figure figcaption strong,
+	.video-figure figcaption span { display: block; }
+	.video-figure figcaption strong { color: var(--text); font-size: 1.1rem; }
 
 	.video-figure figcaption a {
 		color: var(--accent);
@@ -526,6 +521,7 @@ const projectUpdates = [
 	}
 
 	@media (max-width: 768px) {
+		.video-grid { grid-template-columns: 1fr; }
 		.hero h1 {
 			font-size: 3rem;
 		}
