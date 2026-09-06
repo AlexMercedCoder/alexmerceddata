@@ -13,6 +13,6 @@
   if (!window.AlexMercedWebMCP) return;
   window.AlexMercedWebMCP.init({
     site: 'alexmerceddata.com',
-    packs: ["knowledge", "projects"]
+    packs: ["knowledge"]
   });
 })();
