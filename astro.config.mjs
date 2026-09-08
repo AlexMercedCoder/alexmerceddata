@@ -7,5 +7,12 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://alexmerceddata.com',
   trailingSlash: 'always',
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date();
+        return item;
+      },
+    }),
+  ],
 });

@@ -22,4 +22,13 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 Sitemap: https://alexmerceddata.com/sitemap-index.xml
