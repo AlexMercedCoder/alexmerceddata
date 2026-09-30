@@ -1,4 +1,7 @@
 ---
+import networkHead from '../../network/network-head.html?raw';
+import network from '../../network/network.json';
+
 interface Props {
 	title: string;
 	description?: string;
@@ -8,13 +11,46 @@ interface Props {
 
 const { 
 	title, 
-	description = "Alex Merced is a Data Lakehouse & AI thought leader, educator, and author.",
+	description = "Alex Merced's data and AI work: talks, the Lakehouse and AI Show, books, videos, and writing.",
 	canonicalUrl,
 	ogType = "website"
 } = Astro.props;
 
 const currentUrl = new URL(Astro.url.pathname, Astro.site);
 const canonical = canonicalUrl || currentUrl.href;
+const ogImage = new URL('/og-image.jpg', Astro.site).href;
+const fullTitle = title.includes('|') ? title : `${title} | Alex Merced Data`;
+
+const pageSchema = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebPage",
+			"@id": `${canonical}#webpage`,
+			"url": canonical,
+			"name": fullTitle,
+			"description": description,
+			"isPartOf": { "@id": "https://alexmerceddata.com/#website" },
+			"author": { "@id": "https://alexmerced.com/#alexmerced" }
+		},
+		{
+			"@type": "WebSite",
+			"@id": "https://alexmerceddata.com/#website",
+			"url": "https://alexmerceddata.com",
+			"name": "Alex Merced Data",
+			"author": { "@id": "https://alexmerced.com/#alexmerced" },
+			"publisher": { "@id": "https://alexmerceddata.com/#organization" }
+		},
+		{
+			"@type": "Organization",
+			"@id": "https://alexmerceddata.com/#organization",
+			"name": "Alex Merced Data",
+			"url": "https://alexmerceddata.com",
+			"founder": { "@id": "https://alexmerced.com/#alexmerced" },
+			"logo": { "@type": "ImageObject", "url": "https://alexmerceddata.com/favicon.png" }
+		}
+	]
+};
 ---
 
 <!doctype html>
@@ -26,82 +62,27 @@ const canonical = canonicalUrl || currentUrl.href;
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		
-		<!-- Open Graph / Facebook -->
+		<Fragment set:html={networkHead} />
+
+		<!-- Open Graph -->
 		<meta property="og:type" content={ogType} />
 		<meta property="og:url" content={canonical} />
-		<meta property="og:title" content={title} />
+		<meta property="og:title" content={fullTitle} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/og-image.jpg" />
+		<meta property="og:image" content={ogImage} />
 
 		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={canonical} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content="/og-image.jpg" />
-		
-		<!-- Canonical URL -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content={network.twitterSite} />
+		<meta name="twitter:title" content={fullTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
 		<link rel="canonical" href={canonical} />
 
-		<!-- JSON-LD -->
-		<script type="application/ld+json" set:html={`{
-			"@context": "https://schema.org",
-			"@graph": [
-				{
-					"@type": "WebPage",
-					"@id": "${canonical}#webpage",
-					"url": "${canonical}",
-					"name": "${title}",
-					"description": "${description}",
-					"isPartOf": {
-						"@id": "https://alexmerceddata.com/#website"
-					}
-				},
-				{
-					"@type": "WebSite",
-					"@id": "https://alexmerceddata.com/#website",
-					"url": "https://alexmerceddata.com",
-					"name": "Alex Merced Data",
-					"publisher": {
-						"@id": "https://alexmerceddata.com/#organization"
-					}
-				},
-				{
-					"@type": "Organization",
-					"@id": "https://alexmerceddata.com/#organization",
-					"name": "Alex Merced Data",
-					"url": "https://alexmerceddata.com",
-					"logo": {
-						"@type": "ImageObject",
-						"url": "https://alexmerceddata.com/favicon.png"
-					}
-				},
-				{
-					"@type": "Person",
-					"@id": "https://alexmerced.com/#alexmerced",
-					"name": "Alex Merced",
-					"url": "https://alexmerced.com",
-					"sameAs": [
-						"https://www.youtube.com/@alexmerceddata",
-						"https://www.youtube.com/@AlexMercedCoder",
-						"https://datalakehousehub.com",
-						"https://whoisalexmerced.com",
-						"https://branding.alexmerced.com",
-						"https://linkedin.com/in/alexmerced",
-						"https://amdatalakehouse.substack.com/",
-						"https://open.spotify.com/show/2PRDrWVpgDvKxN6n1oUsJF"
-					],
-					"jobTitle": "Head of Developer Relations",
-					"worksFor": {
-						"@type": "Organization",
-						"name": "Dremio",
-						"url": "https://www.dremio.com"
-					}
-				}
-			]
-		}`} />
-		
-		<title>{title.includes('|') ? title : `${title} | Alex Merced Data`}</title>
+		<script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+		<title>{fullTitle}</title>
 		<slot name="head" />
 	</head>
 	<body>
@@ -110,14 +91,13 @@ const canonical = canonicalUrl || currentUrl.href;
 			<nav class="container">
 				<a href="/" class="logo">AlexMerced<span>Data</span></a>
 				<ul class="nav-links" id="primary-nav">
-					<li><a href="/">About</a></li>
+					<li><a href="/#talks">Talks</a></li>
+					<li><a href="/lakehouse-ai-show/">Lakehouse &amp; AI Show</a></li>
+					<li><a href="/books/">Books</a></li>
+					<li><a href="/videos/">Videos</a></li>
+					<li><a href="/blogroll/">Writing</a></li>
 					<li><a href="/#open-source">Open Source</a></li>
-					<li><a href="/books">Books</a></li>
-					<li><a href="/lakehouse-ai-show">Lakehouse & AI Show</a></li>
-					<li><a href="/blogroll">Blogroll</a></li>
-					<li><a href="/videos">Videos</a></li>
-					<li><a href="/gallery">Gallery</a></li>
-					<li><a href="/knowledge">Knowledge Base</a></li>
+					<li><a href="/gallery/">Gallery</a></li>
 				</ul>
 				<button class="mobile-menu" aria-label="Toggle Menu" aria-expanded="false" aria-controls="primary-nav">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -129,63 +109,59 @@ const canonical = canonicalUrl || currentUrl.href;
 			<slot />
 		</main>
 
+		{network.cta && (
+			<section class="cta-strip" aria-labelledby="cta-strip-heading">
+				<div class="container cta-strip-inner">
+					<h2 id="cta-strip-heading">{network.cta.heading}</h2>
+					<ul class="cta-strip-links">
+						{network.cta.links.map((link, i) => (
+							<li><a href={link.url} class={i === 0 ? 'button primary' : 'button'} data-network-event={link.event}>{link.label}</a></li>
+						))}
+					</ul>
+				</div>
+			</section>
+		)}
+
 		<footer>
 			<div class="container footer-content">
 				<div class="footer-brand">
 					<h3>AlexMerced<span>Data</span></h3>
-					<p>Empowering the data and AI community through education, advocacy, and open source.</p>
+					<p>Alex Merced's data and AI work: talks, the Lakehouse and AI Show, books, videos, and writing. For his bio and facts, visit <a href="https://alexmerced.com">alexmerced.com</a>.</p>
 				</div>
 				<div class="footer-links">
-					<h4>Quick Links</h4>
+					<h4>On this site</h4>
 					<ul>
-						<li><a href="/">About Alex</a></li>
-						<li><a href="/lakehouse-ai-show">Lakehouse & AI Show</a></li>
-						<li><a href="/books">Data & AI Books</a></li>
-						<li><a href="/gallery">Infographics Gallery</a></li>
-						<li><a href="/knowledge">Knowledge Base</a></li>
-						<li><a href="https://opendatalakehouse.com" target="_blank" rel="noopener noreferrer">opendatalakehouse.com</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/lakehouse-ai-show/">Lakehouse &amp; AI Show</a></li>
+						<li><a href="/books/">Data &amp; AI Books</a></li>
+						<li><a href="/videos/">Videos</a></li>
+						<li><a href="/blogroll/">Writing</a></li>
+						<li><a href="/gallery/">Infographics Gallery</a></li>
+						<li><a href="/knowledge/">Knowledge Base</a></li>
 					</ul>
 				</div>
 				<div class="footer-social">
 					<h4>Connect</h4>
 					<ul>
+						<li><a href="https://alexmerced.com">About Alex</a></li>
 						<li><a href="https://youtube.com/@alexmerceddata" target="_blank" rel="noopener noreferrer">YouTube</a></li>
 						<li><a href="https://linkedin.com/in/alexmerced" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
 					</ul>
 				</div>
 			</div>
-			<nav class="footer-run" aria-label="The Alex Merced Network">
-			  <div class="footer-run-title">The Alex Merced Network</div>
-			  <ul class="footer-run-list">
-			    <li><a href="https://alexmerced.com" target="_blank" rel="noopener">AlexMerced.com</a></li>
-			    <li><a href="https://whoisalexmerced.com" target="_blank" rel="noopener">WhoIsAlexMerced.com</a></li>
-			    <li><a href="https://alexmercedmedia.com" target="_blank" rel="noopener">AlexMercedMedia.com</a></li>
-			    <li><a href="https://branding.alexmerced.com" target="_blank" rel="noopener">Branding.AlexMerced.com</a></li>
-			    <li><a href="https://books.alexmerced.com" target="_blank" rel="noopener">Books</a></li>
-			    <li><a href="https://resources.alexmerced.com" target="_blank" rel="noopener">Resources.AlexMerced.com</a></li>
-			    <li><a href="https://opendatalakehouse.com" target="_blank" rel="noopener">OpenDataLakehouse.com</a></li>
-			    <li><a href="https://alexmercedcoder.dev" target="_blank" rel="noopener">AlexMercedCoder.dev</a></li>
-			    <li><a href="https://datalakehousehub.com" target="_blank" rel="noopener">DataLakehouseHub.com</a></li>
-			    <li><a href="https://datalakehouse.help" target="_blank" rel="noopener">DataLakehouse.help</a></li>
-			    <li><a href="https://iceberglakehouse.com" target="_blank" rel="noopener">IcebergLakehouse.com</a></li>
-			    <li><a href="https://agenticlakehouse.com" target="_blank" rel="noopener">AgenticLakehouse.com</a></li>
-			    <li><a href="https://agenticanalyticsnow.com" target="_blank" rel="noopener">AgenticAnalyticsNow.com</a></li>
-			    <li><a href="https://openagenticplatform.com" target="_blank" rel="noopener">OpenAgenticPlatform.com</a></li>
-			    <li><a href="https://www.alexmercedai.com" target="_blank" rel="noopener">AlexMercedAI.com</a></li>
-			    <li><a href="https://dataaiwiki.com" target="_blank" rel="noopener">DataAIWiki.com</a></li>
-			    <li><a href="https://semanticlakehouse.com" target="_blank" rel="noopener">SemanticLakehouse.com</a></li>
-			    <li><a href="https://openlakehouse.alexmerced.com" target="_blank" rel="noopener">OpenLakehouse.AlexMerced.com</a></li>
-			    <li><a href="https://dataengnr.com" target="_blank" rel="noopener">DataEngnr.com</a></li>
-			    <li><a href="https://weekofdata.com" target="_blank" rel="noopener">WeekOfData.com</a></li>
-			    <li><a href="https://alexmerced.blog" target="_blank" rel="noopener">AlexMerced.blog</a></li>
-			    <li><a href="https://tuts.alexmercedcoder.dev" target="_blank" rel="noopener">Tuts.AlexMercedCoder.dev</a></li>
-			    <li><a href="https://grokoverflow.com" target="_blank" rel="noopener">GrokOverflow.com</a></li>
-			    <li><a href="https://ingestthis.com" target="_blank" rel="noopener">IngestThis.com</a></li>
-			    <li><a href="https://alexmercedmusic.com" target="_blank" rel="noopener">AlexMercedMusic.com</a></li>
-			    <li><a href="https://alexmercedlibertarian.com" target="_blank" rel="noopener">AlexMercedLibertarian.com</a></li>
-			    <li><a href="https://d6storyteller.alexmerced.com" target="_blank" rel="noopener">D6Storyteller.AlexMerced.com</a></li>
-			  </ul>
-			</nav>
+			{network.footer.groups.map((group) => (
+				<nav class="footer-run" aria-label={group.title}>
+					<div class="footer-run-title">{group.title}</div>
+					<ul class="footer-run-list">
+						{group.links.map((link) => (
+							<li><a href={link.url} target="_blank" rel="noopener">{link.title}</a></li>
+						))}
+					</ul>
+				</nav>
+			))}
+			<div class="footer-run footer-all-sites">
+				<a href={network.footer.allSitesUrl}>{network.footer.allSitesLabel} &rarr;</a>
+			</div>
 			<nav class="footer-run" aria-label="Free weekly newsletters">
 			  <div class="footer-run-title">Free Weekly Newsletters</div>
 			  <ul class="footer-run-list">
@@ -431,6 +407,50 @@ const canonical = canonicalUrl || currentUrl.href;
 		content: "\00B7";
 		margin-right: 0.75rem;
 		opacity: 0.5;
+	}
+
+	.footer-all-sites a {
+		color: var(--accent);
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+
+	.footer-all-sites a:hover { text-decoration: underline; }
+
+	.footer-brand p a { color: var(--accent); }
+
+	/* CTA strip: the one primary next step, shown above the footer on every page */
+	.cta-strip {
+		background: linear-gradient(145deg, rgba(100, 255, 218, 0.08), rgba(2, 12, 27, 0.6));
+		border-top: 1px solid var(--secondary);
+		padding: 3rem 0;
+	}
+
+	.cta-strip-inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+	}
+
+	.cta-strip h2 {
+		font-size: 1.75rem;
+		margin: 0;
+	}
+
+	.cta-strip-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		list-style: none;
+	}
+
+	@media (max-width: 640px) {
+		.cta-strip-inner { flex-direction: column; align-items: stretch; text-align: center; }
+		.cta-strip-links { flex-direction: column; }
+		.cta-strip-links a { display: block; }
 	}
 
 	.footer-bottom {
