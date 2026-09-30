@@ -1,5 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import bookData from '../data/books.json';
+
+// Flagship titles come from the entity layer (src/data/books.json is generated).
+const flagshipBooks = bookData.books.filter((b) => b.flagship);
+const bookCount = bookData.books.length;
 
 const projectUpdates = [
 	{ name: 'SencilloDB', version: '0.8.0', kind: 'Embedded data', status: 'Published on npm', description: 'A dependency-free embedded JSON document store with typed schemas, hardened transactions, atomic persistence, checksummed logs, diagnostics, repair, and selective shard writes.', href: 'https://github.com/AlexMercedCoder/SencilloDB' },
@@ -16,22 +21,8 @@ const projectUpdates = [
 ];
 ---
 
-<Layout title="Alex Merced | Apache Iceberg, Data Lakehouse & Agentic AI" description="Explore Alex Merced’s work in Apache Iceberg, open data platforms, agentic AI, open specifications, developer education, and technical authorship.">
+<Layout title="Alex Merced's Data and AI Work | Talks, Books and Videos" description="Talks, the Lakehouse and AI Show, books, videos, and writing by Alex Merced on the open lakehouse, Apache Iceberg, and agentic AI. His bio lives at alexmerced.com.">
 	<Fragment slot="head">
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "VideoObject",
-			"name": "Who is Alex Merced?",
-			"description": "Who is Alex Merced — a short introduction",
-			"thumbnailUrl": "https://alexmerceddata.com/who-is-alex-merced.jpg",
-			"uploadDate": "2026-08-05T00:00:00+00:00",
-			"duration": "PT48S",
-			"contentUrl": "https://alexmerceddata.com/who-is-alex-merced.mp4",
-			"embedUrl": "https://alexmerceddata.com/#brand-video",
-			"about": { "@id": "https://alexmerced.com/#alexmerced" },
-			"author": { "@id": "https://alexmerced.com/#alexmerced" },
-			"publisher": { "@id": "https://alexmerceddata.com/#organization" }
-		})} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "ItemList",
@@ -104,34 +95,83 @@ const projectUpdates = [
 			</g>
 		</svg>
 		<div class="container hero-content">
-			<div class="hero-image">
-				<img src="/images/alexmercedpic.jpg" alt="Alex Merced" />
-			</div>
 			<div class="hero-text">
-				<h1>Alex Merced</h1>
-				<h2 class="subtitle">Data Lakehouse & AI Thought Leader</h2>
-				<p class="bio">
-					Promoting empowerment through education, technology, and optimism. 
-					Alex is a Developer Advocate, Educator, and Author who has specialized in data engineering, open source (Apache Iceberg, Apache Polaris), and developer education.
-				</p>
+				<span class="video-label">AlexMercedData</span>
+				<h1>Alex Merced's data and AI work</h1>
+				<p class="subtitle">Talks, the Lakehouse and AI Show, books, videos, and writing on the open lakehouse, Apache Iceberg, and agentic AI.</p>
+				<p class="bio">This site collects the work. For who Alex is, his background, and his press kit, go to <a href="https://alexmerced.com">alexmerced.com</a>.</p>
 				<div class="hero-actions">
-					<a href="/books" class="button primary">Explore My Books</a>
-					<a href="/videos" class="button">Watch Videos</a>
+					<a href="/lakehouse-ai-show/" class="button primary">Watch the show</a>
+					<a href="#books" class="button">Browse the books</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<section class="container video-section" id="brand-video">
-		<div class="video-header">
-			<span class="video-label">Alex's perspective</span>
-			<h2>Open data should stay useful across tools</h2>
-			<p>I focus on open tables, interoperable catalogs, and a semantic layer that gives people and agents the same governed definitions. Start with <a href="https://opendatalakehouse.com/architecture">the independent architecture guide</a>, then explore <a href="https://datalakehouse.help/">hands-on tasks</a> and <a href="https://dataaiwiki.com/wiki/">quick definitions</a>.</p>
+	<nav class="container jump-links" aria-label="On this page">
+		<a href="#talks">Talks</a>
+		<a href="#show">Lakehouse and AI Show</a>
+		<a href="#books">Books</a>
+		<a href="#videos">Videos</a>
+		<a href="#writing">Writing</a>
+		<a href="#open-source">Open source</a>
+	</nav>
+
+	<section class="container work-section" id="talks">
+		<div class="work-header">
+			<span class="video-label">Talks</span>
+			<h2>Conference talks and sessions</h2>
 		</div>
+		<div class="card work-card">
+			<p>Alex speaks on open lakehouse architecture, Apache Iceberg, Apache Polaris, semantic layers, and agentic AI. He has spoken at events including Data Council, Confluent Current, and DataEngBytes.</p>
+			<p>Speaking topics and booking details are on alexmerced.com.</p>
+			<a href="https://alexmerced.com/speaking" class="button primary" data-network-event="cta_speaking">Speaking topics and booking</a>
+		</div>
+	</section>
+
+	<section class="container work-section" id="show">
+		<div class="work-header">
+			<span class="video-label">Video series</span>
+			<h2>The Lakehouse and AI Show</h2>
+		</div>
+		<div class="work-grid">
+			<div class="card work-card">
+				<h3>Short episodes, one concept each</h3>
+				<p>Most episodes run under four minutes. The series starts with OLTP versus OLAP and ETL versus ELT, works through Apache Arrow, Apache Parquet, Apache Iceberg, and Apache Polaris, then moves into language models, tokens, context windows, and prompting.</p>
+				<a href="/lakehouse-ai-show/" class="button primary">Watch the episodes</a>
+			</div>
+			<div class="card work-card">
+				<h3>The podcast</h3>
+				<p>Longer conversations on data engineering, open source, and where the lakehouse is heading.</p>
+				<a href="https://open.spotify.com/show/2PRDrWVpgDvKxN6n1oUsJF" target="_blank" rel="noopener noreferrer" class="button">Listen on Spotify</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="container work-section" id="books">
+		<div class="work-header">
+			<span class="video-label">Books</span>
+			<h2>Books on Iceberg, the lakehouse, and AI</h2>
+			<p>Alex has written {bookCount} books. These are the four from O'Reilly, Manning, and Packt.</p>
+		</div>
+		<div class="book-grid">
+			{flagshipBooks.map((book) => (
+				<article class="card book-tile">
+					<img src={book.cover} alt={`Cover of ${book.title}`} loading="lazy" />
+					<h3><a href={`https://books.alexmerced.com/books/${book.slug}/`}>{book.title}</a></h3>
+					<p class="book-publisher">{book.publisher}</p>
+					<a href={book.amazon} target="_blank" rel="noopener noreferrer" class="book-buy">Buy on Amazon</a>
+				</article>
+			))}
+		</div>
+		<div class="work-more"><a href="/books/">See all {bookCount} books</a></div>
+	</section>
+
+	<section class="container video-section" id="videos">
 		<div class="video-header">
-			<span class="video-label">Featured films</span>
-			<h2>Three stories. One open future.</h2>
-			<p>Meet Alex, open the agentic stack, and travel through the Apache Iceberg lakehouse.</p>
+			<span class="video-label">Videos</span>
+			<h2>Films and the video roll</h2>
+			<p>Three short music films, plus the latest uploads from the <a href="https://www.youtube.com/@alexmerceddata" target="_blank" rel="noopener noreferrer">Alex Merced Data and AI YouTube channel</a> in the <a href="/videos/">video roll</a>.</p>
 		</div>
 		<div class="video-grid">
 			<figure class="video-figure"><div class="video-frame"><video controls preload="metadata" playsinline poster="https://alexmerced.com/my-name-is-alex-poster.jpg" aria-label="My Name Is Alex music video"><source src="https://alexmerced.com/my-name-is-alex.mp4" type="video/mp4" />Your browser does not support embedded video.</video></div><figcaption><strong>My Name Is Alex</strong><span>A personal, music-driven introduction.</span></figcaption></figure>
@@ -140,21 +180,30 @@ const projectUpdates = [
 		</div>
 	</section>
 
-	<section class="container about-section">
-		<div class="about-grid">
-			<div class="card">
-				<h3>Developer Advocacy</h3>
-				<p>Serving as Head of Developer Relations at Dremio, focusing on data engineering and open-source tech. Frequent speaker at events like Data Council, Confluent Current, and DataEngBytes.</p>
+	<section class="container work-section" id="writing">
+		<div class="work-header">
+			<span class="video-label">Writing</span>
+			<h2>Articles and newsletters</h2>
+			<p>Alex writes about open tables, interoperable catalogs, and a semantic layer that gives people and agents the same governed definitions.</p>
+		</div>
+		<div class="work-grid">
+			<div class="card work-card">
+				<h3>Articles</h3>
+				<p>New articles publish on Data Lakehouse Hub. The blogroll lists the latest ones and lets you search them by title.</p>
+				<a href="/blogroll/" class="button primary">Search the blogroll</a>
 			</div>
-			<div class="card">
-				<h3>Authorship</h3>
-				<p>Author of "Apache Iceberg: The Definitive Guide", "Apache Polaris: The Definitive Guide", and "Architecting an Apache Iceberg Lakehouse", and the Packt title "Building the Software Factory", along with 73 other books on tech, economics, and fiction.</p>
+			<div class="card work-card">
+				<h3>Weekly newsletters</h3>
+				<p>An AI newsletter on Thursdays and an Apache lakehouse newsletter on Fridays, both free on Substack.</p>
+				<a href="https://amdatalakehouse.substack.com/" target="_blank" rel="noopener noreferrer" class="button">Subscribe on Substack</a>
 			</div>
-			<div class="card">
-				<h3>Educator</h3>
-				<p>With over a decade of teaching economics and finance in NYC, and extensive experience instructing software engineering and web development.</p>
+			<div class="card work-card">
+				<h3>Infographics</h3>
+				<p>Architecture diagrams and explainers on the lakehouse, Apache Iceberg, Apache Polaris, Arrow, Parquet, MCP, and AI.</p>
+				<a href="/gallery/" class="button">Open the gallery</a>
 			</div>
 		</div>
+		<p class="work-note">New to the lakehouse? Start with <a href="https://opendatalakehouse.com/architecture">the independent architecture guide</a>, then try <a href="https://datalakehouse.help/">hands-on tasks</a>.</p>
 	</section>
 
 	<section class="project-section" id="open-source">
@@ -177,33 +226,6 @@ const projectUpdates = [
 		</div>
 	</section>
 
-	<section class="container kb-section">
-		<div class="kb-feature card">
-			<h2>📚 Knowledge Base</h2>
-			<p>Explore a free library of 200+ in-depth articles covering Apache Iceberg, open table formats, data lakehouse architecture, data platforms (Dremio, Snowflake, Databricks, Trino), and AI engineering concepts — written as authoritative references for data engineers and architects.</p>
-			<a href="/knowledge" class="button primary">Browse the Knowledge Base</a>
-		</div>
-	</section>
-
-	<section class="container cta-section">
-		<div class="cta-grid">
-			<div class="card cta-card">
-				<h3>📺 Lakehouse & AI Show</h3>
-				<p>Watch bite-sized video deep dives into Data Lakehouse architecture, open table formats, Apache Iceberg, and AI data systems.</p>
-				<a href="/lakehouse-ai-show" class="button primary">Watch the Show</a>
-			</div>
-			<div class="card cta-card">
-				<h3>🎙️ Listen to the Podcast</h3>
-				<p>Join Alex Merced for deep dives into Data Engineering, open-source technology, and the future of the Data Lakehouse.</p>
-				<a href="https://open.spotify.com/show/2PRDrWVpgDvKxN6n1oUsJF?si=369a437441814254" target="_blank" rel="noopener noreferrer" class="button">Listen on Spotify</a>
-			</div>
-			<div class="card cta-card">
-				<h3>📧 Read the Newsletter</h3>
-				<p>Get the latest insights, tutorials, and architectural patterns delivered directly to your inbox every week.</p>
-				<a href="https://amdatalakehouse.substack.com/" target="_blank" rel="noopener noreferrer" class="button">Subscribe on Substack</a>
-			</div>
-		</div>
-	</section>
 </Layout>
 
 <style>
@@ -287,7 +309,7 @@ const projectUpdates = [
 	}
 
 	.hero h1 {
-		font-size: 4rem;
+		font-size: clamp(2.4rem, 6vw, 4rem);
 		font-weight: 800;
 		margin-bottom: 0.5rem;
 		background: linear-gradient(to right, var(--text), var(--accent));
@@ -295,18 +317,90 @@ const projectUpdates = [
 		-webkit-text-fill-color: transparent;
 	}
 
-	.hero-image {
-		margin-bottom: 2rem;
+
+
+	.bio a { color: var(--accent); }
+
+	.jump-links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem 1.5rem;
+		height: auto;
+		padding-top: 2rem;
+		padding-bottom: 0;
 	}
 
-	.hero-image img {
-		width: 200px;
-		height: 200px;
-		border-radius: 50%;
-		object-fit: cover;
-		border: 4px solid var(--accent);
-		box-shadow: 0 10px 30px -10px rgba(100, 255, 218, 0.3);
+	.jump-links a {
+		color: var(--text-muted);
+		text-decoration: none;
+		font-weight: 500;
 	}
+
+	.jump-links a:hover { color: var(--accent); }
+
+	.work-section {
+		padding: 4rem 1.5rem 1rem;
+		scroll-margin-top: 90px;
+	}
+
+	.video-section { scroll-margin-top: 90px; }
+
+	.work-header {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto 2.5rem;
+	}
+
+	.work-header h2 { font-size: 2.25rem; margin-bottom: 0.75rem; }
+	.work-header p { font-size: 1.1rem; margin: 0; }
+
+	.work-card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.work-card p { flex-grow: 1; }
+
+	.work-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 2rem;
+	}
+
+	.work-grid .work-card { max-width: none; margin: 0; }
+
+	.book-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 1.5rem;
+	}
+
+	.book-tile {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.book-tile img {
+		width: 100%;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		border-radius: 6px;
+		margin-bottom: 1rem;
+		background-color: var(--primary);
+	}
+
+	.book-tile h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+	.book-tile h3 a { color: var(--text); text-decoration: none; }
+	.book-tile h3 a:hover { color: var(--accent); }
+	.book-publisher { font-size: 0.9rem; margin-bottom: 1rem; flex-grow: 1; }
+	.book-buy { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+
+	.work-more, .work-note { text-align: center; margin-top: 2rem; }
+	.work-more a, .work-note a, .video-header p a { color: var(--accent); font-weight: 600; }
 
 	.subtitle {
 		color: var(--accent);
@@ -402,9 +496,6 @@ const projectUpdates = [
 		color: var(--accent);
 	}
 
-	.about-section {
-		padding: 5rem 1.5rem;
-	}
 
 	.project-section {
 		padding: 5rem 0;
@@ -463,11 +554,6 @@ const projectUpdates = [
 	.project-paths { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; }
 	.project-paths a { color: var(--accent); font-weight: 700; }
 
-	.about-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-	}
 
 	.card h3 {
 		color: var(--accent);
@@ -475,61 +561,18 @@ const projectUpdates = [
 		font-size: 1.25rem;
 	}
 
-	.kb-section {
-		padding: 0 1.5rem 3rem;
-	}
 
-	.kb-feature {
-		text-align: center;
-		padding: 3rem 2rem;
-		background: linear-gradient(to bottom, var(--secondary), rgba(2,12,27,0.5));
-		border-color: var(--accent);
-		max-width: 800px;
-		margin: 0 auto;
-	}
 
-	.kb-feature h2 {
-		color: var(--accent);
-		font-size: 2rem;
-		margin-bottom: 1rem;
-	}
 
-	.kb-feature p {
-		font-size: 1.15rem;
-		margin-bottom: 2rem;
-	}
 
-	.cta-section {
-		padding: 2rem 1.5rem 5rem;
-	}
 
-	.cta-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-		max-width: 800px;
-		margin: 0 auto;
-	}
 
-	.cta-card {
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
 
-	.cta-card h3 {
-		font-size: 1.5rem;
-		margin-bottom: 1rem;
-	}
 
-	.cta-card p {
-		margin-bottom: 1.5rem;
-		flex-grow: 1;
-	}
 
 	@media (max-width: 768px) {
 		.video-grid { grid-template-columns: 1fr; }
+		.book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 		.hero h1 {
 			font-size: 3rem;
 		}
