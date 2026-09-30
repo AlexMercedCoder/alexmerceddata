@@ -14,6 +14,14 @@ const books = bookData.books.map((b) => ({
 	details: b.canonicalPage,
 	publisher: b.publisher,
 }));
+
+const sections = [
+	{ id: 'tech', heading: 'Data and AI books', intro: 'Apache Iceberg, the lakehouse, semantic layers, agents, and AI engineering.' },
+	{ id: 'economics', heading: 'Economics and philosophy', intro: 'Books on economics, finance, and ideas.' },
+	{ id: 'fiction', heading: 'Fiction', intro: 'Novels and stories.' },
+	{ id: 'tabletop', heading: 'Tabletop roleplaying', intro: 'Game books and settings for tabletop RPGs.' },
+].map((section) => ({ ...section, books: books.filter((b) => b.category === section.id) }))
+ .filter((section) => section.books.length > 0);
 ---
 
 <Layout title="Books by Alex Merced" description={`The full library of ${books.length} books by Alex Merced covering Apache Iceberg, Data Lakehouses, AI Engineering, Economics, Fiction, and tabletop roleplaying.`}>
@@ -29,10 +37,7 @@ const books = bookData.books.map((b) => ({
 				"item": {
 					"@type": "Book",
 					"name": b.title,
-					"author": {
-						"@type": "Person",
-						"name": "Alex Merced"
-					},
+					"author": { "@id": "https://alexmerced.com/#alexmerced" },
 					"url": b.details,
 					"image": b.image,
 					"description": b.description
@@ -74,7 +79,7 @@ const books = bookData.books.map((b) => ({
 
 	<div class="container page-header">
 		<h1>Books by Alex Merced</h1>
-		<p>Discover {books.length} published titles spanning Apache Iceberg, Data Lakehouses, AI Engineering, Economics, and Fiction.</p>
+		<p>All {books.length} of Alex's published titles, from Apache Iceberg and AI engineering to economics and fiction. Each title opens its page on <a href="https://books.alexmerced.com/">books.alexmerced.com</a>.</p>
 		
 		<div class="controls-container">
 			<div class="search-box">
@@ -92,29 +97,34 @@ const books = bookData.books.map((b) => ({
 	</div>
 
 	<div class="container">
-		<div class="books-grid" id="booksGrid">
-			{books.map((book) => (
-				<div 
-					class="book-card card" 
-					data-category={book.category} 
-					data-title={book.title.toLowerCase()}
-					data-description={book.description.toLowerCase()}
-				>
-					<div class="book-image">
-						<img src={book.image} alt={book.title} loading="lazy" />
-					</div>
-					<div class="book-info">
-						<span class="category-badge">{book.category === 'tech' ? 'Data & AI' : book.category === 'economics' ? 'Economics' : book.category === 'tabletop' ? 'Tabletop RPG' : 'Fiction'}</span>
-						<h3>{book.title}</h3>
-						<p>{book.description}</p>
-						<p class="book-links">
-							<a href={book.details} target="_blank" rel="noopener noreferrer">Details</a>
-							<a href={book.link} target="_blank" rel="noopener noreferrer" class="button">Get on Amazon</a>
-						</p>
-					</div>
+		{sections.map((section) => (
+			<section class="book-section" id={`books-${section.id}`} data-section={section.id}>
+				<h2>{section.heading} <span class="section-count">({section.books.length})</span></h2>
+				<p class="section-intro">{section.intro}</p>
+				<div class="books-grid">
+					{section.books.map((book) => (
+						<div
+							class="book-card card"
+							data-category={book.category}
+							data-title={book.title.toLowerCase()}
+							data-description={book.description.toLowerCase()}
+						>
+							<div class="book-image">
+								<img src={book.image} alt={book.title} loading="lazy" />
+							</div>
+							<div class="book-info">
+								<span class="category-badge">{book.category === 'tech' ? 'Data & AI' : book.category === 'economics' ? 'Economics' : book.category === 'tabletop' ? 'Tabletop RPG' : 'Fiction'}</span>
+								<h3><a href={book.details}>{book.title}</a></h3>
+								<p>{book.description}</p>
+								<p class="book-links">
+									<a href={book.link} target="_blank" rel="noopener noreferrer" class="button">Buy on Amazon</a>
+								</p>
+							</div>
+						</div>
+					))}
 				</div>
-			))}
-		</div>
+			</section>
+		))}
 		<div id="noResults" class="no-results" style="display: none;">
 			<p>No books found matching your search criteria.</p>
 		</div>
@@ -147,6 +157,11 @@ const books = bookData.books.map((b) => ({
 			} else {
 				(card as HTMLElement).style.display = 'none';
 			}
+		});
+
+		document.querySelectorAll('.book-section').forEach((section) => {
+			const visible = Array.from(section.querySelectorAll('.book-card')).some((c) => (c as HTMLElement).style.display !== 'none');
+			(section as HTMLElement).style.display = visible ? '' : 'none';
 		});
 
 		if (noResults) {
@@ -259,6 +274,36 @@ const books = bookData.books.map((b) => ({
 		border-color: var(--accent);
 		font-weight: 600;
 	}
+
+	/* Category sections */
+	.book-section {
+		max-width: 1200px;
+		margin: 0 auto 4rem;
+	}
+
+	.book-section h2 {
+		font-size: 2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.section-count {
+		color: var(--text-muted);
+		font-weight: 400;
+		font-size: 1.25rem;
+	}
+
+	.section-intro {
+		margin-bottom: 2rem;
+	}
+
+	.book-info h3 a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.book-info h3 a:hover { color: var(--accent); }
+
+	.page-header p a { color: var(--accent); }
 
 	/* Books Grid */
 	.books-grid {

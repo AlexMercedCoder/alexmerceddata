@@ -9,18 +9,23 @@ try {
 	blogs = feed.items.map(item => ({
 		title: item.title,
 		link: item.link,
+		year: new Date(item.pubDate || item.isoDate).getFullYear(),
 		date: new Date(item.pubDate || item.isoDate).toLocaleDateString(),
 		description: item.contentSnippet ? item.contentSnippet.substring(0, 150) + '...' : ''
 	})).filter(blog => !blog.link.endsWith('/index/'));
 } catch (error) {
 	console.error('Error fetching blog feed:', error);
 }
+
+// Group by publication year so the page has a real section outline.
+const years = [...new Set(blogs.map((b) => b.year))].sort((a, b) => b - a);
+const groups = years.map((year) => ({ year, posts: blogs.filter((b) => b.year === year) }));
 ---
 
-<Layout title="Searchable Blogroll" description="Search through Alex Merced's articles on the Data Lakehouse Hub.">
+<Layout title="Writing | Searchable Blogroll | Alex Merced Data" description="Search recent articles by Alex Merced on Data Lakehouse Hub, from the RSS feed, newest first and grouped by year.">
 	<div class="container page-header">
 		<h1>Blogroll</h1>
-		<p>Search and read articles across Data Lakehouse Hub.</p>
+		<p>Alex writes about the lakehouse, Apache Iceberg, and agentic AI on <a href="https://datalakehousehub.com">Data Lakehouse Hub</a>. Search the latest posts from the Hub feed here, newest first.</p>
 		
 		<div class="search-container">
 			<input type="text" id="blogSearch" placeholder="Search articles by title..." />
@@ -28,18 +33,23 @@ try {
 	</div>
 
 	<div class="container">
-		<div class="blog-list" id="blogList">
-			{blogs.map((blog) => (
-				<a href={blog.link} target="_blank" rel="noopener noreferrer" class="blog-card card" data-title={blog.title.toLowerCase()}>
-					<div class="blog-info">
-						<h3>{blog.title}</h3>
-						<p class="date">{blog.date}</p>
-						<p class="description">{blog.description}</p>
-					</div>
-				</a>
-			))}
-			{blogs.length === 0 && <p>No articles found or error loading feed.</p>}
-		</div>
+		{groups.map((group) => (
+			<section class="blog-year" data-year={group.year}>
+				<h2>{group.year} articles <span class="year-count">({group.posts.length})</span></h2>
+				<div class="blog-list">
+					{group.posts.map((blog) => (
+						<a href={blog.link} target="_blank" rel="noopener noreferrer" class="blog-card card" data-title={blog.title.toLowerCase()}>
+							<div class="blog-info">
+								<h3>{blog.title}</h3>
+								<p class="date">{blog.date}</p>
+								<p class="description">{blog.description}</p>
+							</div>
+						</a>
+					))}
+				</div>
+			</section>
+		))}
+		{blogs.length === 0 && <p>No articles found or error loading feed.</p>}
 	</div>
 </Layout>
 
@@ -57,6 +67,10 @@ try {
 				} else {
 					card.style.display = 'none';
 				}
+			});
+			document.querySelectorAll('.blog-year').forEach(section => {
+				const visible = Array.from(section.querySelectorAll('.blog-card')).some(c => c.style.display !== 'none');
+				section.style.display = visible ? '' : 'none';
 			});
 		});
 	}
@@ -94,6 +108,24 @@ try {
 
 	.search-container input:focus {
 		border-color: var(--accent);
+	}
+
+	.page-header p a { color: var(--accent); }
+
+	.blog-year {
+		max-width: 800px;
+		margin: 0 auto 3rem;
+	}
+
+	.blog-year h2 {
+		font-size: 1.75rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.year-count {
+		color: var(--text-muted);
+		font-weight: 400;
+		font-size: 1.1rem;
 	}
 
 	.blog-list {
