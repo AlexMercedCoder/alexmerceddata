@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+// 720px WebP thumbnails; the cards link to the full-resolution originals.
+import thumbs from '../data/gallery-thumbs.json';
 
 const galleryItems = [
 	{
@@ -158,6 +160,13 @@ const galleryItems = [
 	}
 ];
 
+const thumbFor = (image: string) => {
+	const key = image.split('/').pop()!.replace(/\.[a-z]+$/, '');
+	const t = (thumbs as Record<string, { src: string; width: number; height: number }>)[key];
+	if (!t) throw new Error(`Missing gallery thumbnail for ${image}`);
+	return t;
+};
+
 const categories = ["All", ...new Set(galleryItems.map(item => item.category))];
 ---
 
@@ -204,7 +213,7 @@ const categories = ["All", ...new Set(galleryItems.map(item => item.category))];
 					data-card-cat={item.category}
 				>
 					<div class="image-wrapper">
-						<img src={item.image} alt={item.title} loading="lazy" />
+						<img src={thumbFor(item.image).src} alt={item.title} width={thumbFor(item.image).width} height={thumbFor(item.image).height} loading="lazy" decoding="async" />
 						<div class="image-overlay">
 							<span class="view-btn">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/></svg>
@@ -216,6 +225,7 @@ const categories = ["All", ...new Set(galleryItems.map(item => item.category))];
 						<span class="category-badge">{item.category}</span>
 						<h3>{item.title}</h3>
 						<p>{item.description}</p>
+						<a class="full-size-link" href={item.image}>Open full-resolution image</a>
 					</div>
 				</div>
 			))}
@@ -334,7 +344,9 @@ const categories = ["All", ...new Set(galleryItems.map(item => item.category))];
 	}
 
 	cards.forEach((card) => {
-		card.addEventListener('click', () => {
+		card.addEventListener('click', (e) => {
+			// The full-size link navigates on its own; do not also open the lightbox.
+			if ((e.target as HTMLElement).closest('a')) return;
 			const imgSrc = card.getAttribute('data-full-img') || '';
 			const title = card.getAttribute('data-card-title') || '';
 			const desc = card.getAttribute('data-card-desc') || '';
@@ -485,6 +497,12 @@ const categories = ["All", ...new Set(galleryItems.map(item => item.category))];
 		transition: transform 0.4s ease;
 	}
 
+	.full-size-link {
+		display: inline-block;
+		margin-top: 0.75rem;
+		color: var(--accent);
+		font-size: 0.9rem;
+	}
 	.gallery-card:hover .image-wrapper img {
 		transform: scale(1.05);
 	}

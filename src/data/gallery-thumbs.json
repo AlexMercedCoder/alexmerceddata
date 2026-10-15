@@ -1,0 +1,112 @@
+{
+  "ai-terminology-clear-definitions-fewer-misconceptions": {
+    "src": "/images/gallery/thumbs/ai-terminology-clear-definitions-fewer-misconceptions-720.webp",
+    "width": 720,
+    "height": 766
+  },
+  "apache-datafusion-open-modular-query-engine-overview": {
+    "src": "/images/gallery/thumbs/apache-datafusion-open-modular-query-engine-overview-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "apache-flink-architecture-and-functionality-overview": {
+    "src": "/images/gallery/thumbs/apache-flink-architecture-and-functionality-overview-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "apache-iceberg-snapshot-management": {
+    "src": "/images/gallery/thumbs/apache-iceberg-snapshot-management-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "apache-iceberg-table-compaction": {
+    "src": "/images/gallery/thumbs/apache-iceberg-table-compaction-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "apache-iceberg-table-maintenance": {
+    "src": "/images/gallery/thumbs/apache-iceberg-table-maintenance-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "apache-iceberg-v3-equality-deletes-vs-deletion-vectors": {
+    "src": "/images/gallery/thumbs/apache-iceberg-v3-equality-deletes-vs-deletion-vectors-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "apache-spark-architecture-and-functionality-overview": {
+    "src": "/images/gallery/thumbs/apache-spark-architecture-and-functionality-overview-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "architecture-of-apache-arrow": {
+    "src": "/images/gallery/thumbs/architecture-of-apache-arrow-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "architecture-of-apache-iceberg": {
+    "src": "/images/gallery/thumbs/architecture-of-apache-iceberg-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "architecture-of-apache-ossie": {
+    "src": "/images/gallery/thumbs/architecture-of-apache-ossie-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "architecture-of-apache-parquet": {
+    "src": "/images/gallery/thumbs/architecture-of-apache-parquet-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "architecture-of-apache-polaris": {
+    "src": "/images/gallery/thumbs/architecture-of-apache-polaris-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "architecture-of-model-context-protocol": {
+    "src": "/images/gallery/thumbs/architecture-of-model-context-protocol-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "data-modeling-structure-data-align-meaning-drive-value": {
+    "src": "/images/gallery/thumbs/data-modeling-structure-data-align-meaning-drive-value-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "end-to-end-operational-data-to-ai-insights": {
+    "src": "/images/gallery/thumbs/end-to-end-operational-data-to-ai-insights-720.webp",
+    "width": 720,
+    "height": 461
+  },
+  "inside-an-apache-iceberg-metadata-json-v3": {
+    "src": "/images/gallery/thumbs/inside-an-apache-iceberg-metadata-json-v3-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "inside-an-apache-iceberg-v3-manifest": {
+    "src": "/images/gallery/thumbs/inside-an-apache-iceberg-v3-manifest-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "inside-an-apache-iceberg-v3-manifest-list": {
+    "src": "/images/gallery/thumbs/inside-an-apache-iceberg-v3-manifest-list-720.webp",
+    "width": 720,
+    "height": 480
+  },
+  "open-lakehouse-architecture": {
+    "src": "/images/gallery/thumbs/open-lakehouse-architecture-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "productive-with-ai-and-agents-books": {
+    "src": "/images/gallery/thumbs/productive-with-ai-and-agents-books-720.webp",
+    "width": 720,
+    "height": 405
+  },
+  "streaming-to-an-iceberg-lakehouse": {
+    "src": "/images/gallery/thumbs/streaming-to-an-iceberg-lakehouse-720.webp",
+    "width": 720,
+    "height": 405
+  }
+}

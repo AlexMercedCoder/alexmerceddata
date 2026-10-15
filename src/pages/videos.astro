@@ -32,7 +32,7 @@ try {
 			{videos.map((video) => (
 				<a href={video.link} target="_blank" rel="noopener noreferrer" class="video-card card" data-title={video.title.toLowerCase()}>
 					<div class="video-thumbnail">
-						<img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt={video.title} loading="lazy" />
+						<img src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt={video.title} width="320" height="180" loading="lazy" decoding="async" />
 					</div>
 					<div class="video-info">
 						<h3>{video.title}</h3>
@@ -111,9 +111,16 @@ try {
 		overflow: hidden;
 	}
 
+	/* Reserve the 16:9 box before the thumbnail loads so the grid does not shift. */
+	.video-thumbnail {
+		aspect-ratio: 16 / 9;
+		background-color: #050d1a;
+	}
+
 	.video-thumbnail img {
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover;
 		display: block;
 		border-bottom: 1px solid rgba(100, 255, 218, 0.1);
 	}
